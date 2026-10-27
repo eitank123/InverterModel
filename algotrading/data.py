@@ -84,6 +84,30 @@ def regime_switching(n: int = 2520, mus: tuple[float, ...] = (0.30, -0.30),
     return pd.DataFrame({"close": close, "regime": regime}, index=_index(n, start))
 
 
+def garch(n: int = 2520, mu: float = 0.07, omega: float = 2e-6, alpha: float = 0.09,
+          beta: float = 0.89, s0: float = 100.0, seed: int | None = None,
+          start: str = "2015-01-01") -> pd.DataFrame:
+    """GARCH(1,1) returns: constant expected return, *clustered* volatility.
+
+    sigma2_t = omega + alpha * eps_{t-1}^2 + beta * sigma2_{t-1}   (daily units)
+    Returns themselves are unpredictable, but volatility is predictable, which is
+    a stylised fact of every real market ("volatility clustering").
+    Long-run daily vol = sqrt(omega / (1 - alpha - beta)) (defaults: ~1%/day, 16%/yr).
+    """
+    rng = np.random.default_rng(seed)
+    z = rng.standard_normal(n)
+    var = omega / (1 - alpha - beta)
+    r = np.zeros(n)
+    sig = np.zeros(n)
+    for t in range(1, n):
+        var = omega + alpha * r[t - 1] ** 2 + beta * var
+        sig[t] = np.sqrt(var)
+        r[t] = mu / TRADING_DAYS + sig[t] * z[t]
+    close = s0 * np.cumprod(1 + r)
+    return pd.DataFrame({"close": close, "sigma": sig * np.sqrt(TRADING_DAYS)},
+                        index=_index(n, start))
+
+
 def panel(generator=regime_switching, n_assets: int = 10, seed: int = 0,
           **kwargs) -> pd.DataFrame:
     """Independent synthetic assets side by side: one ``close`` column per asset."""
@@ -129,6 +153,44 @@ def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
     monthly_tr = (df["close"] + df["dividend"] / 12) / df["close"].shift(1) - 1
     df["tr"] = df["close"].iloc[0] * (1 + monthly_tr.fillna(0.0)).cumprod()
     return df
+
+
+def bond_total_return(yields: pd.Series, maturity: float = 10.0) -> pd.Series:
+    """Total-return index of a constant-maturity government bond, built from yields.
+
+    Each month we buy a new ``maturity``-year par bond (coupon = current yield), hold it
+    one month, and reprice it at next month's yield. Return = coupon income + price
+    change. Price change ~ -duration * change in yield: when rates rise, bonds fall.
+    ``yields`` are annual decimals, monthly frequency.
+    """
+    y0 = yields.shift(1)
+    y1 = yields
+    c = y0 / 2                                  # semi-annual coupon of a par bond
+    n = int(maturity * 2)
+    t = np.arange(1, n + 1)[None, :] - 1 / 6    # cash-flow times (half-years) one month later
+    disc = (1 + y1.to_numpy()[:, None] / 2) ** (-t)
+    price = c.to_numpy()[:, None] * disc
+    price[:, -1] += disc[:, -1]
+    # Discounting from one month in already includes the month's accrued coupon.
+    ret = pd.Series(price.sum(axis=1) - 1.0, index=yields.index)
+    return (1 + ret.fillna(0.0)).cumprod()
+
+
+DJIA_URL = ("https://raw.githubusercontent.com/jalajthanaki/stock_price_prediction/"
+            "master/data/DJIA_data.csv")
+
+
+def load_djia_daily(cache_dir: str | None = None) -> pd.DataFrame:
+    """Daily Dow Jones Industrial Average OHLC, 2006-12 to 2016-12 (index level, no
+    dividends: dividend yield ~2%/yr is missing). Downloaded once, then cached."""
+    cache_dir = cache_dir or os.path.join(os.path.dirname(__file__), "..", "data")
+    path = os.path.join(cache_dir, "djia_daily_2007_2016.csv")
+    if not os.path.exists(path):
+        os.makedirs(cache_dir, exist_ok=True)
+        pd.read_csv(DJIA_URL).to_csv(path, index=False)
+    df = pd.read_csv(path, parse_dates=["Date"]).set_index("Date").sort_index()
+    df.columns = [c.lower().replace(" ", "_") for c in df.columns]
+    return df.rename(columns={"adj_close": "close", "close": "raw_close"})
 
 
 def load_csv(path: str, date_col: str = "Date", close_col: str = "Close") -> pd.DataFrame:

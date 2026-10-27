@@ -29,8 +29,9 @@ the work is learning not to fool yourself. The math is the easy part for you.
 - ✅ 155 years of S&P 500 total return (Shiller). Trend timing tested in Experiment 1.
 - Download daily data for liquid ETFs (SPY, QQQ, TLT, GLD) using `load_yahoo`
   (needs network access to Yahoo Finance).
-- Reproduce known effects: time-series momentum (Moskowitz, Ooi & Pedersen 2012),
-  volatility targeting, and the 60/40 portfolio.
+- ✅ Reproduce known effects: time-series momentum, volatility targeting (Exp 3), and the
+  60/40 portfolio with 155 years of bonds rebuilt from yields (Exp 4).
+- ✅ News sentiment: sources, scorers, and an honest backtest (Exp 5). No edge in world news.
 - ✅ Multi-asset portfolios (`PerAsset`, `PortfolioVolTarget`). Breadth tested in Experiment 2.
 - Pairs trading / cointegration (Engle-Granger, Johansen), where your OU knowledge applies.
 

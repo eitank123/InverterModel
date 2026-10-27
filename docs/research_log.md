@@ -124,11 +124,120 @@ expensive your market (small caps, crypto, retail), the slower your signals must
 
 ---
 
+## Background reading, round 2 (2026-10-27)
+
+| Source | Key claim | What we test |
+|---|---|---|
+| Kim, Tse & Wald (2016), critique of MOP | TSMOM's alpha is mostly from volatility scaling. Without it, TSMOM ≈ buy & hold. | Exp 3 |
+| Moreira & Muir (2017), *Volatility-Managed Portfolios*, JF | Cutting exposure when vol is high raises Sharpe, because vol is predictable and returns don't rise with it. | Exp 3 (GARCH) |
+| Tetlock (2007), *Giving Content to Investor Sentiment*, JF | Pessimism in a WSJ market column predicts lower returns next day, then a reversal within a week. | Exp 5 |
+| Lopez-Lira & Tang (2023–25), *Can ChatGPT Forecast Stock Price Movements?* | LLM scores of firm-specific headlines predict the next-day reaction, mostly for small caps and negative news. Returns are fading as adoption grows. | `news.ClaudeScorer` (not yet run: needs an API key) |
+| Faber (2018) 10-year update | The SMA-10 out-of-sample Sharpe held up, but the rule lagged stocks in 6 of 8 years after 2009. | Exp 1, Exp 4 |
+
+---
+
+## Experiment 3: Trend signal or volatility scaling?
+`python scripts/experiments/exp03_vol_scaling.py` · 2×2 design: {buy & hold, trend} × {unscaled, vol-scaled}
+
+**Hypothesis.** Following Kim, Tse & Wald, vol scaling explains most of the trend strategy's Sharpe.
+
+| Market | Effect of vol scaling | Effect of trend signal |
+|---|---|---|
+| Synthetic GBM, constant vol (20 seeds) | −0.02 | −0.12 |
+| Synthetic GARCH, clustered vol (20 seeds) | **+0.03** | −0.15 |
+| S&P 500 monthly 1871–2026 | −0.08 | **+0.16** |
+| DJIA daily 2007–2016 | −0.03 | −0.05 |
+
+(Effects are average Sharpe differences over the two levels of the other factor.)
+
+**Result.**
+- On synthetic data without trends, the trend signal *costs* 0.12–0.15 Sharpe. Sitting in cash during dips of an upward-drifting asset is pure cost when there is no trend.
+- Vol scaling helps only when volatility clusters (GARCH), and only a little.
+- On 155 years of the S&P 500 the **trend signal**, not the scaling, is what helped. Monthly vol estimates from 12 points are noisy and lag by a month.
+- On one decade of daily DJIA data neither factor mattered. One decade with one crash is an anecdote, not evidence.
+
+**Lesson.** The Kim–Tse–Wald effect is mostly about *cross-asset* risk balancing across 58
+futures with very different volatilities, not about timing one market. Our single-asset test
+cannot confirm or refute it. That needs many assets (Exp 4 is a first, small step).
+
+---
+
+## Experiment 4: Stocks + bonds, 60/40 and trend (1871–2026)
+`python scripts/experiments/exp04_stocks_bonds.py` · bonds = 10-year constant-maturity bond built from Shiller's yields · lag 1, 10 bp, cash = bond yield − 1.5%
+
+**Data check.** Rebuilt 10-year bond returns: 4.5%/yr, 4.3% vol, worst drawdown −23%.
+2022: −15% (the real 10-year Treasury lost ≈15–16%). 1941–81: 2.8%/yr while inflation ran
+~4.7%, the great bond bear market. *A bug was caught here:* the first version counted the
+coupon twice (9.3%/yr). Sanity-checking against known history caught it.
+
+**Stock–bond correlation is not a constant:** +0.03 (1871–1928), +0.09 (1929–49),
+−0.10 (1950–67), **+0.28 (1968–99)**, **−0.33 (2000–20)**, **+0.33 (2021–26)**. Bonds hedged
+stocks for only about 20 of the last 155 years. When inflation drives markets, both fall together.
+
+| Portfolio | CAGR | Vol | Sharpe | Max DD |
+|---|---|---|---|---|
+| 100% stocks | 9.4% | 14.0% | 0.71 | −82% |
+| 60/40 | 7.7% | 8.6% | 0.90 | −61% |
+| **60/40, each asset with SMA-10 filter** | 7.0% | 6.1% | **1.14** | **−32%** |
+| TSMOM 2 assets, unscaled | 4.5% | 5.9% | 0.78 | −34% |
+| TSMOM 2 assets, vol-scaled (levered ≈2.3×) | 6.5% | 9.1% | 0.74 | −60% |
+| 80% 60/40 + 20% TSMOM | 7.6% | 7.5% | 1.02 | −52% |
+
+Crises (total return): 1929–32: 60/40 −60% vs filtered −17%. 2008: −25% vs +6%. 2022: −19% vs −3%.
+
+**The surprise: vol-scaled TSMOM lost 51% in 1966–82.** Diagnosis: it held ~1.2× gross
+bond exposure, the bond trend whipsawed (bond-only trend Sharpe −0.51 over 1966–81), and
+turnover of 9×/yr cost 27% over 15 years. At futures-like 2 bp costs it still lost 39%.
+Published trend-following made money in the 1970s mainly from **commodities and currencies**,
+which we don't have. With two assets, there is no breadth (Exp 2).
+
+**Lessons.**
+1. A 60/40 is not "safe". It lost 61% in 1929–32, and bonds stop hedging when inflation is the problem.
+2. The simplest overlay, the SMA-10 filter per asset, was the best risk-adjusted result in the
+   whole project so far: Sharpe 0.90 → 1.14 and drawdown halved, at a cost of 0.7%/yr CAGR.
+3. Vol-scaling + leverage on a tiny universe amplifies whipsaw. Don't lever a strategy
+   whose edge comes from breadth until you have the breadth.
+
+---
+
+## Experiment 5: News sentiment (r/worldnews headlines vs DJIA, 2008–2016)
+`python scripts/experiments/exp05_news_sentiment.py` · ~50k headlines · Loughran-McDonald scorer
+
+**Data check.** The dataset's `Label` matches "DJIA closed up that *same* day" 99.8% of the time.
+Tutorials that predict it from the same day's headlines are using information from after the
+prediction moment (lookahead).
+
+| Test | Result | Verdict |
+|---|---|---|
+| corr(sentiment_t, return same day) | −0.001 | nothing, even with lookahead |
+| corr(sentiment_t, return t+1 … t+5) | +0.010, +0.019, +0.004, −0.007, −0.026 | all within noise (±0.045) |
+| Next-day direction "accuracy" | 50.4% | worse than "always up" (53.6%) |
+| Bad news → higher volatility next day? | t-stat −0.18 after controlling for recent vol | no |
+| Best honest strategy (5-day smoothing, cash when negative) | Sharpe 0.43 vs buy & hold 0.37 | looks like a win… |
+| …vs the same strategy with randomly time-shifted news | null mean 0.47, p = 0.57 | **…it is not.** |
+
+**The key lesson of the whole project so far.** The "sentiment" strategy beat buy & hold on Sharpe,
+and a naive researcher would stop there. But a strategy that is randomly in the market half the
+time *also* beats buy & hold over 2008–2016, because it sits out half of the 2008 crash by chance.
+**The right benchmark is the strategy's own null distribution, not buy & hold.**
+
+**Why it failed.**
+1. **Wrong source.** World-politics headlines voted on by Reddit users are not market news.
+   Same-day correlation of zero shows these headlines don't even *describe* the market.
+2. **Wrong granularity.** The published LLM results (Lopez-Lira & Tang) are firm-level:
+   a headline about company X predicting X's stock, mostly small caps. Aggregate world news predicting
+   an index is far harder, because the index is the most efficiently priced asset in the world.
+3. **Speed.** Anything in a headline about the S&P 500 is priced in within seconds.
+
+**Next for news.** (a) Firm-level: SEC 8-K filings and per-ticker headlines, which need network
+access. (b) Macro events: FOMC/CPI release days as a *risk* calendar, not a direction signal.
+(c) `ClaudeScorer` on headlines *after* the model's training cutoff, which needs an API key.
+
+---
+
 ## Open questions / next experiments
-* **Exp 3: Is it the trend or the volatility scaling?** Reproduce Kim, Tse & Wald's
-  critique: compare TSMOM with and without vol scaling, and buy & hold with vol scaling.
-* **Exp 4: A second real asset.** Build a 10-year Treasury total-return series from
-  Shiller's bond yields (price ≈ −duration × Δyield + carry). Then test 60/40 versus
-  60/40 + trend, which is the real use case for trend following: crisis diversification.
-* **Real daily data** (ETFs, futures) needs network access to a data provider (e.g. Yahoo Finance).
+* **More breadth:** commodities and currencies are where 1970s trend profits came from.
+  Shiller has no such data. We need network access (Yahoo/Stooq) or GitHub-hosted datasets.
+* **Out-of-sample discipline:** freeze the SMA-10 60/40 rule now, and re-test it in 6–12 months on unseen data.
+* **Firm-level news + LLM scoring** (see Exp 5).
 * **Event-driven engine** for paper trading (Roadmap phase 5).

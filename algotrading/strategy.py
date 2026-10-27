@@ -163,14 +163,20 @@ class PortfolioStrategy(ABC):
 
 
 class PerAsset(PortfolioStrategy):
-    """Run a single-asset strategy on every column and give each an equal 1/N budget."""
+    """Run a single-asset strategy on every column and give each a fixed budget.
 
-    def __init__(self, strategy: Strategy):
-        self.strategy = strategy
+    budgets: {column: weight}; default equal 1/N. ``PerAsset(BuyAndHold(),
+    {"stocks": .6, "bonds": .4})`` is the classic 60/40 portfolio, rebalanced every bar.
+    """
+
+    def __init__(self, strategy: Strategy, budgets: dict[str, float] | None = None):
+        self.strategy, self.budgets = strategy, budgets
 
     def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
         w = pd.DataFrame({c: self.strategy.positions(prices[c]) for c in prices.columns})
-        return w / prices.shape[1]
+        if self.budgets is None:
+            return w / prices.shape[1]
+        return w * pd.Series(self.budgets).reindex(w.columns).fillna(0.0)
 
 
 class PortfolioVolTarget(PortfolioStrategy):
@@ -196,3 +202,17 @@ class PortfolioVolTarget(PortfolioStrategy):
         gross = w.abs().sum(axis=1)
         scale = np.minimum(scale, self.max_leverage / gross.where(gross > 0, np.inf))
         return w.mul(scale, axis=0)
+
+
+class Blend(PortfolioStrategy):
+    """Sum of several portfolio strategies with fixed mixing weights,
+    e.g. ``Blend({core_60_40: 0.8, trend_sleeve: 0.2})``."""
+
+    def __init__(self, parts: dict[PortfolioStrategy, float]):
+        self.parts = parts
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        return sum(s.weights(prices) * k for s, k in self.parts.items())
+
+    def __repr__(self) -> str:
+        return "Blend(" + ", ".join(f"{k}*{s!r}" for s, k in self.parts.items()) + ")"
