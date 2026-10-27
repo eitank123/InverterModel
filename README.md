@@ -12,7 +12,8 @@ to be read and changed, not used as a black box.
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q                 # 42 tests, ~3 s
+python -m pytest -q                 # 43 tests, ~3 s
+python scripts/today.py             # what the frozen rules hold right now
 python scripts/run_demo.py          # strategies on 3 synthetic markets -> results/*.png
 python scripts/overfitting_demo.py  # how parameter search fools you
 python scripts/experiments/exp01_sp500_trend.py      # trend timing on 155 years of S&P 500
@@ -26,6 +27,8 @@ python scripts/experiments/exp08_kelly_leverage.py   # Kelly sizing and leverage
 python scripts/experiments/exp09_robustness_and_profits.py  # annual profits, bootstrap, 10y outlook (~1.5 min)
 python scripts/experiments/exp10_improve_filter.py   # whipsaw fixes, train/test split
 python scripts/experiments/exp11_clean_bond_era.py   # re-check on reliable bond data
+python scripts/experiments/exp12_insurance_or_exposure.py  # filter vs vol-matched control
+python scripts/experiments/exp13_implementation.py   # month-end vs average vs daily (banded)
 ```
 
 ## Layout
@@ -33,7 +36,7 @@ python scripts/experiments/exp11_clean_bond_era.py   # re-check on reliable bond
 | File | What it does |
 |---|---|
 | `algotrading/data.py` | Synthetic markets with known structure (GBM random walk, Ornstein-Uhlenbeck mean reversion, regime-switching trends, multi-asset panels); 155 years of S&P 500 total return (`load_shiller_sp500`), 10-year bonds from yields (`bond_total_return`), daily DJIA 2007–16, GARCH generator; CSV and Yahoo loaders |
-| `algotrading/strategy.py` | Single-asset strategies: buy & hold, SMA crossover, Faber SMA-10, momentum, trend ensemble, z-score mean reversion, vol targeting. Portfolios: `PerAsset` (incl. 60/40-style budgets), `TrendFilter`, `ValueTilt`, `InverseVol`, `PortfolioVolTarget`, `Levered`, `Blend` |
+| `algotrading/strategy.py` | Single-asset strategies: buy & hold, SMA crossover, Faber SMA-10, momentum, trend ensemble, z-score mean reversion, vol targeting, `MonthlySMA`, `BandedSMA`, `AverageSignal`. Portfolios: `PerAsset` (incl. 60/40-style budgets), `TrendFilter`, `ValueTilt`, `InverseVol`, `PortfolioVolTarget`, `Levered`, `Blend` |
 | `algotrading/backtest.py` | Vectorised backtester for one asset or a portfolio: explicit timing, transaction costs, interest on cash/leverage |
 | `algotrading/metrics.py` | Sharpe, Sortino, CAGR, max drawdown, turnover, Probabilistic and Deflated Sharpe; any bar frequency |
 | `algotrading/news.py` | Curated news sources, RSS/Atom reader, Loughran-McDonald and Claude headline scorers, daily sentiment index, `SentimentStrategy` |

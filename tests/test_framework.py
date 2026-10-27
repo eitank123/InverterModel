@@ -345,3 +345,17 @@ def test_inverse_vol_favours_calmer_asset():
 def test_levered_scales_weights(two_assets):
     core = at.PerAsset(at.BuyAndHold(), {"stocks": 0.6, "bonds": 0.4})
     assert np.allclose(at.Levered(core, 1.5).weights(two_assets), 1.5 * core.weights(two_assets))
+
+
+def test_monthly_and_banded_sma_are_causal_and_banding_cuts_trades():
+    px = at.data.gbm(2520, seed=4)["close"]
+    for s in (at.MonthlySMA(10, "end"), at.MonthlySMA(10, "avg"), at.BandedSMA(200, 0.02)):
+        assert at.validation.check_no_lookahead(s, px)
+    plain = at.PriceAboveSMA(200).positions(px).diff().abs().sum()
+    banded = at.BandedSMA(200, 0.02).positions(px).diff().abs().sum()
+    monthly = at.MonthlySMA(10, "end").positions(px)
+    assert banded < plain
+    # Monthly signal only changes on a month's last trading day.
+    changes = monthly.index[monthly.diff().fillna(0) != 0]
+    month_ends = px.groupby(px.index.to_period("M")).apply(lambda s: s.index[-1])
+    assert set(changes) <= set(month_ends)

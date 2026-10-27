@@ -279,3 +279,41 @@ class InverseVol(PortfolioStrategy):
         vol = prices.pct_change().rolling(self.lookback).std()
         inv = 1 / vol
         return inv.div(inv.sum(axis=1), axis=0).fillna(0.0)
+
+
+class MonthlySMA(Strategy):
+    """SMA filter evaluated once a month on month-end or month-average prices, held
+    for the following month. Uses only data up to each month's last trading day."""
+
+    def __init__(self, window: int = 10, how: str = "end"):
+        self.window, self.how = window, how
+
+    def positions(self, prices: pd.Series) -> pd.Series:
+        g = prices.groupby(prices.index.to_period("M"))
+        monthly = g.last() if self.how == "end" else g.mean()
+        last_day = g.apply(lambda s: s.index[-1])
+        sig = (monthly > monthly.rolling(self.window).mean()).astype(float)
+        sig.index = pd.DatetimeIndex(last_day.values)
+        return sig.reindex(prices.index).ffill().fillna(0.0)
+
+
+class BandedSMA(Strategy):
+    """Daily SMA filter with hysteresis: enter above sma*(1+band), exit below sma*(1-band)."""
+
+    def __init__(self, window: int = 200, band: float = 0.02):
+        self.window, self.band = window, band
+
+    def positions(self, prices: pd.Series) -> pd.Series:
+        sma = prices.rolling(self.window).mean().to_numpy()
+        p = prices.to_numpy()
+        pos = np.zeros(len(p))
+        cur = 0.0
+        for t in range(len(p)):
+            if np.isnan(sma[t]):
+                cur = 0.0
+            elif cur == 0.0 and p[t] > sma[t] * (1 + self.band):
+                cur = 1.0
+            elif cur == 1.0 and p[t] < sma[t] * (1 - self.band):
+                cur = 0.0
+            pos[t] = cur
+        return pd.Series(pos, index=prices.index)

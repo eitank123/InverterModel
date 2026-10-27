@@ -373,6 +373,58 @@ improvement is small and **not significant**.
 
 ---
 
+## Experiment 12: Is the drawdown reduction just lower exposure?
+`exp12_insurance_or_exposure.py` · control = the same base portfolio at a **constant** exposure with the filter's volatility
+
+A filter that is out of the market 25% of the time is less volatile, and less volatility alone shrinks drawdowns.
+The fair comparison is a vol-matched constant-exposure portfolio.
+
+| 1957–2026 | CAGR | vol | max DD | P(filter DD smaller) | P(filter CAGR higher) |
+|---|---|---|---|---|---|
+| S&P 500 + SMA10 | 9.9% | 9.0% | −25% | 92% | 84% |
+| S&P 500 at constant 0.74× | 9.2% | 9.0% | −38% | | |
+| 60/40 + SMA10 | 8.0% | 5.9% | −15% | 90% | 69% |
+| 60/40 at constant 0.74× | 7.7% | 5.9% | −20% | | |
+
+Synthetic check (100 × 40-year markets, truth known):
+
+| Market | Filter DD better than control | Filter CAGR better |
+|---|---|---|
+| GBM, no serial structure | 40% | 15% |
+| GARCH, vol clusters only | 29% | 13% |
+| Regime switching (trends) | **80%** | **82%** |
+
+**Lesson.** Where returns have no trend structure, the filter is *worse* than simply holding less. It
+helps only when trends exist. On real data it beat the control about 90% of the time, which is indirect
+evidence that real markets have exploitable slow trends (mostly slow bear markets), consistent with the
+12-month variance ratio of Exp 6. It is not proof (p ≈ 0.1), but the pieces agree.
+
+---
+
+## Experiment 13: How to implement the filter in practice
+`exp13_implementation.py` · daily trading
+
+| DJIA 2007–2016 | CAGR | Sharpe | max DD | switches/yr |
+|---|---|---|---|---|
+| buy & hold | 4.7% | 0.34 | −54% | n/a |
+| monthly SMA10, month-end close | 4.4% | 0.46 | −16% | 1.5 |
+| monthly SMA10, month-average | 4.3% | 0.43 | −19% | 1.5 |
+| daily SMA200 | 3.1% | 0.36 | −16% | **7.7** |
+| daily SMA200 ±2% band | 4.4% | **0.49** | −16% | 1.9 |
+
+Over 100 synthetic markets the ranking is the same: the banded daily filter beats month-end in 64% of
+seeds, plain daily in 55%, and month-average in 39%.
+
+**Lesson.** Month-end closes are at least as good as the averages our long backtests used, so the
+real-world rule is not weaker than the research version. Checking daily without a band triples trading
+for nothing. **Recommended implementation: monthly check on month-end closes, or a daily 200-day SMA with a ±2% band.**
+
+`python scripts/today.py` prints what the frozen rules hold now. As of 2026-09: stocks +7.1% above their
+10-month average and bonds +1.5% above, so both are IN. 60/40+SMA10 = 60% stocks / 40% bonds. The value tilt = 48/52
+(its CAPE input is stale since 2023 and would be even lower at today's CAPE ≈ 41).
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
