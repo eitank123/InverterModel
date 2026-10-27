@@ -366,3 +366,23 @@ class KellyPortfolio(PortfolioStrategy):
     def __repr__(self) -> str:
         return (f"KellyPortfolio(fraction={self.fraction}, cov_lookback={self.cov_lookback}, "
                 f"cap={self.cap}, vol_floor={self.vol_floor})")
+
+
+class RecoveryLeverage(PortfolioStrategy):
+    """Stocks held at ``base`` leverage while above their 10-month average (cash otherwise),
+    raised to ``boost`` while the price is still more than ``depth`` below its 36-month high:
+    buying the recovery after a crash. Combines long-horizon mean reversion with the trend
+    filter. Found in improvement-loop round 5. Bonds are not held."""
+
+    def __init__(self, base: float = 2.0, boost: float = 3.0, depth: float = 0.15,
+                 stocks: str = "stocks"):
+        self.base, self.boost, self.depth, self.stocks = base, boost, depth, stocks
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        s = prices[self.stocks]
+        on = PriceAboveSMA(10).positions(s)
+        deep = (s / s.rolling(36, min_periods=12).max() - 1) < -self.depth
+        lev = pd.Series(np.where(deep, self.boost, self.base), index=s.index) * on
+        w = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
+        w[self.stocks] = lev
+        return w

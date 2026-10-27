@@ -1,5 +1,5 @@
 {
- "name": "Champion (deployable): S&P 500 + SMA10 x2",
+ "name": "Margin champion: S&P 500 + SMA10 x2",
  "description": "S&P 500 held at 2x leverage while above its 10-month average, cash otherwise. Fits an ordinary margin account.",
  "symbols": {
   "stocks": "SPY",

@@ -486,6 +486,39 @@ added anything. And at today's valuations all of these numbers should be expecte
 
 ---
 
+## Experiment 16 — 2×/3× daily-reset ETFs vs margin (`scripts/experiments/exp16_etf_vs_margin.py`)
+* A 2× ETF (SSO) costs about the same as cheap margin and beats retail margin (cash + 1.5% or more).
+* A 3× ETF (UPRO) beat 3× margin in 83% of the bootstrap simulations. Its daily-reset drag L(L−1)/2·σ² is smaller than the margin spread.
+* **Leverage up to 3× is deployable without a margin account**, so `research.evaluate` now reports a `deployable_etf` flag.
+
+## Improvement loop, rounds 1–5 (`scripts/loop.py`, `loop/checkpoints.json`)
+* **New champion: recovery leverage.** It holds the S&P 500 at 2× above its 10-month average, at 3× while the index is more than 15% below its 36-month high, and in cash otherwise.
+  * Parameters were chosen on 1957–1990: train 11.6%/yr, untouched 1991–2026 test 19.0%/yr, max drawdown −49%.
+  * The plain 2× trend version tests at 18.1%, with a −41% loss on the crash-day stress test.
+* **These are leveraged numbers from strong periods.** The S&P 500 itself made 11.4%/yr over 1991–2026 and about 10.7%/yr since 1957.
+* At today's valuations (CAPE ≈ 41) the forward 10-year median is about 4.3%/yr for the champion and for the S&P 500. The champion's average wealth is higher (1.89× vs 1.61×), and its chance of a 10-year loss is about 20%.
+
+## 5-year full-cost simulation (`algotrading/execution.py`, `scripts/simulate_last5.py`)
+* Setup: $100k from 2021-10 to 2026-09, trading real tickers.
+* Every cost is charged:
+  * $1 commission per order;
+  * spread and slippage;
+  * the SEC fee and FINRA TAF on sales;
+  * ETF expense ratios;
+  * leveraged-ETF financing and daily-reset drag;
+  * the cash sweep fee.
+
+| Strategy | End value | CAGR | Max drawdown | Trades | All costs |
+|---|---|---|---|---|---|
+| Champion (SSO; the 3× boost never triggered) | $247,322 | 19.9% | −22% | 5 | $24,187 (trading costs $319) |
+| S&P 500 buy & hold (SPY) | $184,899 | 13.1% | −19% | 1 | small |
+| 60/40 (SPY/IEF) | $143,325 | 7.5% | −19% | 18 | $692 |
+
+* Almost all costs sit inside the funds (financing and expense ratio). Trading costs are negligible.
+* Pre-tax. The 2025 April whipsaw (sell, then rebuy two months later) cost most of that year's gain.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

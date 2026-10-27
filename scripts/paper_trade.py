@@ -25,12 +25,16 @@ def filtered(stock_w):
 
 
 ACCOUNTS = {
-    "champion_deployable": ("Champion (deployable): S&P 500 + SMA10 x2",
+    "champion_deployable": ("Margin champion: S&P 500 + SMA10 x2",
                             "S&P 500 held at 2x leverage while above its 10-month average, cash otherwise. "
                             "Fits an ordinary margin account.", at.Levered(filtered(1.0), 2.0), 0.015, 2.0),
     "champion_research": ("Research champion: 60/40 + SMA10 x3",
                           "60/40 with each asset trend-filtered, at 3x leverage. Needs futures-level financing.",
                           at.Levered(filtered(0.6), 3.0), 0.005, 3.0),
+    "champion_recovery": ("Champion: recovery leverage (2x, 3x after deep falls)",
+                          "S&P 500 at 2x while above its 10-month average, 3x while still >15% below its "
+                          "36-month high, cash otherwise. Implementable with 2x/3x S&P ETFs (e.g. SSO/UPRO).",
+                          at.RecoveryLeverage(2.0, 3.0, 0.15), 0.005, 3.0),
     "benchmark_6040": ("Benchmark: 60/40", "60% stocks, 40% bonds, rebalanced monthly, no leverage.",
                        at.PerAsset(at.BuyAndHold(), {"stocks": 0.6, "bonds": 0.4}), 0.0, 1.0),
 }

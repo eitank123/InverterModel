@@ -139,6 +139,146 @@ year,strategy,return
 2024,60/40,0.19250299961677086
 2025,60/40,0.1123620387023272
 2026,60/40,0.09170361043878406
+1957,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.3024484292219073
+1958,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.5350488381301393
+1959,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.2463748717529064
+1960,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.13272151536890808
+1961,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.629313700521539
+1962,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.21717193500302068
+1963,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.33260303351647313
+1964,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.31108566387700143
+1965,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.13832621334611805
+1966,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.10052584653445162
+1967,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.21018787163060404
+1968,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.044712050634837075
+1969,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.2453826158347433
+1970,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.2590184732062064
+1971,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.10033405713018695
+1972,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.2946039214814016
+1973,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.2721233717113719
+1974,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.06228485801990047
+1975,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.26731481776934474
+1976,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.5432789943333773
+1977,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.06951171378440357
+1978,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.001603915129716471
+1979,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.1873673362493995
+1980,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.32508035054810835
+1981,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.04205289569525905
+1982,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.21567291664979749
+1983,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.3628862133579971
+1984,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.06446108188303068
+1985,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.5509010473129854
+1986,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.4283159672147472
+1987,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.09134254203723335
+1988,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.07552378519379643
+1989,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.5621927576030008
+1990,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.18264147318750756
+1991,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.10014758428771997
+1992,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.24805316562126678
+1993,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.15033972644135862
+1994,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.10122533907193998
+1995,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.7995349432680776
+1996,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.4332750126370368
+1997,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.6201002187333104
+1998,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.12004202280280563
+1999,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.32500200214341435
+2000,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.09926122126736736
+2001,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.03574739962295581
+2002,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.07157446337726003
+2003,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.5167051071217035
+2004,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.28180675487334095
+2005,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.10477189554412414
+2006,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.25229290359212
+2007,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.07726730116693004
+2008,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.018235048151985622
+2009,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.655757992022044
+2010,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.056485858610612505
+2011,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.11174665718316035
+2012,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.12969816322440098
+2013,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.6470915998046314
+2014,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.3141591334682432
+2015,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.09040875743759347
+2016,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.024822960209186284
+2017,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.4377427945377941
+2018,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.06667951509001657
+2019,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.3034208632854849
+2020,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.0416526573004784
+2021,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.6227716012039708
+2022,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",-0.10488900031071924
+2023,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.3072388379262012
+2024,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.6352747075574501
+2025,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.020035711327022865
+2026,"recovery leverage {""base"": 2.0, ""boost"": 3.0, ""depth"": 0.15}",0.24335338353923386
+1957,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.3024484292219073
+1958,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5350488381301393
+1959,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.2463748717529064
+1960,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.13272151536890808
+1961,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.629313700521539
+1962,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.21717193500302068
+1963,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.33260303351647313
+1964,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.31108566387700143
+1965,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.13832621334611805
+1966,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10052584653445162
+1967,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.21018787163060404
+1968,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.044712050634837075
+1969,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.2453826158347433
+1970,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.19352769711193085
+1971,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.06502754430781099
+1972,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.2946039214814016
+1973,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.2721233717113719
+1974,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.06228485801990047
+1975,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.13124288361772485
+1976,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3892752556779542
+1977,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06951171378440357
+1978,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.001603915129716471
+1979,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.1873673362493995
+1980,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.32508035054810835
+1981,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.04205289569525905
+1982,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.21567291664979749
+1983,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3628862133579971
+1984,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06446108188303068
+1985,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5509010473129854
+1986,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4283159672147472
+1987,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09134254203723335
+1988,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.09151888646275341
+1989,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5621927576030008
+1990,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.18264147318750756
+1991,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.10014758428771997
+1992,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.24805316562126678
+1993,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.15033972644135862
+1994,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10122533907193998
+1995,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.7995349432680776
+1996,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4332750126370368
+1997,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6201002187333104
+1998,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.12004202280280563
+1999,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.32500200214341435
+2000,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09926122126736736
+2001,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.03574739962295581
+2002,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.03712225796067836
+2003,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3383765379462069
+2004,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.22062155906213432
+2005,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.10477189554412414
+2006,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.25229290359212
+2007,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.07726730116693004
+2008,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.018235048151985622
+2009,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.41881046397977273
+2010,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.058884862938820115
+2011,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.11174665718316035
+2012,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.12969816322440098
+2013,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6470915998046314
+2014,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3141591334682432
+2015,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09040875743759347
+2016,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.024822960209186284
+2017,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4377427945377941
+2018,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06667951509001657
+2019,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3034208632854849
+2020,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.0416526573004784
+2021,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6227716012039708
+2022,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10488900031071924
+2023,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3072388379262012
+2024,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6352747075574501
+2025,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.020035711327022865
+2026,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.24335338353923386
 1957,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",-0.43516335952780527
 1958,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8650047167797239
 1959,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.3543109209364519
@@ -349,6 +489,76 @@ year,strategy,return
 2024,"60/40+SMA10 xL {""lev"": 4.0}",0.8066242364320324
 2025,"60/40+SMA10 xL {""lev"": 4.0}",0.028941978502368126
 2026,"60/40+SMA10 xL {""lev"": 4.0}",0.3026161964875058
+1957,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.4083281052550295
+1958,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8650047167797239
+1959,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3519531397204687
+1960,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.20703214106895018
+1961,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",1.023123775241713
+1962,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.32807185333925337
+1963,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.4775111171941564
+1964,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.46875435924349884
+1965,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.18692458310323978
+1966,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.17074760503570852
+1967,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.29775330805429334
+1968,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.008565863843938204
+1969,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.37089767965456977
+1970,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.2590184732062064
+1971,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.05724505526988222
+1972,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3324064371249149
+1973,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.40565324502133415
+1974,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.06228485801990047
+1975,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.05248989369743162
+1976,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.5478100865232063
+1977,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1311210634167731
+1978,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.012180061875506909
+1979,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.1753100467293469
+1980,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.15949889868696787
+1981,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.12620611729881748
+1982,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.16624818024564414
+1983,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.49526239534501904
+1984,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.11429127496920366
+1985,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8117144043726252
+1986,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.6281946109890986
+1987,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.06175707501403516
+1988,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.09203289194392283
+1989,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8615466450391351
+1990,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.3053601564302255
+1991,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.1014031377044382
+1992,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.32545974180599613
+1993,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.20197510805423402
+1994,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1760587237475303
+1995,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",1.3239427530645762
+1996,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.648410936006496
+1997,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.759585610919628
+1998,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.11389283829476282
+1999,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.29987253417689375
+2000,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.15717222626314753
+2001,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.03574739962295581
+2002,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.05168361587127024
+2003,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3883895746337913
+2004,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3118035264300305
+2005,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.1347508053305455
+2006,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.367179435344694
+2007,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.07576462688106855
+2008,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.029342897974050652
+2009,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.5383617566727976
+2010,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.1778437008268703
+2011,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.19593381001254095
+2012,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.1859314393395919
+2013,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",1.076155650637722
+2014,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.4814853393514644
+2015,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1490781207784564
+2016,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.11908291728907039
+2017,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.7039916197619516
+2018,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.11966883387525251
+2019,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.37919619440935226
+2020,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.18495175038388967
+2021,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",1.037665534263954
+2022,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.16192102259355068
+2023,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.44391178186984726
+2024,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8410144075388064
+2025,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1224605098195628
+2026,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.34323698382165446
 1957,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.43516335952780527
 1958,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.8650047167797239
 1959,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.3543109209364519
@@ -419,73 +629,3 @@ year,strategy,return
 2024,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",1.0374006506097349
 2025,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.0029374066038549973
 2026,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.3550821384461782
-1957,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.22751931210136245
-1958,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3788984377143203
-1959,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.37290315231548377
-1960,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.18832869330800783
-1961,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8978045079832218
-1962,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.19847052377565522
-1963,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3364209368762878
-1964,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3104799086645853
-1965,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.18946778237787787
-1966,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.04916200806439863
-1967,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.18537726237819885
-1968,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.06094407836157745
-1969,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.2092044574903853
-1970,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2590184732062064
-1971,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.21504136801264995
-1972,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.44042241412991334
-1973,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.3657865963270853
-1974,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.06228485801990047
-1975,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11140000030085462
-1976,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.611877768054413
-1977,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.09644549175070738
-1978,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0731498125093425
-1979,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2210687351441687
-1980,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.049603761106252975
-1981,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.00181377402113847
-1982,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.26295537141493464
-1983,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.4148092591558292
-1984,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.12697660590298498
-1985,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8017423082973851
-1986,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.6951151420471895
-1987,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0804099404929427
-1988,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.05800235634489748
-1989,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.47942555288736144
-1990,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.1345962677526017
-1991,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11184395435918293
-1992,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3440779854828586
-1993,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11458326093509363
-1994,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.16831871628050887
-1995,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8270594473446307
-1996,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.46685877863278114
-1997,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3509009172830535
-1998,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.39501564616143336
-1999,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.614698165226597
-2000,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.04155008922270853
-2001,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.03574739962295581
-2002,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0026030779280967753
-2003,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2601865980773692
-2004,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.38141433755083054
-2005,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.09937690910538888
-2006,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.28003865038786335
-2007,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.00705938275240392
-2008,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.03844851293397422
-2009,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.29882846562842214
-2010,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3250975814920465
-2011,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.08865719159673979
-2012,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.09544070402195293
-2013,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.7327352439453809
-2014,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3705491940504584
-2015,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0011691396044267721
-2016,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.05238051922184572
-2017,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.44159113751722745
-2018,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.19744299247073926
-2019,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.388653848792762
-2020,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.2798518121605288
-2021,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.7442220550602798
-2022,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.16192102259355068
-2023,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.38931042465985066
-2024,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.6214870795263567
-2025,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.1855491496172177
-2026,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.1420224476268086

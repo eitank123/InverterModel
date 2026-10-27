@@ -1,6 +1,11 @@
 # Project status
 
-_Last updated: 2026-10-27 (after Experiments 6–15)_
+_Last updated: 2026-10-27 (after Experiments 6–16, loop round 5, 5-year cost simulation)_
+
+> **Reality check on returns.** The stock market's long-run average is about 10%/yr (9.4% since 1871, 10.7% since 1957).
+> The 18–20% figures in this repo are **2–3× leveraged** results from unusually strong periods (1991–2026, 2021–2026).
+> They come with −45 to −50% drawdowns. At today's valuations the expected 10-year return is about 4–5%/yr for every candidate,
+> including the champion. Taxes are not included.
 
 ## Where we are
 **Roadmap:** Phase 1 (simulator) ✅ · Phase 2 (research hygiene) ✅ · Phase 3 (real data) mostly ✅ ·

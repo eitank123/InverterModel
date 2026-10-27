@@ -103,6 +103,8 @@ def evaluate(c: Candidate, ctx: Context) -> tuple[dict, pd.Series]:
     row["ruin"] = bool(row["crash_day_loss"] <= -1.0 or (1 + r[FULL[0]:]).min() <= 0)
     # Deployable with an ordinary margin account (Reg-T: about 2x overnight); more needs futures.
     row["deployable"] = bool(row["max_gross"] <= 2.0 + 1e-9)
+    # Up to 3x is reachable without margin through daily-reset 2x/3x ETFs (Exp 16).
+    row["deployable_etf"] = bool(row["max_gross"] <= 3.0 + 1e-9)
     return row, r
 
 

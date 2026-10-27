@@ -24,6 +24,8 @@ from algotrading.research import Candidate, Context, Leaderboard  # noqa: E402
 
 warnings.filterwarnings("ignore")
 LOOP = os.path.join(os.path.dirname(__file__), "..", "loop")
+# The current champion (changed only by a checkpoint decision; see loop/checkpoints.json).
+CHAMPION = {"name": "recovery leverage", "params": '{"base": 2.0, "boost": 3.0, "depth": 0.15}'}
 SMA10 = at.PriceAboveSMA(10)
 
 
@@ -223,7 +225,43 @@ def iteration_4():
     ]
 
 
-ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4}
+class VarianceManaged(at.PortfolioStrategy):
+    """Moreira & Muir (2017): stock weight = c / trailing variance (not volatility), capped.
+    c is set so the weight equals ``target_lev`` at the long-run variance (16% vol)."""
+
+    def __init__(self, target_lev, cap, window=3, gate=True):
+        self.target_lev, self.cap, self.window, self.gate = target_lev, cap, window, gate
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        var = (s.pct_change().rolling(self.window).var() * 12).clip(lower=0.04**2)
+        w = (self.target_lev * 0.16**2 / var).clip(upper=self.cap).fillna(0.0)
+        if self.gate:
+            w = w * SMA10.positions(s)
+        return pd.DataFrame({"stocks": w, "bonds": 0.0}, index=prices.index)
+
+
+def iteration_5():
+    """Checkpoint 4: variance management (published version) and recovery leverage."""
+    return [
+        Candidate("variance-managed stocks", "variance managed",
+                  lambda lev, cap, win: VarianceManaged(lev, cap, win),
+                  {"lev": [1.0, 1.5, 2.0], "cap": [2.0, 3.0], "win": [3, 6]},
+                  note="Moreira & Muir (2017): weight ~ 1 / variance"),
+        Candidate("variance-managed ungated", "variance managed",
+                  lambda lev, cap: VarianceManaged(lev, cap, 3, gate=False),
+                  {"lev": [1.0, 1.5, 2.0], "cap": [2.0, 3.0]}),
+        Candidate("recovery leverage", "recovery leverage",
+                  lambda base, boost, depth: at.RecoveryLeverage(base, boost, depth),
+                  {"base": [1.0, 2.0], "boost": [2.0, 3.0], "depth": [0.15, 0.25, 0.35]},
+                  note="extra leverage after deep falls once the trend turns up"),
+        Candidate("recovery leverage <=2x", "recovery leverage",
+                  lambda base, depth: at.RecoveryLeverage(base, 2.0, depth),
+                  {"base": [1.0, 1.5], "depth": [0.15, 0.25, 0.35]}),
+    ]
+
+
+ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5}
 
 
 def run(iters, financings=(0.005, 0.015)):
@@ -273,7 +311,10 @@ def export(board, n_forward=6):
     cheap = board.df[(board.df["financing"] == 0.005) & ~board.df["ruin"].astype(bool)]
     best_per_family = (cheap[cheap["family"] != "benchmark"].sort_values("test_cagr", ascending=False)
                        .groupby("family").head(1).nlargest(n_forward, "test_cagr"))
-    picks = pd.concat([cheap[cheap["family"] == "benchmark"], best_per_family]).drop_duplicates("name")
+    # Always include the champion and the best strategy an ordinary (<=2x) margin account can hold.
+    deploy = cheap[cheap["deployable"].astype(bool) & (cheap["family"] != "benchmark")].nlargest(1, "test_cagr")
+    champ = cheap[(cheap["name"] == CHAMPION["name"]) & (cheap["params"] == CHAMPION["params"])]
+    picks = pd.concat([cheap[cheap["family"] == "benchmark"], champ, deploy, best_per_family]).drop_duplicates("name")
     # Different families can reach the same strategy (e.g. 100% stocks via "mix"): keep one.
     picks = picks.loc[picks[["test_cagr", "full_cagr"]].round(6).drop_duplicates().index]
     ctx = Context.default(0.005)

@@ -12,6 +12,8 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+sys_path = os.path.join(os.path.dirname(__file__))
+
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop")
 OUT = os.path.join(ROOT, "dashboard")
 
@@ -30,7 +32,15 @@ def main():
     lb = pd.read_csv(os.path.join(ROOT, "leaderboard.csv"))
     lb = lb.sort_values("test_cagr", ascending=False).reset_index(drop=True)
     lb["id"] = lb["name"] + " | " + lb["params"] + " | +" + (lb["financing"] * 100).round(1).astype(str) + "%"
-    cols = ["id", "name", "family", "params", "financing", "iteration", "train_cagr", "test_cagr",
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("loop", os.path.join(sys_path, "loop.py"))
+    loop = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(loop)
+    lb["is_champion"] = (lb["name"] == loop.CHAMPION["name"]) & (lb["params"] == loop.CHAMPION["params"]) \
+        & (lb["financing"] == 0.005)
+    lb["deployable_etf"] = lb.get("deployable_etf", lb["max_gross"] <= 3.0 + 1e-9)
+    cols = ["id", "name", "family", "params", "financing", "iteration", "is_champion", "deployable_etf",
+            "train_cagr", "test_cagr",
             "full_cagr", "full_max_dd", "full_worst_year", "crash_day_loss", "avg_gross", "max_gross",
             "deployable", "ruin", "test_excess_sharpe", "note"]
     dump("leaderboard", records(lb[cols]))

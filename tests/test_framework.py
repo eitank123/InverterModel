@@ -475,3 +475,59 @@ def test_paper_account_moves_forward_with_interest(tmp_path):
     acct.save()
     again = at.paper.PaperAccount.load_or_create(str(tmp_path / "a.json"))
     assert again.state.last_month == "2026-02" and len(again.state.equity_history) == 2
+
+
+def test_recovery_leverage_boosts_only_after_deep_fall_in_uptrend():
+    idx = pd.date_range("2000-01-01", periods=60, freq="MS")
+    p = np.r_[np.linspace(100, 150, 24), np.linspace(150, 90, 12), np.linspace(90, 130, 24)]
+    px = pd.DataFrame({"stocks": p, "bonds": 100.0}, index=idx)
+    w = at.RecoveryLeverage(2.0, 3.0, 0.15).weights(px)["stocks"]
+    assert w.iloc[23] == 2.0                      # uptrend, at the high
+    assert w.iloc[30] == 0.0                      # falling: below its 10-month average
+    rec = w.iloc[36:50]
+    assert (rec == 3.0).any()                     # recovering while still >15% below the high
+    assert w.iloc[-1] == 2.0                      # back near the high
+    assert at.validation.check_no_lookahead(
+        type("S", (at.Strategy,), {"positions": lambda self, s: at.RecoveryLeverage().weights(
+            pd.DataFrame({"stocks": s, "bonds": s}))["stocks"]})(),
+        at.data.gbm(600, seed=3)["close"])
+
+
+# --- Execution / full-cost simulation ---------------------------------------------------
+
+def test_ledger_charges_every_fee_and_realizes_pl():
+    from algotrading.execution import CostModel, Ledger
+    led = Ledger(10_000.0, CostModel(commission_per_order=1.0, extra_slippage_bps=0.0))
+    led.trade("2024-01-01", "SPY", 10, 500.0, spread_bps=10, reason="buy")
+    assert np.isclose(led.cash, 10_000 - 5000 - 5.0 - 1.0)          # amount + 10bp spread + $1
+    led.trade("2024-02-01", "SPY", -10, 600.0, spread_bps=10, reason="sell")
+    reg = 6000 * 27.80 / 1e6 + 10 * 0.000166
+    t = led.trades[-1]
+    assert np.isclose(t["realized_pl"], (6000 - 6.0 - 1.0 - reg) - 5006.0, atol=0.01)
+    assert led.shares == {} and np.isclose(led.cash, 10_000 + t["realized_pl"], atol=0.01)
+    assert np.isclose(sum(led.fees.values()), 1 + 5 + 1 + 6 + reg)
+
+
+def test_leveraged_etf_prices_include_costs_and_drag():
+    from algotrading.execution import CostModel, Instrument, etf_prices
+    idx = pd.date_range("2000-01-01", periods=121, freq="MS")
+    rng = np.random.default_rng(0)
+    r = pd.DataFrame({"stocks": rng.normal(0.008, 0.045, 121)}, index=idx)
+    r.iloc[0] = np.nan
+    cash = pd.Series(0.02, index=idx)
+    inst = {"X1": Instrument("X1", "stocks", 1.0, 0.0), "X2": Instrument("X2", "stocks", 2.0, 0.009)}
+    p = etf_prices(r, cash, inst, CostModel())
+    g = p.pct_change().dropna()
+    naive = 2 * g["X1"]
+    assert (g["X2"] < naive).all()                       # financing + fees + drag every month
+
+
+def test_simulation_buy_and_hold_matches_prices_minus_costs():
+    from algotrading.execution import simulate, INSTRUMENTS
+    idx = pd.date_range("2020-01-01", periods=24, freq="MS")
+    px = pd.DataFrame({"SPY": np.linspace(100, 150, 24), "SSO": 1.0, "UPRO": 1.0, "IEF": 1.0}, index=idx)
+    res = simulate(lambda d: ({"SPY": 1.0}, "hold"), px, pd.Series(0.0, index=idx), 10_000.0)
+    assert len(res["trades"]) == 1                        # one buy, never rebalanced
+    # 100 shares bought; the $1 + 3bp fees ($4) are paid from cash (a small debit with interest).
+    expected = 100 * 150 - 4.0
+    assert abs(res["final"] - expected) < 0.1
