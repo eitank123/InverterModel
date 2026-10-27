@@ -1,6 +1,14 @@
 # Project status
 
-_Last updated: 2026-10-27 (after Experiments 6–16, loop round 5, 5-year cost simulation)_
+_Last updated: 2026-10-27 (after loop round 8: overfitting audit, ensemble champion)_
+
+> **Champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
+> It is chosen by its worst era across 1880–2026, not by the best backtest:
+> - eras: 15.4% / 14.6% / 13.1% / 21.3%;
+> - 5-year full-cost: 19.9%/yr with a −26% max drawdown;
+> - forward 10-year median about 4.7%/yr.
+>
+> Real-time selection would have earned about 15%/yr on 1991–2026, not the champion's 21%. Treat backtest numbers as upper bounds.
 
 > **Reality check on returns.** The stock market's long-run average is about 10%/yr (9.4% since 1871, 10.7% since 1957).
 > The 18–20% figures in this repo are **2–3× leveraged** results from unusually strong periods (1991–2026, 2021–2026).

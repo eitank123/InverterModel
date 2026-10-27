@@ -369,20 +369,40 @@ class KellyPortfolio(PortfolioStrategy):
 
 
 class RecoveryLeverage(PortfolioStrategy):
-    """Stocks held at ``base`` leverage while above their 10-month average (cash otherwise),
-    raised to ``boost`` while the price is still more than ``depth`` below its 36-month high:
-    buying the recovery after a crash. Combines long-horizon mean reversion with the trend
-    filter. Found in improvement-loop round 5. Bonds are not held."""
+    """Stocks held at ``base`` leverage while the trend is up (cash otherwise), raised to
+    ``boost`` while the price is still more than ``depth`` below its 36-month high: buying the
+    recovery after a crash. Combines long-horizon mean reversion with the trend filter.
+    Found in improvement-loop round 5.
+
+    Round 6 options (defaults keep the round-5 rule):
+      signal  "sma10": price above its 10-month average; "tsmom12": 12-month return > 0
+              (Moskowitz, Ooi & Pedersen 2012); "either": in while EITHER is up (fewer
+              whipsaw exits); "both": in only while both are up.
+      off_lev bond weight held while out of stocks (0 = cash).
+      off_gate  round 7: hold the bonds only while bonds are above their own 10-month
+              average (cash otherwise)."""
 
     def __init__(self, base: float = 2.0, boost: float = 3.0, depth: float = 0.15,
-                 stocks: str = "stocks"):
+                 stocks: str = "stocks", signal: str = "sma10", off_lev: float = 0.0,
+                 bonds: str = "bonds", off_gate: bool = False):
         self.base, self.boost, self.depth, self.stocks = base, boost, depth, stocks
+        self.signal, self.off_lev, self.bonds, self.off_gate = signal, off_lev, bonds, off_gate
+
+    def trend(self, s: pd.Series) -> pd.Series:
+        sma = PriceAboveSMA(10).positions(s).astype(bool)
+        mom = (s / s.shift(12) - 1 > 0).fillna(False)
+        return {"sma10": sma, "tsmom12": mom, "either": sma | mom, "both": sma & mom}[self.signal]
 
     def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
         s = prices[self.stocks]
-        on = PriceAboveSMA(10).positions(s)
+        on = self.trend(s)
         deep = (s / s.rolling(36, min_periods=12).max() - 1) < -self.depth
         lev = pd.Series(np.where(deep, self.boost, self.base), index=s.index) * on
         w = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
         w[self.stocks] = lev
+        if self.off_lev and self.bonds in w:
+            hold = ~on
+            if self.off_gate:
+                hold &= PriceAboveSMA(10).positions(prices[self.bonds]).astype(bool)
+            w[self.bonds] = np.where(hold, self.off_lev, 0.0)
         return w

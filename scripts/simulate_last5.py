@@ -19,7 +19,9 @@ import pandas as pd
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import algotrading as at  # noqa: E402
-from algotrading.execution import CostModel, etf_prices, simulate  # noqa: E402
+from algotrading.execution import CostModel, etf_prices, etf_weights, simulate  # noqa: E402
+sys.path.insert(0, os.path.dirname(__file__))
+from loop import ensemble  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "loop", "dashboard")
 START, START_CASH = "2021-10-01", 100_000.0
@@ -29,13 +31,44 @@ idx = pd.DataFrame({"stocks": df["tr"], "bonds": at.data.bond_total_return(df["l
 cash = (df["long_rate"] - 0.015).clip(lower=0)
 costs = CostModel()
 prices_all = etf_prices(idx.pct_change(), cash, at.execution.INSTRUMENTS, costs,
-                        start_price={"SPY": 650.0, "SSO": 110.0, "UPRO": 105.0, "IEF": 95.0})
+                        start_price={"SPY": 650.0, "SSO": 110.0, "UPRO": 105.0, "IEF": 95.0, "UST": 45.0})
 prices = prices_all[START:]
 sma = idx["stocks"].rolling(10).mean()
 high36 = idx["stocks"].rolling(36, min_periods=12).max()
+mom12 = idx["stocks"] / idx["stocks"].shift(12) - 1
+
+
+# The ensemble's exposure comes straight from the library (causal: tests check no look-ahead).
+ENSEMBLE_W = ensemble(3.0).weights(idx)
+
+
+def ensemble_champion(d):
+    st, bd = ENSEMBLE_W.loc[d, "stocks"], ENSEMBLE_W.loc[d, "bonds"]
+    return etf_weights(st, bd), f"ensemble exposure: stocks {st:.2f}x, bonds {bd:.2f}x"
+
+
+
+for _d in ENSEMBLE_W[START:].index:
+    _w = etf_weights(*ENSEMBLE_W.loc[_d, ["stocks", "bonds"]])
+    _lev = {s: i.leverage for s, i in at.execution.INSTRUMENTS.items()}
+    assert abs(sum(v * _lev[k] for k, v in _w.items() if k in ("SPY", "SSO", "UPRO"))
+               - ENSEMBLE_W.loc[_d, "stocks"]) < 1e-4, "ETF mapping changes the stock exposure"
 
 
 def champion(d):
+    """Round 6: in while the S&P is above its 10-month average OR up over 12 months;
+    2x Treasuries (UST) when out."""
+    s = idx["stocks"].loc[d]
+    gap, mom = s / sma.loc[d] - 1, mom12.loc[d]
+    trend = f"S&P {gap:+.1%} vs 10-month average, {mom:+.1%} over 12 months"
+    if gap <= 0 and mom <= 0:
+        return {"UST": 1.0}, f"{trend}: both down, out of stocks, 2x Treasuries"
+    if s / high36.loc[d] - 1 < -0.15:
+        return {"UPRO": 1.0}, f"{trend}, still {s / high36.loc[d] - 1:.0%} below the 3-year high: 3x"
+    return {"SSO": 1.0}, f"{trend}: 2x"
+
+
+def previous_champion(d):
     s = idx["stocks"].loc[d]
     gap = s / sma.loc[d] - 1
     below_high = s / high36.loc[d] - 1
@@ -53,16 +86,20 @@ def margin_champion(d):
 
 
 STRATS = {
-    "Champion: recovery leverage (SSO/UPRO)": champion,
-    "Margin champion as ETF: 2x trend (SSO)": margin_champion,
+    "Champion: ensemble 3x trend + value + recovery+": ensemble_champion,
+    "Challenger: recovery+ (SSO/UPRO, UST when out)": champion,
+    "Previous champion: recovery leverage (SSO/UPRO/cash)": previous_champion,
     "Benchmark: 60/40 (SPY/IEF)": lambda d: ({"SPY": 0.6, "IEF": 0.4}, "monthly rebalance to 60/40"),
     "Benchmark: S&P 500 buy & hold (SPY)": lambda d: ({"SPY": 1.0}, "buy and hold"),
 }
 # Cross-check: the signal must match the research implementation.
-w_lib = at.RecoveryLeverage(2.0, 3.0, 0.15).weights(idx[: prices.index[-1]])["stocks"][START:]
-w_here = pd.Series({d: {"UPRO": 3.0, "SSO": 2.0}.get(next(iter(champion(d)[0]), ""), 0.0)
-                    for d in prices.index})
-assert (w_lib.reindex(w_here.index) == w_here).all(), "simulation signal differs from the library"
+for fn, lib in [(champion, at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0)),
+                (previous_champion, at.RecoveryLeverage(2.0, 3.0, 0.15))]:
+    w_lib = lib.weights(idx[: prices.index[-1]])[START:]
+    w_here = pd.DataFrame({d: {"stocks": {"UPRO": 3.0, "SSO": 2.0}.get(next(iter(fn(d)[0]), ""), 0.0),
+                               "bonds": 2.0 if "UST" in fn(d)[0] else 0.0} for d in prices.index}).T
+    assert (w_lib.reindex(w_here.index)[["stocks", "bonds"]] == w_here).all().all(), \
+        "simulation signal differs from the library"
 
 summary, equity_rows, trade_rows, yearly_rows = [], [], [], []
 for name, fn in STRATS.items():

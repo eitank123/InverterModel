@@ -28,6 +28,8 @@ from .backtest import run_backtest
 from .strategy import PortfolioStrategy
 
 TRAIN, TEST, FULL = ("1957", "1990"), ("1991", "2026"), ("1957", "2026")
+# Eras never used to choose anything (bond data before 1953 is interpolated: trust stock-only results).
+UNSEEN = {"e1880": ("1880", "1929"), "e1930": ("1930", "1956")}
 
 # Largest one-day S&P 500 / DJIA falls (approximate, %), which monthly averages smooth away.
 CRASH_DAYS = {"1929-10": -0.129, "1987-10": -0.205, "2008-10": -0.090, "2020-03": -0.120}
@@ -100,6 +102,9 @@ def evaluate(c: Candidate, ctx: Context) -> tuple[dict, pd.Series]:
     for label, (a, b) in {"train": TRAIN, "test": TEST, "full": FULL}.items():
         for k, v in period_stats(r[a:b], ctx.cash).items():
             row[f"{label}_{k}"] = v
+    for label, (a, b) in UNSEEN.items():
+        row[f"{label}_cagr"] = metrics.cagr(r[a:b], 12)
+    row["worst_era_cagr"] = min(row["e1880_cagr"], row["e1930_cagr"], row["train_cagr"], row["test_cagr"])
     row["ruin"] = bool(row["crash_day_loss"] <= -1.0 or (1 + r[FULL[0]:]).min() <= 0)
     # Deployable with an ordinary margin account (Reg-T: about 2x overnight); more needs futures.
     row["deployable"] = bool(row["max_gross"] <= 2.0 + 1e-9)
@@ -135,6 +140,26 @@ def forward_growth(strategy: PortfolioStrategy, ctx: Context, n_paths: int = 300
     return {"fwd_median_cagr": float(np.median(g)), "fwd_mean_cagr": float(np.mean(g)),
             "fwd_p5_cagr": float(np.percentile(g, 5)), "fwd_p_loss": float((w < 1).mean()),
             "fwd_mean_wealth_x": float(w.mean())}
+
+
+def beats_everywhere(new: pd.Series, old: pd.Series) -> dict:
+    """Champion gate (added after checkpoint 6): the challenger must not lose to the incumbent
+    in ANY era, including the eras nobody selected on. Returns CAGR per era and the verdict."""
+    eras = {"1880-1929": ("1880", "1929"), "1930-1956": ("1930", "1956"),
+            "1957-1990": TRAIN, "1991-2026": TEST}
+    out = {k: (metrics.cagr(new[a:b], 12), metrics.cagr(old[a:b], 12)) for k, (a, b) in eras.items()}
+    out["passes"] = all(n >= o for n, o in out.values())
+    return out
+
+
+def walk_forward_selection(returns: pd.DataFrame, start: int = 1957) -> pd.Series:
+    """What running the loop in real time would have earned: each January pick the strategy
+    with the best log growth on all data known at that moment, hold it for the year."""
+    out = []
+    for y in range(start, returns.index[-1].year + 1):
+        best = np.log1p(returns[:str(y - 1)]).mean().idxmax()
+        out.append(returns.loc[str(y), best])
+    return pd.concat(out)
 
 
 class Leaderboard:

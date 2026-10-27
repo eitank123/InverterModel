@@ -36,7 +36,30 @@ INSTRUMENTS = {
     "SSO": Instrument("SSO", "stocks", 2.0, 0.0089, 3.0),
     "UPRO": Instrument("UPRO", "stocks", 3.0, 0.0091, 3.0),
     "IEF": Instrument("IEF", "bonds", 1.0, 0.0015, 2.0),
+    "UST": Instrument("UST", "bonds", 2.0, 0.0095, 5.0),       # 2x 7-10y Treasuries (thinly traded)
 }
+
+
+def etf_weights(stocks: float, bonds: float) -> dict[str, float]:
+    """Map a stock/bond exposure (e.g. 2.4x stocks, 0.67x bonds) onto unlevered and levered
+    ETFs without a margin loan where possible: bonds through IEF (or UST when >1x), stocks
+    through SPY + UPRO using exactly the capital left over."""
+    w: dict[str, float] = {}
+    if bonds > 1.0:
+        w["UST"] = bonds / 2
+    elif bonds > 0:
+        w["IEF"] = bonds
+    free = max(1.0 - sum(w.values()), 0.0)
+    if stocks <= 0:
+        pass
+    elif stocks <= free:
+        w["SPY"] = stocks
+    elif stocks <= 3 * free:
+        w["UPRO"] = (stocks - free) / 2
+        w["SPY"] = free - w["UPRO"]
+    else:
+        w["UPRO"] = stocks / 3
+    return {k: round(v, 6) for k, v in w.items() if v > 1e-6}
 
 
 @dataclass

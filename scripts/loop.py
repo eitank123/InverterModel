@@ -25,7 +25,9 @@ from algotrading.research import Candidate, Context, Leaderboard  # noqa: E402
 warnings.filterwarnings("ignore")
 LOOP = os.path.join(os.path.dirname(__file__), "..", "loop")
 # The current champion (changed only by a checkpoint decision; see loop/checkpoints.json).
-CHAMPION = {"name": "recovery leverage", "params": '{"base": 2.0, "boost": 3.0, "depth": 0.15}'}
+# Since checkpoint 7 the champion is chosen by its WORST era (1880-1929, 1930-1956, 1957-1990,
+# 1991-2026), not by the 1991-2026 test alone (see loop/README.md).
+CHAMPION = {"name": "ensemble: trend + value + recovery", "params": '{"trend": 3.0}'}
 SMA10 = at.PriceAboveSMA(10)
 
 
@@ -261,7 +263,77 @@ def iteration_5():
     ]
 
 
-ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5}
+class RecoveryMix(at.PortfolioStrategy):
+    """Stock/bond version (checkpoint 5): trend-filtered mix at ``base`` leverage, ``boost``
+    after deep stock falls."""
+
+    def __init__(self, stock_w, base, boost, depth=0.15):
+        self.f, self.base, self.boost, self.depth = filtered(stock_w), base, boost, depth
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        deep = (s / s.rolling(36, min_periods=12).max() - 1) < -self.depth
+        lev = np.where(deep, self.boost, self.base)
+        return self.f.weights(prices).mul(lev, axis=0)
+
+
+def iteration_6():
+    """Checkpoint 5: exit signal choice, bonds as the risk-off asset, stock/bond recovery."""
+    return [
+        Candidate("recovery, exit signal", "recovery leverage",
+                  lambda signal: at.RecoveryLeverage(2.0, 3.0, 0.15, signal=signal),
+                  {"signal": ["sma10", "tsmom12", "either", "both"]},
+                  note="SMA10 vs 12-month momentum vs combinations"),
+        Candidate("recovery, bonds when out", "recovery leverage",
+                  lambda off: at.RecoveryLeverage(2.0, 3.0, 0.15, off_lev=off),
+                  {"off": [0.0, 1.0, 2.0, 3.0]},
+                  note="risk-off asset = Treasuries (Alpha Architect 2016)"),
+        Candidate("recovery mix", "recovery leverage",
+                  lambda w, base, boost: RecoveryMix(w, base, boost),
+                  {"w": [0.6, 0.8], "base": [2.0, 3.0], "boost": [3.0, 4.0]}),
+        Candidate("recovery+ (signal, bonds when out)", "recovery leverage",
+                  lambda signal, off: at.RecoveryLeverage(2.0, 3.0, 0.15, signal=signal, off_lev=off),
+                  {"signal": ["sma10", "either"], "off": [0.0, 1.0, 2.0]},
+                  note="stay in while SMA10 or 12m momentum is up; Treasuries when out"),
+    ]
+
+
+def iteration_7():
+    """Checkpoint 6: the champion's weak spot is bonds falling with stocks (2022). Gate the
+    risk-off bonds on their own trend."""
+    return [
+        Candidate("recovery+ bond-gated", "recovery leverage",
+                  lambda signal, off: at.RecoveryLeverage(2.0, 3.0, 0.15, signal=signal, off_lev=off,
+                                                          off_gate=True),
+                  {"signal": ["sma10", "either"], "off": [1.0, 2.0, 3.0]},
+                  note="Treasuries when out of stocks only if bonds trend up (Faber 2007 per-asset rule)"),
+    ]
+
+
+def ensemble(trend_lev=2.0):
+    """Equal thirds of three different, published effects; no selection between them:
+    trend (Moskowitz-Ooi-Pedersen 2012; Faber 2007), valuation (Campbell & Shiller 1988),
+    post-crash mean reversion with trend confirmation (Poterba & Summers 1988)."""
+    return at.Blend({at.Levered(filtered(1.0), trend_lev): 1 / 3,
+                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})
+
+
+def iteration_8():
+    """Checkpoint 7 (user: 'don't depend on past years'): stop picking the single best fit.
+    Fixed equal-weight ensembles of independent effects, judged on their WORST era."""
+    return [
+        Candidate("ensemble: trend + value + recovery", "ensemble",
+                  lambda trend: ensemble(trend), {"trend": [2.0, 3.0]},
+                  note="equal thirds; no weights fitted"),
+        Candidate("ensemble: trend + value", "ensemble",
+                  lambda: at.Blend({at.Levered(filtered(1.0), 2.0): 0.5,
+                                    CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 0.5})),
+    ]
+
+
+ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
+              6: iteration_6, 7: iteration_7, 8: iteration_8}
 
 
 def run(iters, financings=(0.005, 0.015)):

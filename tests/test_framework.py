@@ -493,6 +493,29 @@ def test_recovery_leverage_boosts_only_after_deep_fall_in_uptrend():
         at.data.gbm(600, seed=3)["close"])
 
 
+def test_recovery_either_signal_and_bonds_when_out():
+    idx = pd.date_range("2000-01-01", periods=60, freq="MS")
+    p = np.r_[np.linspace(100, 150, 24), np.linspace(150, 90, 12), np.linspace(90, 130, 24)]
+    bonds = np.r_[np.linspace(100, 120, 40), np.linspace(120, 100, 20)]
+    px = pd.DataFrame({"stocks": p, "bonds": bonds}, index=idx)
+    base = at.RecoveryLeverage(2.0, 3.0, 0.15).weights(px)
+    either = at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0).weights(px)
+    both = at.RecoveryLeverage(2.0, 3.0, 0.15, signal="both").weights(px)
+    # "either" is in whenever the champion is in; "both" only when the champion is in
+    assert ((base["stocks"] > 0) <= (either["stocks"] > 0)).all()
+    assert ((both["stocks"] > 0) <= (base["stocks"] > 0)).all()
+    # never stocks and bonds together; bonds exactly when out of stocks (after warm-up)
+    assert ((either["stocks"] > 0) & (either["bonds"] > 0)).sum() == 0
+    out = either["stocks"].iloc[12:] == 0
+    assert (either["bonds"].iloc[12:][out] == 2.0).all()
+    gated = at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0, off_gate=True).weights(px)
+    assert (gated["bonds"] <= either["bonds"]).all()
+    assert at.validation.check_no_lookahead(
+        type("S", (at.Strategy,), {"positions": lambda self, s: at.RecoveryLeverage(
+            signal="either", off_lev=1.0).weights(pd.DataFrame({"stocks": s, "bonds": s}))["stocks"]})(),
+        at.data.gbm(600, seed=4)["close"])
+
+
 # --- Execution / full-cost simulation ---------------------------------------------------
 
 def test_ledger_charges_every_fee_and_realizes_pl():
@@ -531,3 +554,26 @@ def test_simulation_buy_and_hold_matches_prices_minus_costs():
     # 100 shares bought; the $1 + 3bp fees ($4) are paid from cash (a small debit with interest).
     expected = 100 * 150 - 4.0
     assert abs(res["final"] - expected) < 0.1
+
+
+def test_walk_forward_selection_uses_only_past_years():
+    from algotrading.research import beats_everywhere, walk_forward_selection
+    idx = pd.date_range("1950-01-01", "1960-12-01", freq="MS")
+    # "a" wins until 1957, "b" wins from 1957: the selector can only switch AFTER seeing it
+    a = pd.Series(np.where(idx.year < 1957, 0.02, -0.01), index=idx)
+    b = pd.Series(np.where(idx.year < 1957, 0.00, 0.03), index=idx)
+    wf = walk_forward_selection(pd.DataFrame({"a": a, "b": b}), start=1957)
+    assert (wf["1957"] == -0.01).all()            # 1957 picked with pre-1957 data only
+    g = beats_everywhere(b, a)
+    assert not g["passes"]
+
+
+def test_etf_weights_reproduce_exposure_without_margin():
+    from algotrading.execution import INSTRUMENTS, etf_weights
+    for st, bd in [(0.0, 0.0), (0.5, 0.0), (1.0, 0.0), (2.0, 0.0), (3.0, 0.0), (2.4, 0.67), (0.0, 2.0), (1.5, 0.5)]:
+        w = etf_weights(st, bd)
+        stocks = sum(v * INSTRUMENTS[k].leverage for k, v in w.items() if INSTRUMENTS[k].underlying == "stocks")
+        bonds = sum(v * INSTRUMENTS[k].leverage for k, v in w.items() if INSTRUMENTS[k].underlying == "bonds")
+        assert abs(stocks - st) < 1e-5 and abs(bonds - bd) < 1e-5
+        if st + bd <= 3 * 1.0 and st <= 3 * (1 - min(bd, 1)):
+            assert sum(w.values()) <= 1.0 + 1e-9          # fully funded: no margin loan

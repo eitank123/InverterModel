@@ -1,5 +1,5 @@
 {
- "name": "Champion: recovery leverage (2x, 3x after deep falls)",
+ "name": "Previous champion: recovery leverage (2x, 3x after deep falls)",
  "description": "S&P 500 at 2x while above its 10-month average, 3x while still >15% below its 36-month high, cash otherwise. Implementable with 2x/3x S&P ETFs (e.g. SSO/UPRO).",
  "symbols": {
   "stocks": "SPY",

@@ -1,0 +1,33 @@
+{
+ "name": "Champion: recovery+ (2x/3x S&P, 2x Treasuries when out)",
+ "description": "S&P 500 at 2x while above its 10-month average OR up over 12 months (3x while >15% below its 36-month high); 2x 7-10y Treasuries otherwise. ETFs: SSO/UPRO, UST.",
+ "symbols": {
+  "stocks": "SPY",
+  "bonds": "IEF"
+ },
+ "start": "2026-09-01",
+ "cash": -100040.0,
+ "holdings": {
+  "SPY": 307.6923076923077
+ },
+ "last_month": "2026-09",
+ "equity_history": [
+  {
+   "date": "2026-09-01",
+   "equity": 99960.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-01",
+   "symbol": "SPY",
+   "side": "buy",
+   "qty": 307.6923,
+   "price": 650.0
+  }
+ ],
+ "targets": {
+  "SPY": 2.0,
+  "IEF": 0.0
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "name": "Champion: ensemble (3x trend + valuation + recovery+)",
+ "description": "Equal thirds of three published effects, no fitted weights: S&P 500 at 3x above its 10-month average; S&P leverage 0.5-3x set by valuation (trend-filtered); recovery+. ETFs: SPY/UPRO, IEF/UST.",
+ "symbols": {
+  "stocks": "SPY",
+  "bonds": "IEF"
+ },
+ "start": "2026-09-01",
+ "cash": -108885.12951368216,
+ "holdings": {
+  "SPY": 321.2974782177136
+ },
+ "last_month": "2026-09",
+ "equity_history": [
+  {
+   "date": "2026-09-01",
+   "equity": 99958.23
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-01",
+   "symbol": "SPY",
+   "side": "buy",
+   "qty": 321.2975,
+   "price": 650.0
+  }
+ ],
+ "targets": {
+  "SPY": 2.0884336084151385,
+  "IEF": 0.0
+ }
+}

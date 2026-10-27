@@ -519,6 +519,39 @@ added anything. And at today's valuations all of these numbers should be expecte
 
 ---
 
+## Loop rounds 6–8: exit signals, bonds when out, and the overfitting audit
+**Round 6.** Exiting only when *both* the 10-month average and 12-month momentum turn down kept recovery leverage invested through whipsaws:
+- test result: 21.8% vs 19.0%;
+- trend switches: 125 vs 187.
+
+Holding 2× Treasuries instead of cash when out raised training growth to 13.6%. In 2022 it failed: the exit came late and bonds fell with stocks. In the full-cost 5-year simulation it made 16.6%/yr against 19.9% for the old rule.
+
+**Round 7.** Holding bonds only while they trend up cut 2022 from −35% to −30%, but cost 1.3 points a year in training. Rejected.
+
+**Overfitting audit (prompted by the user).**
+- **Trials.** 219 variants have been tried against the same 1991–2026 test.
+- **Walk-forward selection.** Running the selection itself in real time (each year, pick the best strategy on data known then) earned 14.9%/yr on 1991–2026, against 22.5% for the hand-picked champion.
+- **Significance.** The probability that the champion's Sharpe truly beats the S&P's is 0.86, below the 0.95 bar.
+- **Unseen eras.** In 1880–1956, never used to choose anything, the recovery family made only 8.7%/yr in 1930–56, no better than the S&P. Its "3× after a crash" boost was caught in the false recoveries of 1930–32. Trend and valuation leverage made 12–19% in the same era.
+
+**Round 8: ensemble.** Equal thirds of 3× trend, valuation-scaled leverage (≤3×) and recovery+, with no fitted weights:
+
+| | 1880–1929 | 1930–1956 | 1957–1990 | 1991–2026 | Worst era | Forward median | Forward average wealth | P(10-year loss) |
+|---|---|---|---|---|---|---|---|---|
+| Ensemble (new champion) | 15.4% | 14.6% | 13.1% | 21.3% | **13.1%** | 4.7% | 1.98× | 17.5% |
+| Recovery+ | 14.0% | 8.7% | 13.6% | 22.5% | 8.7% | 6.8% | 2.30× | 14.5% |
+| S&P 500 | 8.3% | 8.8% | 10.0% | 11.4% | 8.3% | 4.3% | 1.61× | 18% |
+
+5-year full-cost simulation for the ensemble: $100k → $247,966 (19.9%/yr), max drawdown −26%, 47 trades costing $398 in total.
+
+**Lesson.** A strategy found by searching many ideas on one history is partly a description of that history. Defences:
+- a different, untouched era;
+- fixed equal-weight combinations of independent, published effects;
+- judging by the worst era, not the best;
+- the forward paper record, which is the only truly unseen data.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

@@ -14,6 +14,8 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import algotrading as at  # noqa: E402
 from algotrading.paper import PaperAccount  # noqa: E402
+sys.path.insert(0, os.path.dirname(__file__))
+from loop import ensemble  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "paper")
 SYMBOLS = {"stocks": "SPY", "bonds": "IEF"}
@@ -31,10 +33,18 @@ ACCOUNTS = {
     "champion_research": ("Research champion: 60/40 + SMA10 x3",
                           "60/40 with each asset trend-filtered, at 3x leverage. Needs futures-level financing.",
                           at.Levered(filtered(0.6), 3.0), 0.005, 3.0),
-    "champion_recovery": ("Champion: recovery leverage (2x, 3x after deep falls)",
+    "champion_recovery": ("Previous champion: recovery leverage (2x, 3x after deep falls)",
                           "S&P 500 at 2x while above its 10-month average, 3x while still >15% below its "
                           "36-month high, cash otherwise. Implementable with 2x/3x S&P ETFs (e.g. SSO/UPRO).",
                           at.RecoveryLeverage(2.0, 3.0, 0.15), 0.005, 3.0),
+    "champion_ensemble": ("Champion: ensemble (3x trend + valuation + recovery+)",
+                          "Equal thirds of three published effects, no fitted weights: S&P 500 at 3x above its "
+                          "10-month average; S&P leverage 0.5-3x set by valuation (trend-filtered); recovery+. "
+                          "ETFs: SPY/UPRO, IEF/UST.", ensemble(3.0), 0.005, 3.0),
+    "champion_recovery_plus": ("Challenger: recovery+ (2x/3x S&P, 2x Treasuries when out)",
+                               "S&P 500 at 2x while above its 10-month average OR up over 12 months (3x while "
+                               ">15% below its 36-month high); 2x 7-10y Treasuries otherwise. ETFs: SSO/UPRO, UST.",
+                               at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0), 0.005, 3.0),
     "benchmark_6040": ("Benchmark: 60/40", "60% stocks, 40% bonds, rebalanced monthly, no leverage.",
                        at.PerAsset(at.BuyAndHold(), {"stocks": 0.6, "bonds": 0.4}), 0.0, 1.0),
 }
