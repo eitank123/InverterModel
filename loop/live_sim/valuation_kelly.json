@@ -4,7 +4,7 @@
  "description": "Loop strategy 'valuation-Kelly ungated' {\"f\": 1.0, \"cap\": 3.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -35.74404000000504,
+ "cash": -35.750479600862185,
  "holdings": {
   "SPY": 106.61491563129617,
   "UPRO": 187.202
@@ -21,18 +21,22 @@
   "stocks": 1.3744031958907592,
   "bonds": 0.0
  },
- "last_date": "2026-10-23",
+ "last_date": "2026-10-26",
  "last_signal_month": "2026-10",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 33.74404,
   "regulatory": 0.0
  },
- "fund_costs": 0.0,
+ "fund_costs": 7.881323362477622,
  "equity_history": [
   {
    "date": "2026-10-23",
    "equity": 99964.26
+  },
+  {
+   "date": "2026-10-26",
+   "equity": 100920.23
   }
  ],
  "trades": [
@@ -66,10 +70,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.0,
-  "SPY": 762.368,
+  "IEF": 95.0183,
+  "SPY": 767.7107,
   "SSO": NaN,
-  "UPRO": 100.0,
-  "UST": 45.0
+  "UPRO": 102.0639,
+  "UST": 45.0081
  }
 }

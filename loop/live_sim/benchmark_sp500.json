@@ -4,7 +4,7 @@
  "description": "100% SPY.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -31.0,
+ "cash": -31.005584920634917,
  "holdings": {
   "SPY": 131.17024848891873
  },
@@ -18,18 +18,22 @@
   "stocks": 1.0,
   "bonds": 0.0
  },
- "last_date": "2026-10-23",
+ "last_date": "2026-10-26",
  "last_signal_month": "2026-10",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 30.0,
   "regulatory": 0.0
  },
- "fund_costs": 0.0,
+ "fund_costs": 0.377628010931541,
  "equity_history": [
   {
    "date": "2026-10-23",
    "equity": 99969.0
+  },
+  {
+   "date": "2026-10-26",
+   "equity": 100669.8
   }
  ],
  "trades": [
@@ -49,10 +53,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.0,
-  "SPY": 762.368,
+  "IEF": 95.0183,
+  "SPY": 767.7107,
   "SSO": NaN,
-  "UPRO": 100.0,
-  "UST": 45.0
+  "UPRO": 102.0639,
+  "UST": 45.0081
  }
 }
