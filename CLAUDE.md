@@ -20,6 +20,13 @@ Standing instructions from the owner. Every session and every scheduled round fo
   `python scripts/live_sim.py`. It advances the play-money accounts in `loop/live_sim/` by the
   newest real trading days from FRED; report their values and trades. Never send broker orders
   unless the owner asks again.
+* **Reports:**
+  * a daily report (Tue–Sat, routine "Algo trading daily report");
+  * a weekly report with a learning review (Saturday, routine "Algo trading weekly report").
+
+  Both use `python scripts/report.py daily|weekly`, write to `reports/`, and appear on the
+  dashboard's Reports tab. The fleet of 19 strategies in `scripts/live_sim.py` runs side by side.
+  New ideas get NEW accounts, and existing accounts are never edited.
 * **Secrets and real money:** never put API keys in code or git. Real-money orders need the
   owner's explicit approval (docs/AUTOMATION.md).
 * **Reporting:** report results honestly, including when an idea fails or a number is an upper bound.
