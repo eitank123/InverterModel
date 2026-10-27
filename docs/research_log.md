@@ -583,6 +583,21 @@ Data: DJIA daily 2007–2016, a price index with no dividends, the only daily da
 
 ---
 
+## Loop round 9: two published whipsaw cures, neither beats the champion
+| | 1880–1929 | 1930–56 | 1957–90 | 1991–2026 | Max DD |
+|---|---|---|---|---|---|
+| Growth-trend timing 2× (earnings) | 9.8% | 14.7% | 7.9% | 20.2% | −75% |
+| Multi-horizon trend 3× (1/3/12 m) | 10.4% | 16.4% | 9.5% | 20.2% | −59% |
+| Ensemble with growth-trend sleeve | 14.2% | 16.1% | 11.8% | 22.4% | −55% |
+| Ensemble + multi-horizon (4 sleeves) | 14.4% | 15.6% | 12.3% | 21.2% | −54% |
+| **Champion ensemble** | 15.4% | 14.6% | **13.1%** | 21.3% | −53% |
+
+* **Growth-trend timing failed in 1973–74.** In an inflationary bust, nominal earnings kept growing, so the "economy is weakening" gate never opened and the rule stayed invested at 2× through the crash.
+* **Multi-horizon trend was worse on one market.** The 1-month signal adds noise. Its published edge comes from 67 markets, not one.
+* **228 variants tried so far.** The walk-forward selection estimate is unchanged: 14.3%/yr since 1957.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

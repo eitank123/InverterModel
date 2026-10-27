@@ -332,8 +332,58 @@ def iteration_8():
     ]
 
 
+class GrowthTrend(at.PortfolioStrategy):
+    """Growth-trend timing (Philosophical Economics 2016): obey the 10-month price trend only
+    while the economy weakens (12-month earnings growth < 0, lagged 3 months for reporting);
+    otherwise stay invested. ``lev`` x S&P 500 when in, cash when out.
+    Note: Shiller earnings end 2023-06; after that the gate stays open (always invested)."""
+
+    def __init__(self, lev):
+        self.lev = lev
+        e = at.data.load_shiller_sp500()["earnings"].dropna()
+        self.weak = (e / e.shift(12) - 1).shift(3) < 0
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        weak = self.weak.reindex(prices.index).fillna(False).astype(bool)
+        on = ~weak | SMA10.positions(s).astype(bool)
+        return pd.DataFrame({"stocks": np.where(on, self.lev, 0.0), "bonds": 0.0}, index=prices.index)
+
+
+class MultiHorizonTrend(at.PortfolioStrategy):
+    """Hurst, Ooi & Pedersen (2017): equal-weight 1-, 3- and 12-month time-series momentum;
+    S&P exposure = lev x share of the three signals that are positive."""
+
+    def __init__(self, lev):
+        self.lev = lev
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        votes = sum((s / s.shift(k) - 1 > 0).astype(float) for k in (1, 3, 12)) / 3
+        return pd.DataFrame({"stocks": votes * self.lev, "bonds": 0.0}, index=prices.index)
+
+
+def iteration_9():
+    """Checkpoint 7 + reading: two published ways to cut trend whipsaw, alone and as ensemble sleeves."""
+    return [
+        Candidate("growth-trend timing xL", "growth-trend",
+                  lambda lev: GrowthTrend(lev), {"lev": [2.0, 3.0]},
+                  note="Philosophical Economics (2016): trend exit only when earnings growth < 0"),
+        Candidate("multi-horizon trend xL", "multi-horizon trend",
+                  lambda lev: MultiHorizonTrend(lev), {"lev": [2.0, 3.0]},
+                  note="Hurst, Ooi & Pedersen (2017): 1/3/12-month TSMOM, equal weight"),
+        Candidate("ensemble: growth-trend + value + recovery", "ensemble",
+                  lambda: at.Blend({GrowthTrend(3.0): 1 / 3, CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                                    at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})),
+        Candidate("ensemble: 4 sleeves (+ multi-horizon)", "ensemble",
+                  lambda: at.Blend({at.Levered(filtered(1.0), 3.0): 0.25, CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 0.25,
+                                    at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 0.25,
+                                    MultiHorizonTrend(3.0): 0.25})),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
-              6: iteration_6, 7: iteration_7, 8: iteration_8}
+              6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9}
 
 
 def run(iters, financings=(0.005, 0.015)):

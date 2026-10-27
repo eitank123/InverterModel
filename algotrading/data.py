@@ -212,8 +212,10 @@ def fred_daily_proxies(div_yield: float = 0.012, duration: float = 7.5,
     Good enough for monthly SIGNALS; not a substitute for traded prices."""
     sp = sp500 if sp500 is not None else load_fred("SP500")
     y = (dgs10 if dgs10 is not None else load_fred("DGS10")) / 100
-    days = sp.index.intersection(y.index)
-    sp, y = sp[days], y[days]
+    # The yield is often published a day later than the S&P close: carry the last value forward
+    # (a later yield change is then booked on the day it becomes known).
+    days = sp.index[sp.index >= y.index[0]]
+    sp, y = sp[days], y.reindex(y.index.union(days)).ffill()[days]
     stocks = sp * (1 + div_yield / 252) ** np.arange(len(days))
     bonds = (1 + (y.shift(1) / 252 - duration * y.diff()).fillna(0.0)).cumprod()
     return pd.DataFrame({"stocks": stocks, "bonds": bonds}, index=days)

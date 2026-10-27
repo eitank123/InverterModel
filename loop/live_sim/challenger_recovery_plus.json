@@ -4,7 +4,7 @@
  "description": "2x S&P while above its 10-month average or up over 12 months, 3x after >15% falls; 2x Treasuries otherwise.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -42.0,
+ "cash": -42.00756666666666,
  "holdings": {
   "UPRO": 500.0,
   "SPY": 65.58512424445937
@@ -21,18 +21,22 @@
   "stocks": 2.0,
   "bonds": 0.0
  },
- "last_date": "2026-10-23",
+ "last_date": "2026-10-26",
  "last_signal_month": "2026-10",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 40.0,
   "regulatory": 0.0
  },
- "fund_costs": 0.0,
+ "fund_costs": 20.41933523506932,
  "equity_history": [
   {
    "date": "2026-10-23",
    "equity": 99958.0
+  },
+  {
+   "date": "2026-10-26",
+   "equity": 101340.34
   }
  ],
  "trades": [
@@ -66,10 +70,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.0,
-  "SPY": 762.368,
+  "IEF": 95.0183,
+  "SPY": 767.7107,
   "SSO": NaN,
-  "UPRO": 100.0,
-  "UST": 45.0
+  "UPRO": 102.0639,
+  "UST": 45.0081
  }
 }
