@@ -56,12 +56,15 @@ def main():
         dump("checkpoints", json.load(f))
 
     eq_rows, pos_rows, trade_rows, acct_rows = [], [], [], []
-    for path in sorted(glob.glob(os.path.join(ROOT, "paper", "*.json"))):
+    # The trading desk shows the real-time simulation (loop/live_sim) once it exists; the older
+    # monthly paper ledger (loop/paper) is the fallback.
+    live = sorted(glob.glob(os.path.join(ROOT, "live_sim", "*.json")))
+    for path in live or sorted(glob.glob(os.path.join(ROOT, "paper", "*.json"))):
         with open(path) as f:
             st = json.load(f)
         key = os.path.basename(path)[:-5]
         last = st["equity_history"][-1]
-        prices = {t["symbol"]: t["price"] for t in st["trades"]}
+        prices = st.get("prices") or {t["symbol"]: t["price"] for t in st["trades"]}
         for h in st["equity_history"]:
             eq_rows.append({"account": st["name"], "date": h["date"], "equity": h["equity"]})
         invested = 0.0
@@ -74,23 +77,32 @@ def main():
                              "value": round(value, 2), "weight": value / last["equity"] if last["equity"] else 0,
                              "target_weight": st["targets"].get(sym, 0.0)})
         for t in st["trades"]:
-            trade_rows.append({"account": st["name"], **t, "notional": round(t["qty"] * t["price"], 2)})
+            trade_rows.append({"account": st["name"], **{k: v for k, v in t.items() if k != "shares"},
+                               "notional": round(t["qty"] * t["price"], 2)})
         acct_rows.append({"key": key, "account": st["name"], "description": st["description"],
                           "start": st["start"], "as_of": last["date"], "equity": last["equity"],
                           "start_equity": 100000.0, "return_since_start": last["equity"] / 100000.0 - 1,
-                          "cash": round(st["cash"], 2), "gross_exposure": invested / last["equity"]})
+                          "cash": round(st["cash"], 2), "gross_exposure": invested / last["equity"],
+                          "trading_costs": round(sum(st.get("fees", {}).values()), 2),
+                          "fund_costs": round(st.get("fund_costs", 0.0), 2)})
     dump("paper_equity", eq_rows)
     dump("paper_positions", pos_rows)
     dump("paper_trades", trade_rows)
     dump("paper_accounts", acct_rows)
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    last_day = max((r["as_of"] for r in acct_rows), default="")
     dump("trading_status", [
-        {"item": "Broker connection", "value": "Not connected", "state": "warn",
-         "detail": "Needs Alpaca (or IBKR) paper keys as environment secrets and network access to *.alpaca.markets. See docs/AUTOMATION.md."},
-        {"item": "Mode", "value": "Forward paper trading (simulated fills)", "state": "ok",
-         "detail": "Accounts move forward one completed month at a time from their start date; nothing is backfilled."},
-        {"item": "Price source", "value": "Shiller monthly data (SPY/IEF stand-ins)", "state": "warn",
-         "detail": "Monthly average prices until a broker feed is connected."},
+        {"item": "Mode", "value": "Real-time simulation (play money)", "state": "ok",
+         "detail": "Accounts started 2026-10-23 with $100,000 each and advance one real trading day at a time; "
+                   "nothing is backfilled. No broker and no real money."},
+        {"item": "Price source", "value": f"FRED daily closes to {last_day}", "state": "ok",
+         "detail": "S&P 500, 10-year Treasury yield and 3-month T-bill from the St. Louis Fed. ETF prices "
+                   "(SPY, UPRO, IEF, UST) are built from the real index moves net of fund costs."},
+        {"item": "Costs", "value": "All charged", "state": "ok",
+         "detail": "Commission, spread + slippage, SEC/FINRA fees, expense ratios, leveraged-ETF financing, "
+                   "cash sweep fee."},
+        {"item": "Broker connection", "value": "Not used", "state": "ok",
+         "detail": "Owner's choice: simulation only. Alpaca paper keys would add real quotes and fills (docs/AUTOMATION.md)."},
         {"item": "Last export", "value": now, "state": "ok", "detail": "scripts/export_dashboard.py"},
     ])
 

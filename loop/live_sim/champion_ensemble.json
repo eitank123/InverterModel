@@ -1,0 +1,75 @@
+{
+ "key": "champion_ensemble",
+ "name": "Champion: ensemble (3x trend + valuation + recovery+)",
+ "description": "Equal thirds of three published effects: S&P 500 at 3x above its 10-month average; leverage 0.5-3x set by valuation; recovery+. Traded through SPY/UPRO and IEF/UST.",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -42.88434000000416,
+ "holdings": {
+  "UPRO": 544.217,
+  "SPY": 59.78516936702485
+ },
+ "basis": {
+  "UPRO": 54449.91085,
+  "SPY": 45592.973490000004
+ },
+ "targets": {
+  "UPRO": 0.544217,
+  "SPY": 0.455783
+ },
+ "exposure": {
+  "stocks": 2.0884336084151385,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 40.88434,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99957.12
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 544.217,
+   "price": 100.0,
+   "amount": 54421.7,
+   "commission": 1.0,
+   "spread_slippage": 27.21,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.09x, bonds 0.00x",
+   "qty": 544.217
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 59.7852,
+   "price": 762.368,
+   "amount": 45578.3,
+   "commission": 1.0,
+   "spread_slippage": 13.67,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.09x, bonds 0.00x",
+   "qty": 59.7852
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

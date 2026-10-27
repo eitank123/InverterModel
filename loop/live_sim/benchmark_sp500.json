@@ -1,0 +1,58 @@
+{
+ "key": "benchmark_sp500",
+ "name": "Benchmark: S&P 500 buy & hold",
+ "description": "100% SPY.",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -31.0,
+ "holdings": {
+  "SPY": 131.17024848891873
+ },
+ "basis": {
+  "SPY": 100031.0
+ },
+ "targets": {
+  "SPY": 1.0
+ },
+ "exposure": {
+  "stocks": 1.0,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 1.0,
+  "spread_slippage": 30.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99969.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 131.1702,
+   "price": 762.368,
+   "amount": 100000.0,
+   "commission": 1.0,
+   "spread_slippage": 30.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "buy and hold",
+   "qty": 131.1702
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

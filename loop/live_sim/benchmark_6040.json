@@ -1,0 +1,75 @@
+{
+ "key": "benchmark_6040",
+ "name": "Benchmark: 60/40",
+ "description": "60% SPY, 40% IEF, rebalanced monthly.",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -36.0,
+ "holdings": {
+  "IEF": 421.05263157894734,
+  "SPY": 78.70214909335124
+ },
+ "basis": {
+  "IEF": 40017.0,
+  "SPY": 60019.0
+ },
+ "targets": {
+  "SPY": 0.6,
+  "IEF": 0.4
+ },
+ "exposure": {
+  "stocks": 0.6,
+  "bonds": 0.4
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 34.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99964.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "IEF",
+   "side": "buy",
+   "shares": 421.0526,
+   "price": 95.0,
+   "amount": 40000.0,
+   "commission": 1.0,
+   "spread_slippage": 16.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "monthly rebalance to 60/40",
+   "qty": 421.0526
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 78.7021,
+   "price": 762.368,
+   "amount": 60000.0,
+   "commission": 1.0,
+   "spread_slippage": 18.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "monthly rebalance to 60/40",
+   "qty": 78.7021
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

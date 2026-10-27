@@ -17,8 +17,9 @@ acceptable; ruin is not.
    * forward view: 10-year simulations at today's valuations (median, average wealth, chance of loss);
    * two financing levels (cash + 0.5% futures-like, cash + 1.5% margin) and a "fits a 2× margin
      account" flag.
-4. **Paper trading** (`python scripts/paper_trade.py`): forward accounts advance by every newly
-   completed month. Nothing is backfilled.
+4. **Real-time simulation** (`python scripts/live_sim.py`): play-money accounts that started
+   2026-10-23 advance by every new real trading day (FRED data), with every cost charged.
+   Nothing is backfilled. (`scripts/paper_trade.py` keeps the older monthly ledger.)
 5. **Dashboard** (`python scripts/export_dashboard.py`): writes `loop/dashboard/*.json`, which are
    uploaded to the Algo Trading Lab dashboard.
 6. Commit and push.

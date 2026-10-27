@@ -9,6 +9,11 @@ python scripts/rebalance.py          # local paper broker, Shiller stand-in pric
 python scripts/today.py              # what the rule holds right now
 ```
 
+## Stage 1b: Real-time simulation (running now)
+`python scripts/live_sim.py` runs every loop round. Play-money accounts advance one real trading day
+at a time on FRED data (S&P 500, 10-year yield, T-bills), with every cost charged. No broker and
+no keys are needed. Records are in `loop/live_sim/`, and the dashboard's Trading desk shows them.
+
 ## Stage 2: Paper trading (fake money, real market). Do this for 3–6 months.
 1. Open an Alpaca account and generate **paper** API keys (or use Interactive Brokers' paper account,
    which needs a different adapter: ask me to write it). Check that the broker accepts residents of your country.

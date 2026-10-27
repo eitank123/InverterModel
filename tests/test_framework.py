@@ -603,3 +603,29 @@ def test_fred_proxies_from_given_series():
     assert px["stocks"].iloc[-1] / px["stocks"].iloc[0] > 5000 / 4000  # dividends added
     carry = px["bonds"].iloc[-1] / px["bonds"].iloc[0] - 1
     assert abs(carry - ((1 + 0.04 / 252) ** 299 - 1)) < 1e-9
+
+
+def test_live_sim_moves_forward_only_and_rebalances_monthly(tmp_path):
+    from algotrading.execution import CostModel
+    from algotrading.live_sim import LiveSimAccount
+    days = pd.bdate_range("2026-01-05", "2026-03-31")
+    px = pd.DataFrame({"SPY": np.linspace(600, 660, len(days)), "UPRO": 100.0, "IEF": 95.0, "UST": 45.0},
+                      index=days)
+    cash = pd.Series(0.04, index=days)
+    calls = []
+
+    def target(d):
+        calls.append(d)
+        return {"SPY": 1.0}, {"stocks": 1.0, "bonds": 0.0}, "test"
+
+    path = str(tmp_path / "a.json")
+    acct = LiveSimAccount.load_or_create(path, "a", "A", "", "2026-01-05")
+    assert acct.advance(px[:"2026-02-10"], cash, target, CostModel()) == len(px[:"2026-02-10"])
+    acct.save()
+    assert [d.strftime("%Y-%m") for d in calls] == ["2026-01", "2026-02"]   # once per month
+    again = LiveSimAccount.load_or_create(path, "a", "A", "", "2026-01-05")
+    assert again.advance(px[:"2026-02-10"], cash, target, CostModel()) == 0  # nothing new
+    assert again.advance(px, cash, target, CostModel()) == len(px["2026-02-11":])
+    eq = pd.Series({h["date"]: h["equity"] for h in again.st["equity_history"]})
+    assert eq.index.is_unique and eq.iloc[-1] > 100_000 * 1.05            # followed SPY up
+    assert again.st["trades"][0]["commission"] == 1.0                      # costs charged
