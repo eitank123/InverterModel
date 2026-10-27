@@ -593,3 +593,13 @@ def test_splice_monthly_uses_live_returns_after_anchor():
     assert out.loc["2021-06-01", "stocks"] == hist.loc["2021-06-01", "stocks"]   # anchor
     r_live = me["stocks"].iloc[-1] / me["stocks"].iloc[-2] - 1
     assert abs(out["stocks"].iloc[-1] / out["stocks"].iloc[-2] - 1 - r_live) < 1e-12
+
+
+def test_fred_proxies_from_given_series():
+    idx = pd.bdate_range("2024-01-01", periods=300)
+    sp = pd.Series(np.linspace(4000, 5000, 300), index=idx)
+    y = pd.Series(4.0, index=idx)                      # flat 4% yield: bonds earn carry only
+    px = at.data.fred_daily_proxies(sp500=sp, dgs10=y)
+    assert px["stocks"].iloc[-1] / px["stocks"].iloc[0] > 5000 / 4000  # dividends added
+    carry = px["bonds"].iloc[-1] / px["bonds"].iloc[0] - 1
+    assert abs(carry - ((1 + 0.04 / 252) ** 299 - 1)) < 1e-9

@@ -197,6 +197,28 @@ def load_djia_daily(cache_dir: str | None = None) -> pd.DataFrame:
     return df.rename(columns={"adj_close": "close", "close": "raw_close"})
 
 
+def load_fred(series: str) -> pd.Series:
+    """One daily series from FRED (St. Louis Fed), e.g. "SP500" (S&P 500 price, last ~10 years)
+    or "DGS10" (10-year Treasury yield, %). Public CSV endpoint, no key needed."""
+    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}"
+    df = pd.read_csv(url, index_col=0, parse_dates=True)
+    return pd.to_numeric(df.iloc[:, 0], errors="coerce").dropna().rename(series)
+
+
+def fred_daily_proxies(div_yield: float = 0.012, duration: float = 7.5,
+                       sp500: pd.Series | None = None, dgs10: pd.Series | None = None) -> pd.DataFrame:
+    """Daily total-return proxies from FRED: S&P 500 price plus a steady dividend accrual, and a
+    7-10y Treasury index built from the 10-year yield (carry minus duration x yield change).
+    Good enough for monthly SIGNALS; not a substitute for traded prices."""
+    sp = sp500 if sp500 is not None else load_fred("SP500")
+    y = (dgs10 if dgs10 is not None else load_fred("DGS10")) / 100
+    days = sp.index.intersection(y.index)
+    sp, y = sp[days], y[days]
+    stocks = sp * (1 + div_yield / 252) ** np.arange(len(days))
+    bonds = (1 + (y.shift(1) / 252 - duration * y.diff()).fillna(0.0)).cumprod()
+    return pd.DataFrame({"stocks": stocks, "bonds": bonds}, index=days)
+
+
 def load_csv(path: str, date_col: str = "Date", close_col: str = "Close") -> pd.DataFrame:
     """Load a CSV of daily prices (e.g. downloaded from Yahoo Finance / Stooq)."""
     df = pd.read_csv(path, parse_dates=[date_col]).set_index(date_col).sort_index()

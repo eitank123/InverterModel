@@ -47,11 +47,16 @@ if a.broker == "alpaca":
     monthly = splice_monthly(history, month_ends)
     source = f"history to {month_ends.index[0]:%Y-%m}, live {SIGNAL} month-ends to {month_ends.index[-1]:%Y-%m-%d}"
 else:
-    monthly = history
+    try:                                               # real data from FRED when reachable
+        month_ends = completed_month_ends(at.data.fred_daily_proxies())
+        monthly = splice_monthly(history, month_ends)
+        source = f"history + FRED S&P 500 / 10y yield month-ends to {month_ends.index[-1]:%Y-%m-%d}"
+    except Exception as e:                             # offline
+        monthly = history
+        source = f"offline history only ({type(e).__name__})"
     prices = {"SPY": 650.0, "UPRO": 105.0, "IEF": 95.0, "UST": 45.0}
     broker = at.broker.PaperBroker(cash=100_000, prices=prices)
     a.execute = True                                   # nothing real can happen here
-    source = "offline history only (no broker connection)"
 
 targets, exposure = target_etf_weights(strategy, monthly)
 print(f"Champion: {CHAMPION['name']} {CHAMPION['params']}")
