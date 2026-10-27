@@ -1,12 +1,19 @@
-"""Vectorised single-asset backtester with transaction costs.
+"""Vectorised backtester with transaction costs, for one asset or a portfolio.
 
 Timing convention (the single most important thing to get right):
 
-    bar t close:   strategy sees prices[:t+1] and outputs target position p_t
-                   we trade from p_{t-1} to p_t, paying cost * |p_t - p_{t-1}|
-    bar t+1 close: we earn p_t * r_{t+1}, where r_{t+1} = P_{t+1}/P_t - 1
+    bar t close:   strategy sees prices[:t+1] and outputs target weights w_t
+                   we trade from w_{t-1} to w_t, paying cost * |w_t - w_{t-1}|
+    bar t+1 close: we earn w_t . r_{t+1}, where r_{t+1} = P_{t+1}/P_t - 1
 
-So strategy return on bar t is  p_{t-1} * r_t - cost * |p_t - p_{t-1}|.
+So the return on bar t is
+
+    w_{t-1} . r_t  +  (1 - sum(w_{t-1})) * cash_t  -  cost * sum|w_t - w_{t-1}|
+
+The middle term matters: capital you don't invest sits in cash and earns interest,
+and capital you borrow (sum of weights > 1) pays it. Ignoring it makes "sit in cash"
+strategies look worse than they are when rates are high, and leverage look free.
+
 Trading at the same close you computed the signal on is a slight idealisation; set
 ``execution_lag=1`` to trade one bar later (more conservative).
 """
@@ -17,17 +24,17 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 from . import metrics
-from .strategy import Strategy
+from .strategy import PortfolioStrategy, Strategy
 
 
 @dataclass
 class BacktestResult:
     name: str
-    prices: pd.Series
-    positions: pd.Series      # position held during each bar (after lag)
+    prices: pd.Series | pd.DataFrame
+    positions: pd.Series | pd.DataFrame   # weight held during each bar (after lag)
     gross_returns: pd.Series
     costs: pd.Series
-    returns: pd.Series        # net of costs
+    returns: pd.Series                    # net of costs, including cash interest
     stats: dict[str, float] = field(default_factory=dict)
 
     @property
@@ -40,27 +47,54 @@ class BacktestResult:
                 f"MaxDD {s['max_drawdown']:.1%}>")
 
 
-def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy,
+def _cash_series(cash: float | pd.Series, index: pd.Index, ppy: int) -> pd.Series:
+    """Per-bar cash return from an annual rate (float or Series of annual rates)."""
+    if isinstance(cash, pd.Series):
+        return (cash.reindex(index).ffill().fillna(0.0) / ppy)
+    return pd.Series(cash / ppy, index=index)
+
+
+def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy | PortfolioStrategy,
                  cost_bps: float = 2.0, execution_lag: int = 0,
+                 cash_rate: float | pd.Series = 0.0, ppy: int | None = None,
                  name: str | None = None) -> BacktestResult:
     """Backtest ``strategy`` on ``prices``.
 
-    cost_bps: one-way cost per unit of position traded, in basis points (1bp = 0.01%).
-              Covers commission + half the bid/ask spread + slippage. 1-5bp is realistic
-              for liquid ETFs/futures, much more for small caps or crypto.
+    prices:    Series (one asset), DataFrame with a ``close`` column (one asset), or a
+               DataFrame with one column per asset (portfolio; needs a PortfolioStrategy).
+               Use *total-return* prices (dividends reinvested) whenever you can.
+    cost_bps:  one-way cost per unit of weight traded, in basis points (1bp = 0.01%).
+               Covers commission + half the bid/ask spread + slippage. 1-5bp is realistic
+               for liquid ETFs/futures, much more for small caps or crypto.
+    cash_rate: annual interest earned on uninvested capital (and paid on leverage).
+               A float, or a Series of annual rates (e.g. T-bill yield over time).
     """
-    if isinstance(prices, pd.DataFrame):
+    if isinstance(prices, pd.DataFrame) and "close" in prices.columns:
         prices = prices["close"]
-    target = strategy.positions(prices).reindex(prices.index).fillna(0.0)
+    ppy = ppy or metrics.infer_ppy(prices.index)
+
+    if isinstance(prices, pd.DataFrame):
+        if not isinstance(strategy, PortfolioStrategy):
+            raise TypeError("multi-asset prices need a PortfolioStrategy (e.g. PerAsset)")
+        target = strategy.weights(prices).reindex(prices.index).fillna(0.0)
+    else:
+        target = strategy.positions(prices).reindex(prices.index).fillna(0.0)
     if execution_lag:
         target = target.shift(execution_lag).fillna(0.0)
 
     asset_ret = prices.pct_change().fillna(0.0)
-    held = target.shift(1).fillna(0.0)              # position during bar t
+    held = target.shift(1).fillna(0.0)                 # weight during bar t
     trades = target.diff().abs().fillna(target.abs())
+    invested = held
+    if isinstance(prices, pd.DataFrame):
+        trades = trades.sum(axis=1)
+        gross = (held * asset_ret).sum(axis=1)
+        invested = held.sum(axis=1)
+    else:
+        gross = held * asset_ret
+    cash = _cash_series(cash_rate, prices.index, ppy) * (1 - invested)
     costs = trades * cost_bps / 1e4
-    gross = held * asset_ret
-    net = gross - costs
+    net = gross + cash - costs
 
     return BacktestResult(
         name=name or repr(strategy),
@@ -69,7 +103,7 @@ def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy,
         gross_returns=gross,
         costs=costs,
         returns=net,
-        stats=metrics.summary(net, held),
+        stats=metrics.summary(net, held, ppy),
     )
 
 

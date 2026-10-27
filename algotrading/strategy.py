@@ -16,6 +16,8 @@ from abc import ABC, abstractmethod
 import numpy as np
 import pandas as pd
 
+from .metrics import infer_ppy
+
 
 class Strategy(ABC):
     @abstractmethod
@@ -107,6 +109,90 @@ class VolTarget(Strategy):
         self.lookback, self.max_leverage = lookback, max_leverage
 
     def positions(self, prices: pd.Series) -> pd.Series:
-        realised = prices.pct_change().rolling(self.lookback).std() * np.sqrt(252)
+        ppy = infer_ppy(prices.index)
+        realised = prices.pct_change().rolling(self.lookback).std() * np.sqrt(ppy)
         scale = (self.target_vol / realised).clip(upper=self.max_leverage).fillna(0.0)
         return self.base.positions(prices) * scale
+
+
+class PriceAboveSMA(Strategy):
+    """Faber (2007) timing rule: long when price > its ``window``-bar moving average,
+    else in cash. Classic version: monthly bars, window=10 (~ the 200-day average)."""
+
+    def __init__(self, window: int = 10):
+        self.window = window
+
+    def positions(self, prices: pd.Series) -> pd.Series:
+        sma = prices.rolling(self.window).mean()
+        return (prices > sma).astype(float).where(sma.notna(), 0.0)
+
+
+class TrendEnsemble(Strategy):
+    """Average of time-series momentum signals over several lookbacks.
+
+    Hurst, Ooi & Pedersen ("A Century of Evidence on Trend-Following", AQR) use an
+    equal mix of 1-, 3- and 12-month lookbacks. Averaging hedges *parameter risk*:
+    we don't know which horizon trends at, so we hold a bit of each. The output is in
+    [-1, 1] and naturally scales down when the horizons disagree.
+    Lookbacks are in bars: (21, 63, 252) for daily data, (1, 3, 12) for monthly.
+    """
+
+    def __init__(self, lookbacks: tuple[int, ...] = (21, 63, 252), allow_short: bool = True):
+        self.lookbacks, self.allow_short = tuple(lookbacks), allow_short
+
+    def positions(self, prices: pd.Series) -> pd.Series:
+        sigs = [np.sign(prices.pct_change(lb)) for lb in self.lookbacks]
+        # Stay flat until the longest lookback has data.
+        ready = prices.pct_change(max(self.lookbacks)).notna()
+        pos = (sum(sigs) / len(sigs)).where(ready, 0.0)
+        return pos if self.allow_short else pos.clip(lower=0.0)
+
+
+# --- Portfolios ----------------------------------------------------------------------
+
+class PortfolioStrategy(ABC):
+    """Maps a DataFrame of prices (one column per asset) to a DataFrame of weights."""
+
+    @abstractmethod
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        """Target weight per asset per bar. sum(|w|) is gross exposure (leverage)."""
+
+    def __repr__(self) -> str:
+        params = ", ".join(f"{k}={v}" for k, v in vars(self).items())
+        return f"{type(self).__name__}({params})"
+
+
+class PerAsset(PortfolioStrategy):
+    """Run a single-asset strategy on every column and give each an equal 1/N budget."""
+
+    def __init__(self, strategy: Strategy):
+        self.strategy = strategy
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        w = pd.DataFrame({c: self.strategy.positions(prices[c]) for c in prices.columns})
+        return w / prices.shape[1]
+
+
+class PortfolioVolTarget(PortfolioStrategy):
+    """Scale a portfolio's weights so its *combined* realised volatility hits a target.
+
+    Diversification lowers portfolio vol below the per-asset vol; this layer levers it
+    back up so a better Sharpe turns into more return at the same risk.
+    """
+
+    def __init__(self, base: PortfolioStrategy, target_vol: float = 0.10,
+                 lookback: int = 60, max_leverage: float = 3.0):
+        self.base, self.target_vol = base, target_vol
+        self.lookback, self.max_leverage = lookback, max_leverage
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        w = self.base.weights(prices)
+        ppy = infer_ppy(prices.index)
+        # Returns the base portfolio *would have* earned, using only past weights.
+        port_ret = (w.shift(1) * prices.pct_change()).sum(axis=1)
+        realised = port_ret.rolling(self.lookback).std() * np.sqrt(ppy)
+        scale = (self.target_vol / realised).clip(upper=self.max_leverage)
+        scale = scale.replace([np.inf, -np.inf], np.nan).fillna(0.0)
+        gross = w.abs().sum(axis=1)
+        scale = np.minimum(scale, self.max_leverage / gross.where(gross > 0, np.inf))
+        return w.mul(scale, axis=0)

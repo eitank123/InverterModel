@@ -9,6 +9,8 @@ synthetic data the unit test for your research process.
 """
 from __future__ import annotations
 
+import os
+
 import numpy as np
 import pandas as pd
 
@@ -80,6 +82,53 @@ def regime_switching(n: int = 2520, mus: tuple[float, ...] = (0.30, -0.30),
     log_ret[0] = 0.0
     close = s0 * np.exp(np.cumsum(log_ret))
     return pd.DataFrame({"close": close, "regime": regime}, index=_index(n, start))
+
+
+def panel(generator=regime_switching, n_assets: int = 10, seed: int = 0,
+          **kwargs) -> pd.DataFrame:
+    """Independent synthetic assets side by side: one ``close`` column per asset."""
+    cols = {f"asset_{i:02d}": generator(seed=seed * 1000 + i, **kwargs)["close"]
+            for i in range(n_assets)}
+    return pd.DataFrame(cols)
+
+
+SHILLER_URL = "https://raw.githubusercontent.com/datasets/s-and-p-500/main/data/data.csv"
+SHILLER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "sp500_shiller_monthly.csv")
+
+
+def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
+    """Monthly S&P 500 since 1871 (Robert Shiller's dataset, via datasets/s-and-p-500).
+
+    Columns:
+      close      price index (no dividends)
+      tr         total-return index: dividends reinvested -> what an investor really earned
+      dividend   annualised dividend per share
+      long_rate  10-year government bond yield, as a decimal (0.05 = 5%)
+      cpi        consumer price index
+
+    Caveats you must know before trusting results on this data:
+      * Prices up to mid-2023 are *monthly averages of daily closes*, not month-end
+        closes. Averaging smooths the series and creates artificial positive
+        autocorrelation in monthly returns, which flatters short-lookback momentum.
+        Use ``execution_lag=1`` as a guard.
+      * After 2023-06 only the price is published; dividends and rates are carried
+        forward from the last known value (dividend *yield* held constant).
+    """
+    path = path or SHILLER_PATH
+    if not os.path.exists(path):
+        path = SHILLER_URL
+    raw = pd.read_csv(path, parse_dates=["Date"]).set_index("Date").sort_index()
+    df = pd.DataFrame({"close": raw["SP500"]})
+    div = raw["Dividend"].replace(0.0, np.nan)
+    last = div.last_valid_index()
+    yield_last = div[last] / df.loc[last, "close"]
+    div[div.index > last] = df.loc[div.index > last, "close"] * yield_last
+    df["dividend"] = div.ffill()
+    df["long_rate"] = raw["Long Interest Rate"].replace(0.0, np.nan).ffill() / 100
+    df["cpi"] = raw["Consumer Price Index"].replace(0.0, np.nan).ffill()
+    monthly_tr = (df["close"] + df["dividend"] / 12) / df["close"].shift(1) - 1
+    df["tr"] = df["close"].iloc[0] * (1 + monthly_tr.fillna(0.0)).cumprod()
+    return df
 
 
 def load_csv(path: str, date_col: str = "Date", close_col: str = "Close") -> pd.DataFrame:

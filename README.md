@@ -1,27 +1,34 @@
 # Algo_trading
 
 A small, readable backtesting framework for learning algorithmic trading. It's built
-to be read and changed, not used as a black box. See **[ROADMAP.md](ROADMAP.md)** for
-the learning plan.
+to be read and changed, not used as a black box.
+
+* **[ROADMAP.md](ROADMAP.md)**: the learning plan
+* **[docs/lessons/](docs/lessons/)**: market concepts, introduced as experiments need them
+* **[docs/research_log.md](docs/research_log.md)**: every experiment: hypothesis, result, lesson
 
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q                 # 15 tests, < 1 s
+python -m pytest -q                 # 26 tests, ~2 s
 python scripts/run_demo.py          # strategies on 3 synthetic markets -> results/*.png
 python scripts/overfitting_demo.py  # how parameter search fools you
+python scripts/experiments/exp01_sp500_trend.py      # trend timing on 155 years of S&P 500
+python scripts/experiments/exp02_diversification.py  # breadth, parameter risk, costs
 ```
 
 ## Layout
 
 | File | What it does |
 |---|---|
-| `algotrading/data.py` | Synthetic markets with known structure (GBM random walk, Ornstein-Uhlenbeck mean reversion, regime-switching trends) plus CSV and Yahoo loaders |
-| `algotrading/strategy.py` | `Strategy` base class and examples: buy & hold, SMA crossover, momentum, z-score mean reversion, volatility targeting |
-| `algotrading/backtest.py` | Vectorised backtester with explicit timing and transaction costs, plus comparison tables and plots |
-| `algotrading/metrics.py` | Sharpe, Sortino, CAGR, max drawdown, Calmar, turnover, … |
+| `algotrading/data.py` | Synthetic markets with known structure (GBM random walk, Ornstein-Uhlenbeck mean reversion, regime-switching trends, multi-asset panels); 155 years of S&P 500 total return (`load_shiller_sp500`); CSV and Yahoo loaders |
+| `algotrading/strategy.py` | Single-asset strategies: buy & hold, SMA crossover, Faber SMA-10, momentum, trend ensemble, z-score mean reversion, vol targeting. Portfolios: `PerAsset`, `PortfolioVolTarget` |
+| `algotrading/backtest.py` | Vectorised backtester for one asset or a portfolio: explicit timing, transaction costs, interest on cash/leverage |
+| `algotrading/metrics.py` | Sharpe, Sortino, CAGR, max drawdown, turnover, Probabilistic and Deflated Sharpe; any bar frequency |
 | `algotrading/validation.py` | Lookahead detector, grid search, walk-forward, Monte-Carlo Sharpe null distribution |
+| `scripts/experiments/` | Reproducible research experiments (see the research log) |
+| `data/` | Shiller S&P 500 monthly dataset (public domain, via github.com/datasets/s-and-p-500) |
 | `tests/` | Correctness tests, including timing, costs and lookahead |
 
 ## The core model

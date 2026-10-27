@@ -16,7 +16,7 @@ the work is learning not to fool yourself. The math is the easy part for you.
 - **Exercise:** run `scripts/run_demo.py`. Explain *why* each strategy wins or loses in
   each market. Then change `cost_bps` to 10 and see which strategies survive.
 
-## Phase 2: Research hygiene (2–3 weeks), the most important phase
+## Phase 2: Research hygiene (2–3 weeks), the most important phase 🔄 (in progress)
 - Overfitting and multiple testing: `scripts/overfitting_demo.py`. Read about the
   Deflated Sharpe Ratio (Bailey & López de Prado).
 - Train/test split, walk-forward, and why you can only use the test set **once**.
@@ -26,11 +26,12 @@ the work is learning not to fool yourself. The math is the easy part for you.
   out-of-sample Sharpe near zero across many seeds.
 
 ## Phase 3: Real data and classic strategies (3–4 weeks)
-- Download daily data for liquid ETFs (SPY, QQQ, TLT, GLD) using `load_yahoo`.
+- ✅ 155 years of S&P 500 total return (Shiller). Trend timing tested in Experiment 1.
+- Download daily data for liquid ETFs (SPY, QQQ, TLT, GLD) using `load_yahoo`
+  (needs network access to Yahoo Finance).
 - Reproduce known effects: time-series momentum (Moskowitz, Ooi & Pedersen 2012),
   volatility targeting, and the 60/40 portfolio.
-- Extend the framework to **multiple assets** (portfolio weights instead of a single
-  position). This is the next coding milestone.
+- ✅ Multi-asset portfolios (`PerAsset`, `PortfolioVolTarget`). Breadth tested in Experiment 2.
 - Pairs trading / cointegration (Engle-Granger, Johansen), where your OU knowledge applies.
 
 ## Phase 4: Signal processing and ML (ongoing, plays to your EE strengths)

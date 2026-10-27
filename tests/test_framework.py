@@ -82,3 +82,85 @@ def test_walk_forward_runs(prices):
                                     {"lookback": [10, 40]}, prices,
                                     train_bars=400, test_bars=200)
     assert len(wf) == 3 and len(wf.attrs["oos_returns"]) == 600
+
+
+# --- Portfolio, cash, frequency and significance ---------------------------------------
+
+def test_infer_ppy():
+    assert at.metrics.infer_ppy(pd.bdate_range("2020-01-01", periods=50)) == 252
+    assert at.metrics.infer_ppy(pd.date_range("2000-01-01", periods=50, freq="MS")) == 12
+
+
+def test_flat_strategy_earns_cash():
+    px = at.data.gbm(252 * 5, seed=0)["close"]
+
+    class Flat(at.Strategy):
+        def positions(self, prices):
+            return pd.Series(0.0, index=prices.index)
+
+    res = at.run_backtest(px, Flat(), cash_rate=0.05)
+    assert abs(res.stats["cagr"] - 0.0513) < 0.002      # 5% compounded daily
+
+
+def test_leverage_pays_cash_rate(prices):
+    class Levered(at.Strategy):
+        def positions(self, prices):
+            return pd.Series(2.0, index=prices.index)
+
+    a = at.run_backtest(prices, Levered(), cost_bps=0, cash_rate=0.0)
+    b = at.run_backtest(prices, Levered(), cost_bps=0, cash_rate=0.05)
+    assert np.allclose((a.returns - b.returns).iloc[1:], 0.05 / 252)
+
+
+def test_portfolio_equal_weight_matches_average():
+    px = at.data.panel(at.data.gbm, n_assets=3, seed=1, n=500)
+    res = at.run_backtest(px, at.PerAsset(at.BuyAndHold()), cost_bps=0)
+    expected = px.pct_change().fillna(0.0).mean(axis=1)
+    assert np.allclose(res.returns.iloc[1:], expected.iloc[1:])
+    assert np.isclose(res.stats["exposure"], 1.0, atol=0.01)
+
+
+def test_portfolio_vol_target_is_causal():
+    px = at.data.panel(at.data.regime_switching, n_assets=3, seed=2, n=800)
+    strat = at.PortfolioVolTarget(at.PerAsset(at.TrendEnsemble((10, 50))), target_vol=0.1)
+    full = strat.weights(px)
+    t = 500
+    tampered = px.copy()
+    tampered.iloc[t:] *= 1.7
+    assert np.allclose(full.iloc[:t], strat.weights(tampered).iloc[:t])
+
+
+def test_portfolio_vol_target_hits_target():
+    px = at.data.panel(at.data.regime_switching, n_assets=10, seed=3, n=2520)
+    strat = at.PortfolioVolTarget(at.PerAsset(at.TrendEnsemble()), target_vol=0.10)
+    vol = at.run_backtest(px, strat, cost_bps=0).stats["ann_vol"]
+    assert 0.08 < vol < 0.12
+
+
+@pytest.mark.parametrize("strategy", [at.PriceAboveSMA(10), at.TrendEnsemble((5, 20, 60))],
+                         ids=repr)
+def test_new_strategies_no_lookahead(strategy, prices):
+    assert at.validation.check_no_lookahead(strategy, prices)
+
+
+def test_expected_max_sharpe_matches_simulation():
+    rng = np.random.default_rng(0)
+    sims = rng.standard_normal((20000, 100)).max(axis=1).mean()
+    assert abs(at.metrics.expected_max_sharpe(100, 1.0) - sims) < 0.05
+
+
+def test_psr_and_dsr_behave():
+    rng = np.random.default_rng(1)
+    idx = pd.bdate_range("2000-01-01", periods=2520)
+    r = pd.Series(rng.normal(0.0004, 0.01, 2520), index=idx)    # true SR ~ 0.63
+    psr_short = at.metrics.probabilistic_sharpe(r.iloc[:252])
+    psr_long = at.metrics.probabilistic_sharpe(r)
+    assert psr_long > psr_short and psr_long > 0.9
+    assert at.metrics.deflated_sharpe(r, n_trials=1000, trial_sharpes_std=0.5) < psr_long
+
+
+def test_shiller_data_sane():
+    df = at.data.load_shiller_sp500()
+    assert df.index[0].year == 1871 and df.notna().all().all()
+    tr_cagr = at.metrics.cagr(df["tr"].pct_change().dropna())
+    assert 0.08 < tr_cagr < 0.11     # ~9-10% nominal total return, per the literature
