@@ -17,13 +17,17 @@ python scripts/today.py              # what the rule holds right now
 3. Allow network access to `paper-api.alpaca.markets` and `data.alpaca.markets`
    (and `api.alpaca.markets` for live). In this cloud environment: open the environment menu in the
    session's title bar → Edit → Network access, and add these hosts.
-4. Dry run, then send paper orders:
+4. Dry run, then send paper orders for the **current champion** (the ensemble). The signal joins the
+   long history to live SPY/IEF month-end closes; trades go through SPY, UPRO, IEF and UST:
    ```bash
-   python scripts/rebalance.py --broker alpaca             # shows orders, sends nothing
-   python scripts/rebalance.py --broker alpaca --execute   # sends PAPER orders
+   python scripts/live_trade.py --broker alpaca             # shows orders, sends nothing
+   python scripts/live_trade.py --broker alpaca --execute   # sends PAPER orders
    ```
-5. Schedule it monthly (first trading day after month end). Options: cron on your computer,
-   a small cloud VM, or a scheduled Claude Code session that runs the script and reports to you.
+   Every real-market run is appended to `loop/live/runs.jsonl`. (`scripts/rebalance.py` still runs
+   the original frozen 60/40 rule.)
+5. Scheduling is already done: the improvement-loop routine runs every 4 hours, and once the keys
+   and network access are in place it runs the paper command above each time. Rerunning is safe:
+   the signal only changes when a month completes, and drifts under 2% are not traded.
 6. Each month, compare paper fills with what the backtest assumed (prices, costs, timing).
    **The gap is your real cost model.**
 

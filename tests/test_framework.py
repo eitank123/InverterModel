@@ -577,3 +577,19 @@ def test_etf_weights_reproduce_exposure_without_margin():
         assert abs(stocks - st) < 1e-5 and abs(bonds - bd) < 1e-5
         if st + bd <= 3 * 1.0 and st <= 3 * (1 - min(bd, 1)):
             assert sum(w.values()) <= 1.0 + 1e-9          # fully funded: no margin loan
+
+
+def test_splice_monthly_uses_live_returns_after_anchor():
+    from algotrading.live import completed_month_ends, splice_monthly
+    hist = pd.DataFrame({"stocks": np.arange(1.0, 25.0), "bonds": 1.0},
+                        index=pd.date_range("2020-01-01", periods=24, freq="MS"))
+    days = pd.bdate_range("2021-06-01", "2022-03-15")
+    live = pd.DataFrame({"stocks": np.linspace(100, 200, len(days)), "bonds": 50.0}, index=days)
+    me = completed_month_ends(live, asof=pd.Timestamp("2022-03-15"))
+    assert me.index[-1] == pd.Timestamp("2022-02-28")             # March still running: dropped
+    out = splice_monthly(hist, me)
+    assert out.index.is_monotonic_increasing and not out.index.duplicated().any()
+    assert out.loc["2021-05-01", "stocks"] == hist.loc["2021-05-01", "stocks"]   # untouched before
+    assert out.loc["2021-06-01", "stocks"] == hist.loc["2021-06-01", "stocks"]   # anchor
+    r_live = me["stocks"].iloc[-1] / me["stocks"].iloc[-2] - 1
+    assert abs(out["stocks"].iloc[-1] / out["stocks"].iloc[-2] - 1 - r_live) < 1e-12
