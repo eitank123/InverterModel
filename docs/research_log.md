@@ -552,6 +552,37 @@ Holding 2× Treasuries instead of cash when out raised training growth to 13.6%.
 
 ---
 
+## Experiment 17: daily trading vs the monthly approach (`scripts/experiments/exp17_daily_trading.py`)
+Data: DJIA daily 2007–2016, a price index with no dividends, the only daily data reachable offline. All rules are published ones with no fitted parameters. Signals trade one day after they fire.
+
+| Rule (cost per side) | 0bp | 1bp | 5bp | Trades/yr | Max DD |
+|---|---|---|---|---|---|
+| Buy & hold | 4.8% | 4.7% | 4.7% | 0 | −54% |
+| 200-day average | 3.0% | 3.0% | 2.6% | 4 | −16% |
+| 20-day momentum | 3.2% | 2.9% | 1.8% | 13 | −26% |
+| 1-day reversal | 2.4% | 1.1% | −4.1% | 66 | −23% |
+| RSI(2) (Connors) | 0.9% | 0.7% | 0.2% | 7 | −14% |
+| Turn of the month | 0.1% | −0.2% | −1.1% | 12 | −30% |
+| Intraday only | 6.1% | 0.9% | −17.6% | 252 | −51% |
+
+* **No daily rule beat buy & hold even with free trading,** except "intraday only", whose edge disappears at 0.3bp per side.
+  * The overnight/intraday split is unreliable on index data, because index opens are stale.
+* **Costs scale with turnover:**
+  * 66 trades a year at 5bp costs about 6.6% a year, more than the whole market return;
+  * the monthly champion trades about 10 times a year, costing well under 0.1% a year.
+* The daily 200-day average behaves like the monthly 10-month rule:
+  * less return in this window (it sat out the 2009 rebound);
+  * a much smaller drawdown (−16% vs −54%).
+* **Why:** short-horizon predictability in index prices is tiny (Exp 6), and it is where the professionals compete hardest:
+  * market makers and high-frequency firms;
+  * colocated servers;
+  * rebates for providing liquidity.
+
+  A retail account pays the spread on every round trip. Short-term gains are also taxed at higher rates in many countries (e.g. the US).
+* **Where daily data can still help:** faster crash exits for the monthly rules (an open direction). Testing that needs daily SPY/IEF bars, which come with the Alpaca connection.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
