@@ -33,10 +33,10 @@ acceptable; ruin is not.
 ## Directions explored so far
 Leverage on trend-filtered portfolios · stock/bond mixes · Gayed-Bilello levered S&P ·
 volatility targeting · trend-strength leverage · valuation-scaled Kelly · leveraged bonds ·
-≤2× deployable variants.
+≤2× deployable variants · drawdown brake · levered dual momentum · Sell-in-May seasonality (watch list).
 
 ## Open directions (candidates for coming rounds)
-Daily-reset leveraged ETFs (volatility decay) vs futures · drawdown-based de-leveraging ·
-dual momentum (stocks vs bonds vs cash) under leverage · seasonality (Sell in May / turn of month) ·
+Daily-reset leveraged ETFs (volatility decay) vs futures ·
+turn-of-month effects ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·
 more markets once data access is allowed.

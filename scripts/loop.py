@@ -151,7 +151,79 @@ def iteration_3():
     ]
 
 
-ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3}
+class DrawdownBrake(at.PortfolioStrategy):
+    """Base leverage L; after the strategy's own equity falls more than ``dd`` from its peak,
+    cut to ``safe`` leverage until a new high (uses only past returns)."""
+
+    def __init__(self, base, lev, dd, safe=1.0):
+        self.base, self.lev, self.dd, self.safe = base, lev, dd, safe
+
+    def weights(self, prices):
+        w = self.base.weights(prices)
+        r = (w.shift(1) * prices.pct_change()).sum(axis=1).to_numpy()
+        lev = np.empty(len(r))
+        eq, peak, cur = 1.0, 1.0, self.lev
+        for t in range(len(r)):
+            eq *= 1 + cur * r[t]                           # equity at the leverage actually held
+            peak = max(peak, eq)
+            cur = self.safe if eq / peak - 1 < -self.dd else self.lev
+            lev[t] = cur
+        return w.mul(lev, axis=0)
+
+
+class DualMomentumLevered(at.PortfolioStrategy):
+    """Each month hold the stronger of stocks or bonds at leverage L if its 12-month return beats
+    cash, else cash (Antonacci's dual momentum, levered)."""
+
+    def __init__(self, lev, lookback=12):
+        self.lev, self.lookback = lev, lookback
+        df = at.data.load_shiller_sp500()
+        self.cash = (df["long_rate"] - 0.015).clip(lower=0)
+
+    def weights(self, prices):
+        mom = prices.pct_change(self.lookback)
+        hurdle = self.cash.reindex(prices.index).ffill() * self.lookback / 12
+        best = mom.fillna(-np.inf).idxmax(axis=1)
+        ok = mom.max(axis=1) > hurdle
+        w = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
+        for c in prices.columns:
+            w.loc[(best == c) & ok, c] = self.lev
+        return w.where(mom.notna().all(axis=1), 0.0)
+
+
+class SeasonalLeverage(at.PortfolioStrategy):
+    """Lever the base in November-April, hold ``summer`` leverage May-October (Bouman & Jacobsen
+    2002, 'Sell in May'). The weight decided at month t is held in month t+2 (execution lag 1),
+    so the calendar is shifted accordingly."""
+
+    def __init__(self, base, winter, summer):
+        self.base, self.winter, self.summer = base, winter, summer
+
+    def weights(self, prices):
+        held_month = (prices.index + pd.DateOffset(months=2)).month
+        lev = np.where(np.isin(held_month, [11, 12, 1, 2, 3, 4]), self.winter, self.summer)
+        return self.base.weights(prices).mul(lev, axis=0)
+
+
+def iteration_4():
+    """Checkpoint 3 open directions: drawdown brakes, dual momentum, seasonality, valuation x trend."""
+    return [
+        Candidate("S&P+SMA10 xL + drawdown brake", "drawdown brake",
+                  lambda lev, dd: DrawdownBrake(filtered(1.0), lev, dd),
+                  {"lev": [2.0, 3.0], "dd": [0.15, 0.25, 0.35]}),
+        Candidate("dual momentum xL", "dual momentum",
+                  lambda lev: DualMomentumLevered(lev), {"lev": [1.0, 1.5, 2.0, 3.0]},
+                  note="Antonacci (2014): strongest of stocks/bonds if it beats cash"),
+        Candidate("seasonal leverage S&P+SMA10", "seasonality",
+                  lambda w_, s_: SeasonalLeverage(filtered(1.0), w_, s_),
+                  {"w_": [2.0, 3.0], "s_": [0.5, 1.0, 2.0]}, note="Sell in May (Bouman & Jacobsen 2002)"),
+        Candidate("valuation-scaled leverage <=3x", "valuation leverage",
+                  lambda w, k: CappedValuationLeverage(w, k, 0.5, 3.0),
+                  {"w": [0.6, 1.0], "k": [1.5, 2.0, 3.0]}),
+    ]
+
+
+ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4}
 
 
 def run(iters, financings=(0.005, 0.015)):

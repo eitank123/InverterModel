@@ -349,143 +349,143 @@ year,strategy,return
 2024,"60/40+SMA10 xL {""lev"": 4.0}",0.8066242364320324
 2025,"60/40+SMA10 xL {""lev"": 4.0}",0.028941978502368126
 2026,"60/40+SMA10 xL {""lev"": 4.0}",0.3026161964875058
-1957,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.3024484292219073
-1958,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5350488381301393
-1959,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.2463748717529064
-1960,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.13272151536890808
-1961,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.629313700521539
-1962,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.21717193500302068
-1963,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.33260303351647313
-1964,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.31108566387700143
-1965,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.13832621334611805
-1966,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10052584653445162
-1967,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.21018787163060404
-1968,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.044712050634837075
-1969,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.2453826158347433
-1970,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.19352769711193085
-1971,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.06502754430781099
-1972,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.2946039214814016
-1973,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.2721233717113719
-1974,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.06228485801990047
-1975,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.13124288361772485
-1976,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3892752556779542
-1977,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06951171378440357
-1978,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.001603915129716471
-1979,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.1873673362493995
-1980,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.32508035054810835
-1981,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.04205289569525905
-1982,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.21567291664979749
-1983,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3628862133579971
-1984,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06446108188303068
-1985,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5509010473129854
-1986,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4283159672147472
-1987,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09134254203723335
-1988,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.09151888646275341
-1989,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.5621927576030008
-1990,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.18264147318750756
-1991,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.10014758428771997
-1992,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.24805316562126678
-1993,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.15033972644135862
-1994,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10122533907193998
-1995,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.7995349432680776
-1996,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4332750126370368
-1997,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6201002187333104
-1998,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.12004202280280563
-1999,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.32500200214341435
-2000,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09926122126736736
-2001,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.03574739962295581
-2002,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.03712225796067836
-2003,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3383765379462069
-2004,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.22062155906213432
-2005,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.10477189554412414
-2006,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.25229290359212
-2007,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.07726730116693004
-2008,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.018235048151985622
-2009,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.41881046397977273
-2010,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.058884862938820115
-2011,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.11174665718316035
-2012,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.12969816322440098
-2013,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6470915998046314
-2014,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3141591334682432
-2015,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.09040875743759347
-2016,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.024822960209186284
-2017,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.4377427945377941
-2018,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.06667951509001657
-2019,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3034208632854849
-2020,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.0416526573004784
-2021,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6227716012039708
-2022,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",-0.10488900031071924
-2023,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.3072388379262012
-2024,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.6352747075574501
-2025,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.020035711327022865
-2026,"S&P+SMA10 x2 (deployable) {""lev"": 2.0}",0.24335338353923386
-1957,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.3066119242280948
-1958,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",1.400321475835216
-1959,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.31242460484401735
-1960,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.03595191698160294
-1961,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.6890182086592977
-1962,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.20966117521966365
-1963,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.33365731051550096
-1964,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.2486541578123702
-1965,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.1692166684627101
-1966,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.11188429832881097
-1967,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.2821678842499087
-1968,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.166571091262935
-1969,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.10060500272462758
-1970,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.061493045242333455
-1971,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.20017287976881093
-1972,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.3796030403491606
-1973,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.33915428246933144
-1974,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.5710736851695962
-1975,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.7690324359832093
-1976,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.4895927554485442
-1977,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.283515388255552
-1978,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.03289109833759718
-1979,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.36136589521604257
-1980,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.667895295489841
-1981,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.3039413390028255
-1982,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.22260671444996905
-1983,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.49842730389037526
-1984,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.13155658905666978
-1985,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.8125909921277055
-1986,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.6297227455145193
-1987,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.013333978506559707
-1988,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.20346293847637176
-1989,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.6638782866674571
-1990,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.11795344481355396
-1991,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.31138570365454776
-1992,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.20980000748131022
-1993,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.1414367499046416
-1994,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.032990202646518196
-1995,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.5011241985735622
-1996,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.2751669575746998
-1997,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.3188380621989886
-1998,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.2922600632016912
-1999,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.16701008275292573
-2000,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.0021225899421918326
-2001,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.04979328923424886
-2002,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.14674605513348193
-2003,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.40520742269734855
-2004,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.18711412823489093
-2005,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.0880863974061945
-2006,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.18069100550445794
-2007,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.0741789388235401
-2008,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.6868203961095904
-2009,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.2714081055210307
-2010,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.30246917474366564
-2011,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.020657187310453295
-2012,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.49877586301595134
-2013,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.9900320500902389
-2014,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.37168525447939116
-2015,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.029631648320052495
-2016,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.27507038583916166
-2017,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.4427595330901004
-2018,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.019342878008206665
-2019,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.49387142970727615
-2020,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.05144302813495971
-2021,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.4524516398615184
-2022,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",-0.3038609025979008
-2023,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.3482352285029542
-2024,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.45688182626162366
-2025,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.21454169583895122
-2026,"valuation-Kelly ungated {""f"": 1.0, ""cap"": 3.0}",0.18108362134574607
+1957,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.43516335952780527
+1958,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.8650047167797239
+1959,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.3543109209364519
+1960,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.20703214106895018
+1961,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",1.023123775241713
+1962,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.32706692597653986
+1963,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.5055192256912486
+1964,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.46875435924349884
+1965,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.18692458310323978
+1966,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.17074760503570852
+1967,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.29775330805429334
+1968,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.0347450412904291
+1969,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.37089767965456977
+1970,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.2590184732062064
+1971,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.05724505526988222
+1972,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.42562889241717916
+1973,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.40565324502133415
+1974,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.06228485801990047
+1975,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.13923762309820487
+1976,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.5589731108710854
+1977,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.1311210634167731
+1978,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.04682588641133767
+1979,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.22814081386320684
+1980,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.4017460128776662
+1981,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.12620611729881748
+1982,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.26295537141493464
+1983,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.49842730389037526
+1984,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.15044723974991603
+1985,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.8125909921277055
+1986,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.6297227455145193
+1987,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.245445295540764
+1988,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.08630369941043092
+1989,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.5929497382691873
+1990,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.3053601564302255
+1991,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.11436264257905004
+1992,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.34013617991719247
+1993,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.20197510805423402
+1994,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.1760587237475303
+1995,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",1.3239427530645762
+1996,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.648410936006496
+1997,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.963099381705357
+1998,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.13049613302952978
+1999,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.46530433458487286
+2000,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.17646684946576952
+2001,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.03574739962295581
+2002,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.07157446337726003
+2003,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.5167051071217035
+2004,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.3118035264300305
+2005,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.1347508053305455
+2006,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.367179435344694
+2007,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.08160247447853641
+2008,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.03844851293397422
+2009,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.655757992022044
+2010,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.057440553185929444
+2011,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.19593381001254095
+2012,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.1859314393395919
+2013,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",1.076155650637722
+2014,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.4822963055585556
+2015,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.1424287587795603
+2016,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.021106757231196704
+2017,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.7039916197619516
+2018,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.12205488136697973
+2019,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.46528410449736723
+2020,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.3791726976999418
+2021,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.28004816848142
+2022,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.14462831717215763
+2023,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.10547310608602545
+2024,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",1.0374006506097349
+2025,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",-0.0029374066038549973
+2026,"S&P+SMA10 xL + drawdown brake {""lev"": 3.0, ""dd"": 0.35}",0.3550821384461782
+1957,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.22751931210136245
+1958,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3788984377143203
+1959,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.37290315231548377
+1960,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.18832869330800783
+1961,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8978045079832218
+1962,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.19847052377565522
+1963,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3364209368762878
+1964,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3104799086645853
+1965,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.18946778237787787
+1966,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.04916200806439863
+1967,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.18537726237819885
+1968,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.06094407836157745
+1969,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.2092044574903853
+1970,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2590184732062064
+1971,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.21504136801264995
+1972,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.44042241412991334
+1973,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.3657865963270853
+1974,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.06228485801990047
+1975,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11140000030085462
+1976,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.611877768054413
+1977,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.09644549175070738
+1978,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0731498125093425
+1979,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2210687351441687
+1980,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.049603761106252975
+1981,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.00181377402113847
+1982,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.26295537141493464
+1983,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.4148092591558292
+1984,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.12697660590298498
+1985,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8017423082973851
+1986,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.6951151420471895
+1987,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0804099404929427
+1988,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.05800235634489748
+1989,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.47942555288736144
+1990,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.1345962677526017
+1991,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11184395435918293
+1992,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3440779854828586
+1993,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.11458326093509363
+1994,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.16831871628050887
+1995,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.8270594473446307
+1996,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.46685877863278114
+1997,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3509009172830535
+1998,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.39501564616143336
+1999,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.614698165226597
+2000,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.04155008922270853
+2001,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.03574739962295581
+2002,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0026030779280967753
+2003,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.2601865980773692
+2004,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.38141433755083054
+2005,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.09937690910538888
+2006,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.28003865038786335
+2007,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.00705938275240392
+2008,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.03844851293397422
+2009,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.29882846562842214
+2010,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3250975814920465
+2011,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.08865719159673979
+2012,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.09544070402195293
+2013,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.7327352439453809
+2014,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.3705491940504584
+2015,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.0011691396044267721
+2016,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.05238051922184572
+2017,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.44159113751722745
+2018,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.19744299247073926
+2019,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.388653848792762
+2020,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.2798518121605288
+2021,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.7442220550602798
+2022,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.16192102259355068
+2023,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.38931042465985066
+2024,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.6214870795263567
+2025,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",-0.1855491496172177
+2026,"seasonal leverage S&P+SMA10 {""w_"": 3.0, ""s_"": 1.0}",0.1420224476268086
