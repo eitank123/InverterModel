@@ -114,13 +114,14 @@ def evaluate(c: Candidate, ctx: Context) -> tuple[dict, pd.Series]:
 
 
 def forward_growth(strategy: PortfolioStrategy, ctx: Context, n_paths: int = 300,
-                   horizon: int = 120, seed: int = 0) -> dict:
+                   horizon: int = 120, seed: int = 0, stock_mean: float = 0.05) -> dict:
     """Expected 10-year growth at today's valuations: block bootstrap of 1957+ history
-    (stocks, bonds, cash jointly) with stock mean 5%/yr (CAPE ~41), bonds = current yield."""
+    (stocks, bonds, cash jointly) with stock mean 5%/yr (CAPE ~41; ``stock_mean`` to test other
+    views), bonds = current yield."""
     df = data.load_shiller_sp500()
     hist = pd.DataFrame({"stocks": ctx.px["stocks"].pct_change(), "bonds": ctx.px["bonds"].pct_change(),
                          "cash": ctx.cash / 12})["1957":].dropna()
-    target = pd.Series({"stocks": 0.05, "bonds": df["long_rate"].iloc[-1],
+    target = pd.Series({"stocks": stock_mean, "bonds": df["long_rate"].iloc[-1],
                         "cash": max(df["long_rate"].iloc[-1] - 0.015, 0)})
     arr = (hist + (target - hist.mean() * 12) / 12).to_numpy()
     rng = np.random.default_rng(seed)
