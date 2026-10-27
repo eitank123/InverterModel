@@ -29,6 +29,7 @@ python scripts/experiments/exp10_improve_filter.py   # whipsaw fixes, train/test
 python scripts/experiments/exp11_clean_bond_era.py   # re-check on reliable bond data
 python scripts/experiments/exp12_insurance_or_exposure.py  # filter vs vol-matched control
 python scripts/experiments/exp13_implementation.py   # month-end vs average vs daily (banded)
+python scripts/experiments/exp14_inflation_regime.py # inflation guard for bonds, train/test
 ```
 
 ## Layout

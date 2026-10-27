@@ -425,6 +425,26 @@ for nothing. **Recommended implementation: monthly check on month-end closes, or
 
 ---
 
+## Experiment 14: An inflation-regime guard for the bond sleeve
+`exp14_inflation_regime.py` · train 1957–1990, test 1991–2026, CPI lagged 2 months
+
+**Hypothesis.** Cutting bonds to cash when inflation is high and rising avoids the regimes where bonds
+stop hedging (Exp 4).
+
+| Excess Sharpe | train 1957–90 | test 1991–2026 |
+|---|---|---|
+| 60/40 | 0.35 | 0.85 |
+| 60/40+SMA10 [frozen] | **0.28** | **1.01** |
+| best guard on train (6%, rising) | 0.37 | 1.01 |
+
+* The guard looked good on train (+0.09) and added nothing on test (+0.004). It is active in only 3% of
+  test months, and the bond trend filter already exits bonds when rising inflation pushes yields up. **Rejected.**
+* **New finding:** in 1957–1990 the frozen trend filter had a *lower* excess Sharpe than plain 60/40. All of its
+  risk-adjusted advantage comes from 1991–2026 (and its drawdown benefit holds in both). So results depend on
+  the era: an edge that is real over 70 years can be absent for 30. Size expectations accordingly.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

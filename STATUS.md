@@ -1,6 +1,6 @@
 # Project status
 
-_Last updated: 2026-10-27 (after Experiments 6–13)_
+_Last updated: 2026-10-27 (after Experiments 6–14)_
 
 ## Where we are
 **Roadmap:** Phase 1 (simulator) ✅ · Phase 2 (research hygiene) ✅ · Phase 3 (real data) mostly ✅ ·
@@ -11,7 +11,7 @@ Phase 4 (math / signal processing) started.
 | Backtester | Single asset + portfolios, costs, cash interest, leverage with borrow spread, any bar frequency |
 | Statistics | Variance ratio, Hurst, Newey-West OLS, out-of-sample R², block bootstrap, Kelly, Probabilistic/Deflated Sharpe |
 | Data | S&P 500 + 10y bonds monthly 1871–2026 (bonds reliable only from 1953) · CAPE/earnings to 2023 · DJIA daily 2007–16 · 50k headlines |
-| Experiments | 13, all reproducible (`scripts/experiments/`); `scripts/today.py` prints current signals |
+| Experiments | 14, all reproducible (`scripts/experiments/`); `scripts/today.py` prints current signals |
 | Tests | 43 passing |
 
 ## The honest bottom line
@@ -23,6 +23,7 @@ Phase 4 (math / signal processing) started.
    Against a vol-matched constant-exposure control it still has smaller drawdowns (≈90% bootstrap
    probability), and synthetic tests show that happens only when markets trend (Exp 12).
    Implement it on month-end closes, or with a daily SMA-200 and a ±2% band (Exp 13).
+   Its risk-adjusted edge is era-dependent: absent in 1957–1990, present in 1991–2026 (Exp 14).
 3. **At today's valuations (CAPE ≈ 41) every candidate is expected to earn about 4–5%/yr nominal over 10
    years.** The candidates differ in downside: P(10-year loss) is 23% for the S&P 500 and 2.7% for the filtered 60/40.
 4. **Leverage is a dial, not an edge.** Kelly says 3.6× on stocks; history says 4× is ruin.
