@@ -1,0 +1,14 @@
+[
+ {"checkpoint": 1, "date": "2026-10-27", "iteration": 1,
+  "finding": "On 1991-2026 history, more leverage always won: S&P 500 + SMA10 at 3x made 24.5%/yr (max DD -66%). But the forward simulation at today's valuations showed leverage does not raise the median.",
+  "decision": "Leverage should follow the expected premium (Kelly: f = premium / variance). Try valuation-scaled leverage; widen leverage grids; lever the bond sleeve alone.",
+  "sources": "Gayed & Bilello (2016) Leverage for the Long Run; Kelly (1956)"},
+ {"checkpoint": 2, "date": "2026-10-27", "iteration": 2,
+  "finding": "Valuation-Kelly had the best TRAIN growth (13.8%/yr) but delevered through the 1991-2026 bull (test 14.9%). Expected wealth rises with leverage while median growth peaks near 2x (S&P+SMA10) or 2.5-3x (60/40+SMA10).",
+  "decision": "Map the expected-value frontier so the leverage choice is explicit. Rank only strategies an ordinary margin account can hold (<=2x) separately from futures-only ones.",
+  "sources": "Harvey et al. (2018) The Impact of Volatility Targeting; Ayres & Nalebuff, Lifecycle Investing"},
+ {"checkpoint": 3, "date": "2026-10-27", "iteration": 3,
+  "finding": "Deployable champion: S&P 500 + SMA10 x2: 14.4%/yr since 1957, 18.1% on the untouched test period, max DD -47%, a 1987-style crash day costs -41%. Forward at CAPE 41: median 4.3%/yr (best of the frontier), mean wealth 1.83x in 10 years.",
+  "decision": "Start forward paper accounts (deployable champion, research champion 60/40+SMA10 x3, 60/40 benchmark). Next: alternative trend signals under leverage, financing via leveraged ETFs (daily-reset decay), regime-specific leverage caps.",
+  "sources": "Exp 12-15 of the research log"}
+]

@@ -440,3 +440,38 @@ def test_kelly_portfolio_levers_calm_asset_and_respects_cap():
     assert w["bonds"] > w["stocks"] and abs(w.sum() - 2.0) < 1e-9
     floored = at.KellyPortfolio(mu, 0.5, cap=10, vol_floor={"bonds": 0.10}).weights(px).iloc[-1]
     assert floored["bonds"] < at.KellyPortfolio(mu, 0.5, cap=10).weights(px).iloc[-1]["bonds"]
+
+
+# --- Improvement loop and paper ledger -------------------------------------------------
+
+def test_crash_stress_uses_exposure_in_crash_month():
+    idx = pd.date_range("1987-01-01", periods=12, freq="MS")
+    pos = pd.DataFrame({"stocks": 2.0, "bonds": 0.0}, index=idx)
+    assert np.isclose(at.research.crash_stress(pos), 2.0 * -0.205)
+    pos.loc["1987-10", "stocks"] = 0.0                 # out of the market that month
+    assert at.research.crash_stress(pos) == 0.0
+
+
+def test_leaderboard_replaces_same_candidate(tmp_path):
+    lb = at.research.Leaderboard(str(tmp_path / "lb.csv"))
+    row = {"name": "x", "financing": 0.005, "test_cagr": 0.1, "ruin": False}
+    lb.add(row, 1)
+    lb.add({**row, "test_cagr": 0.2}, 2)
+    assert len(lb.df) == 1 and lb.df.iloc[0]["test_cagr"] == 0.2
+    lb.save()
+    assert len(at.research.Leaderboard(str(tmp_path / "lb.csv")).df) == 1
+
+
+def test_paper_account_moves_forward_with_interest(tmp_path):
+    acct = at.paper.PaperAccount.load_or_create(
+        str(tmp_path / "a.json"), name="t", description="", symbols={"stocks": "SPY", "bonds": "IEF"},
+        start="2026-01-01", cash=100_000.0)
+    m1, m2 = pd.Timestamp("2026-01-01"), pd.Timestamp("2026-02-01")
+    acct.step(m1, {"SPY": 100.0, "IEF": 50.0}, {"stocks": 2.0, "bonds": 0.0}, 0.03, 0.01, cost_bps=0)
+    assert np.isclose(acct.state.holdings["SPY"], 2000) and np.isclose(acct.state.cash, -100_000)
+    acct.step(m2, {"SPY": 100.0, "IEF": 50.0}, {"stocks": 2.0, "bonds": 0.0}, 0.03, 0.01, cost_bps=0)
+    # one month of borrowing at cash + spread = 4%/12 on 100k
+    assert np.isclose(acct.state.equity_history[-1]["equity"], 100_000 - 100_000 * 0.04 / 12, atol=0.01)
+    acct.save()
+    again = at.paper.PaperAccount.load_or_create(str(tmp_path / "a.json"))
+    assert again.state.last_month == "2026-02" and len(again.state.equity_history) == 2

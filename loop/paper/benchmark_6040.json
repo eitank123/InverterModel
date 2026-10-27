@@ -1,0 +1,41 @@
+{
+ "name": "Benchmark: 60/40",
+ "description": "60% stocks, 40% bonds, rebalanced monthly, no leverage.",
+ "symbols": {
+  "stocks": "SPY",
+  "bonds": "IEF"
+ },
+ "start": "2026-09-01",
+ "cash": -20.0,
+ "holdings": {
+  "IEF": 421.05263157894734,
+  "SPY": 92.3076923076923
+ },
+ "last_month": "2026-09",
+ "equity_history": [
+  {
+   "date": "2026-09-01",
+   "equity": 99980.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-01",
+   "symbol": "IEF",
+   "side": "buy",
+   "qty": 421.0526,
+   "price": 95.0
+  },
+  {
+   "date": "2026-09-01",
+   "symbol": "SPY",
+   "side": "buy",
+   "qty": 92.3077,
+   "price": 650.0
+  }
+ ],
+ "targets": {
+  "SPY": 0.6,
+  "IEF": 0.4
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "name": "Research champion: 60/40 + SMA10 x3",
+ "description": "60/40 with each asset trend-filtered, at 3x leverage. Needs futures-level financing.",
+ "symbols": {
+  "stocks": "SPY",
+  "bonds": "IEF"
+ },
+ "start": "2026-09-01",
+ "cash": -200060.0,
+ "holdings": {
+  "IEF": 1263.1578947368423,
+  "SPY": 276.9230769230769
+ },
+ "last_month": "2026-09",
+ "equity_history": [
+  {
+   "date": "2026-09-01",
+   "equity": 99940.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-01",
+   "symbol": "IEF",
+   "side": "buy",
+   "qty": 1263.1579,
+   "price": 95.0
+  },
+  {
+   "date": "2026-09-01",
+   "symbol": "SPY",
+   "side": "buy",
+   "qty": 276.9231,
+   "price": 650.0
+  }
+ ],
+ "targets": {
+  "SPY": 1.7999999999999998,
+  "IEF": 1.2000000000000002
+ }
+}
