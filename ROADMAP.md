@@ -44,7 +44,7 @@ the work is learning not to fool yourself. The math is the easy part for you.
   Use purged k-fold cross-validation for time series.
 - Position sizing: Kelly criterion, risk parity, drawdown control.
 
-## Phase 5: Paper trading (1–3 months)
+## Phase 5: Paper trading (1–3 months) 🔄 code ready (`broker.py`, `scripts/rebalance.py`, docs/AUTOMATION.md)
 - Event-driven engine: bars arrive one at a time, the same code runs in backtest and live.
 - Broker API with a paper account: Alpaca (US stocks, free), Interactive Brokers,
   or a crypto exchange testnet.

@@ -359,3 +359,84 @@ def test_monthly_and_banded_sma_are_causal_and_banding_cuts_trades():
     changes = monthly.index[monthly.diff().fillna(0) != 0]
     month_ends = px.groupby(px.index.to_period("M")).apply(lambda s: s.index[-1])
     assert set(changes) <= set(month_ends)
+
+
+# --- Broker / rebalancing ---------------------------------------------------------------
+
+from algotrading.broker import Limits, Order, PaperBroker, plan_rebalance  # noqa: E402
+
+
+def test_paper_rebalance_reaches_targets_and_is_idempotent():
+    b = PaperBroker(cash=100_000, prices={"SPY": 500.0, "IEF": 100.0}, cost_bps=0)
+    at.broker.rebalance(b, {"SPY": 0.6, "IEF": 0.4}, execute=True)
+    w = {s: q * b.prices[s] / b.equity() for s, q in b.positions().items()}
+    assert abs(w["SPY"] - 0.6) < 1e-9 and abs(w["IEF"] - 0.4) < 1e-9
+    assert at.broker.rebalance(b, {"SPY": 0.6, "IEF": 0.4}, execute=True) == []
+
+
+def test_plan_sells_first_and_exits_dropped_symbols():
+    orders = plan_rebalance({"SPY": 0.5}, 100_000, {"SPY": 50, "IEF": 300},
+                            {"SPY": 500.0, "IEF": 100.0}, Limits(max_order_frac=1.0))
+    assert orders[0] == Order("IEF", 300, "sell")
+    assert orders[1].side == "buy" and orders[1].symbol == "SPY"
+
+
+def test_plan_safety_limits():
+    px = {"SPY": 500.0}
+    with pytest.raises(ValueError, match="leverage"):
+        plan_rebalance({"SPY": 2.0}, 100_000, {}, px, Limits(max_gross_leverage=1.5))
+    with pytest.raises(ValueError, match="fat-finger"):
+        plan_rebalance({"SPY": 1.0}, 100_000, {}, px, Limits(max_order_frac=0.5))
+    with pytest.raises(ValueError, match="short"):
+        plan_rebalance({"SPY": -0.5}, 100_000, {}, px)
+    # Small drift is ignored.
+    assert plan_rebalance({"SPY": 0.6}, 100_000, {"SPY": 119}, px) == []
+
+
+def test_dry_run_sends_nothing():
+    b = PaperBroker(cash=10_000, prices={"SPY": 500.0})
+    out = at.broker.rebalance(b, {"SPY": 0.5}, execute=False)
+    assert out and all(oid == "DRY-RUN" for _, oid in out) and b.positions() == {}
+
+
+def test_frozen_rule_ignores_partial_month():
+    days = pd.bdate_range("2024-01-01", "2025-03-14")
+    up = pd.Series(np.linspace(100, 200, len(days)), index=days)
+    closes = pd.DataFrame({"SPY": up, "IEF": up})
+    closes.loc["2025-03-03":, "SPY"] = 50.0          # crash inside the unfinished month
+    w = at.broker.frozen_rule_weights(closes, "SPY", "IEF", asof=pd.Timestamp("2025-03-14"))
+    assert w == {"SPY": 0.6, "IEF": 0.4}            # decided on February's close
+    w_end = at.broker.frozen_rule_weights(closes, "SPY", "IEF", asof=pd.Timestamp("2025-04-01"))
+    assert w_end["SPY"] == 0.0                       # March completed: now out
+
+
+def test_alpaca_adapter_builds_correct_requests():
+    pytest.importorskip("alpaca")
+    from types import SimpleNamespace
+    from alpaca.trading.enums import OrderSide, TimeInForce
+    sent = []
+    fake = SimpleNamespace(
+        submit_order=lambda req: sent.append(req) or SimpleNamespace(id="abc"),
+        get_account=lambda: SimpleNamespace(equity="1000", trading_blocked=False, status="ACTIVE"),
+        get_all_positions=lambda: [SimpleNamespace(symbol="SPY", qty="2.5")],
+        get_clock=lambda: SimpleNamespace(is_open=False))
+    b = at.broker.AlpacaBroker.__new__(at.broker.AlpacaBroker)
+    b.trading = fake
+    assert b.submit(Order("SPY", 1.23456, "sell")) == "abc"
+    assert sent[0].symbol == "SPY" and sent[0].qty == 1.2346
+    assert sent[0].side == OrderSide.SELL and sent[0].time_in_force == TimeInForce.DAY
+    assert b.equity() == 1000.0 and b.positions() == {"SPY": 2.5} and b.account_ok()
+    with pytest.raises(RuntimeError, match="closed"):
+        at.broker.rebalance(b, {"SPY": 0.5}, execute=True)
+
+
+def test_kelly_portfolio_levers_calm_asset_and_respects_cap():
+    rng = np.random.default_rng(0)
+    idx = pd.date_range("2000-01-01", periods=120, freq="MS")
+    px = pd.DataFrame({"stocks": 100 * np.cumprod(1 + rng.normal(0.006, 0.045, 120)),
+                       "bonds": 100 * np.cumprod(1 + rng.normal(0.003, 0.015, 120))}, index=idx)
+    mu = pd.DataFrame({"stocks": 0.05, "bonds": 0.02}, index=idx)
+    w = at.KellyPortfolio(mu, fraction=0.5, cap=2.0).weights(px).iloc[-1]
+    assert w["bonds"] > w["stocks"] and abs(w.sum() - 2.0) < 1e-9
+    floored = at.KellyPortfolio(mu, 0.5, cap=10, vol_floor={"bonds": 0.10}).weights(px).iloc[-1]
+    assert floored["bonds"] < at.KellyPortfolio(mu, 0.5, cap=10).weights(px).iloc[-1]["bonds"]

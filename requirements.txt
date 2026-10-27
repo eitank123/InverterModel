@@ -3,6 +3,8 @@ pandas>=2.1
 matplotlib>=3.8
 pytest>=8
 pysentiment2>=0.1   # Loughran-McDonald finance dictionary (news scoring)
+scikit-learn>=1.5   # ridge / neural-net forecasts (ml.py, Exp 15)
 # optional:
 # yfinance>=0.2    # real market data (needs network access to Yahoo)
 # anthropic>=2.0   # news.ClaudeScorer (needs an API key)
+# alpaca-py>=0.40   # broker connection (broker.AlpacaBroker)

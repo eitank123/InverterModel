@@ -445,9 +445,50 @@ stop hedging (Exp 4).
 
 ---
 
+## Experiment 15: Kelly leverage only where it is "safe" (incl. ridge and a neural net)
+`exp15_kelly_safe_leverage.py` · 1957–2026 · Kelly fraction / cap / vol target chosen on TRAIN 1957–1990 by
+"highest CAGR with max DD ≥ −25%", TEST 1991–2026 reported once · leverage costs cash + 1%
+
+**Idea.** Multi-asset Kelly w = λ·Σ⁻¹·μ levers calm assets and calm periods. A trend gate sets μ = 0 below
+the 10-month SMA. Ways to estimate μ: K1 literature priors (equity premium 5%, term premium 1.5%), K2 valuation
+(excess CAPE yield), K3 ridge regression, K4 neural-net ensemble (walk-forward, 12 features), and K5 = K1 with a
+volatility floor.
+
+**ML diagnostic first:** out-of-sample R² vs the historical mean is negative for every model
+(ridge −1.3% / −0.8%, NN −2.4% / −0.6% for stocks / bonds). Sign hit-rates of 53–56% equal the base rate of up-months.
+**The models have no forecasting skill**, the Goyal–Welch result again. (The first NN version had R² of −917%:
+an unscaled target made it extrapolate wildly. A good reminder that NNs fail loudly on financial data.)
+
+| 1957–2026 | CAGR train | CAGR **test** | CAGR full | max DD full | excess Sharpe full | avg gross |
+|---|---|---|---|---|---|---|
+| 60/40 | 8.7% | 9.0% | 8.9% | −27% | 0.59 | 1.00 |
+| 60/40+SMA10 | 7.6% | 8.4% | 8.0% | −15% | 0.63 | 0.73 |
+| **60/40+SMA10 ×1.5** (train-picked) | 8.0% | **10.9%** | **9.5%** | **−23%** | 0.60 | 1.10 |
+| **60/40+SMA10 vol-target 10%** (train-picked) | 8.9% | **12.4%** | **10.7%** | **−24%** | 0.57 | 1.46 |
+| K1 Kelly priors | 5.9% | 5.8% | 5.8% | −9% | 0.50 | 0.41 |
+| K2 Kelly valuation | 6.6% | 6.4% | 6.5% | −24% | 0.40 | 0.71 |
+| K3 Kelly ridge | 10.0% | 13.7% | 11.9% | **−38%** | 0.60 | 1.14 |
+| K4 Kelly neural net | 8.6% | 8.5% | 8.5% | **−51%** | 0.40 | 0.77 |
+| K5 Kelly priors + vol floor | 7.0% | 9.5% | 8.3% | −19% | 0.54 | 1.10 |
+
+* Kelly with priors levered bonds about 4×. Rising rates in 1957–81 forced the train-selected fraction down to 0.05,
+  leaving an under-invested portfolio. **Low volatility ≠ low risk.** The vol floor (K5) fixes part of it.
+* Ridge and NN broke the drawdown budget out of sample (−38%, −51%). Their train-period CAGR was not skill.
+* Vol-targeting ("lever only when calm") vs constant leverage with the same volatility: CAGR 10.7% vs 10.8%,
+  P(higher CAGR) 40%, P(smaller DD) 62%. **Timing the leverage adds nothing reliable.**
+* **Financing decides it.** Trend-filtered 60/40 at 2×: 11.4% (free), 10.5% (+1.5%), 9.6% (+3%), 8.3% (+5%), vs
+  8.9% for plain 60/40. Futures-level financing is required for leverage to be worth it.
+
+**Answer to "can we beat 8.6% a year?":** yes, robustly. 60/40+SMA10 at 1.5× gives 9.5%/yr since 1957 and 10.9% on the
+untouched test period with a −23% max DD; ~2× or a 10% vol target gives ~10.7%/yr with −24 to −30%. The gain comes
+from *how much* leverage, made tolerable by the trend filter. No forecasting model (ridge, NN, Kelly μ-estimates)
+added anything. And at today's valuations all of these numbers should be expected to be lower.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
 * Month-end prices instead of monthly averages, to measure the real-time version of the filter.
 * Firm-level news + LLM scoring (Exp 5 follow-up).
-* Event-driven engine + paper trading the frozen rule.
+* Paper trading the frozen rule through `scripts/rebalance.py` (needs broker keys + network access; see docs/AUTOMATION.md).

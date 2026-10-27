@@ -7,13 +7,15 @@ to be read and changed, not used as a black box.
 * **[ROADMAP.md](ROADMAP.md)**: the learning plan
 * **[docs/lessons/](docs/lessons/)**: market concepts, introduced as experiments need them
 * **[docs/research_log.md](docs/research_log.md)**: every experiment: hypothesis, result, lesson
+* **[docs/AUTOMATION.md](docs/AUTOMATION.md)**: from backtest to paper trading to live trading
 
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
-python -m pytest -q                 # 43 tests, ~3 s
+python -m pytest -q                 # 50 tests, ~5 s
 python scripts/today.py             # what the frozen rules hold right now
+python scripts/rebalance.py         # monthly rebalance (offline paper demo; --broker alpaca for real API)
 python scripts/run_demo.py          # strategies on 3 synthetic markets -> results/*.png
 python scripts/overfitting_demo.py  # how parameter search fools you
 python scripts/experiments/exp01_sp500_trend.py      # trend timing on 155 years of S&P 500
@@ -30,6 +32,7 @@ python scripts/experiments/exp11_clean_bond_era.py   # re-check on reliable bond
 python scripts/experiments/exp12_insurance_or_exposure.py  # filter vs vol-matched control
 python scripts/experiments/exp13_implementation.py   # month-end vs average vs daily (banded)
 python scripts/experiments/exp14_inflation_regime.py # inflation guard for bonds, train/test
+python scripts/experiments/exp15_kelly_safe_leverage.py  # Kelly / ridge / neural-net leverage (~4 min first run)
 ```
 
 ## Layout
@@ -37,11 +40,13 @@ python scripts/experiments/exp14_inflation_regime.py # inflation guard for bonds
 | File | What it does |
 |---|---|
 | `algotrading/data.py` | Synthetic markets with known structure (GBM random walk, Ornstein-Uhlenbeck mean reversion, regime-switching trends, multi-asset panels); 155 years of S&P 500 total return (`load_shiller_sp500`), 10-year bonds from yields (`bond_total_return`), daily DJIA 2007–16, GARCH generator; CSV and Yahoo loaders |
-| `algotrading/strategy.py` | Single-asset strategies: buy & hold, SMA crossover, Faber SMA-10, momentum, trend ensemble, z-score mean reversion, vol targeting, `MonthlySMA`, `BandedSMA`, `AverageSignal`. Portfolios: `PerAsset` (incl. 60/40-style budgets), `TrendFilter`, `ValueTilt`, `InverseVol`, `PortfolioVolTarget`, `Levered`, `Blend` |
+| `algotrading/strategy.py` | Single-asset strategies: buy & hold, SMA crossover, Faber SMA-10, momentum, trend ensemble, z-score mean reversion, vol targeting, `MonthlySMA`, `BandedSMA`, `AverageSignal`. Portfolios: `PerAsset` (incl. 60/40-style budgets), `TrendFilter`, `ValueTilt`, `InverseVol`, `PortfolioVolTarget`, `Levered`, `Blend`, `KellyPortfolio` |
 | `algotrading/backtest.py` | Vectorised backtester for one asset or a portfolio: explicit timing, transaction costs, interest on cash/leverage |
 | `algotrading/metrics.py` | Sharpe, Sortino, CAGR, max drawdown, turnover, Probabilistic and Deflated Sharpe; any bar frequency |
 | `algotrading/news.py` | Curated news sources, RSS/Atom reader, Loughran-McDonald and Claude headline scorers, daily sentiment index, `SentimentStrategy` |
 | `algotrading/stats.py` | Variance ratio, Hurst exponent, Newey-West OLS, out-of-sample R², stationary block bootstrap, Kelly fraction |
+| `algotrading/ml.py` | Point-in-time macro features, walk-forward forecasting, small regularised neural-net ensemble |
+| `algotrading/broker.py` | Broker interface, local `PaperBroker`, `AlpacaBroker`, rebalancer with safety limits, the frozen rule's live signal |
 | `algotrading/validation.py` | Lookahead detector, grid search, walk-forward, Monte-Carlo Sharpe null distribution |
 | `scripts/experiments/` | Reproducible research experiments (see the research log) |
 | `data/` | Shiller S&P 500 monthly dataset (public domain, via github.com/datasets/s-and-p-500) |

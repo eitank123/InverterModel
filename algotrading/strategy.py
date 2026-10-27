@@ -317,3 +317,52 @@ class BandedSMA(Strategy):
                 cur = 0.0
             pos[t] = cur
         return pd.Series(pos, index=prices.index)
+
+
+class KellyPortfolio(PortfolioStrategy):
+    """Multi-asset fractional Kelly: w = fraction * Sigma^-1 mu, long-only, gross <= cap.
+
+    mu:   DataFrame of *annual excess-return forecasts* per asset, indexed by the date the
+          forecast is made (must be point-in-time). NaN or <= 0 means "no bet".
+    Sigma is the trailing ``cov_lookback``-bar covariance of returns, annualised;
+    ``vol_floor`` ({asset: annual vol}) stops Kelly from treating a calm period as safe.
+    Kelly levers assets in inverse proportion to their variance, so calm assets
+    (bonds) get the most leverage, and calm periods get more than turbulent ones.
+    """
+
+    def __init__(self, mu: pd.DataFrame, fraction: float = 0.5, cov_lookback: int = 36,
+                 cap: float = 2.0, vol_floor: dict[str, float] | None = None):
+        self.mu, self.fraction, self.cov_lookback, self.cap = mu, fraction, cov_lookback, cap
+        self.vol_floor = vol_floor
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        ppy = infer_ppy(prices.index)
+        rets = prices.pct_change()
+        mu = self.mu.reindex(prices.index).ffill()[prices.columns]
+        out = np.zeros(prices.shape)
+        for t in range(self.cov_lookback, len(prices)):
+            m = mu.iloc[t].to_numpy()
+            if np.isnan(m).all():
+                continue
+            m = np.nan_to_num(m).clip(min=0.0)
+            if not m.any():
+                continue
+            cov = rets.iloc[t - self.cov_lookback + 1: t + 1].cov().to_numpy() * ppy
+            if self.vol_floor:
+                # "Calm" is not "safe": never assume an asset is less risky than its floor.
+                vol = np.sqrt(np.diag(cov))
+                floor = np.array([self.vol_floor.get(c, 0.0) for c in prices.columns])
+                scale = np.maximum(vol, floor) / np.where(vol > 0, vol, 1.0)
+                cov = cov * np.outer(scale, scale)
+            w = self.fraction * np.linalg.solve(cov + 1e-8 * np.eye(len(m)), m)
+            w = w.clip(min=0.0)
+            w[m == 0] = 0.0
+            gross = w.sum()
+            if gross > self.cap:
+                w *= self.cap / gross
+            out[t] = w
+        return pd.DataFrame(out, index=prices.index, columns=prices.columns)
+
+    def __repr__(self) -> str:
+        return (f"KellyPortfolio(fraction={self.fraction}, cov_lookback={self.cov_lookback}, "
+                f"cap={self.cap}, vol_floor={self.vol_floor})")
