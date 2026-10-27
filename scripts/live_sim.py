@@ -97,12 +97,43 @@ ACCOUNTS["frozen_6040_sma10"] = ("Frozen rule: 60/40 + SMA10 (no leverage)",
                                  "The original research rule: 60/40, each asset held only above its 10-month "
                                  "average.", from_strategy(filtered(0.6)))
 
+
+
+def daily_band_200(lev=3.0, band=0.02):
+    """Exp 18: S&P at ``lev`` while above its 200-day average (+/-2% band), T-bills otherwise.
+    Gayed & Bilello (2016) 'Leverage for the Long Run', banded as in Exp 13. Added 2026-10-27."""
+    state = {"on": None}
+
+    def fn(d):
+        s = sp[:d]
+        sma = s.iloc[-200:].mean()
+        p = s.iloc[-1]
+        if state["on"] is None:
+            state["on"] = p > sma
+        elif state["on"] and p < sma * (1 - band):
+            state["on"] = False
+        elif not state["on"] and p > sma * (1 + band):
+            state["on"] = True
+        w = etf_weights(lev, 0.0) if state["on"] else {}
+        return w, {"stocks": lev if state["on"] else 0.0, "bonds": 0.0}, \
+            f"S&P {p / sma - 1:+.1%} vs 200-day average: {'in' if state['on'] else 'out'}"
+    return fn
+
+
+DAILY = {"daily_band_3x": ("Daily trend: 3x above the 200-day average (±2% band)",
+                           "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its "
+                           "200-day average, T-bills otherwise; checked every day.", daily_band_200())}
+ACCOUNTS.update(DAILY)
+
 print(f"Data: FRED S&P 500 to {sp.index[-1]:%Y-%m-%d}, 10y yield to {y10.index[-1]:%Y-%m-%d}, "
       f"T-bill to {tb.index[-1]:%Y-%m-%d}")
 for key, (name, desc, fn) in ACCOUNTS.items():
     acct = LiveSimAccount.load_or_create(os.path.join(ROOT, f"{key}.json"), key, name, desc,
                                          start_date=etf.index[-1].strftime("%Y-%m-%d"))
-    n = acct.advance(etf, cash, fn, costs)
+    if key in DAILY and acct.st["last_date"]:                # rebuild the band state up to the last day
+        for d in sp.index[(sp.index >= pd.Timestamp(acct.st["start"])) & (sp.index <= pd.Timestamp(acct.st["last_date"]))]:
+            fn(d)
+    n = acct.advance(etf, cash, fn, costs, daily=key in DAILY)
     acct.save()
     st = acct.st
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]

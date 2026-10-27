@@ -54,9 +54,12 @@ class LiveSimAccount:
         with open(self.path, "w") as f:
             json.dump(self.st, f, indent=1, default=float)
 
-    def advance(self, etf_px: pd.DataFrame, cash_rate: pd.Series, target_fn, costs: CostModel):
+    def advance(self, etf_px: pd.DataFrame, cash_rate: pd.Series, target_fn, costs: CostModel,
+                daily: bool = False):
         """Process every trading day after ``last_date``. ``target_fn(date)`` returns
-        ({symbol: weight}, exposure dict, reason) using data up to that date only."""
+        ({symbol: weight}, exposure dict, reason) using data up to that date only. Monthly rules
+        rebalance on the first trading day of each month; ``daily`` rules also trade on any day
+        their target changes."""
         st = self.st
         days = etf_px.index[etf_px.index >= pd.Timestamp(st["start"])]
         if st["last_date"]:
@@ -73,8 +76,9 @@ class LiveSimAccount:
                     st["fund_costs"] += q * px[s] * (ins.expense_ratio + (ins.leverage - 1)
                                                      * (float(cash_rate.asof(d)) + costs.swap_spread)) / 252
             month = d.strftime("%Y-%m")
-            if st["last_signal_month"] != month:                  # first trading day of a month
-                targets, exposure, reason = target_fn(d)
+            signal = target_fn(d) if daily else None             # daily rules look every day
+            if st["last_signal_month"] != month or (signal and signal[0] != st["targets"]):
+                targets, exposure, reason = signal or target_fn(d)
                 equity = led.value(px)
                 orders = []
                 for s in set(targets) | set(led.shares):

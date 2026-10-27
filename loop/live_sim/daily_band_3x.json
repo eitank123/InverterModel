@@ -1,0 +1,58 @@
+{
+ "key": "daily_band_3x",
+ "name": "Daily trend: 3x above the 200-day average (\u00b12% band)",
+ "description": "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its 200-day average, T-bills otherwise; checked every day.",
+ "start": "2026-10-26",
+ "start_equity": 100000.0,
+ "cash": -51.0,
+ "holdings": {
+  "UPRO": 979.779203890055
+ },
+ "basis": {
+  "UPRO": 100051.0
+ },
+ "targets": {
+  "UPRO": 1.0
+ },
+ "exposure": {
+  "stocks": 3.0,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-26",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 1.0,
+  "spread_slippage": 50.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-26",
+   "equity": 99949.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-26",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 979.7792,
+   "price": 102.0638,
+   "amount": 100000.0,
+   "commission": 1.0,
+   "spread_slippage": 50.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "S&P +5.2% vs 200-day average: in",
+   "qty": 979.7792
+  }
+ ],
+ "prices": {
+  "IEF": 95.0183,
+  "SPY": 767.7107,
+  "SSO": NaN,
+  "UPRO": 102.0638,
+  "UST": 45.008
+ }
+}

@@ -629,3 +629,19 @@ def test_live_sim_moves_forward_only_and_rebalances_monthly(tmp_path):
     eq = pd.Series({h["date"]: h["equity"] for h in again.st["equity_history"]})
     assert eq.index.is_unique and eq.iloc[-1] > 100_000 * 1.05            # followed SPY up
     assert again.st["trades"][0]["commission"] == 1.0                      # costs charged
+
+
+def test_live_sim_daily_rule_trades_mid_month(tmp_path):
+    from algotrading.execution import CostModel
+    from algotrading.live_sim import LiveSimAccount
+    days = pd.bdate_range("2026-01-05", "2026-01-30")
+    px = pd.DataFrame({"SPY": 600.0, "UPRO": 100.0, "IEF": 95.0, "UST": 45.0}, index=days)
+    flip = pd.Timestamp("2026-01-15")
+
+    def target(d):
+        return ({"UPRO": 1.0}, {"stocks": 3.0, "bonds": 0.0}, "in") if d < flip else ({}, {"stocks": 0.0, "bonds": 0.0}, "out")
+
+    acct = LiveSimAccount.load_or_create(str(tmp_path / "d.json"), "d", "D", "", "2026-01-05")
+    acct.advance(px, pd.Series(0.04, index=days), target, CostModel(), daily=True)
+    sides = [(t["date"], t["side"]) for t in acct.st["trades"]]
+    assert sides == [("2026-01-05", "buy"), ("2026-01-15", "sell")]

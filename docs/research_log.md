@@ -598,6 +598,22 @@ Data: DJIA daily 2007–2016, a price index with no dividends, the only daily da
 
 ---
 
+## Experiment 18: a daily crash exit for the 3× trend sleeve (`scripts/experiments/exp18_daily_crash_exit.py`)
+Daily data 2007–2026: DJIA to 2016 chained to the FRED S&P 500, T-bills from FRED, 5bp per switch, 3× daily-reset exposure.
+
+| 3× rule | CAGR | Max DD | 2008 | 2020 | 2022 | 2007–16 | 2017–26 |
+|---|---|---|---|---|---|---|---|
+| Monthly 10-month average (current sleeve) | 14.1% | −64% | −3.8% | +51.6% | −54.2% | 11.1% | 17.2% |
+| Daily 200-day (Gayed-Bilello) | 15.9% | −55% | −8.0% | +35.7% | −42.6% | 7.6% | 25.0% |
+| Daily 200-day ±2% band | 16.5% | −58% | −3.5% | −8.6% | −41.0% | 11.7% | 21.6% |
+| Monthly + daily emergency exit | 11.7% | −56% | −3.8% | +33.2% | −42.6% | 7.0% | 16.8% |
+
+* No rule dominates.
+* The banded daily rule beat the monthly one in both halves. It cut the 2022 loss, but lost money in 2020 because it sold during the crash and missed the rebound.
+* This covers one era only, so the champion is unchanged. The rule runs as a new real-time simulation account (checked daily) to collect unseen evidence.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
