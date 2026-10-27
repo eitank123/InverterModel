@@ -163,6 +163,8 @@ cannot confirm or refute it. That needs many assets (Exp 4 is a first, small ste
 ---
 
 ## Experiment 4: Stocks + bonds, 60/40 and trend (1871–2026)
+> ⚠ Pre-1953 bond data is interpolated and too smooth. Sharpe ratios here are flattered; see Exp 11 for the clean re-check.
+
 `python scripts/experiments/exp04_stocks_bonds.py` · bonds = 10-year constant-maturity bond built from Shiller's yields · lag 1, 10 bp, cash = bond yield − 1.5%
 
 **Data check.** Rebuilt 10-year bond returns: 4.5%/yr, 4.3% vol, worst drawdown −23%.
@@ -235,9 +237,145 @@ access. (b) Macro events: FOMC/CPI release days as a *risk* calendar, not a dire
 
 ---
 
+## Background reading, round 3: the math (2026-10-27)
+
+| Source | Claim | Used in |
+|---|---|---|
+| Lo & MacKinlay (1988), *Stock Market Prices Do Not Follow Random Walks* | Variance-ratio test with a heteroskedasticity-robust z | `stats.variance_ratio`, Exp 6 |
+| Working (1960) | Averaging a random walk induces ρ₁ = 0.25 | Exp 1, Exp 6 null |
+| Poterba & Summers (1988); Fama & French (1988) | Mean reversion in stock prices at 3–5 year horizons | Exp 6 |
+| Campbell & Shiller (1988, 1998) | Valuation ratios forecast long-horizon returns | Exp 7 |
+| Goyal & Welch (2008); Goyal, Welch & Zafirov (update) | Most predictors fail out of sample, and most "have lost their empirical support" | `stats.oos_r2`, Exp 7 |
+| Campbell & Thompson (2008) | Sign restrictions improve out-of-sample forecasts | Exp 7 |
+| Kelly (1956); Thorp; MacLean, Thorp & Ziemba (2011) | Growth-optimal betting f* = μ/σ² and its drawdown risk | Exp 8 |
+| Asness, Moskowitz & Pedersen (2013), *Value and Momentum Everywhere* | Value and momentum are negatively correlated (≈ −0.5), so combining them helps | Exp 7 |
+| Politis & Romano (1994) | Stationary block bootstrap | `stats.bootstrap_stat`, Exp 9–11 |
+| Industry check: SG Trend Index | ≈ +2.6% in 2024 and ≈ +2.4% in 2025 (secondary sources), versus S&P 500 ≈ +18% in 2025 | Context for "annual profits" |
+
+---
+
+## Experiment 6: Is the market a random walk?
+`exp06_random_walk.py` · variance ratios at 2–120 months vs a simulated *averaged* random-walk null
+
+* The textbook test says "not a random walk" (z = +7 at 2 months), but that is **entirely the
+  averaging artifact**. Against the right null, stocks are a random walk at nearly every horizon.
+* 12 months: VR 1.66 vs 95% null 1.65, a borderline **trend**. This matches TSMOM's 12-month horizon.
+* 10 years: VR 0.64 before 1945 (**mean reversion**, as Poterba & Summers found). None after 1945.
+* Annual autocorrelations of real returns: lag 2 = −0.22 (just significant), others noise.
+* Bonds "trend" at every horizon, but subtracting carry (yield/12) removes it all except at 2 months.
+  The predictable part of bonds is their **yield**, which is known in advance.
+* Hurst exponent: S&P 0.64, inside the averaged-random-walk band [0.565, 0.642].
+
+**Lesson:** the edge, if any, is tiny and lives at about 12 months (trend) and about 10 years (valuation).
+Everything in between is noise.
+
+---
+
+## Experiment 7: Does valuation predict returns?
+`exp07_valuation.py` · CAPE and excess CAPE yield (ECY), published with a 6-month lag
+
+| Horizon | log CAPE: coef (NW t) | in-sample R² | OOS R² (plain / Campbell-Thompson) |
+|---|---|---|---|
+| 1 month | −0.09 (−2.7) | 0.6% | n/a |
+| 12 months | −0.09 (−2.9) | 4% | −1.3% / −0.5% (ECY: +2.0% / +3.3%) |
+| 5 years | −0.06 (−2.8) | 12% | −21% / −9% |
+| 10 years | −0.06 (−4.6) | 24% | +2% / +6% (ECY: −28% / +16%) |
+
+* In-sample evidence is strong. Out-of-sample it is unstable, the Goyal–Welch pattern exactly.
+* Regression-implied 10-year real return at CAPE 30.8 (last in data, 2023): +2.3%/yr. **At CAPE ≈ 41
+  (October 2026): +0.6%/yr real.**
+* A real-time valuation tilt (30–90% stocks by ECY percentile) raised CAGR 8.0% → 8.9%. Combined with
+  SMA-10 it gave the best Calmar ratio (0.29, max drawdown −27%). Today it would hold **48% stocks**.
+* Value and trend active returns: ρ = −0.05, not the −0.5 that AMP report (they used cross-sectional
+  value and momentum across many assets, not timing on one market).
+
+---
+
+## Experiment 8: Kelly sizing and leverage
+`exp08_kelly_leverage.py` · borrowing at cash + 1%
+
+* Full-sample Kelly: stocks 3.6×, 60/40 6.4×, 60/40+SMA10 10.7×. At 4× on stocks, 1929 wipes you out.
+  60/40+SMA10 still compounds at 6×, but with a −99.5% drawdown. Kelly ignores fat tails, and no
+  human sits through that.
+* The trailing 30-year Kelly estimate ranged 1.0–9.4. A rolling half-Kelly reduced Sharpe in every case.
+* **60/40+SMA10 at 1.5×: 8.6% CAGR, −46% max DD**, about stock-like returns with half the drawdown.
+  (Exp 11 later shows that leverage adds nothing to *excess* Sharpe; it is just a dial.)
+
+---
+
+## Experiment 9: Annual profits, robustness, and the next 10 years
+`exp09_robustness_and_profits.py`
+
+**Annual profits (simulated; monthly data; 2026 = Jan–Sep):**
+
+| | 2022 | 2023 | 2024 | 2025 | 2026 YTD | last 12m | 10y p.a. | 100y p.a. | worst year |
+|---|---|---|---|---|---|---|---|---|---|
+| S&P 500 | −15.0% | +21.7% | +30.3% | +15.8% | +13.2% | +18.3% | 15.5% | 10.5% | −42% (1931) |
+| 60/40 | −14.8% | +12.7% | +19.3% | +11.2% | +9.2% | +12.6% | 9.6% | 8.5% | −26% (1931) |
+| 60/40+SMA10 | −2.8% | +8.8% | +19.1% | +3.6% | +9.2% | +12.6% | 8.0% | 7.6% | −10% (1937) |
+| 60/40+SMA10 ×1.5 | −5.0% | +11.9% | +27.6% | +3.6% | +12.4% | +17.2% | 11.0% | 9.3% | −16% (1937) |
+
+The filter won big in 2000–02 (+4%/yr vs −20%/yr for stocks) and in 2008 (+7.6% vs −39%), and lagged in fast
+rebounds (2020, 2025).
+
+**Parameter plateau:** Sharpe is flat across SMA windows of 6–16 months (8 is best, 10 is fine), so the result is not a lucky parameter.
+
+**Next 10 years (1000 block-bootstrap paths):**
+
+| | historical means: median CAGR | valuation-adjusted: median CAGR | P(10-year loss), valuation-adjusted |
+|---|---|---|---|
+| S&P 500 | 10.7% | 4.2% | 23% |
+| 60/40 | 8.3% | 4.4% | 12% |
+| 60/40+SMA10 | 7.1% | 4.3% | 2.7% |
+| value+SMA10 | 6.4% | 4.2% | 1.4% |
+
+At today's valuations, all candidates are expected to earn about 4–5%/yr nominal. **The strategies
+differ in risk, not in expected return.**
+
+---
+
+## Experiment 10: Ten ways to reduce whipsaw (train 1901–1960, test 1961–2026)
+`exp10_improve_filter.py`
+
+* Train/test rank correlation of Sharpe: +0.32. Train rankings barely predict test rankings.
+* The train winner (inverse-vol + SMA, train Sharpe **3.04**) was an artifact of fake-smooth early bond data (next entry).
+* No variant beat the frozen SMA-10 rule with confidence (best P = 0.76). Partial de-risking cut whipsaw losses in
+  2020/2025 but gave up most of the 2008 protection. **You cannot tell a V-crash from a slow bear in advance.**
+* Decision: **keep SMA-10 frozen.**
+
+---
+
+## Experiment 11: Data flaw found, conclusions re-checked on 1957–2026
+`exp11_clean_bond_era.py`
+
+**Flaw.** Before 1953 Shiller's long rate is interpolated from annual data: monthly yield changes have
+autocorrelation 0.85 (0.3 after 1953). Rebuilt bond returns then have 0.5% volatility and a raw Sharpe of 5–9,
+which is impossible for real bonds. Every stock/bond Sharpe that included pre-1953 data was flattered.
+
+**Re-check, 1957–2026, Sharpe in excess of cash:**
+
+| | CAGR | excess Sharpe (95% CI) | P(beats 60/40) | max DD |
+|---|---|---|---|---|
+| S&P 500 | 10.7% | 0.56 (0.26–0.85) | 25% | −49% |
+| 60/40 | 8.9% | 0.59 (0.30–0.90) | n/a | −27% |
+| **60/40+SMA10** | 8.0% | 0.63 (0.36–0.89) | **63%** | **−15%** |
+| S&P 500+SMA10 | 9.9% | 0.63 (0.39–0.87) | 63% | −25% |
+| value+SMA10 | 8.0% | 0.64 (0.39–0.90) | 68% | −16% |
+| 2-asset vol-scaled TSMOM | 4.1% | 0.04 | 0% | −63% |
+
+**Correction of earlier claims.** "P(60/40+SMA10 beats 60/40) = 99.5%" (Exp 9) is withdrawn. It came from
+raw Sharpe (cash interest counted as skill) plus fake-smooth pre-1953 bonds. On clean data the risk-adjusted
+improvement is small and **not significant**.
+
+**What survives, robustly:** the filter halves drawdowns. Bootstrap P(smaller max DD) = 100% for both 60/40
+(−15% vs −27%) and the S&P 500 (−25% vs −49%). The worst 12-month return also improves in 99% of resamples
+(−12% vs −24%). **The trend filter is crash insurance with a small premium, not alpha.**
+
+---
+
 ## Open questions / next experiments
-* **More breadth:** commodities and currencies are where 1970s trend profits came from.
-  Shiller has no such data. We need network access (Yahoo/Stooq) or GitHub-hosted datasets.
-* **Out-of-sample discipline:** freeze the SMA-10 60/40 rule now, and re-test it in 6–12 months on unseen data.
-* **Firm-level news + LLM scoring** (see Exp 5).
-* **Event-driven engine** for paper trading (Roadmap phase 5).
+* More breadth (commodities, currencies, international), which is where trend following's real edge lives.
+  Needs data access.
+* Month-end prices instead of monthly averages, to measure the real-time version of the filter.
+* Firm-level news + LLM scoring (Exp 5 follow-up).
+* Event-driven engine + paper trading the frozen rule.

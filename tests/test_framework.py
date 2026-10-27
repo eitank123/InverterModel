@@ -161,7 +161,9 @@ def test_psr_and_dsr_behave():
 
 def test_shiller_data_sane():
     df = at.data.load_shiller_sp500()
-    assert df.index[0].year == 1871 and df.notna().all().all()
+    core = ["close", "tr", "dividend", "long_rate", "cpi"]
+    assert df.index[0].year == 1871 and df[core].notna().all().all()
+    assert 4 < df["cape"].min() and df["cape"].max() < 45     # 1999 peak was 44.2
     tr_cagr = at.metrics.cagr(df["tr"].pct_change().dropna())
     assert 0.08 < tr_cagr < 0.11     # ~9-10% nominal total return, per the literature
 
@@ -244,3 +246,102 @@ def test_fetch_rss_parses_rss_and_atom(tmp_path):
     b = at.news.fetch_rss(atom.as_uri())
     assert a.loc[0, "title"] == "Fed holds rates" and a.loc[0, "published"].hour == 18
     assert b.loc[0, "title"] == "8-K filed" and b.loc[0, "link"] == "http://y"
+
+
+# --- Statistics ----------------------------------------------------------------------
+
+def test_variance_ratio_size_and_power():
+    rng = np.random.default_rng(0)
+    zs = [at.stats.variance_ratio(rng.standard_normal(1000), 4)[1] for _ in range(300)]
+    assert 0.01 < np.mean(np.abs(zs) > 1.96) < 0.10          # ~5% false alarms
+    e = rng.standard_normal(5000)
+    y = np.zeros(5000)
+    for t in range(1, 5000):
+        y[t] = 0.3 * y[t - 1] + e[t]
+    vr, z = at.stats.variance_ratio(y, 2)
+    assert abs(vr - 1.3) < 0.05 and z > 5                       # VR(2) = 1 + rho_1
+
+
+def test_newey_west_wider_than_ols_on_overlapping_data():
+    rng = np.random.default_rng(1)
+    r = pd.Series(rng.standard_normal(2000))
+    y = r.rolling(60).sum().shift(-60)                           # overlapping 60-period sums
+    # The correction matters when the predictor is persistent (like a valuation ratio).
+    xs = np.zeros(2000)
+    for t in range(1, 2000):
+        xs[t] = 0.98 * xs[t - 1] + rng.standard_normal()
+    x = pd.DataFrame({"x": xs})
+    nw = at.stats.ols_newey_west(y, x, lags=60)
+    plain = at.stats.ols_newey_west(y, x, lags=0)
+    assert nw.loc["x", "se_nw"] > 3 * plain.loc["x", "se_nw"]
+
+
+def test_oos_r2_negative_for_noise_predictor():
+    rng = np.random.default_rng(2)
+    y = pd.Series(rng.standard_normal(800) * 0.04 + 0.005)
+    x = pd.Series(rng.standard_normal(800))
+    r2, _ = at.stats.oos_r2(y, x, horizon=1, min_train=200)
+    assert r2 < 0.01
+
+
+def test_kelly_fraction():
+    rng = np.random.default_rng(3)
+    r = pd.Series(rng.normal(0.01, 0.05, 200000))
+    assert abs(at.stats.kelly_fraction(r) - 4.0) < 0.2         # mu / sigma^2 = 0.01/0.0025
+
+
+def test_borrow_spread_charged_only_on_leverage(prices):
+    class Lev(at.Strategy):
+        def __init__(self, f):
+            self.f = f
+
+        def positions(self, p):
+            return pd.Series(self.f, index=p.index)
+
+    for f, extra in [(0.5, 0.0), (2.0, 0.02 / 252)]:
+        a = at.run_backtest(prices, Lev(f), cost_bps=0, cash_rate=0.03)
+        b = at.run_backtest(prices, Lev(f), cost_bps=0, cash_rate=0.03, borrow_spread=0.02)
+        assert np.allclose((a.returns - b.returns).iloc[1:], extra)
+
+
+# --- Portfolio building blocks --------------------------------------------------------
+
+@pytest.fixture
+def two_assets():
+    return at.data.panel(at.data.regime_switching, n_assets=2, seed=5, n=600).set_axis(
+        ["stocks", "bonds"], axis=1)
+
+
+def test_trend_filter_zeroes_weight_when_out(two_assets):
+    core = at.PerAsset(at.BuyAndHold(), {"stocks": 0.6, "bonds": 0.4})
+    w = at.TrendFilter(core, at.PriceAboveSMA(20)).weights(two_assets)
+    sma_on = at.PriceAboveSMA(20).positions(two_assets["stocks"])
+    assert np.allclose(w["stocks"], 0.6 * sma_on)
+
+
+def test_average_signal_is_mean_of_parts(prices):
+    parts = [at.PriceAboveSMA(w) for w in (10, 20, 40)]
+    avg = at.AverageSignal(parts).positions(prices)
+    assert np.allclose(avg, sum(p.positions(prices) for p in parts) / 3)
+    assert at.validation.check_no_lookahead(at.AverageSignal(parts), prices)
+
+
+def test_value_tilt_bounds(two_assets):
+    sig = pd.Series(np.linspace(0, 1, len(two_assets)), index=two_assets.index)
+    w = at.ValueTilt(sig, lo=0.3, hi=0.9).weights(two_assets)
+    assert np.isclose(w["stocks"].iloc[0], 0.3) and np.isclose(w["stocks"].iloc[-1], 0.9)
+    assert np.allclose(w.sum(axis=1), 1.0)
+
+
+def test_inverse_vol_favours_calmer_asset():
+    idx = pd.bdate_range("2020-01-01", periods=300)
+    rng = np.random.default_rng(0)
+    px = pd.DataFrame({"calm": 100 * np.cumprod(1 + rng.normal(0, 0.005, 300)),
+                       "wild": 100 * np.cumprod(1 + rng.normal(0, 0.02, 300))}, index=idx)
+    w = at.InverseVol(60).weights(px).iloc[-1]
+    assert np.isclose(w.sum(), 1.0) and w["calm"] > 3 * w["wild"]
+
+
+def test_levered_scales_weights(two_assets):
+    core = at.PerAsset(at.BuyAndHold(), {"stocks": 0.6, "bonds": 0.4})
+    assert np.allclose(at.Levered(core, 1.5).weights(two_assets), 1.5 * core.weights(two_assets))

@@ -16,7 +16,7 @@ the work is learning not to fool yourself. The math is the easy part for you.
 - **Exercise:** run `scripts/run_demo.py`. Explain *why* each strategy wins or loses in
   each market. Then change `cost_bps` to 10 and see which strategies survive.
 
-## Phase 2: Research hygiene (2–3 weeks), the most important phase 🔄 (in progress)
+## Phase 2: Research hygiene (2–3 weeks), the most important phase ✅
 - Overfitting and multiple testing: `scripts/overfitting_demo.py`. Read about the
   Deflated Sharpe Ratio (Bailey & López de Prado).
 - Train/test split, walk-forward, and why you can only use the test set **once**.
@@ -35,7 +35,8 @@ the work is learning not to fool yourself. The math is the easy part for you.
 - ✅ Multi-asset portfolios (`PerAsset`, `PortfolioVolTarget`). Breadth tested in Experiment 2.
 - Pairs trading / cointegration (Engle-Granger, Johansen), where your OU knowledge applies.
 
-## Phase 4: Signal processing and ML (ongoing, plays to your EE strengths)
+## Phase 4: Signal processing and ML (ongoing, plays to your EE strengths) 🔄
+- ✅ Random-walk tests, valuation predictability, Kelly sizing, bootstrap (Exp 6–11, Lesson 4).
 - Filters as indicators: an EMA is a first-order IIR low-pass filter. Look at phase
   lag vs. noise rejection, and Kalman filters for dynamic hedge ratios.
 - Spectral and wavelet analysis of returns (and why markets are mostly noise).

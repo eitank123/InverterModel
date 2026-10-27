@@ -56,8 +56,8 @@ def _cash_series(cash: float | pd.Series, index: pd.Index, ppy: int) -> pd.Serie
 
 def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy | PortfolioStrategy,
                  cost_bps: float = 2.0, execution_lag: int = 0,
-                 cash_rate: float | pd.Series = 0.0, ppy: int | None = None,
-                 name: str | None = None) -> BacktestResult:
+                 cash_rate: float | pd.Series = 0.0, borrow_spread: float = 0.0,
+                 ppy: int | None = None, name: str | None = None) -> BacktestResult:
     """Backtest ``strategy`` on ``prices``.
 
     prices:    Series (one asset), DataFrame with a ``close`` column (one asset), or a
@@ -68,6 +68,8 @@ def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy | Portfoli
                for liquid ETFs/futures, much more for small caps or crypto.
     cash_rate: annual interest earned on uninvested capital (and paid on leverage).
                A float, or a Series of annual rates (e.g. T-bill yield over time).
+    borrow_spread: extra annual rate paid on borrowed money (brokers charge more than
+               they pay; ~0.5-1.5% for retail margin, less via futures).
     """
     if isinstance(prices, pd.DataFrame) and "close" in prices.columns:
         prices = prices["close"]
@@ -92,7 +94,9 @@ def run_backtest(prices: pd.Series | pd.DataFrame, strategy: Strategy | Portfoli
         invested = held.sum(axis=1)
     else:
         gross = held * asset_ret
-    cash = _cash_series(cash_rate, prices.index, ppy) * (1 - invested)
+    cash_balance = 1 - invested
+    cash = (_cash_series(cash_rate, prices.index, ppy) * cash_balance
+            - borrow_spread / ppy * (-cash_balance).clip(lower=0))
     costs = trades * cost_bps / 1e4
     net = gross + cash - costs
 

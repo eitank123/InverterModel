@@ -216,3 +216,66 @@ class Blend(PortfolioStrategy):
 
     def __repr__(self) -> str:
         return "Blend(" + ", ".join(f"{k}*{s!r}" for s, k in self.parts.items()) + ")"
+
+
+class Levered(PortfolioStrategy):
+    """Scale every weight of a base portfolio by a constant leverage factor."""
+
+    def __init__(self, base: PortfolioStrategy, leverage: float):
+        self.base, self.leverage = base, leverage
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        return self.base.weights(prices) * self.leverage
+
+
+class TrendFilter(PortfolioStrategy):
+    """Multiply each asset's base weight by a single-asset filter in [0, 1]
+    (e.g. ``PriceAboveSMA(10)``): keep the position while trending, cash otherwise."""
+
+    def __init__(self, base: PortfolioStrategy, filt: Strategy):
+        self.base, self.filt = base, filt
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        w = self.base.weights(prices)
+        f = pd.DataFrame({c: self.filt.positions(prices[c]) for c in prices}, index=prices.index)
+        return w * f
+
+
+class AverageSignal(Strategy):
+    """Average of several single-asset strategies' positions (e.g. SMA 6/8/10/12):
+    partial exposure when they disagree, which softens whipsaw."""
+
+    def __init__(self, strategies: list[Strategy]):
+        self.strategies = strategies
+
+    def positions(self, prices: pd.Series) -> pd.Series:
+        return sum(s.positions(prices) for s in self.strategies) / len(self.strategies)
+
+
+class ValueTilt(PortfolioStrategy):
+    """Stock/bond split from a valuation percentile in [0, 1] (1 = cheap stocks):
+    stock weight = lo + (hi - lo) * percentile. The signal must be point-in-time."""
+
+    def __init__(self, signal: pd.Series, lo: float = 0.3, hi: float = 0.9,
+                 stocks: str = "stocks", bonds: str = "bonds"):
+        self.signal, self.lo, self.hi, self.stocks, self.bonds = signal, lo, hi, stocks, bonds
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        p = self.signal.reindex(prices.index).ffill().fillna(0.5)
+        ws = self.lo + (self.hi - self.lo) * p
+        return pd.DataFrame({self.stocks: ws, self.bonds: 1 - ws}, index=prices.index)
+
+    def __repr__(self) -> str:
+        return f"ValueTilt(lo={self.lo}, hi={self.hi})"
+
+
+class InverseVol(PortfolioStrategy):
+    """Risk parity (naive): weights proportional to 1 / trailing volatility, summing to 1."""
+
+    def __init__(self, lookback: int = 36):
+        self.lookback = lookback
+
+    def weights(self, prices: pd.DataFrame) -> pd.DataFrame:
+        vol = prices.pct_change().rolling(self.lookback).std()
+        inv = 1 / vol
+        return inv.div(inv.sum(axis=1), axis=0).fillna(0.0)

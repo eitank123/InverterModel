@@ -129,6 +129,8 @@ def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
       dividend   annualised dividend per share
       long_rate  10-year government bond yield, as a decimal (0.05 = 5%)
       cpi        consumer price index
+      earnings   annualised earnings per share (NaN after 2023-06)
+      cape       Shiller CAPE = real price / 10-year average real earnings (NaN when unknown)
 
     Caveats you must know before trusting results on this data:
       * Prices up to mid-2023 are *monthly averages of daily closes*, not month-end
@@ -150,6 +152,8 @@ def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
     df["dividend"] = div.ffill()
     df["long_rate"] = raw["Long Interest Rate"].replace(0.0, np.nan).ffill() / 100
     df["cpi"] = raw["Consumer Price Index"].replace(0.0, np.nan).ffill()
+    df["earnings"] = raw["Earnings"].replace(0.0, np.nan)
+    df["cape"] = raw["PE10"].replace(0.0, np.nan)
     monthly_tr = (df["close"] + df["dividend"] / 12) / df["close"].shift(1) - 1
     df["tr"] = df["close"].iloc[0] * (1 + monthly_tr.fillna(0.0)).cumprod()
     return df
