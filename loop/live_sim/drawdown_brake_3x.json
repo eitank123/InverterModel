@@ -1,0 +1,58 @@
+{
+ "key": "drawdown_brake_3x",
+ "name": "Trend 3x + drawdown brake",
+ "description": "Loop strategy 'S&P+SMA10 xL + drawdown brake' {\"lev\": 3.0, \"dd\": 0.35}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -51.0,
+ "holdings": {
+  "UPRO": 1000.0
+ },
+ "basis": {
+  "UPRO": 100051.0
+ },
+ "targets": {
+  "UPRO": 1.0
+ },
+ "exposure": {
+  "stocks": 3.0,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 1.0,
+  "spread_slippage": 50.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99949.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 1000.0,
+   "price": 100.0,
+   "amount": 100000.0,
+   "commission": 1.0,
+   "spread_slippage": 50.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 3.00x, bonds 0.00x",
+   "qty": 1000.0
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

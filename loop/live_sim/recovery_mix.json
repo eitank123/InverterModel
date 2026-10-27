@@ -1,0 +1,75 @@
+{
+ "key": "recovery_mix",
+ "name": "Recovery mix: 80/20 trend, 2x, 4x after falls",
+ "description": "Loop strategy 'recovery mix' {\"w\": 0.8, \"base\": 2.0, \"boost\": 4.0}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -38.0,
+ "holdings": {
+  "SPY": 91.81917394224311,
+  "UPRO": 300.0
+ },
+ "basis": {
+  "SPY": 70022.0,
+  "UPRO": 30016.0
+ },
+ "targets": {
+  "UPRO": 0.3,
+  "SPY": 0.7
+ },
+ "exposure": {
+  "stocks": 1.6,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 36.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99962.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 91.8192,
+   "price": 762.368,
+   "amount": 70000.0,
+   "commission": 1.0,
+   "spread_slippage": 21.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.60x, bonds 0.00x",
+   "qty": 91.8192
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 300.0,
+   "price": 100.0,
+   "amount": 30000.0,
+   "commission": 1.0,
+   "spread_slippage": 15.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.60x, bonds 0.00x",
+   "qty": 300.0
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

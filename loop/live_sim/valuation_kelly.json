@@ -1,0 +1,75 @@
+{
+ "key": "valuation_kelly",
+ "name": "Valuation Kelly (cap 3x, no trend filter)",
+ "description": "Loop strategy 'valuation-Kelly ungated' {\"f\": 1.0, \"cap\": 3.0}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -35.74404000000504,
+ "holdings": {
+  "SPY": 106.61491563129617,
+  "UPRO": 187.202
+ },
+ "basis": {
+  "SPY": 81305.18394,
+  "UPRO": 18730.560100000002
+ },
+ "targets": {
+  "UPRO": 0.187202,
+  "SPY": 0.812798
+ },
+ "exposure": {
+  "stocks": 1.3744031958907592,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 33.74404,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99964.26
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 106.6149,
+   "price": 762.368,
+   "amount": 81279.8,
+   "commission": 1.0,
+   "spread_slippage": 24.38,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.37x, bonds 0.00x",
+   "qty": 106.6149
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 187.202,
+   "price": 100.0,
+   "amount": 18720.2,
+   "commission": 1.0,
+   "spread_slippage": 9.36,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.37x, bonds 0.00x",
+   "qty": 187.202
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

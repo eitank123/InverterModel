@@ -1,0 +1,75 @@
+{
+ "key": "vol_target_6040",
+ "name": "Vol-target 12% on trend 60/40 (cap 4x)",
+ "description": "Loop strategy '60/40+SMA10 vol-target' {\"tv\": 0.12, \"cap\": 4.0}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -34.37358000000131,
+ "holdings": {
+  "SPY": 115.60309456850236,
+  "UPRO": 118.67900000000002
+ },
+ "basis": {
+  "SPY": 88159.53963,
+  "UPRO": 11874.833950000002
+ },
+ "targets": {
+  "UPRO": 0.118679,
+  "SPY": 0.881321
+ },
+ "exposure": {
+  "stocks": 1.2373571582457235,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 32.373580000000004,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99965.63
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 115.6031,
+   "price": 762.368,
+   "amount": 88132.1,
+   "commission": 1.0,
+   "spread_slippage": 26.44,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.24x, bonds 0.00x",
+   "qty": 115.6031
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 118.679,
+   "price": 100.0,
+   "amount": 11867.9,
+   "commission": 1.0,
+   "spread_slippage": 5.93,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.24x, bonds 0.00x",
+   "qty": 118.679
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "key": "trend_6040_4x",
+ "name": "Trend 60/40 at 4x (needs margin)",
+ "description": "Loop strategy '60/40+SMA10 xL' {\"lev\": 4.0}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -46.0,
+ "holdings": {
+  "SPY": 39.35107454667562,
+  "UPRO": 700.0
+ },
+ "basis": {
+  "SPY": 30010.0,
+  "UPRO": 70036.0
+ },
+ "targets": {
+  "UPRO": 0.7,
+  "SPY": 0.3
+ },
+ "exposure": {
+  "stocks": 2.4,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 44.0,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99954.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 39.3511,
+   "price": 762.368,
+   "amount": 30000.0,
+   "commission": 1.0,
+   "spread_slippage": 9.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.40x, bonds 0.00x",
+   "qty": 39.3511
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 700.0,
+   "price": 100.0,
+   "amount": 70000.0,
+   "commission": 1.0,
+   "spread_slippage": 35.0,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.40x, bonds 0.00x",
+   "qty": 700.0
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

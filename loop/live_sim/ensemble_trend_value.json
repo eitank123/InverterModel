@@ -1,0 +1,75 @@
+{
+ "key": "ensemble_trend_value",
+ "name": "Ensemble: 2x trend + valuation",
+ "description": "Loop strategy 'ensemble: trend + value' {}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -38.32650000001013,
+ "holdings": {
+  "SPY": 89.6778196356615,
+  "UPRO": 316.32500000000005
+ },
+ "basis": {
+  "SPY": 68389.01025,
+  "UPRO": 31649.316250000003
+ },
+ "targets": {
+  "UPRO": 0.316325,
+  "SPY": 0.683675
+ },
+ "exposure": {
+  "stocks": 1.632650412622708,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 36.3265,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99961.67
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 89.6778,
+   "price": 762.368,
+   "amount": 68367.5,
+   "commission": 1.0,
+   "spread_slippage": 20.51,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.63x, bonds 0.00x",
+   "qty": 89.6778
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 316.325,
+   "price": 100.0,
+   "amount": 31632.5,
+   "commission": 1.0,
+   "spread_slippage": 15.82,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.63x, bonds 0.00x",
+   "qty": 316.325
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

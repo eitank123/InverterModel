@@ -1,0 +1,75 @@
+{
+ "key": "valuation_3x",
+ "name": "Valuation-scaled leverage (0.5-3x)",
+ "description": "Loop strategy 'valuation-scaled leverage <=3x' {\"w\": 1.0, \"k\": 2.0}, best of its family (parameters picked on 1957-1990).",
+ "start": "2026-10-23",
+ "start_equity": 100000.0,
+ "cash": -34.65299999999661,
+ "holdings": {
+  "SPY": 113.77051502686366,
+  "UPRO": 132.64999999999998
+ },
+ "basis": {
+  "SPY": 86762.0205,
+  "UPRO": 13272.632499999998
+ },
+ "targets": {
+  "UPRO": 0.13265,
+  "SPY": 0.86735
+ },
+ "exposure": {
+  "stocks": 1.265300825245416,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-23",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 32.653,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-23",
+   "equity": 99965.35
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-23",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 113.7705,
+   "price": 762.368,
+   "amount": 86735.0,
+   "commission": 1.0,
+   "spread_slippage": 26.02,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.27x, bonds 0.00x",
+   "qty": 113.7705
+  },
+  {
+   "date": "2026-10-23",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 132.65,
+   "price": 100.0,
+   "amount": 13265.0,
+   "commission": 1.0,
+   "spread_slippage": 6.63,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.27x, bonds 0.00x",
+   "qty": 132.65
+  }
+ ],
+ "prices": {
+  "IEF": 95.0,
+  "SPY": 762.368,
+  "SSO": NaN,
+  "UPRO": 100.0,
+  "UST": 45.0
+ }
+}

@@ -20,7 +20,7 @@ import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_weights  # noqa: E402
 from algotrading.live import completed_month_ends, shiller_history, splice_monthly  # noqa: E402
 from algotrading.live_sim import LiveSimAccount, daily_etf_returns  # noqa: E402
-from loop import ensemble  # noqa: E402
+from loop import build_from_row, ensemble, filtered  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
 ANCHOR = "2026-10-23"                       # price levels: SPY = S&P/10 there; others fixed
@@ -67,6 +67,35 @@ ACCOUNTS = {
     "benchmark_6040": ("Benchmark: 60/40", "60% SPY, 40% IEF, rebalanced monthly.",
                        fixed({"SPY": 0.6, "IEF": 0.4}, "monthly rebalance to 60/40")),
 }
+
+# The fleet: the best (train-picked) member of every strategy family the loop has tested, run
+# side by side so the real-time record can tell them apart. Added 2026-10-27; never edited
+# afterwards (new ideas get NEW accounts). (key, title, leaderboard name, params)
+FLEET = [
+    ("trend_3x", "Trend: S&P 500 + SMA10 at 3x", "S&P+SMA10 xL (Gayed-Bilello)", '{"lev": 3.0}'),
+    ("trend_2x", "Trend: S&P 500 + SMA10 at 2x", "mix+SMA10 x2 (deployable)", '{"w": 1.0}'),
+    ("trend_strength_3x", "Trend strength: leverage scaled by 4 averages", "trend-strength leverage",
+     '{"w": 1.0, "lev": 3.0}'),
+    ("trend_6040_4x", "Trend 60/40 at 4x (needs margin)", "60/40+SMA10 xL", '{"lev": 4.0}'),
+    ("drawdown_brake_3x", "Trend 3x + drawdown brake", "S&P+SMA10 xL + drawdown brake", '{"lev": 3.0, "dd": 0.35}'),
+    ("seasonal_3x", "Seasonal: 3x Nov-Apr, 1x May-Oct (trend-filtered)", "seasonal leverage S&P+SMA10",
+     '{"w_": 3.0, "s_": 1.0}'),
+    ("variance_managed", "Variance-managed stocks (Moreira-Muir)", "variance-managed stocks",
+     '{"lev": 2.0, "cap": 3.0, "win": 3}'),
+    ("vol_target_6040", "Vol-target 12% on trend 60/40 (cap 4x)", "60/40+SMA10 vol-target", '{"tv": 0.12, "cap": 4.0}'),
+    ("valuation_3x", "Valuation-scaled leverage (0.5-3x)", "valuation-scaled leverage <=3x", '{"w": 1.0, "k": 2.0}'),
+    ("valuation_kelly", "Valuation Kelly (cap 3x, no trend filter)", "valuation-Kelly ungated", '{"f": 1.0, "cap": 3.0}'),
+    ("dual_momentum", "Dual momentum (Antonacci)", "dual momentum xL", '{"lev": 1.0}'),
+    ("recovery_mix", "Recovery mix: 80/20 trend, 2x, 4x after falls", "recovery mix",
+     '{"w": 0.8, "base": 2.0, "boost": 4.0}'),
+    ("ensemble_trend_value", "Ensemble: 2x trend + valuation", "ensemble: trend + value", "{}"),
+]
+for key, title, name, params in FLEET:
+    ACCOUNTS[key] = (title, f"Loop strategy '{name}' {params}, best of its family (parameters picked on "
+                     "1957-1990).", from_strategy(build_from_row({"name": name, "params": params})))
+ACCOUNTS["frozen_6040_sma10"] = ("Frozen rule: 60/40 + SMA10 (no leverage)",
+                                 "The original research rule: 60/40, each asset held only above its 10-month "
+                                 "average.", from_strategy(filtered(0.6)))
 
 print(f"Data: FRED S&P 500 to {sp.index[-1]:%Y-%m-%d}, 10y yield to {y10.index[-1]:%Y-%m-%d}, "
       f"T-bill to {tb.index[-1]:%Y-%m-%d}")
