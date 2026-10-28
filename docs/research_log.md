@@ -700,6 +700,20 @@ Setup: 13 markets (OECD monthly data via FRED), each held while above its own 10
 
 ---
 
+## Experiment 22: how much leverage? (`scripts/experiments/exp22_leverage_frontier_13_markets.py`)
+| Champion scaled by | Median growth (13 markets) | Avg log growth | Worst market | Worst max DD | US worst era |
+|---|---|---|---|---|---|
+| 0.33× | 7.5% | 7.8% | 6.7% | −32% | 7.0% |
+| 0.50× | 8.7% | 9.2% | 7.5% | −52% | 9.4% |
+| 0.67× | 9.7% | 10.4% | 7.9% | −67% | 11.4% |
+| 0.83× | 10.6% | 11.4% | **8.1%** | −78% | 12.3% |
+| 1.00× (champion) | **11.2%** | **12.2%** | 7.9% | −85% | **13.0%** |
+
+* **Expected growth in an unseen market is still rising at the champion's leverage,** so the champion is not past the growth-optimal (Kelly) point. No market was ruined at any scale.
+* **The worst market does best at about 0.83×.** That is the protective choice if the owner wants one.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
