@@ -120,6 +120,64 @@ SHILLER_URL = "https://raw.githubusercontent.com/datasets/s-and-p-500/main/data/
 SHILLER_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "sp500_shiller_monthly.csv")
 
 
+FRED_MONTHLY_PATH = os.path.join(os.path.dirname(SHILLER_PATH), "fred_monthly.csv")
+FRED_MONTHLY_SERIES = {"GS10": "10-year Treasury yield (%)", "CPIAUCSL": "CPI, all urban",
+                       "TB3MS": "3-month T-bill (%)", "CP": "Corporate profits after tax (quarterly)"}
+
+
+def save_fred_monthly(path: str | None = None) -> pd.DataFrame:
+    """Download the monthly FRED series used to keep the Shiller file current (scripts/update_data.py)."""
+    cols = {}
+    for sid in FRED_MONTHLY_SERIES:
+        s = load_fred(sid)
+        s.index = s.index.to_period("M").to_timestamp()
+        cols[sid] = s
+    df = pd.DataFrame(cols)
+    df.index.name = "Date"
+    df.to_csv(path or FRED_MONTHLY_PATH)
+    return df
+
+
+def _extend_with_fred(df: pd.DataFrame, fred: pd.DataFrame) -> pd.DataFrame:
+    """Fill what the Shiller file stopped publishing (rates, CPI, earnings, CAPE after 2023)
+    from FRED, splicing at the last month each Shiller series was really updated.
+
+    * long_rate: FRED GS10 (the same 10-year constant-maturity yield Shiller uses).
+    * cpi: FRED CPIAUCSL rescaled to Shiller's CPI at the splice month.
+    * earnings: last Shiller earnings x growth of US corporate profits after tax (FRED CP),
+      lagged 5 months for publication. CP grew slower than S&P EPS in 2013-23 (buybacks),
+      so this errs toward a HIGHER CAPE, i.e. less valuation leverage.
+    * cape: recomputed like Shiller (real price / 10-year average real earnings) wherever his
+      value is missing.
+    """
+    df = df.copy()
+    fred = fred.reindex(df.index.union(fred.index)).sort_index()
+
+    def last_real(col):
+        s = df[col].dropna()
+        return s[s.diff().fillna(1) != 0].index[-1]
+
+    lr = last_real("long_rate")
+    gs10 = fred["GS10"].reindex(df.index) / 100
+    df.loc[df.index > lr, "long_rate"] = gs10[df.index > lr]
+    df["long_rate"] = df["long_rate"].ffill()
+    lc = last_real("cpi")
+    cpi_f = fred["CPIAUCSL"].reindex(df.index).ffill()
+    if lc in cpi_f.index and pd.notna(cpi_f[lc]):
+        df.loc[df.index > lc, "cpi"] = (cpi_f * df.loc[lc, "cpi"] / cpi_f[lc])[df.index > lc]
+    df["cpi"] = df["cpi"].ffill()
+    le = df["earnings"].last_valid_index()
+    cp = fred["CP"].dropna()
+    cp = cp.reindex(fred.index).ffill().shift(5).reindex(df.index).ffill()
+    if pd.notna(cp.get(le)):
+        df.loc[df.index > le, "earnings"] = (df.loc[le, "earnings"] * cp / cp[le])[df.index > le]
+    real_p = df["close"] * df["cpi"].iloc[-1] / df["cpi"]
+    real_e = df["earnings"] * df["cpi"].iloc[-1] / df["cpi"]
+    cape = real_p / real_e.rolling(120).mean()
+    df["cape"] = df["cape"].fillna(cape.where(df.index > df["cape"].last_valid_index()))
+    return df
+
+
 def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
     """Monthly S&P 500 since 1871 (Robert Shiller's dataset, via datasets/s-and-p-500).
 
@@ -137,8 +195,10 @@ def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
         closes. Averaging smooths the series and creates artificial positive
         autocorrelation in monthly returns, which flatters short-lookback momentum.
         Use ``execution_lag=1`` as a guard.
-      * After 2023-06 only the price is published; dividends and rates are carried
-        forward from the last known value (dividend *yield* held constant).
+      * After 2023-06 only the price is published; the dividend *yield* is held constant.
+        Rates, CPI, earnings and CAPE after 2023 come from FRED (``data/fred_monthly.csv``,
+        written by scripts/update_data.py; see ``_extend_with_fred``). Without that file
+        they are carried forward from 2023.
     """
     path = path or SHILLER_PATH
     if not os.path.exists(path):
@@ -156,6 +216,9 @@ def load_shiller_sp500(path: str | None = None) -> pd.DataFrame:
     df["cape"] = raw["PE10"].replace(0.0, np.nan)
     monthly_tr = (df["close"] + df["dividend"] / 12) / df["close"].shift(1) - 1
     df["tr"] = df["close"].iloc[0] * (1 + monthly_tr.fillna(0.0)).cumprod()
+    if path == SHILLER_PATH and os.path.exists(FRED_MONTHLY_PATH):
+        fred = pd.read_csv(FRED_MONTHLY_PATH, index_col=0, parse_dates=True)
+        df = _extend_with_fred(df, fred)
     return df
 
 

@@ -5,7 +5,7 @@ _Last updated: 2026-10-27 (after loop round 8: overfitting audit, ensemble champ
 > **Champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
 > It is chosen by its worst era across 1880–2026, not by the best backtest:
 > - eras: 15.4% / 14.6% / 13.1% / 21.3%;
-> - 5-year full-cost: 19.9%/yr with a −26% max drawdown;
+> - 5-year full-cost: 19.6%/yr with a −26% max drawdown (after the 2023+ data fix);
 > - forward 10-year median about 4.7%/yr.
 >
 > Real-time selection would have earned about 15%/yr on 1991–2026, not the champion's 21%. Treat backtest numbers as upper bounds.

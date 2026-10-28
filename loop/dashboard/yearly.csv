@@ -135,10 +135,10 @@ year,strategy,return
 2020,60/40,0.16254630167021467
 2021,60/40,0.1455948179936093
 2022,60/40,-0.1480799414492634
-2023,60/40,0.1269978338431037
-2024,60/40,0.19250299961677086
-2025,60/40,0.1123620387023272
-2026,60/40,0.09170361043878406
+2023,60/40,0.12853225510567112
+2024,60/40,0.17929144780209905
+2025,60/40,0.12255114489383923
+2026,60/40,0.06394012544473138
 1957,"ensemble: trend + value + recovery {""trend"": 3.0}",-0.3223925710271529
 1958,"ensemble: trend + value + recovery {""trend"": 3.0}",0.7104020428591651
 1959,"ensemble: trend + value + recovery {""trend"": 3.0}",0.27800074322537216
@@ -205,10 +205,10 @@ year,strategy,return
 2020,"ensemble: trend + value + recovery {""trend"": 3.0}",-0.04651519506271773
 2021,"ensemble: trend + value + recovery {""trend"": 3.0}",0.7434795066874111
 2022,"ensemble: trend + value + recovery {""trend"": 3.0}",-0.20558191040364027
-2023,"ensemble: trend + value + recovery {""trend"": 3.0}",0.32721963872864257
-2024,"ensemble: trend + value + recovery {""trend"": 3.0}",0.6775974041718533
-2025,"ensemble: trend + value + recovery {""trend"": 3.0}",0.09987014684287865
-2026,"ensemble: trend + value + recovery {""trend"": 3.0}",0.25531731373127253
+2023,"ensemble: trend + value + recovery {""trend"": 3.0}",0.3200639008506172
+2024,"ensemble: trend + value + recovery {""trend"": 3.0}",0.6752138355748336
+2025,"ensemble: trend + value + recovery {""trend"": 3.0}",0.10335105163032976
+2026,"ensemble: trend + value + recovery {""trend"": 3.0}",0.24885701220653944
 1957,"growth-trend timing xL {""lev"": 2.0}",-0.3296263909228919
 1958,"growth-trend timing xL {""lev"": 2.0}",0.5457689234469059
 1959,"growth-trend timing xL {""lev"": 2.0}",0.2463748717529064
@@ -275,10 +275,10 @@ year,strategy,return
 2020,"growth-trend timing xL {""lev"": 2.0}",0.07084824449799831
 2021,"growth-trend timing xL {""lev"": 2.0}",0.6227716012039708
 2022,"growth-trend timing xL {""lev"": 2.0}",-0.30802414533236544
-2023,"growth-trend timing xL {""lev"": 2.0}",0.41959231579838785
-2024,"growth-trend timing xL {""lev"": 2.0}",0.6352747075574501
-2025,"growth-trend timing xL {""lev"": 2.0}",0.2777000467274384
-2026,"growth-trend timing xL {""lev"": 2.0}",0.24335338353923386
+2023,"growth-trend timing xL {""lev"": 2.0}",0.4182796711587575
+2024,"growth-trend timing xL {""lev"": 2.0}",0.633410138089876
+2025,"growth-trend timing xL {""lev"": 2.0}",0.2751803733223086
+2026,"growth-trend timing xL {""lev"": 2.0}",0.24000756402796775
 1957,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",-0.43516335952780527
 1958,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8650047167797239
 1959,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.3543109209364519
@@ -345,10 +345,10 @@ year,strategy,return
 2020,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",-0.18495175038388967
 2021,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.037665534263954
 2022,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",-0.16192102259355068
-2023,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.44560062892532804
-2024,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.0374006506097349
-2025,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",-0.0029374066038549973
-2026,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.3550821384461782
+2023,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.44282740880529925
+2024,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.0328295275347998
+2025,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",-0.005466962530397912
+2026,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.3478702321000009
 1957,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",-0.3737228844237901
 1958,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.9370369510265473
 1959,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.2903674169448214
@@ -415,10 +415,10 @@ year,strategy,return
 2020,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",-0.18495175038388967
 2021,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",1.037665534263954
 2022,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",-0.2330201950994888
-2023,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.45500045622211105
-2024,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",1.0374006506097349
-2025,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.058068707975284184
-2026,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.24239963957006383
+2023,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.45210017317889095
+2024,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",1.0328295275347998
+2025,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.05516348661407644
+2026,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.2362760918853335
 1957,"60/40+SMA10 xL {""lev"": 4.0}",-0.39043272436072396
 1958,"60/40+SMA10 xL {""lev"": 4.0}",0.5716403662821417
 1959,"60/40+SMA10 xL {""lev"": 4.0}",0.28762317376935975
@@ -485,10 +485,10 @@ year,strategy,return
 2020,"60/40+SMA10 xL {""lev"": 4.0}",0.1265395510191858
 2021,"60/40+SMA10 xL {""lev"": 4.0}",0.7281612605269641
 2022,"60/40+SMA10 xL {""lev"": 4.0}",-0.15281992855316606
-2023,"60/40+SMA10 xL {""lev"": 4.0}",0.2628751090190966
-2024,"60/40+SMA10 xL {""lev"": 4.0}",0.8066242364320324
-2025,"60/40+SMA10 xL {""lev"": 4.0}",0.028941978502368126
-2026,"60/40+SMA10 xL {""lev"": 4.0}",0.3026161964875058
+2023,"60/40+SMA10 xL {""lev"": 4.0}",0.2612172307941465
+2024,"60/40+SMA10 xL {""lev"": 4.0}",0.6899173232602984
+2025,"60/40+SMA10 xL {""lev"": 4.0}",0.027847235923060598
+2026,"60/40+SMA10 xL {""lev"": 4.0}",0.23975755429625845
 1957,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.4083281052550295
 1958,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8650047167797239
 1959,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3519531397204687
@@ -555,10 +555,10 @@ year,strategy,return
 2020,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.18495175038388967
 2021,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",1.037665534263954
 2022,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.16192102259355068
-2023,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.44391178186984726
-2024,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8410144075388064
-2025,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1224605098195628
-2026,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.34323698382165446
+2023,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.441141972546395
+2024,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.8371143081900876
+2025,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",-0.1239753142046971
+2026,"variance-managed stocks {""lev"": 2.0, ""cap"": 3.0, ""win"": 3}",0.3370920700335951
 1957,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",-0.3349927535243532
 1958,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.670804271443667
 1959,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.2463748717529064
@@ -625,7 +625,7 @@ year,strategy,return
 2020,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",-0.00014241210552379258
 2021,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.6227716012039708
 2022,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",-0.3011487315018837
-2023,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.3072388379262012
-2024,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.6352747075574501
-2025,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.2777000467274384
-2026,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.24335338353923386
+2023,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.30603008240236207
+2024,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.633410138089876
+2025,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.2751803733223086
+2026,"recovery+ bond-gated {""signal"": ""either"", ""off"": 3.0}",0.24000756402796775

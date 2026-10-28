@@ -683,6 +683,23 @@ Setup: 13 markets (OECD monthly data via FRED), each held while above its own 10
 
 ---
 
+## Data fix: series the Shiller file stopped updating in 2023
+**What was stale.** The source file stopped updating several series after 2023 and the loader carried the last values forward:
+* the 10-year yield, CPI and CAPE stopped in 2023-09;
+* earnings stopped in 2023-06.
+
+**Effects:**
+* bonds and cash used a frozen 4.09% yield, while the real 10-year yield rose to 5.0%;
+* the valuation sleeve saw CAPE 30.8 instead of about 41, so it held 1.27× stocks instead of 0.99×.
+
+**Fix.** `data/fred_monthly.csv` holds GS10, CPIAUCSL, TB3MS and CP from FRED, and `data._extend_with_fred` splices them in. The recomputed CAPE matches Shiller's within 0.2% (median, 1900–2023).
+
+**Results after rerunning everything:**
+* champion worst era 13.1% (unchanged), 1991–2026 21.2% (was 21.3%);
+* 5-year simulation: champion 19.6%/yr (was 19.9%), 60/40 6.9% (was 7.5%).
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
