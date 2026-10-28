@@ -666,6 +666,23 @@ Data: OECD monthly share prices (FRED) for Germany, the UK, France, Italy, Canad
 
 ---
 
+## Experiment 21: a global trend sleeve (`scripts/experiments/exp21_global_trend.py`)
+Setup: 13 markets (OECD monthly data via FRED), each held while above its own 10-month average, equal weight, rules fixed in advance.
+
+| Sleeve / mix | 1961–90 | 1991–2026 | 1961–2026 | Max DD |
+|---|---|---|---|---|
+| US trend 3× | 9.8% | 17.2% | 13.8% | −71% |
+| 13-market trend 1× | 10.0% | 8.3% | 9.1% | −23% |
+| 13-market trend 3× | 14.3% | 16.4% | 15.4% | −65% |
+| Champion (US trend sleeve) | 13.8% | 21.2% | 17.8% | −53% |
+| Champion with global 3× trend sleeve | 14.7% | 18.8% | 16.9% | −50% |
+
+* **Trend plus leverage is not a US artefact:** diversified across 13 markets it earns more with shallower falls.
+* **It does not replace the US trend sleeve.** It loses in 1991–2026, so it fails "must not lose anywhere".
+* **It is hard to implement:** 3× on 12 foreign markets needs futures or margin.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
