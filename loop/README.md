@@ -41,6 +41,9 @@ The strategy will trade data nobody has seen, so it must not be fitted to partic
 * **Out-of-sample market check (since checkpoint 10):** report each champion candidate's testable
   sleeves on Japan 1950–2026 (`scripts/experiments/exp19_japan_out_of_sample.py`). The trend
   filter worked there; 3× leverage came close to ruin (−94%).
+* **12-market check (since checkpoint 11):** `scripts/experiments/exp20_twelve_markets.py` runs the
+  US rules on 12 other markets. Candidates report median growth, worst-country growth and worst
+  drawdown there, and anything that goes to zero in any market is excluded.
 * Directions already explored (see checkpoints) are not re-run unless something changed (new data,
   a new constraint, a bug fix).
 
@@ -49,11 +52,11 @@ Leverage on trend-filtered portfolios · stock/bond mixes · Gayed-Bilello lever
 volatility targeting · trend-strength leverage · valuation-scaled Kelly · leveraged bonds ·
 ≤2× deployable variants · drawdown brake · levered dual momentum · Sell-in-May seasonality (watch list) ·
 recovery leverage · exit signals (SMA10 / 12-month momentum / either / both) · bonds as the risk-off asset ·
-bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account) · Japan out-of-sample test (Exp 19).
+bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account) · Japan out-of-sample test (Exp 19) · 12-market test (Exp 20).
 
 ## Open directions (candidates for coming rounds)
 Live earnings data for the valuation sleeve ·
-multi-market trend sleeve (FRED: gold, oil, dollar, international indices) ·
+multi-market trend sleeve: hold the 12 OECD markets with trend filters, for diversification (Exp 20 data) ·
 synthetic-market tests (does the ensemble earn on markets with no trend / no mean reversion?) ·
 turn-of-month effects ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·

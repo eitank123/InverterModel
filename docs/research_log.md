@@ -643,6 +643,29 @@ The choice between them is about risk appetite. Both now run in the real-time si
 
 ---
 
+## Experiment 20: the US rules on 12 other markets (`scripts/experiments/exp20_twelve_markets.py`)
+Data: OECD monthly share prices (FRED) for Germany, the UK, France, Italy, Canada, Australia, the Netherlands, Switzerland, Sweden, Spain, Korea and Japan, mostly from the 1950s to 2026. Dividends added at 3%/yr, US T-bill cash, nothing re-fitted.
+
+| Rule | Median growth | Worst country | Median max DD | Worst max DD | DD worse than −80% |
+|---|---|---|---|---|---|
+| Buy & hold 1× | 9.4% | 7.2% | −59% | −69% | 0 of 12 |
+| Trend 1× | 8.6% | 7.3% | −39% | −48% | 0 |
+| Trend 2× | 10.7% | 7.5% | −75% | −88% | 3 |
+| Trend 3× | 12.0% | 4.5% | −94% | wiped out (Australia) | 12 |
+| Recovery+ | 11.2% | 8.1% | −80% | −92% | 6 |
+| Champion-like mix* | 11.2% | 7.9% | −75% | −89% | 2 |
+| Lower-leverage mix* | 9.7% | 7.9% | −52% | −66% | 0 |
+
+\*The valuation sleeve is replaced by a neutral 1× trend sleeve, because there is no earnings data for these markets.
+
+* **The trend filter travels.** It halved drawdowns in every market.
+* **The champion's structure beats buy & hold out of sample** in 11 of 12 markets, by +1.8 points a year at the median. The cost is drawdowns that are deep everywhere.
+* **3× on a single sleeve is not survivable.** On monthly data it went to zero in Australia's 1987 crash.
+* **The ensemble survived everywhere.** With daily-reset ETFs, a sleeve can lose at most what is in it.
+* **Lower leverage costs median growth (9.7% vs 11.2%)** but has the same worst-country growth and much shallower falls.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
