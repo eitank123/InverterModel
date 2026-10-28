@@ -714,6 +714,22 @@ Setup: 13 markets (OECD monthly data via FRED), each held while above its own 10
 
 ---
 
+## Experiment 23: country momentum rotation (`scripts/experiments/exp23_country_momentum.py`)
+Rule fixed in advance: hold the top 4 of 13 markets by 12-1 month return, equal weight, each only while above its 10-month average.
+
+| | 1961–90 | 1991–2026 | 1961–2026 | Max DD |
+|---|---|---|---|---|
+| All 13, trend 1× | 9.8% | 8.3% | 8.9% | −23% |
+| Top 4 by momentum, trend 1× | 13.8% | 9.0% | 11.2% | −23% |
+| All 13, trend 3× | 13.5% | 16.4% | 15.1% | −65% |
+| Top 4 by momentum, trend 3× | 23.9% | 17.1% | 20.2% | −67% |
+
+* **The edge holds up but has decayed.** Excess over all 13 markets: +4.0 points a year in 1961–90, +0.8 in 1991–2013, +0.7 in 2014–26 (after publication).
+* **It is robust to the number of markets held** (top 2 to 6).
+* **Not a champion candidate yet:** there is no data before 1960, the post-publication edge is small, and it needs 12 country ETFs.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.
