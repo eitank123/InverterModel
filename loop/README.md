@@ -38,6 +38,9 @@ The strategy will trade data nobody has seen, so it must not be fitted to partic
   each year pick the best strategy on data known then) is the honest estimate of what the loop
   itself delivers. Backtest numbers of the hand-picked champion are an upper bound.
 * The only truly unseen data is the forward paper record (from 2026-09).
+* **Out-of-sample market check (since checkpoint 10):** report each champion candidate's testable
+  sleeves on Japan 1950–2026 (`scripts/experiments/exp19_japan_out_of_sample.py`). The trend
+  filter worked there; 3× leverage came close to ruin (−94%).
 * Directions already explored (see checkpoints) are not re-run unless something changed (new data,
   a new constraint, a bug fix).
 
@@ -46,7 +49,7 @@ Leverage on trend-filtered portfolios · stock/bond mixes · Gayed-Bilello lever
 volatility targeting · trend-strength leverage · valuation-scaled Kelly · leveraged bonds ·
 ≤2× deployable variants · drawdown brake · levered dual momentum · Sell-in-May seasonality (watch list) ·
 recovery leverage · exit signals (SMA10 / 12-month momentum / either / both) · bonds as the risk-off asset ·
-bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account).
+bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account) · Japan out-of-sample test (Exp 19).
 
 ## Open directions (candidates for coming rounds)
 Live earnings data for the valuation sleeve ·

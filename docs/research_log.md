@@ -614,6 +614,35 @@ Daily data 2007–2026: DJIA to 2016 chained to the FRED S&P 500, T-bills from F
 
 ---
 
+## Experiment 19: Japan, a market none of the rules were designed on (`scripts/experiments/exp19_japan_out_of_sample.py`)
+Data: Nikkei 225, 1950–2026, from FRED. Month-ends, dividends added at 1.5%/yr, US T-bill cash. Same rules as in the US, nothing re-fitted.
+
+| Rule | 1950–89 boom | 1990–2012 bust | 2013–26 | 1950–2026 | Max DD |
+|---|---|---|---|---|---|
+| Buy & hold 1× | 17.6% | −4.2% | 15.7% | 10.3% | −75% |
+| Buy & hold 3× | 29.9% | −31.6% | 34.0% | 7.8% | −100% |
+| 10-month average 1× | 14.7% | 0.3% | 11.9% | 9.7% | **−38%** |
+| 10-month average 2× | 21.4% | −4.3% | 19.4% | 12.7% | −77% |
+| 10-month average 3× | 24.8% | −10.5% | 24.4% | 12.9% | **−94%** |
+| Recovery+ | 24.2% | −12.0% | 18.6% | 11.1% | −97% |
+| Champion-like mix* | 22.6% | −6.5% | 19.4% | 12.5% | −87% |
+| Lower-leverage mix* (trend 2×, recovery 1–1.5×) | 17.9% | −2.0% | 14.6% | 11.0% | −61% |
+
+\*The valuation sleeve is replaced by a neutral 1× trend sleeve, because there is no Japanese earnings data.
+
+* **The trend filter travels.** Out of sample it halved the drawdown and broke even through the bust.
+* **3× leverage does not travel.** In a 20-year sideways bust, whipsaws at 3× compound toward ruin.
+
+Lower-leverage ensemble on US history:
+* era growth 12.5% / 12.9% / 11.7% / 15.8%;
+* worst era 11.7% (champion 13.1%);
+* max DD −39% (−53%);
+* forward P(10-year loss) 8% (18%).
+
+The choice between them is about risk appetite. Both now run in the real-time simulation.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

@@ -9,6 +9,9 @@ _Last updated: 2026-10-27 (after loop round 8: overfitting audit, ensemble champ
 > - forward 10-year median about 4.7%/yr.
 >
 > Real-time selection would have earned about 15%/yr on 1991–2026, not the champion's 21%. Treat backtest numbers as upper bounds.
+>
+> **Out-of-sample warning (Exp 19, Japan 1950–2026):** the trend filter worked there, but 3× leverage came close to ruin (−94%). A champion-like mix fell −87%.
+> A lower-leverage ensemble fell −61% in Japan. On US history it has a worst era of 11.7% vs 13.1% and a max drawdown of −39% vs −53%. It runs in the real-time simulation for comparison.
 
 > **Reality check on returns.** The stock market's long-run average is about 10%/yr (9.4% since 1871, 10.7% since 1957).
 > The 18–20% figures in this repo are **2–3× leveraged** results from unusually strong periods (1991–2026, 2021–2026).

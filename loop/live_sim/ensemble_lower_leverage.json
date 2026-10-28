@@ -1,0 +1,75 @@
+{
+ "key": "ensemble_lower_leverage",
+ "name": "Ensemble, lower leverage (2x trend, 1-1.5x recovery)",
+ "description": "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like mix -87% there, this one about -61%). Added 2026-10-28.",
+ "start": "2026-10-27",
+ "start_equity": 100000.0,
+ "cash": -36.217659999991156,
+ "holdings": {
+  "SPY": 102.1738444192405,
+  "UPRO": 203.0339367759408
+ },
+ "basis": {
+  "SPY": 78936.37350999999,
+  "UPRO": 21099.84415
+ },
+ "targets": {
+  "UPRO": 0.210883,
+  "SPY": 0.789117
+ },
+ "exposure": {
+  "stocks": 1.421766941748472,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-27",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 34.217659999999995,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-27",
+   "equity": 99963.78
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-27",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 102.1738,
+   "price": 772.3278,
+   "amount": 78911.7,
+   "commission": 1.0,
+   "spread_slippage": 23.67,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.42x, bonds 0.00x",
+   "qty": 102.1738
+  },
+  {
+   "date": "2026-10-27",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 203.0339,
+   "price": 103.8659,
+   "amount": 21088.3,
+   "commission": 1.0,
+   "spread_slippage": 10.54,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 1.42x, bonds 0.00x",
+   "qty": 203.0339
+  }
+ ],
+ "prices": {
+  "IEF": 95.0366,
+  "SPY": 772.3278,
+  "SSO": NaN,
+  "UPRO": 103.8659,
+  "UST": 45.0161
+ }
+}

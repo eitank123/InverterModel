@@ -20,7 +20,7 @@ import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_weights  # noqa: E402
 from algotrading.live import completed_month_ends, shiller_history, splice_monthly  # noqa: E402
 from algotrading.live_sim import LiveSimAccount, daily_etf_returns  # noqa: E402
-from loop import build_from_row, ensemble, filtered  # noqa: E402
+from loop import build_from_row, ensemble, ensemble_lower, filtered  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
 ANCHOR = "2026-10-23"                       # price levels: SPY = S&P/10 there; others fixed
@@ -124,6 +124,10 @@ DAILY = {"daily_band_3x": ("Daily trend: 3x above the 200-day average (±2% band
                            "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its "
                            "200-day average, T-bills otherwise; checked every day.", daily_band_200())}
 ACCOUNTS.update(DAILY)
+ACCOUNTS["ensemble_lower_leverage"] = (
+    "Ensemble, lower leverage (2x trend, 1-1.5x recovery)",
+    "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like "
+    "mix -87% there, this one about -61%). Added 2026-10-28.", from_strategy(ensemble_lower()))
 
 print(f"Data: FRED S&P 500 to {sp.index[-1]:%Y-%m-%d}, 10y yield to {y10.index[-1]:%Y-%m-%d}, "
       f"T-bill to {tb.index[-1]:%Y-%m-%d}")

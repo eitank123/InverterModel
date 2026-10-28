@@ -25,7 +25,7 @@ Standing instructions from the owner. Every session and every scheduled round fo
   * a weekly report with a learning review (Saturday, routine "Algo trading weekly report").
 
   Both use `python scripts/report.py daily|weekly`, write to `reports/`, and appear on the
-  dashboard's Reports tab. The fleet of 19 strategies in `scripts/live_sim.py` runs side by side.
+  dashboard's Reports tab. The fleet of strategies in `scripts/live_sim.py` runs side by side.
   New ideas get NEW accounts, and existing accounts are never edited.
 * **Secrets and real money:** never put API keys in code or git. Real-money orders need the
   owner's explicit approval (docs/AUTOMATION.md).

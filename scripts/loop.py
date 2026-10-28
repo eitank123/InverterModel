@@ -319,6 +319,13 @@ def ensemble(trend_lev=2.0):
                      at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})
 
 
+def ensemble_lower(trend_lev=2.0, rec_base=1.0, rec_boost=1.5, off=1.0):
+    """Exp 19 (Japan): the same three sleeves at lower leverage."""
+    return at.Blend({at.Levered(filtered(1.0), trend_lev): 1 / 3,
+                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                     at.RecoveryLeverage(rec_base, rec_boost, 0.15, signal="either", off_lev=off): 1 / 3})
+
+
 def iteration_8():
     """Checkpoint 7 (user: 'don't depend on past years'): stop picking the single best fit.
     Fixed equal-weight ensembles of independent effects, judged on their WORST era."""
