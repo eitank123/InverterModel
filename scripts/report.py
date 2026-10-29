@@ -65,6 +65,25 @@ def market_section(asof):
     return lines, sp
 
 
+def whipsaw_lines():
+    """Early warning for a trendless market (Exp 24): how often the 10-month trend signal flipped
+    in the last 12 completed months, against its 1957-2026 history."""
+    from algotrading.live import completed_month_ends, shiller_history, splice_monthly
+    hist, _ = shiller_history()
+    try:
+        monthly = splice_monthly(hist, completed_month_ends(at.data.fred_daily_proxies()))["stocks"]
+    except Exception:                                   # offline: history only
+        monthly = hist["stocks"]
+    on = (monthly > monthly.rolling(10).mean()).astype(int)
+    flips = on.diff().abs()
+    roll = flips.rolling(12).sum()["1957":]
+    now, avg, p90 = int(roll.iloc[-1]), float(roll.mean()), float(roll.quantile(0.9))
+    state = "**high: possible trendless market, expect whipsaw costs**" if now > p90 else "normal"
+    return [f"* Trend-signal flips in the last 12 months: {now} (1957-2026 average {avg:.1f}, "
+            f"90th percentile {p90:.0f}): {state}. Signal now: {'in' if on.iloc[-1] else 'out'} "
+            f"(month-end {monthly.index[-1]:%b %Y})."]
+
+
 def accounts_table(accts, since):
     rows = []
     for st, eq in accts:
@@ -174,6 +193,7 @@ def main(kind):
                ["", "## Accounts (ranked by return since start)"] + render_table(rows, "Week") + \
                ["", "## Trades this week"] + trades_lines(rows) + \
                ["", "## Behaviour check (real time vs what the backtest implies)"] + learning_lines(accts, start, asof) + \
+               ["", "## Whipsaw monitor (early warning, Exp 24)"] + whipsaw_lines() + \
                ["", "## Research loop this week"] + \
                ([f"* Checkpoint {c['checkpoint']} ({c['date']}): {c['decision']}" for c in week_cps] or
                 ["* No new checkpoints."]) + \
