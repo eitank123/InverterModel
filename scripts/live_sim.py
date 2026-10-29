@@ -124,6 +124,12 @@ DAILY = {"daily_band_3x": ("Daily trend: 3x above the 200-day average (±2% band
                            "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its "
                            "200-day average, T-bills otherwise; checked every day.", daily_band_200())}
 ACCOUNTS.update(DAILY)
+BANDS = {"champion_band10": 0.10}
+ACCOUNTS["champion_band10"] = (
+    "Champion, tax-aware (trades only beyond a 10% band)",
+    "Same signals as the champion ensemble; a holding is traded only when it drifts more than 10% of "
+    "the account from target (Exp 25: +0.4 points a year after a 25% tax over 1957-2026). Added 2026-10-29.",
+    from_strategy(ensemble(3.0)))
 ACCOUNTS["ensemble_lower_leverage"] = (
     "Ensemble, lower leverage (2x trend, 1-1.5x recovery)",
     "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like "
@@ -137,7 +143,7 @@ for key, (name, desc, fn) in ACCOUNTS.items():
     if key in DAILY and acct.st["last_date"]:                # rebuild the band state up to the last day
         for d in sp.index[(sp.index >= pd.Timestamp(acct.st["start"])) & (sp.index <= pd.Timestamp(acct.st["last_date"]))]:
             fn(d)
-    n = acct.advance(etf, cash, fn, costs, daily=key in DAILY)
+    n = acct.advance(etf, cash, fn, costs, daily=key in DAILY, band=BANDS.get(key, 0.02))
     acct.save()
     st = acct.st
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]

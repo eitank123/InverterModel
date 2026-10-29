@@ -150,5 +150,13 @@
   "finding": "Capital-gains tax added to the execution simulator (execution.simulate(tax_rate=...)): a flat rate on each year's net realized gains, losses carried forward, paid from cash the next January, plus the value after selling everything at the end. 5-year full-cost simulation (2021-10 to 2026-09, $100k) at 25%. Champion: $10,372 tax paid along the way; $245,003 pre-tax becomes $207,278 if sold (15.7%/yr after tax vs 19.6% pre-tax). S&P 500 buy & hold: no tax until sold; $184,899 becomes $163,673 (10.4%/yr vs 13.1%). 60/40: 5.4% vs 6.9%. Recovery+ challenger: 13.1% after tax. Tax costs the champion about 3.9 points a year (it realizes gains at each switch) against 2.7 for buy & hold, but its lead stays about 5 points a year after tax.",
   "decision": "Reporting change, no strategy change. The dashboard's 5-year table now shows tax paid and after-tax results. The actual rate depends on the owner's country and account type (a tax-deferred account would remove the drag). Taxes favour buy-and-hold structures; a future candidate could cut realized gains by rebalancing less often (e.g. a \u00b110% band instead of monthly).",
   "sources": "Israel Tax Authority capital-gains rate 25%; US IRS long-term 15-20% / short-term ordinary rates; Jeffrey & Arnott (1993) Is Your Alpha Big Enough to Cover Its Taxes?"
+ },
+ {
+  "checkpoint": 20,
+  "date": "2026-10-29",
+  "iteration": "exp25",
+  "finding": "Exp 25: the champion through the full execution simulator over 1957-2026 (ETF prices rebuilt from index data, every cost, 25% capital-gains tax with loss carry-forward, sold at the end), varying only the no-trade band (round values fixed in advance). Trades per year / pre-tax / after-tax. 2% band (current): 9.0 / 14.94% / 12.07%. 5%: 5.2 / 15.05% / 12.08%. 10%: 3.9 / 15.04% / 12.45%. 20%: 3.1 / 15.12% / 12.54%. S&P 500 buy & hold: 10.61% / 10.15%. Over 70 years tax cuts the champion's lead over the S&P from about 4.3 to about 1.9-2.4 points a year. A wider band trades less at no pre-tax cost and keeps about 0.4 points a year more after tax.",
+  "decision": "Signals unchanged. Implementation recommendation for a taxable account: trade only beyond a 10% band. A NEW real-time account runs the champion with a 10% band (existing accounts untouched; live_sim gained a band parameter). Important for the owner: in a taxable account the long-run edge over the S&P is about 2 points a year, not 4+. A tax-deferred account keeps the full edge.",
+  "sources": "Jeffrey & Arnott (1993); Leibowitz & Bova on tax-efficient rebalancing; Exp 20-like execution model"
  }
 ]

@@ -1,0 +1,75 @@
+{
+ "key": "champion_band10",
+ "name": "Champion, tax-aware (trades only beyond a 10% band)",
+ "description": "Same signals as the champion ensemble; a holding is traded only when it drifts more than 10% of the account from target (Exp 25: +0.4 points a year after a 25% tax over 1957-2026). Added 2026-10-29.",
+ "start": "2026-10-28",
+ "start_equity": 100000.0,
+ "cash": -41.95767999999953,
+ "holdings": {
+  "SPY": 64.83099057021161,
+  "UPRO": 475.5240691618683
+ },
+ "basis": {
+  "SPY": 50227.663479999996,
+  "UPRO": 49814.294200000004
+ },
+ "targets": {
+  "UPRO": 0.497884,
+  "SPY": 0.502116
+ },
+ "exposure": {
+  "stocks": 1.995768043090024,
+  "bonds": 0.0
+ },
+ "last_date": "2026-10-28",
+ "last_signal_month": "2026-10",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 39.957679999999996,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-10-28",
+   "equity": 99958.04
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-10-28",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 64.831,
+   "price": 774.5,
+   "amount": 50211.6,
+   "commission": 1.0,
+   "spread_slippage": 15.06,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.00x, bonds 0.00x",
+   "qty": 64.831
+  },
+  {
+   "date": "2026-10-28",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 475.5241,
+   "price": 104.7022,
+   "amount": 49788.4,
+   "commission": 1.0,
+   "spread_slippage": 24.89,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-09: stocks 2.00x, bonds 0.00x",
+   "qty": 475.5241
+  }
+ ],
+ "prices": {
+  "IEF": 95.1261,
+  "SPY": 774.5,
+  "SSO": NaN,
+  "UPRO": 104.7022,
+  "UST": 45.0916
+ }
+}

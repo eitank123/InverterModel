@@ -760,6 +760,21 @@ Setup: 200 synthetic 70-year histories resampled from 1957–2026. Shown as medi
 
 ---
 
+## Experiment 25: tax-aware rebalancing bands (`scripts/experiments/exp25_tax_bands.py`)
+Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end.
+
+| | Trades/yr | Pre-tax | After tax |
+|---|---|---|---|
+| S&P 500 buy & hold | 0 | 10.61% | 10.15% |
+| Champion, 2% band | 9.0 | 14.94% | 12.07% |
+| Champion, 10% band | 3.9 | 15.04% | 12.45% |
+| Champion, 20% band | 3.1 | 15.12% | 12.54% |
+
+* **The long-run edge over the S&P in a taxable account is about 2 points a year** (pre-tax it is about 4.3). A tax-deferred account keeps it all.
+* **Trading only beyond a 10% band** gains about 0.4 points a year after tax, at no pre-tax cost. It runs as a new real-time account.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

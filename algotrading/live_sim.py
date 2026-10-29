@@ -55,11 +55,12 @@ class LiveSimAccount:
             json.dump(self.st, f, indent=1, default=float)
 
     def advance(self, etf_px: pd.DataFrame, cash_rate: pd.Series, target_fn, costs: CostModel,
-                daily: bool = False):
+                daily: bool = False, band: float = 0.02):
         """Process every trading day after ``last_date``. ``target_fn(date)`` returns
         ({symbol: weight}, exposure dict, reason) using data up to that date only. Monthly rules
         rebalance on the first trading day of each month; ``daily`` rules also trade on any day
-        their target changes."""
+        their target changes. ``band``: trade a holding only when it is more than this share of
+        equity away from its target (full exits always happen); Exp 25."""
         st = self.st
         days = etf_px.index[etf_px.index >= pd.Timestamp(st["start"])]
         if st["last_date"]:
@@ -84,7 +85,7 @@ class LiveSimAccount:
                 for s in set(targets) | set(led.shares):
                     delta = targets.get(s, 0.0) * equity / px[s] - led.shares.get(s, 0.0)
                     full_exit = targets.get(s, 0.0) == 0.0 and led.shares.get(s, 0.0) != 0.0
-                    if abs(delta) * px[s] >= 0.02 * equity or full_exit:
+                    if abs(delta) * px[s] >= band * equity or full_exit:
                         orders.append((s, delta))
                 for s, delta in sorted(orders, key=lambda o: o[1] > 0):   # sells first
                     led.trade(d, s, delta, px[s], INSTRUMENTS[s].spread_bps, reason)

@@ -6,6 +6,7 @@ _Last updated: 2026-10-27 (after loop round 8: overfitting audit, ensemble champ
 > It is chosen by its worst era across 1880–2026, not by the best backtest:
 > - eras: 15.4% / 14.6% / 13.1% / 21.3%;
 > - 5-year full-cost: 19.6%/yr with a −26% max drawdown (after the 2023+ data fix); 15.7%/yr after 25% capital-gains tax (S&P 500: 13.1% / 10.4%);
+> - 1957–2026 after 25% tax: 12.1–12.5%/yr vs 10.2% for the S&P. In a taxable account the long-run edge is about 2 points a year; trade only beyond a 10% band (Exp 25);
 > - forward 10-year median about 4.7%/yr.
 >
 > Real-time selection would have earned about 15%/yr on 1991–2026, not the champion's 21%. Treat backtest numbers as upper bounds.
