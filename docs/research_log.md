@@ -730,6 +730,23 @@ Rule fixed in advance: hold the top 4 of 13 markets by 12-1 month return, equal 
 
 ---
 
+## Experiment 24: what if markets stop trending? (`scripts/experiments/exp24_no_trend_world.py`)
+Setup: 200 synthetic 70-year histories resampled from 1957–2026. Shown as median growth (5th percentile).
+
+| | No structure (i.i.d.) | Structure kept (24-month blocks) |
+|---|---|---|
+| S&P 1× | 10.6% (8.2%) | 10.7% (7.9%) |
+| S&P 3× buy & hold | 17.7% (9.2%) | 18.0% (8.3%) |
+| Trend 3× sleeve | 13.9% (5.3%) | 17.5% (10.1%) |
+| Champion | 13.3% (7.3%) | 16.3% (10.8%) |
+
+* **Most of the champion's excess comes from leverage.** Timing (trend and recovery) adds the rest, and pays only if market structure persists.
+* **With structure,** the champion has the best bad case of all.
+* **Without structure,** it lags plain leverage by about 3 points a year, but still beats the S&P in 84% of paths.
+* **Caveat:** resampling from 1957 onward leaves out 1929–32, when 3× buy & hold was wiped out.
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

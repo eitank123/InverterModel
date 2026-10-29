@@ -126,5 +126,13 @@
   "finding": "Round 10. (1) Risk-parity sleeve weights (inverse 36-month volatility of each sleeve's own returns; Qian 2005, Asness-Frazzini-Pedersen 2012): 15.2% / 14.8% / 13.1% / 19.7% by era, worst 13.1% (ties the champion), max DD -52%, crash day -46%. It loses 1.5 points a year in 1991-2026, because it underweights the 3x trend sleeve. (2) Adding variance-managed stocks (Moreira-Muir 2017) as a 4th equal sleeve: 15.4% / 15.2% / 12.5% / 21.7%, worst era 12.5% (below 13.1%), crash day -50%. Variants tried: 230.",
   "decision": "Champion unchanged: neither passes beats_everywhere. Equal weight remains the best way to combine the sleeves, consistent with DeMiguel, Garlappi & Uppal (2009): 1/N is hard to beat out of sample.",
   "sources": "Qian (2005) Risk Parity Portfolios; Asness, Frazzini & Pedersen (2012) Leverage Aversion and Risk Parity; Moreira & Muir (2017); DeMiguel, Garlappi & Uppal (2009) Optimal Versus Naive Diversification"
+ },
+ {
+  "checkpoint": 17,
+  "date": "2026-10-29",
+  "iteration": "exp24",
+  "finding": "Exp 24, model risk: synthetic 70-year histories resampled from real 1957-2026 monthly returns, 200 paths. Median growth (5th percentile), structure DESTROYED (i.i.d.) vs KEPT (24-month blocks). S&P 1x: 10.6% (8.2%) vs 10.7% (7.9%). S&P 3x buy & hold: 17.7% (9.2%) vs 18.0% (8.3%). Trend 3x sleeve: 13.9% (5.3%) vs 17.5% (10.1%). Champion: 13.3% (7.3%) vs 16.3% (10.8%). P(champion beats S&P 1x): 84% without structure, 99.5% with it. With structure the champion has the best bad case of all (5th percentile 10.8% vs 8.3% for 3x buy & hold); without structure its timing costs about 3 points a year against plain leverage. Caveat: resampling only from 1957+ omits the 1929-32 crash, where 3x buy & hold was wiped out; real history (worst-era rule, Exp 20) is much harsher on plain leverage than these paths.",
+  "decision": "No champion change. Model-risk statement for the owner: about two-thirds of the champion's excess over the S&P comes from leverage and one-third from timing (trend + recovery). If markets stopped trending, the champion would still beat the S&P most of the time (84%), but would lag plain leverage. Watch item for the real-time simulation: the trend sleeve's whipsaw costs are the first sign of a no-trend regime. Next: a whipsaw monitor in the weekly report (count of trend-signal flips in the past 12 months vs the historical norm).",
+  "sources": "Politis & Romano (1994) stationary bootstrap; Moskowitz, Ooi & Pedersen (2012)"
  }
 ]
