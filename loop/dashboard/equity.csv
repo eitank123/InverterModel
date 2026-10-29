@@ -3347,843 +3347,1680 @@ date,strategy,growth_of_1
 2026-07-01,"growth-trend timing xL {""lev"": 2.0}",8861.131927561264
 2026-08-01,"growth-trend timing xL {""lev"": 2.0}",9402.818955398014
 2026-09-01,"growth-trend timing xL {""lev"": 2.0}",9293.99367254869
-1957-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.9986333333333334
-1957-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8720151885791327
-1957-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8734031460876212
-1957-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8748442612786657
-1957-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8763752387359033
-1957-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8754258322272728
-1957-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.9321821007241318
-1957-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.782114608626316
-1957-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.6906104752897427
-1957-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5629913595835868
-1957-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5640328935988164
-1957-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5648366404721947
-1958-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5655850490208204
-1958-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5663155963758056
-1958-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5670140522780025
-1958-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5676661184381222
-1958-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.5666348583229596
-1958-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.6112267957618244
-1958-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.6652936189005249
-1958-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.743396186274174
-1958-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.8056276421124907
-1958-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.9072474247727972
-1958-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",0.9936658284636676
-1958-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.0534229986906567
-1959-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.182613237468078
-1959-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1319331041168947
-1959-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2216189691606278
-1959-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2862702709005802
-1959-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.3473361397334582
-1959-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.315369590241781
-1959-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.4747788516404141
-1959-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.4522972091029647
-1959-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2820845532733818
-1959-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2813771781967498
-1959-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2995970690533782
-1959-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.4266622714923813
-1960-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.3544473497076426
-1960-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2001269760973423
-1960-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1514058298971894
-1960-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.154073253403118
-1960-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1568141773799503
-1960-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1593688086883311
-1960-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1582094398796428
-1960-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.2011319129006073
-1960-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1998306866616317
-1960-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1301977870836601
-1960-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.1324864376025046
-1960-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.131297326843022
-1961-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.3101103051466034
-1961-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.4759390709301121
-1961-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.6195942204346025
-1961-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.75391825943212
-1961-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.8124710429814122
-1961-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.7450362181010417
-1961-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.7351254344419447
-1961-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.9262111562938038
-1961-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.8853884840972235
-1961-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.9523180373390827
-1961-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.222392527245572
-1961-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.2887545188035134
-1962-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.037623279449658
-1962-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.144073470187318
-1962-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.155587478556886
-1962-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.9549930741272574
-1962-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.518421334687652
-1962-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.52147083086815
-1962-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5246532406893825
-1962-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5278041907201405
-1962-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5309616527142955
-1962-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.534061850061042
-1962-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5371555414586648
-1962-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5401786140235336
-1963-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.5385485916570254
-1963-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.6047446605785016
-1963-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.591735095587148
-1963-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.8216750339080274
-1963-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.9369220623953638
-1963-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.9399726732210096
-1963-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1.8591182176560044
-1963-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.0189027262710346
-1963-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.1838206267738567
-1963-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.205425812236212
-1963-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.173850187604181
-1963-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.3187685144109316
-1964-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.538305986733038
-1964-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.637811897695228
-1964-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.78768807051039
-1964-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9144238995478773
-1964-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.005731547393083
-1964-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9583864099502573
-1964-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.2943900377772044
-1964-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.1559380512259656
-1964-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3253837007405678
-1964-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.5044519584655704
-1964-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.584764725114772
-1964-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.4057013636176277
-1965-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.6759662456936306
-1965-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7640063415678577
-1965-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7819428622770785
-1965-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.9387175985598435
-1965-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.122595781192335
-1965-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.543310675690171
-1965-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.535524093536901
-1965-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7306492699176577
-1965-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.728131081660463
-1965-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.98677952567126
-1965-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.0927638867442955
-1965-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.042310671185989
-1966-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.258377582172737
-1966-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.176436547065522
-1966-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.6657996821326315
-1966-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.008279224009715
-1966-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3810558363847028
-1966-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.292851772768657
-1966-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3025108046354443
-1966-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3127485881298147
-1966-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.32290768380008
-1966-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3326271887751955
-1966-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3427917017009596
-1966-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.352095805270694
-1967-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3606995178375554
-1967-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3593832438597357
-1967-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.6050910569294263
-1967-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.799011667897842
-1967-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.009149303838488
-1967-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8629964349524384
-1967-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.067184414457773
-1967-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.264175072734977
-1967-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.4452669779347955
-1967-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.425066724684863
-1967-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.007479000251416
-1967-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.350193420204962
-1968-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.315181210276334
-1968-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7314102019050073
-1968-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.5162969736069196
-1968-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.528428198165863
-1968-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.530692272926353
-1968-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8145181323905173
-1968-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7916341549170283
-1968-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.5438469250877054
-1968-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.890545600825603
-1968-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.178114754026225
-1968-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.369352761917599
-1968-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.501341070211335
-1969-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.9254821824629653
-1969-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8635288371950343
-1969-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.607676314634022
-1969-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8120010409666567
-1969-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.815876575358306
-1969-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.211445495489297
-1969-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.7660935080308073
-1969-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.7780568624530404
-1969-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.7911600306542774
-1969-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.8041854441306637
-1969-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.8173651157180775
-1969-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.831804111936133
-1970-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.846647485156198
-1970-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.860263948960195
-1970-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.873540340789952
-1970-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.8876446346293294
-1970-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9030694697193073
-1970-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9184073534176576
-1970-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9329021099396315
-1970-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9476399430420783
-1970-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9621079424291765
-1970-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.967612526355524
-1970-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2.9569888522156274
-1970-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.5652936894288874
-1971-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.973731174182713
-1971-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.434638801185569
-1971-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.776532282288548
-1971-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.264490902895016
-1971-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.04218367624771
-1971-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.754356377912993
-1971-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.642879855880838
-1971-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.38834838884839
-1971-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.6780532738029565
-1971-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.377984668568259
-1971-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.755524977358856
-1971-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.7693891237336055
-1972-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.77205910769625
-1972-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.9762868350570795
-1972-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.255177243704215
-1972-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.379075006402877
-1972-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.239703699530895
-1972-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.269238136848363
-1972-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.168378670589761
-1972-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.605370732769983
-1972-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.395567053013816
-1972-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.410700252425651
-1972-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.067362871268048
-1972-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.373750041557704
-1973-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.484422652333796
-1973-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.885855010633245
-1973-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.642233815596186
-1973-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.371071501145836
-1973-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.9785273853564993
-1973-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.9964307585906034
-1973-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.015180679566325
-1973-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.034921984574193
-1973-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.053717996152335
-1973-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.071588136318706
-1973-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.077118710203872
-1973-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.193870899266293
-1974-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.208482858630436
-1974-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.223081455637205
-1974-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.2384179515636125
-1974-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.2546370281376933
-1974-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.271127189080258
-1974-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.2875918625986285
-1974-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.304879116476126
-1974-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.322890707660921
-1974-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3410004620176728
-1974-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.358819131148434
-1974-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3761170496738484
-1974-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.3928006947609863
-1975-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.409764698234791
-1975-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.42650095996196
-1975-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.4340107078992097
-1975-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.5459617318346184
-1975-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.2184595479002285
-1975-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.536710093194161
-1975-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.542123704177663
-1975-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.532768937846801
-1975-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.398651678553597
-1975-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8649749072535364
-1975-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.056185889652101
-1975-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3.8652061991454434
-1976-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.9286580218021205
-1976-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.490702885567235
-1976-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.561334465155263
-1976-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.683616300757067
-1976-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.553228760394023
-1976-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.640091062325871
-1976-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.027289223476677
-1976-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.8583444607918675
-1976-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.2228844345607035
-1976-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.577124558849793
-1976-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.458225125223373
-1976-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.025752532439975
-1977-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.866937551219
-1977-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.388220457828225
-1977-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.305906943454639
-1977-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.331861671586371
-1977-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.358343251221917
-1977-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.384152604548635
-1977-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.410310612619068
-1977-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.4206803746265875
-1977-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.156653497968613
-1977-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.182522709683423
-1977-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.208780824745819
-1977-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.235649452500133
-1978-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.263834698719425
-1978-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.292478732538289
-1978-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.321322741630622
-1978-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.350811738490492
-1978-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.365303520282237
-1978-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.407514815770741
-1978-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.329061563510157
-1978-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.435313990928775
-1978-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.433462263909699
-1978-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.816504636355141
-1978-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.792190176278077
-1978-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.9904855259477765
-1979-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.007120477700936
-1979-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.781299519915544
-1979-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.05293363285827
-1979-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.353129925938961
-1979-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4.976127886365153
-1979-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.272022439663081
-1979-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.427624471283988
-1979-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.172211267034678
-1979-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.372574232842196
-1979-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.633559092377183
-1979-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.4890879070440075
-1979-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.12901895541006
-1980-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.638686490858581
-1980-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.388669599059877
-1980-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.2990821712635965
-1980-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.022469702333222
-1980-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.689942881980635
-1980-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5.712133659220359
-1980-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6.476197953401998
-1980-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.048678400786171
-1980-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.525488201246586
-1980-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.141718107132917
-1980-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9.110841446005876
-1980-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.591327883597696
-1981-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.428876170041423
-1981-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.481919394841082
-1981-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.261362915398724
-1981-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.407996370089473
-1981-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.817055140538726
-1981-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.856249332689282
-1981-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.207802499659015
-1981-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.1928645476505135
-1981-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.2757023710242885
-1981-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.358463485494689
-1981-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.431373594530133
-1981-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.507049748967766
-1982-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.5889391499794225
-1982-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.670709969320451
-1982-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.7497182820044515
-1982-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.829604961294781
-1982-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.908683971403859
-1982-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7.993043267098833
-1982-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.075971090994983
-1982-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.153769612504902
-1982-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.227425331337862
-1982-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8.267259782317089
-1982-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9.251835649977906
-1982-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9.48106880393798
-1983-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10.448420701030994
-1983-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10.947056373385857
-1983-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.043307126583128
-1983-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13.371340072437388
-1983-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14.93716243292973
-1983-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.477942782979076
-1983-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.539452722904128
-1983-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14.136722454380863
-1983-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.29163348573093
-1983-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.320932084769609
-1983-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14.524019329609835
-1983-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14.206692365883928
-1984-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14.6263618606499
-1984-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.119593885154572
-1984-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.015993572839582
-1984-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.127441913227669
-1984-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.247806774216453
-1984-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.370897232297327
-1984-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.493162933276531
-1984-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.609974006702666
-1984-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.68794567931078
-1984-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.295928643137424
-1984-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.554588822315816
-1984-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12.069334713460487
-1985-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13.562225758255499
-1985-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.680201843652663
-1985-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.172325393345883
-1985-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.375561609744633
-1985-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16.38557105650475
-1985-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",17.370317586828996
-1985-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",18.27260251912828
-1985-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16.97769603170121
-1985-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15.753226515047558
-1985-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16.217853427187677
-1985-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",19.104777083063468
-1985-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",21.8767673825927
-1986-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",22.072566561305322
-1986-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25.562947522662256
-1986-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",30.01674701287571
-1986-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32.17109371914022
-1986-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32.28689602661896
-1986-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",34.95675834710942
-1986-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32.69948695448888
-1986-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",34.60218472140208
-1986-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",31.682007489378055
-1986-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",31.257615609666402
-1986-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",34.245511313882275
-1986-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",35.653065401741465
-1987-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",42.43028193234657
-1987-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",50.214480764577345
-1987-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",56.28508047982923
-1987-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.183337846424756
-1987-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",53.77985864634315
-1987-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.37713367795615
-1987-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",65.28488601752176
-1987-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",77.08347248138074
-1987-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",68.99659249670222
-1987-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",43.48321567707544
-1987-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",26.735315300940147
-1987-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",26.90218822727685
-1988-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.06292880193483
-1988-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.214255678818983
-1988-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.37005729258022
-1988-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.53473380395724
-1988-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.708890995267268
-1988-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.88022430458801
-1988-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.97222904479315
-1988-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",26.147040839752044
-1988-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.312878592179914
-1988-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",30.075097267266283
-1988-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27.855766142256204
-1988-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",29.425812030363662
-1989-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32.131623554044644
-1989-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",34.87733167620193
-1989-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",34.22558823233838
-1989-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",37.421441802728005
-1989-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",41.55453606700399
-1989-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",45.2855544576281
-1989-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",48.56180203890819
-1989-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.82460066337563
-1989-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.92410694449691
-1989-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.7567178344622
-1989-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",51.155619588993694
-1989-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.77752166267569
-1990-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",50.48865699246257
-1990-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",46.03559123155985
-1990-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49.05704973939178
-1990-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49.207900167340405
-1990-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54.26059761248935
-1990-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",58.74839442895554
-1990-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",58.31882473111295
-1990-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",43.814106663002846
-1990-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",37.40206449216994
-1990-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",37.627100246864494
-1990-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",37.84314251411524
-1990-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",38.050649078900975
-1991-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",38.259610560092604
-1991-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",38.462067665973095
-1991-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",38.55854335236858
-1991-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",40.71955505712433
-1991-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",40.02149524614375
-1991-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",39.952802708447514
-1991-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",40.40532912972353
-1991-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",43.18911635510469
-1991-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",42.318917771245665
-1991-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",42.08822921166071
-1991-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",41.657105428678165
-1991-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",42.402221859412194
-1992-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",51.33707041511231
-1992-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49.87047234261322
-1992-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",47.81345993159683
-1992-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",47.67619248356932
-1992-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",50.12677329346719
-1992-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",47.60504518614369
-1992-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49.873184398296736
-1992-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",50.81823257708689
-1992-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",50.93675118181652
-1992-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",48.655483433542095
-1992-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",52.20352385239697
-1992-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",56.824751622673936
-1993-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",56.53874322827138
-1993-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",58.968774939417116
-1993-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",62.2842018587747
-1993-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",59.2616553142855
-1993-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.05275628169072
-1993-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",61.11546640142519
-1993-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.737372229910946
-1993-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",63.475046989652036
-1993-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",65.59400189899358
-1993-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",67.5651953536135
-1993-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",67.04970354728134
-1993-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",68.30193697181849
-1994-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",71.31971930066729
-1994-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",70.56862100734759
-1994-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",66.91140763572838
-1994-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",59.52987598956416
-1994-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.629483032982115
-1994-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.91242062046936
-1994-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",61.206830653468295
-1994-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",61.49960332676072
-1994-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",61.62055254663668
-1994-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",60.11062832630757
-1994-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",58.74902869818533
-1994-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",56.27678511907588
-1995-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",59.77949270253267
-1995-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",65.9839749844795
-1995-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",70.36574523032274
-1995-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",76.44560958786413
-1995-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",83.40832738929478
-1995-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",90.64495301772784
-1995-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",99.49747341203387
-1995-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",100.12183215191158
-1995-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",110.4238244757182
-1995-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",112.52267884248717
-1995-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",119.56265075992255
-1995-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",130.78402694324873
-1996-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",130.4138316646144
-1996-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",152.4742719349186
-1996-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",150.22306718934652
-1996-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",149.73481737997747
-1996-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",158.88360970890784
-1996-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",163.4164371733253
-1996-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",144.78179112995693
-1996-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",156.78753730329538
-1996-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",164.79062908333216
-1996-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",183.6423312948781
-1996-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",209.88928308222629
-1996-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",215.5858202682194
-1997-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",234.6531206916753
-1997-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",263.2383292481724
-1997-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",255.8210089470151
-1997-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",227.17838065345015
-1997-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",287.84163924320353
-1997-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",331.29558136089923
-1997-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",385.427262750458
-1997-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",386.0499721474079
-1997-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",396.50891290127527
-1997-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",412.76302948612795
-1997-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",395.14640426831676
-1997-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",423.216390472984
-1998-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",423.0297398061329
-1998-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",501.0622545661015
-1998-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",577.0463113464391
-1998-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",631.5555275212354
-1998-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",622.4717068491141
-1998-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",619.9919453937558
-1998-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",698.4901798680983
-1998-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",547.372420899723
-1998-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",463.4655307425645
-1998-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",477.2994708242077
-1998-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",478.62397685574484
-1998-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",478.4444928644239
-1999-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",547.9376552241181
-1999-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",543.1972897499563
-1999-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",587.0181055349954
-1999-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",657.773743833969
-1999-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",650.8463212655352
-1999-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",633.5860843492977
-1999-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",714.4951906016812
-1999-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",627.7172927565847
-1999-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",611.3159362980878
-1999-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",582.7750372819343
-1999-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",700.3780841364338
-1999-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",701.0667892525013
-2000-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",691.9548635473953
-2000-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",634.1501809348674
-2000-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",703.5681542462012
-2000-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",727.7848491147007
-2000-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",659.2028384972785
-2000-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",716.1585437199974
-2000-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",728.3859889284774
-2000-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",743.042230928218
-2000-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",713.0165239409555
-2000-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",595.8454961043161
-2000-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",575.5579195055709
-2000-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",577.35174168803
-2001-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",579.1126645001784
-2001-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",580.8500024936789
-2001-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",582.4909037507235
-2001-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",584.2577928254341
-2001-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",586.1517618371765
-2001-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",587.9981398869636
-2001-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",589.8307340896113
-2001-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",591.5363279623538
-2001-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",593.1285465784525
-2001-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",594.6459671101157
-2001-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",596.2069127737799
-2001-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",597.9905651211615
-2002-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",599.7546372882689
-2002-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",601.4589400492297
-2002-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",603.3535357103848
-2002-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",603.4088431178249
-2002-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",546.3738898056248
-2002-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",547.9356085073192
-2002-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",549.373939479651
-2002-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",550.6374995404542
-2002-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",551.7250086020466
-2002-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",552.8468494528707
-2002-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",554.0216490079581
-2002-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",555.1897113179499
-2003-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",556.3694894545005
-2003-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",557.4822284334094
-2003-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",558.5553817231437
-2003-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",559.7004202556761
-2003-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",558.9868022198501
-2003-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",652.4705037787961
-2003-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",660.9172451558699
-2003-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",653.8424827609342
-2003-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",712.3095988434914
-2003-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",751.7836115680028
-2003-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",775.0000182548758
-2003-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",842.0590705773585
-2004-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",962.3450394537183
-2004-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",988.8219319444298
-2004-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",937.7723668924059
-2004-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",959.8135620343912
-2004-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",880.0674948023168
-2004-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",950.0834361761722
-2004-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",880.7696007146635
-2004-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",839.3280071450175
-2004-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",902.533538209184
-2004-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",901.781426927343
-2004-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1026.1561143937513
-2004-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1104.6160582457726
-2005-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1054.0374380530593
-2005-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1101.688987576424
-2005-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1086.8755702894173
-2005-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1002.3325172970531
-2005-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1037.3067856076984
-2005-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1100.033174506783
-2005-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1153.9030731702578
-2005-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1158.407946366355
-2005-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1161.9922201011625
-2005-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1063.8709551793236
-2005-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1184.0869950341526
-2005-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1253.463961675443
-2006-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1301.5218731244804
-2006-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1293.175605543407
-2006-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1342.8603006607175
-2006-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1366.1487963126672
-2006-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1324.608539297962
-2006-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1208.0679513830505
-2006-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1225.9817161341787
-2006-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1302.3968537604642
-2006-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1393.2754177425436
-2006-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1535.8215000262717
-2006-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1618.9047817998182
-2006-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1713.7101513483556
-2007-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1738.651518718862
-2007-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1811.1830784587319
-2007-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1666.080361745045
-2007-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1864.8405387898674
-2007-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2043.0098472719235
-2007-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2050.2650058767977
-2007-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2072.031646836964
-2007-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1798.3048411458237
-2007-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1953.7180159244774
-2007-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2117.649411466062
-2007-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1801.275325064985
-2007-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1853.553140237369
-2008-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1851.4524466784333
-2008-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1750.6386649677156
-2008-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1753.5709847315368
-2008-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1756.7566386871322
-2008-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1760.2408726871947
-2008-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1764.0547279113503
-2008-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1767.744542383898
-2008-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1771.265300264146
-2008-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1774.497859437128
-2008-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1777.9137678165444
-2008-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1780.9214052737673
-2008-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1782.2867783511438
-2009-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1783.8017221127423
-2009-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1785.8382290788209
-2009-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1787.8026511308078
-2009-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1789.9331159567387
-2009-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1792.6030995213741
-2009-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1795.9194152554885
-2009-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",1793.6146520059108
-2009-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2222.566905712588
-2009-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2456.760607301673
-2009-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2623.798319946248
-2009-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2777.8506319670264
-2009-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2951.0355773301276
-2010-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3057.629229186614
-2010-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2777.931498298206
-2010-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3260.4638872268115
-2010-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3644.866166903139
-2010-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2986.9842705056017
-2010-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2658.5258628098863
-2010-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2629.020626507183
-2010-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2631.64964713369
-2010-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2634.1716447121935
-2010-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2628.5520785368076
-2010-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2817.3376572442644
-2010-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3120.5446933633293
-2011-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3432.378996813904
-2011-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3742.2246477607573
-2011-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3602.4662481405617
-2011-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3827.9360365197927
-2011-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3890.0149435171925
-2011-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3449.841566157962
-2011-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3759.544590143388
-2011-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2578.546619783776
-2011-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2505.6984817530233
-2011-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2507.0557350973063
-2011-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2508.1212337847223
-2011-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2509.124482278236
-2012-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2510.1072227004615
-2012-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2503.5600263612514
-2012-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2715.415793709971
-2012-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2707.709104472196
-2012-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2453.174709651114
-2012-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2365.9756327011655
-2012-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2571.411492987418
-2012-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2830.0325449640077
-2012-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3083.349868137424
-2012-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3059.70610668656
-2012-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2796.2288735498933
-2012-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",2975.6496087504374
-2013-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3352.356624513314
-2013-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3581.6770356340908
-2013-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",3868.6446157234986
-2013-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4032.7115431182538
-2013-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4580.110345383974
-2013-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4416.870774375217
-2013-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4836.73477063901
-2013-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",4859.623554853413
-2013-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5019.085967419527
-2013-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5324.525648827622
-2013-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",5925.993327743004
-2013-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6177.911749525145
-2014-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6338.484264283242
-2014-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6296.052080266075
-2014-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6792.547928185287
-2014-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6814.645073567021
-2014-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7110.485499771027
-2014-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7773.705938086227
-2014-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8102.96513397809
-2014-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7980.380959191837
-2014-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8386.088934858088
-2014-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7702.417567443981
-2014-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9004.078113273163
-2014-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9157.495762387916
-2015-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8839.616568347637
-2015-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9575.469557125012
-2015-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9575.301029106075
-2015-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9812.987608952051
-2015-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10081.903829509718
-2015-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9927.70138874782
-2015-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9882.447579933774
-2015-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9144.710180015756
-2015-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7863.249061076027
-2015-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7866.984104380038
-2015-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7871.966527646145
-2015-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7853.205007421921
-2016-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6326.656293821957
-2016-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6195.213749491618
-2016-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6197.227193960202
-2016-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6180.2364627367615
-2016-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6115.605589461588
-2016-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6304.892388260311
-2016-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6923.481951657245
-2016-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7166.264096679665
-2016-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7064.5872967578525
-2016-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",6948.58523165992
-2016-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",7185.954951812318
-2016-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8018.960699000394
-2017-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8345.901198731113
-2017-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8971.439841422489
-2017-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9420.329075347
-2017-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9356.673892807461
-2017-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9811.728271055626
-2017-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10315.4499215511
-2017-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10598.80551281341
-2017-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10656.566353984637
-2017-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",11164.13991708023
-2017-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12055.068574917794
-2017-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12603.11413493768
-2017-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13664.241830297111
-2018-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15621.74122971077
-2018-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14220.961080350255
-2018-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14205.369814888996
-2018-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13452.409934198986
-2018-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14200.091155347274
-2018-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15055.452078592782
-2018-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15722.605889572336
-2018-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16829.704028781794
-2018-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",17622.35724367627
-2018-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15525.077831411461
-2018-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14503.925160777051
-2018-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",11996.454414730477
-2019-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12008.550839598664
-2019-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12020.359247924269
-2019-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",11995.016323843229
-2019-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13304.636858225622
-2019-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12662.630227095351
-2019-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13174.314546402202
-2019-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14673.594528461166
-2019-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",13278.860019498823
-2019-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14492.853531098657
-2019-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14480.378837441109
-2019-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16387.28997106444
-2019-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",17578.21396423184
-2020-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",19321.277139057933
-2020-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",19376.59491966726
-2020-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",8364.284787382656
-2020-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9415.911423845282
-2020-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9415.911423845282
-2020-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9415.911423845282
-2020-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",9387.663689573747
-2020-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",11039.425454124499
-2020-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",10822.348341611794
-2020-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",11373.558305665007
-2020-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",12713.093260567928
-2020-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",14327.092522924624
-2021-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",15516.400285375754
-2021-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",16663.03659080635
-2021-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",17056.454427228957
-2021-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",20119.501180554467
-2021-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",20557.669186901523
-2021-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",21656.489946644688
-2021-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",23632.42871052567
-2021-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25162.582536900198
-2021-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25078.481552949852
-2021-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25394.972855409753
-2021-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",28986.5923678983
-2021-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",29193.822640174312
-2022-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27360.53187171016
-2022-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24936.431461598542
-2022-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24222.469157982716
-2022-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24166.06209357673
-2022-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24194.255832685903
-2022-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24227.321315657242
-2022-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24255.586523858845
-2022-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24283.884708136684
-2022-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24324.76258072871
-2022-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24375.033756728884
-2022-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24423.580698961036
-2022-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24466.729024862532
-2023-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24508.11857479626
-2023-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",24480.54694139961
-2023-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",22473.881527054866
-2023-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25076.29268142421
-2023-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",25524.09593306542
-2023-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",29191.71242345282
-2023-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32449.388991581378
-2023-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",31309.59167552632
-2023-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",32504.624167177964
-2023-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",27100.11180771641
-2023-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",30684.595947612826
-2023-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",35301.2672408838
-2024-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",37964.232755361634
-2024-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",42835.853497675795
-2024-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",46848.16200912537
-2024-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",45176.16231425594
-2024-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",48350.76228814246
-2024-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",53266.48727810414
-2024-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",56818.871871028
-2024-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",54928.967931811865
-2024-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",59205.76916063228
-2024-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",64546.09302989922
-2024-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",69045.84280355489
-2024-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",71761.4584066655
-2025-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",70485.24537487948
-2025-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",72453.79269528102
-2025-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",59559.59005884349
-2025-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49391.89783210392
-2025-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49512.08478349537
-2025-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",49482.377532625265
-2025-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",55969.06385116734
-2025-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",58888.84143727215
-2025-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",63647.67818018375
-2025-10-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",67979.05245386309
-2025-11-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",68055.33367553653
-2025-12-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",71369.14120242953
-2026-01-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",73649.83491777998
-2026-02-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",72429.35322771056
-2026-03-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",64767.99732422817
-2026-04-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",73512.68552927782
-2026-05-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",87836.61291393558
-2026-06-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",89009.9852427989
-2026-07-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",89951.50365206007
-2026-08-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",98061.77300577406
-2026-09-01,"S&P+SMA10 xL (Gayed-Bilello) {""lev"": 3.0}",96196.3409172964
+1957-01-01,trend 3x on 'either' signal,0.9400035206718352
+1957-02-01,trend 3x on 'either' signal,0.8236391440548214
+1957-03-01,trend 3x on 'either' signal,0.8603570320439557
+1957-04-01,trend 3x on 'either' signal,0.9224641277563739
+1957-05-01,trend 3x on 'either' signal,0.9240784399799474
+1957-06-01,trend 3x on 'either' signal,0.9230773550033025
+1957-07-01,trend 3x on 'either' signal,0.9829230030014261
+1957-08-01,trend 3x on 'either' signal,0.8246869782256938
+1957-09-01,trend 3x on 'either' signal,0.7282020559595832
+1957-10-01,trend 3x on 'either' signal,0.5936363264172139
+1957-11-01,trend 3x on 'either' signal,0.5947345536210856
+1957-12-01,trend 3x on 'either' signal,0.5955820503599957
+1958-01-01,trend 3x on 'either' signal,0.5963711965767227
+1958-02-01,trend 3x on 'either' signal,0.5971415093723009
+1958-03-01,trend 3x on 'either' signal,0.5978779839005268
+1958-04-01,trend 3x on 'either' signal,0.5985655435820124
+1958-05-01,trend 3x on 'either' signal,0.5974781495111717
+1958-06-01,trend 3x on 'either' signal,0.6444973328048786
+1958-07-01,trend 3x on 'either' signal,0.7015071424986669
+1958-08-01,trend 3x on 'either' signal,0.783861019499087
+1958-09-01,trend 3x on 'either' signal,0.8494798823867483
+1958-10-01,trend 3x on 'either' signal,0.9566310729741122
+1958-11-01,trend 3x on 'either' signal,1.0477534371607182
+1958-12-01,trend 3x on 'either' signal,1.1107633331507314
+1959-01-01,trend 3x on 'either' signal,1.2469857057525344
+1959-02-01,trend 3x on 'either' signal,1.1935469314751042
+1959-03-01,trend 3x on 'either' signal,1.2881146127544243
+1959-04-01,trend 3x on 'either' signal,1.3562850395463795
+1959-05-01,trend 3x on 'either' signal,1.4206748697388674
+1959-06-01,trend 3x on 'either' signal,1.386968304468471
+1959-07-01,trend 3x on 'either' signal,1.5550545934011455
+1959-08-01,trend 3x on 'either' signal,1.5313492212660782
+1959-09-01,trend 3x on 'either' signal,1.3518714832931047
+1959-10-01,trend 3x on 'either' signal,1.3511256040984374
+1959-11-01,trend 3x on 'either' signal,1.3703372472111337
+1959-12-01,trend 3x on 'either' signal,1.50431891266181
+1960-01-01,trend 3x on 'either' signal,1.4281731598877232
+1960-02-01,trend 3x on 'either' signal,1.2654527590824434
+1960-03-01,trend 3x on 'either' signal,1.2178759625914057
+1960-04-01,trend 3x on 'either' signal,1.2691200858809542
+1960-05-01,trend 3x on 'either' signal,1.238274713903114
+1960-06-01,trend 3x on 'either' signal,1.3762280922456631
+1960-07-01,trend 3x on 'either' signal,1.3748518641534175
+1960-08-01,trend 3x on 'either' signal,1.425802961610437
+1960-09-01,trend 3x on 'either' signal,1.4242583417353591
+1960-10-01,trend 3x on 'either' signal,1.3416006474576037
+1960-11-01,trend 3x on 'either' signal,1.3443173887687052
+1960-12-01,trend 3x on 'either' signal,1.342905855510498
+1961-01-01,trend 3x on 'either' signal,1.5551657008291913
+1961-02-01,trend 3x on 'either' signal,1.752012643979136
+1961-03-01,trend 3x on 'either' signal,1.922538408397021
+1961-04-01,trend 3x on 'either' signal,2.0819876833360547
+1961-05-01,trend 3x on 'either' signal,2.1514927321141766
+1961-06-01,trend 3x on 'either' signal,2.0714442611698622
+1961-07-01,trend 3x on 'either' signal,2.0596796710018292
+1961-08-01,trend 3x on 'either' signal,2.2865078696464805
+1961-09-01,trend 3x on 'either' signal,2.238049339576975
+1961-10-01,trend 3x on 'either' signal,2.317498028106994
+1961-11-01,trend 3x on 'either' signal,2.6380897994422416
+1961-12-01,trend 3x on 'either' signal,2.716864764194601
+1962-01-01,trend 3x on 'either' signal,2.4187595677728857
+1962-02-01,trend 3x on 'either' signal,2.5451212068132025
+1962-03-01,trend 3x on 'either' signal,2.558788903972037
+1962-04-01,trend 3x on 'either' signal,2.3206734290217743
+1962-05-01,trend 3x on 'either' signal,1.8094032115646765
+1962-06-01,trend 3x on 'either' signal,1.1757394779955477
+1962-07-01,trend 3x on 'either' signal,1.178198733070355
+1962-08-01,trend 3x on 'either' signal,1.1806336771187003
+1962-09-01,trend 3x on 'either' signal,1.1830736533847457
+1962-10-01,trend 3x on 'either' signal,1.1854693775328498
+1962-11-01,trend 3x on 'either' signal,1.1878600741108742
+1962-12-01,trend 3x on 'either' signal,1.1901961989232923
+1963-01-01,trend 3x on 'either' signal,1.1889365746127651
+1963-02-01,trend 3x on 'either' signal,1.2400905829184545
+1963-03-01,trend 3x on 'either' signal,1.2300372458175681
+1963-04-01,trend 3x on 'either' signal,1.4077267930417223
+1963-05-01,trend 3x on 'either' signal,1.496785668417547
+1963-06-01,trend 3x on 'either' signal,1.4991430738353464
+1963-07-01,trend 3x on 'either' signal,1.4366615766873727
+1963-08-01,trend 3x on 'either' signal,1.560137459983548
+1963-09-01,trend 3x on 'either' signal,1.6875802491027256
+1963-10-01,trend 3x on 'either' signal,1.7042759812601487
+1963-11-01,trend 3x on 'either' signal,1.6798754422100084
+1963-12-01,trend 3x on 'either' signal,1.7918632598236626
+1964-01-01,trend 3x on 'either' signal,1.961514144922244
+1964-02-01,trend 3x on 'either' signal,2.0384088348752547
+1964-03-01,trend 3x on 'either' signal,2.1542279025921958
+1964-04-01,trend 3x on 'either' signal,2.2521649214641544
+1964-05-01,trend 3x on 'either' signal,2.322724280234948
+1964-06-01,trend 3x on 'either' signal,2.2861376128777486
+1964-07-01,trend 3x on 'either' signal,2.5457894720990315
+1964-08-01,trend 3x on 'either' signal,2.438798616216296
+1964-09-01,trend 3x on 'either' signal,2.5697402915129812
+1964-10-01,trend 3x on 'either' signal,2.7081179820948202
+1964-11-01,trend 3x on 'either' signal,2.7701808809823594
+1964-12-01,trend 3x on 'either' signal,2.6318069740342707
+1965-01-01,trend 3x on 'either' signal,2.840658228311195
+1965-02-01,trend 3x on 'either' signal,2.9086925371298387
+1965-03-01,trend 3x on 'either' signal,2.9225532533971905
+1965-04-01,trend 3x on 'either' signal,3.0437032898358196
+1965-05-01,trend 3x on 'either' signal,3.185797922264452
+1965-06-01,trend 3x on 'either' signal,2.7381466405339427
+1965-07-01,trend 3x on 'either' signal,2.732129442010964
+1965-08-01,trend 3x on 'either' signal,2.8911117464171596
+1965-09-01,trend 3x on 'either' signal,3.187300997060873
+1965-10-01,trend 3x on 'either' signal,3.4084279975408784
+1965-11-01,trend 3x on 'either' signal,3.499037488549036
+1965-12-01,trend 3x on 'either' signal,3.45590338711012
+1966-01-01,trend 3x on 'either' signal,3.6406260445852427
+1966-02-01,trend 3x on 'either' signal,3.570571978036406
+1966-03-01,trend 3x on 'either' signal,3.1340118482858856
+1966-04-01,trend 3x on 'either' signal,3.4268087916840235
+1966-05-01,trend 3x on 'either' signal,2.8905750367628573
+1966-06-01,trend 3x on 'either' signal,2.8238382277442895
+1966-07-01,trend 3x on 'either' signal,2.8066411644996094
+1966-08-01,trend 3x on 'either' signal,2.3012809224845387
+1966-09-01,trend 3x on 'either' signal,2.0558496212217507
+1966-10-01,trend 3x on 'either' signal,2.0618629813638245
+1966-11-01,trend 3x on 'either' signal,2.0681516634569843
+1966-12-01,trend 3x on 'either' signal,2.0739080189202728
+1967-01-01,trend 3x on 'either' signal,2.079231049502168
+1967-02-01,trend 3x on 'either' signal,2.07841668400778
+1967-03-01,trend 3x on 'either' signal,2.230433640991933
+1967-04-01,trend 3x on 'either' signal,2.3504103759912596
+1967-05-01,trend 3x on 'either' signal,2.4804204215183034
+1967-06-01,trend 3x on 'either' signal,2.389997108946393
+1967-07-01,trend 3x on 'either' signal,2.516326161772807
+1967-08-01,trend 3x on 'either' signal,2.6382023042181104
+1967-09-01,trend 3x on 'either' signal,2.7502420477615157
+1967-10-01,trend 3x on 'either' signal,2.7377443538908985
+1967-11-01,trend 3x on 'either' signal,2.479387021459208
+1967-12-01,trend 3x on 'either' signal,2.6914209921541103
+1968-01-01,trend 3x on 'either' signal,2.6697592894017816
+1968-02-01,trend 3x on 'either' signal,2.3085860277155152
+1968-03-01,trend 3x on 'either' signal,2.1824233912361426
+1968-04-01,trend 3x on 'either' signal,2.6672616411022063
+1968-05-01,trend 3x on 'either' signal,2.8503663787225517
+1968-06-01,trend 3x on 'either' signal,3.0795020905579404
+1968-07-01,trend 3x on 'either' signal,3.0610276059640693
+1968-08-01,trend 3x on 'either' signal,2.8609862728809943
+1968-09-01,trend 3x on 'either' signal,3.1408798950039634
+1968-10-01,trend 3x on 'either' signal,3.3730376086982794
+1968-11-01,trend 3x on 'either' signal,3.5274261381680696
+1968-12-01,trend 3x on 'either' signal,3.633981738957688
+1969-01-01,trend 3x on 'either' signal,3.1690845783886465
+1969-02-01,trend 3x on 'either' signal,3.1190689670720766
+1969-03-01,trend 3x on 'either' signal,2.912516435204207
+1969-04-01,trend 3x on 'either' signal,3.0862075645049165
+1969-05-01,trend 3x on 'either' signal,3.3842202567970325
+1969-06-01,trend 3x on 'either' signal,2.8481631113590065
+1969-07-01,trend 3x on 'either' signal,2.461734338954313
+1969-08-01,trend 3x on 'either' signal,2.4101014950952004
+1969-09-01,trend 3x on 'either' signal,2.4214691404803994
+1969-10-01,trend 3x on 'either' signal,2.432769329802641
+1969-11-01,trend 3x on 'either' signal,2.4442033456527135
+1969-12-01,trend 3x on 'either' signal,2.4567298877991837
+1970-01-01,trend 3x on 'either' signal,2.4696072469610644
+1970-02-01,trend 3x on 'either' signal,2.4814202016256948
+1970-03-01,trend 3x on 'either' signal,2.492938127061574
+1970-04-01,trend 3x on 'either' signal,2.5051742983685674
+1970-05-01,trend 3x on 'either' signal,2.518556104412353
+1970-06-01,trend 3x on 'either' signal,2.5318624758306645
+1970-07-01,trend 3x on 'either' signal,2.5444373927939563
+1970-08-01,trend 3x on 'either' signal,2.557223190692746
+1970-09-01,trend 3x on 'either' signal,2.569774894520396
+1970-10-01,trend 3x on 'either' signal,2.5745503928660467
+1970-11-01,trend 3x on 'either' signal,2.5653338310044007
+1970-12-01,trend 3x on 'either' signal,3.0930683124169827
+1971-01-01,trend 3x on 'either' signal,3.447407997094606
+1971-02-01,trend 3x on 'either' signal,3.847268120893329
+1971-03-01,trend 3x on 'either' signal,4.143877596785049
+1971-04-01,trend 3x on 'either' signal,4.567205793181216
+1971-05-01,trend 3x on 'either' signal,4.374343297616586
+1971-06-01,trend 3x on 'either' signal,4.124638904801107
+1971-07-01,trend 3x on 'either' signal,4.027927517770507
+1971-08-01,trend 3x on 'either' signal,3.8071089025957257
+1971-09-01,trend 3x on 'either' signal,4.0584421945100075
+1971-10-01,trend 3x on 'either' signal,3.7981178635426818
+1971-11-01,trend 3x on 'either' signal,3.269497700981325
+1971-12-01,trend 3x on 'either' signal,3.94521589355646
+1972-01-01,trend 3x on 'either' signal,4.436104164940105
+1972-02-01,trend 3x on 'either' signal,4.676284778783917
+1972-03-01,trend 3x on 'either' signal,5.004271925336615
+1972-04-01,trend 3x on 'either' signal,5.14998103684361
+1972-05-01,trend 3x on 'either' signal,4.986074370156846
+1972-06-01,trend 3x on 'either' signal,5.020808141991402
+1972-07-01,trend 3x on 'either' signal,4.902193060528195
+1972-08-01,trend 3x on 'either' signal,5.41611456910906
+1972-09-01,trend 3x on 'either' signal,5.16937639480868
+1972-10-01,trend 3x on 'either' signal,5.187173689872996
+1972-11-01,trend 3x on 'either' signal,5.959437245463548
+1972-12-01,trend 3x on 'either' signal,6.319761769390813
+1973-01-01,trend 3x on 'either' signal,6.449917531957445
+1973-02-01,trend 3x on 'either' signal,5.745976174588871
+1973-03-01,trend 3x on 'either' signal,5.459467144079106
+1973-04-01,trend 3x on 'either' signal,5.140568569543602
+1973-05-01,trend 3x on 'either' signal,4.694341468259034
+1973-06-01,trend 3x on 'either' signal,4.368140204180141
+1973-07-01,trend 3x on 'either' signal,4.469176822342943
+1973-08-01,trend 3x on 'either' signal,4.4777427445857665
+1973-09-01,trend 3x on 'either' signal,4.687072041313943
+1973-10-01,trend 3x on 'either' signal,4.707734217229402
+1973-11-01,trend 3x on 'either' signal,4.714128889541138
+1973-12-01,trend 3x on 'either' signal,3.6928821910468947
+1974-01-01,trend 3x on 'either' signal,3.709777127070934
+1974-02-01,trend 3x on 'either' signal,3.726656612999107
+1974-03-01,trend 3x on 'either' signal,3.7443892873826283
+1974-04-01,trend 3x on 'either' signal,3.763142437063603
+1974-05-01,trend 3x on 'either' signal,3.782209025411392
+1974-06-01,trend 3x on 'either' signal,3.801246144172629
+1974-07-01,trend 3x on 'either' signal,3.8212343634807366
+1974-08-01,trend 3x on 'either' signal,3.8420600907617066
+1974-09-01,trend 3x on 'either' signal,3.8629993182563576
+1974-10-01,trend 3x on 'either' signal,3.8836019812870584
+1974-11-01,trend 3x on 'either' signal,3.903602531490687
+1974-12-01,trend 3x on 'either' signal,3.9228928340004696
+1975-01-01,trend 3x on 'either' signal,3.9425072981704714
+1975-02-01,trend 3x on 'either' signal,3.961858438158991
+1975-03-01,trend 3x on 'either' signal,3.970541511235956
+1975-04-01,trend 3x on 'either' signal,4.099983794784583
+1975-05-01,trend 3x on 'either' signal,4.877552859657283
+1975-06-01,trend 3x on 'either' signal,5.245526960074714
+1975-07-01,trend 3x on 'either' signal,5.25178639516798
+1975-08-01,trend 3x on 'either' signal,4.084729754936274
+1975-09-01,trend 3x on 'either' signal,3.929657977154126
+1975-10-01,trend 3x on 'either' signal,4.468839678873221
+1975-11-01,trend 3x on 'either' signal,4.689925519191454
+1975-12-01,trend 3x on 'either' signal,4.469107107875675
+1976-01-01,trend 3x on 'either' signal,5.698712943799529
+1976-02-01,trend 3x on 'either' signal,6.3485718558940585
+1976-03-01,trend 3x on 'either' signal,6.4302389334350005
+1976-04-01,trend 3x on 'either' signal,6.571626117583916
+1976-05-01,trend 3x on 'either' signal,6.420866791071468
+1976-06-01,trend 3x on 'either' signal,6.521300483601478
+1976-07-01,trend 3x on 'either' signal,6.968994594859511
+1976-08-01,trend 3x on 'either' signal,6.773653854714786
+1976-09-01,trend 3x on 'either' signal,7.195149656991857
+1976-10-01,trend 3x on 'either' signal,6.448496075830107
+1976-11-01,trend 3x on 'either' signal,6.311019761096961
+1976-12-01,trend 3x on 'either' signal,6.967217810781019
+1977-01-01,trend 3x on 'either' signal,6.783589532018369
+1977-02-01,trend 3x on 'either' signal,6.230077544687058
+1977-03-01,trend 3x on 'either' signal,6.153593576202806
+1977-04-01,trend 3x on 'either' signal,5.868768492779059
+1977-05-01,trend 3x on 'either' signal,5.817777110655197
+1977-06-01,trend 3x on 'either' signal,5.914758441868212
+1977-07-01,trend 3x on 'either' signal,6.080612224061733
+1977-08-01,trend 3x on 'either' signal,5.637281735209578
+1977-09-01,trend 3x on 'either' signal,5.362704784250547
+1977-10-01,trend 3x on 'either' signal,5.3896076865848705
+1977-11-01,trend 3x on 'either' signal,5.4169150321969015
+1977-12-01,trend 3x on 'either' signal,5.4448572855713175
+1978-01-01,trend 3x on 'either' signal,5.474168767291976
+1978-02-01,trend 3x on 'either' signal,5.5039573690006565
+1978-03-01,trend 3x on 'either' signal,5.533953936661709
+1978-04-01,trend 3x on 'either' signal,5.564621264727377
+1978-05-01,trend 3x on 'either' signal,5.579692113986013
+1978-06-01,trend 3x on 'either' signal,5.62359010254677
+1978-07-01,trend 3x on 'either' signal,5.542001988975908
+1978-08-01,trend 3x on 'either' signal,6.692458421125873
+1978-09-01,trend 3x on 'either' signal,6.690532702178839
+1978-10-01,trend 3x on 'either' signal,6.048922475261313
+1978-11-01,trend 3x on 'either' signal,4.983678115174639
+1978-12-01,trend 3x on 'either' signal,5.204848051136734
+1979-01-01,trend 3x on 'either' signal,5.7886860815183505
+1979-02-01,trend 3x on 'either' signal,5.527616542435149
+1979-03-01,trend 3x on 'either' signal,5.841650250203875
+1979-04-01,trend 3x on 'either' signal,6.18870443258646
+1979-05-01,trend 3x on 'either' signal,5.752855830799476
+1979-06-01,trend 3x on 'either' signal,6.094936811255386
+1979-07-01,trend 3x on 'either' signal,6.274826893531477
+1979-08-01,trend 3x on 'either' signal,7.1356368621031585
+1979-09-01,trend 3x on 'either' signal,7.367274650046753
+1979-10-01,trend 3x on 'either' signal,6.512906021072721
+1979-11-01,trend 3x on 'either' signal,6.345884208147899
+1979-12-01,trend 3x on 'either' signal,7.085702626599237
+1980-01-01,trend 3x on 'either' signal,7.674924591956714
+1980-02-01,trend 3x on 'either' signal,8.541973187881874
+1980-03-01,trend 3x on 'either' signal,6.126220318888789
+1980-04-01,trend 3x on 'either' signal,5.8064311794017955
+1980-05-01,trend 3x on 'either' signal,6.595510096873369
+1980-06-01,trend 3x on 'either' signal,7.857597391500686
+1980-07-01,trend 3x on 'either' signal,8.908642406039071
+1980-08-01,trend 3x on 'either' signal,9.69614513941611
+1980-09-01,trend 3x on 'either' signal,10.352043559841217
+1980-10-01,trend 3x on 'either' signal,11.19972794363381
+1980-11-01,trend 3x on 'either' signal,12.532851689307849
+1980-12-01,trend 3x on 'either' signal,11.818210076144878
+1981-01-01,trend 3x on 'either' signal,11.594741887751889
+1981-02-01,trend 3x on 'either' signal,10.292110414017486
+1981-03-01,trend 3x on 'either' signal,11.364311055553554
+1981-04-01,trend 3x on 'either' signal,11.566019684906953
+1981-05-01,trend 3x on 'either' signal,10.753122343761417
+1981-06-01,trend 3x on 'either' signal,10.807037780685247
+1981-07-01,trend 3x on 'either' signal,9.915035869014126
+1981-08-01,trend 3x on 'either' signal,9.924232365587374
+1981-09-01,trend 3x on 'either' signal,7.216270791110907
+1981-10-01,trend 3x on 'either' signal,7.398925960954626
+1981-11-01,trend 3x on 'either' signal,7.472236985684419
+1981-12-01,trend 3x on 'either' signal,7.5483292656553065
+1982-01-01,trend 3x on 'either' signal,7.630668957394829
+1982-02-01,trend 3x on 'either' signal,7.712889415410758
+1982-03-01,trend 3x on 'either' signal,7.792332176389489
+1982-04-01,trend 3x on 'either' signal,7.872658133907771
+1982-05-01,trend 3x on 'either' signal,7.952171981060239
+1982-06-01,trend 3x on 'either' signal,8.036995148858214
+1982-07-01,trend 3x on 'either' signal,8.120378973527618
+1982-08-01,trend 3x on 'either' signal,8.198605290972601
+1982-09-01,trend 3x on 'either' signal,8.272666025434386
+1982-10-01,trend 3x on 'either' signal,8.312719516774198
+1982-11-01,trend 3x on 'either' signal,9.302709337628125
+1982-12-01,trend 3x on 'either' signal,9.53320299126792
+1983-01-01,trend 3x on 'either' signal,10.505874130954773
+1983-02-01,trend 3x on 'either' signal,11.00725168464069
+1983-03-01,trend 3x on 'either' signal,12.109530465195386
+1983-04-01,trend 3x on 'either' signal,13.444865954656409
+1983-05-01,trend 3x on 'either' signal,15.019298407318256
+1983-06-01,trend 3x on 'either' signal,15.563052382457435
+1983-07-01,trend 3x on 'either' signal,15.624900551204261
+1983-08-01,trend 3x on 'either' signal,14.214456995908707
+1983-09-01,trend 3x on 'either' signal,15.37571861381214
+1983-10-01,trend 3x on 'either' signal,15.405178319017473
+1983-11-01,trend 3x on 'either' signal,14.603883526376244
+1983-12-01,trend 3x on 'either' signal,14.284811655645246
+1984-01-01,trend 3x on 'either' signal,14.706788815138607
+1984-02-01,trend 3x on 'either' signal,12.186236706869883
+1984-03-01,trend 3x on 'either' signal,12.11862543070716
+1984-04-01,trend 3x on 'either' signal,12.06895722384806
+1984-05-01,trend 3x on 'either' signal,11.728711737001914
+1984-06-01,trend 3x on 'either' signal,10.798469112602406
+1984-07-01,trend 3x on 'either' signal,10.905193982331959
+1984-08-01,trend 3x on 'either' signal,11.007157546066763
+1984-09-01,trend 3x on 'either' signal,11.07521847022661
+1984-10-01,trend 3x on 'either' signal,10.733029558845134
+1984-11-01,trend 3x on 'either' signal,10.95881220848399
+1984-12-01,trend 3x on 'either' signal,10.535237312674708
+1985-01-01,trend 3x on 'either' signal,11.838371396887446
+1985-02-01,trend 3x on 'either' signal,13.687137812930544
+1985-03-01,trend 3x on 'either' signal,13.243816034511935
+1985-04-01,trend 3x on 'either' signal,13.421219497181921
+1985-05-01,trend 3x on 'either' signal,14.30284963357991
+1985-06-01,trend 3x on 'either' signal,15.162427948052256
+1985-07-01,trend 3x on 'either' signal,15.950026114073962
+1985-08-01,trend 3x on 'either' signal,14.819711356330801
+1985-09-01,trend 3x on 'either' signal,13.750880534554407
+1985-10-01,trend 3x on 'either' signal,14.156450095550362
+1985-11-01,trend 3x on 'either' signal,16.67642543307297
+1985-12-01,trend 3x on 'either' signal,19.096076252881875
+1986-01-01,trend 3x on 'either' signal,19.266987977706584
+1986-02-01,trend 3x on 'either' signal,22.313716949314816
+1986-03-01,trend 3x on 'either' signal,26.201407173046718
+1986-04-01,trend 3x on 'either' signal,28.08192124802411
+1986-05-01,trend 3x on 'either' signal,28.183004267064362
+1986-06-01,trend 3x on 'either' signal,30.51350829287166
+1986-07-01,trend 3x on 'either' signal,28.543151983683618
+1986-08-01,trend 3x on 'either' signal,30.204003470913555
+1986-09-01,trend 3x on 'either' signal,27.655001320850396
+1986-10-01,trend 3x on 'either' signal,27.284552636437994
+1986-11-01,trend 3x on 'either' signal,29.89266576419217
+1986-12-01,trend 3x on 'either' signal,31.121309819401258
+1987-01-01,trend 3x on 'either' signal,37.03709442264682
+1987-02-01,trend 3x on 'either' signal,43.83186678861125
+1987-03-01,trend 3x on 'either' signal,49.130850547766364
+1987-04-01,trend 3x on 'either' signal,47.29625419769684
+1987-05-01,trend 3x on 'either' signal,46.94406004412455
+1987-06-01,trend 3x on 'either' signal,52.70277497954774
+1987-07-01,trend 3x on 'either' signal,56.98671745000505
+1987-08-01,trend 3x on 'either' signal,67.28562052145915
+1987-09-01,trend 3x on 'either' signal,60.226639908162376
+1987-10-01,trend 3x on 'either' signal,37.95619287658814
+1987-11-01,trend 3x on 'either' signal,23.450937109048372
+1987-12-01,trend 3x on 'either' signal,22.200850607460893
+1988-01-01,trend 3x on 'either' signal,24.679827448429982
+1988-02-01,trend 3x on 'either' signal,24.817828816912453
+1988-03-01,trend 3x on 'either' signal,24.959910886889276
+1988-04-01,trend 3x on 'either' signal,25.11008635072539
+1988-05-01,trend 3x on 'either' signal,25.268907646893727
+1988-06-01,trend 3x on 'either' signal,25.42515372584369
+1988-07-01,trend 3x on 'either' signal,25.509056733138976
+1988-08-01,trend 3x on 'either' signal,23.844590544316734
+1988-09-01,trend 3x on 'either' signal,24.907767215746627
+1988-10-01,trend 3x on 'either' signal,27.426751054298823
+1988-11-01,trend 3x on 'either' signal,25.402849294920035
+1988-12-01,trend 3x on 'either' signal,26.834640432095064
+1989-01-01,trend 3x on 'either' signal,29.30218420761007
+1989-02-01,trend 3x on 'either' signal,31.806111375823654
+1989-03-01,trend 3x on 'either' signal,31.211759010899723
+1989-04-01,trend 3x on 'either' signal,34.12619281977949
+1989-05-01,trend 3x on 'either' signal,37.89533599038615
+1989-06-01,trend 3x on 'either' signal,41.29780919502093
+1989-07-01,trend 3x on 'either' signal,44.285557696895864
+1989-08-01,trend 3x on 'either' signal,49.99686819574589
+1989-09-01,trend 3x on 'either' signal,50.08761217493903
+1989-10-01,trend 3x on 'either' signal,49.93496297785333
+1989-11-01,trend 3x on 'either' signal,46.650969439184564
+1989-12-01,trend 3x on 'either' signal,49.95393486719809
+1990-01-01,trend 3x on 'either' signal,46.04273808634709
+1990-02-01,trend 3x on 'either' signal,41.981799397858445
+1990-03-01,trend 3x on 'either' signal,44.8631403839291
+1990-04-01,trend 3x on 'either' signal,44.548310519345826
+1990-05-01,trend 3x on 'either' signal,49.12255843444369
+1990-06-01,trend 3x on 'either' signal,53.185397235688825
+1990-07-01,trend 3x on 'either' signal,52.796504309469334
+1990-08-01,trend 3x on 'either' signal,39.665265579583526
+1990-09-01,trend 3x on 'either' signal,33.86039187601124
+1990-10-01,trend 3x on 'either' signal,34.064118567131906
+1990-11-01,trend 3x on 'either' signal,34.25970338123819
+1990-12-01,trend 3x on 'either' signal,34.44756075477864
+1991-01-01,trend 3x on 'either' signal,34.636735275923634
+1991-02-01,trend 3x on 'either' signal,34.820021333425395
+1991-03-01,trend 3x on 'either' signal,34.9073615536034
+1991-04-01,trend 3x on 'either' signal,36.863742950330725
+1991-05-01,trend 3x on 'either' signal,36.23178375038749
+1991-06-01,trend 3x on 'either' signal,36.16959583972179
+1991-07-01,trend 3x on 'either' signal,36.57927167357483
+1991-08-01,trend 3x on 'either' signal,39.09945679251587
+1991-09-01,trend 3x on 'either' signal,38.31165896746306
+1991-10-01,trend 3x on 'either' signal,38.10281474629729
+1991-11-01,trend 3x on 'either' signal,37.71251489421523
+1991-12-01,trend 3x on 'either' signal,38.38707483309751
+1992-01-01,trend 3x on 'either' signal,46.475865587205604
+1992-02-01,trend 3x on 'either' signal,45.14814247529508
+1992-03-01,trend 3x on 'either' signal,43.285912481402235
+1992-04-01,trend 3x on 'either' signal,43.16164314907689
+1992-05-01,trend 3x on 'either' signal,45.38017380169223
+1992-06-01,trend 3x on 'either' signal,43.097232924548905
+1992-07-01,trend 3x on 'either' signal,45.150597721268284
+1992-08-01,trend 3x on 'either' signal,46.006157490762945
+1992-09-01,trend 3x on 'either' signal,46.11345334341791
+1992-10-01,trend 3x on 'either' signal,44.048203176629684
+1992-11-01,trend 3x on 'either' signal,47.26027290073552
+1992-12-01,trend 3x on 'either' signal,51.443907825022706
+1993-01-01,trend 3x on 'either' signal,51.18498210940274
+1993-02-01,trend 3x on 'either' signal,53.38490949650605
+1993-03-01,trend 3x on 'either' signal,56.38639233575484
+1993-04-01,trend 3x on 'either' signal,53.65005647169275
+1993-05-01,trend 3x on 'either' signal,54.3662465840177
+1993-06-01,trend 3x on 'either' signal,55.328326661505
+1993-07-01,trend 3x on 'either' signal,54.98603494613223
+1993-08-01,trend 3x on 'either' signal,57.46447407649907
+1993-09-01,trend 3x on 'either' signal,59.3827811157515
+1993-10-01,trend 3x on 'either' signal,61.16731851343531
+1993-11-01,trend 3x on 'either' signal,60.70063960658155
+1993-12-01,trend 3x on 'either' signal,61.83429666671372
+1994-01-01,trend 3x on 'either' signal,64.56631944777475
+1994-02-01,trend 3x on 'either' signal,63.88634408025104
+1994-03-01,trend 3x on 'either' signal,60.57543919789784
+1994-04-01,trend 3x on 'either' signal,53.89287882114047
+1994-05-01,trend 3x on 'either' signal,55.05004061890235
+1994-06-01,trend 3x on 'either' signal,56.32170388255369
+1994-07-01,trend 3x on 'either' signal,54.854536684332736
+1994-08-01,trend 3x on 'either' signal,59.35693969751544
+1994-09-01,trend 3x on 'either' signal,60.17416941191097
+1994-10-01,trend 3x on 'either' signal,58.69968675834394
+1994-11-01,trend 3x on 'either' signal,57.37004716071435
+1994-12-01,trend 3x on 'either' signal,54.955833106982034
+1995-01-01,trend 3x on 'either' signal,58.376323687098036
+1995-02-01,trend 3x on 'either' signal,64.43517179081317
+1995-03-01,trend 3x on 'either' signal,68.71409131036613
+1995-04-01,trend 3x on 'either' signal,74.6512465732185
+1995-05-01,trend 3x on 'either' signal,81.45053257821692
+1995-06-01,trend 3x on 'either' signal,88.5172971322403
+1995-07-01,trend 3x on 'either' signal,97.16202750083293
+1995-08-01,trend 3x on 'either' signal,97.77173103373738
+1995-09-01,trend 3x on 'either' signal,107.83191072628027
+1995-10-01,trend 3x on 'either' signal,109.8814999139348
+1995-11-01,trend 3x on 'either' signal,116.75622669432578
+1995-12-01,trend 3x on 'either' signal,127.7142100875972
+1996-01-01,trend 3x on 'either' signal,127.35270418589057
+1996-02-01,trend 3x on 'either' signal,148.8953326639775
+1996-03-01,trend 3x on 'either' signal,146.6969691287199
+1996-04-01,trend 3x on 'either' signal,146.22017972112621
+1996-05-01,trend 3x on 'either' signal,155.15422780676766
+1996-06-01,trend 3x on 'either' signal,159.58065886728738
+1996-07-01,trend 3x on 'either' signal,141.38341295495988
+1996-08-01,trend 3x on 'either' signal,153.107355280925
+1996-09-01,trend 3x on 'either' signal,160.92259517554504
+1996-10-01,trend 3x on 'either' signal,179.3318024237585
+1996-11-01,trend 3x on 'either' signal,204.9626748863644
+1996-12-01,trend 3x on 'either' signal,210.5255005918264
+1997-01-01,trend 3x on 'either' signal,229.14524544141165
+1997-02-01,trend 3x on 'either' signal,257.05949014169465
+1997-03-01,trend 3x on 'either' signal,249.8162722551551
+1997-04-01,trend 3x on 'either' signal,221.84595559765793
+1997-05-01,trend 3x on 'either' signal,281.08530105298564
+1997-06-01,trend 3x on 'either' signal,323.5192742411782
+1997-07-01,trend 3x on 'either' signal,376.38035438195806
+1997-08-01,trend 3x on 'either' signal,376.9884472859951
+1997-09-01,trend 3x on 'either' signal,387.2018914500349
+1997-10-01,trend 3x on 'either' signal,403.07448467739414
+1997-11-01,trend 3x on 'either' signal,385.8713641841071
+1997-12-01,trend 3x on 'either' signal,413.28248004502524
+1998-01-01,trend 3x on 'either' signal,413.1002105199436
+1998-02-01,trend 3x on 'either' signal,489.3011137697162
+1998-03-01,trend 3x on 'either' signal,563.5016412940975
+1998-04-01,trend 3x on 'either' signal,616.7313945672479
+1998-05-01,trend 3x on 'either' signal,607.8607930967734
+1998-06-01,trend 3x on 'either' signal,605.4392376294977
+1998-07-01,trend 3x on 'either' signal,682.0949290275913
+1998-08-01,trend 3x on 'either' signal,534.5242686958921
+1998-09-01,trend 3x on 'either' signal,452.58687582162065
+1998-10-01,trend 3x on 'either' signal,467.4538605586389
+1998-11-01,trend 3x on 'either' signal,618.372374131453
+1998-12-01,trend 3x on 'either' signal,690.7488184784978
+1999-01-01,trend 3x on 'either' signal,791.0787846672727
+1999-02-01,trend 3x on 'either' signal,784.2349356957236
+1999-03-01,trend 3x on 'either' signal,847.5007422411381
+1999-04-01,trend 3x on 'either' signal,949.6533937704711
+1999-05-01,trend 3x on 'either' signal,939.6520058861656
+1999-06-01,trend 3x on 'either' signal,914.7327343000918
+1999-07-01,trend 3x on 'either' signal,1031.5443402052767
+1999-08-01,trend 3x on 'either' signal,906.2597328986277
+1999-09-01,trend 3x on 'either' signal,882.580460247115
+1999-10-01,trend 3x on 'either' signal,841.374860500963
+1999-11-01,trend 3x on 'either' signal,1013.6870521952713
+1999-12-01,trend 3x on 'either' signal,1090.184861783284
+2000-01-01,trend 3x on 'either' signal,1076.0154793254558
+2000-02-01,trend 3x on 'either' signal,986.1270537282928
+2000-03-01,trend 3x on 'either' signal,1094.0745771309955
+2000-04-01,trend 3x on 'either' signal,1131.732435915338
+2000-05-01,trend 3x on 'either' signal,1025.0848655098237
+2000-06-01,trend 3x on 'either' signal,1113.6530997749269
+2000-07-01,trend 3x on 'either' signal,1132.6672306236903
+2000-08-01,trend 3x on 'either' signal,1155.4582305736178
+2000-09-01,trend 3x on 'either' signal,1108.7671424723603
+2000-10-01,trend 3x on 'either' signal,926.5618479906601
+2000-11-01,trend 3x on 'either' signal,897.7935994015621
+2000-12-01,trend 3x on 'either' signal,802.0226188209255
+2001-01-01,trend 3x on 'either' signal,804.9885885705671
+2001-02-01,trend 3x on 'either' signal,807.4035543362787
+2001-03-01,trend 3x on 'either' signal,809.6844693772788
+2001-04-01,trend 3x on 'either' signal,812.1405122677232
+2001-05-01,trend 3x on 'either' signal,814.773201094991
+2001-06-01,trend 3x on 'either' signal,817.3397366784402
+2001-07-01,trend 3x on 'either' signal,819.887112191088
+2001-08-01,trend 3x on 'either' signal,822.2579524238406
+2001-09-01,trend 3x on 'either' signal,824.4711967457815
+2001-10-01,trend 3x on 'either' signal,826.5804688907896
+2001-11-01,trend 3x on 'either' signal,828.750242621628
+2001-12-01,trend 3x on 'either' signal,831.229587097471
+2002-01-01,trend 3x on 'either' signal,833.6817143794086
+2002-02-01,trend 3x on 'either' signal,836.05075991777
+2002-03-01,trend 3x on 'either' signal,838.684319811511
+2002-04-01,trend 3x on 'either' signal,838.7611992074937
+2002-05-01,trend 3x on 'either' signal,759.480448879572
+2002-06-01,trend 3x on 'either' signal,761.6512971626195
+2002-07-01,trend 3x on 'either' signal,763.6506318176714
+2002-08-01,trend 3x on 'either' signal,765.407028270852
+2002-09-01,trend 3x on 'either' signal,766.918707151687
+2002-10-01,trend 3x on 'either' signal,768.4781085228955
+2002-11-01,trend 3x on 'either' signal,770.1111245035065
+2002-12-01,trend 3x on 'either' signal,771.7347754576681
+2003-01-01,trend 3x on 'either' signal,773.3747118555156
+2003-02-01,trend 3x on 'either' signal,774.9214612792266
+2003-03-01,trend 3x on 'either' signal,776.4131850921891
+2003-04-01,trend 3x on 'either' signal,778.0048321216282
+2003-05-01,trend 3x on 'either' signal,777.0128759606731
+2003-06-01,trend 3x on 'either' signal,906.9587700592556
+2003-07-01,trend 3x on 'either' signal,918.7000612379242
+2003-08-01,trend 3x on 'either' signal,908.8658729290107
+2003-09-01,trend 3x on 'either' signal,990.1373838770755
+2003-10-01,trend 3x on 'either' signal,1045.0077601202656
+2003-11-01,trend 3x on 'either' signal,1077.279446781921
+2003-12-01,trend 3x on 'either' signal,1170.4940752800662
+2004-01-01,trend 3x on 'either' signal,1337.6961384471622
+2004-02-01,trend 3x on 'either' signal,1374.5000241543205
+2004-03-01,trend 3x on 'either' signal,1303.539190731971
+2004-04-01,trend 3x on 'either' signal,1334.1772887315526
+2004-05-01,trend 3x on 'either' signal,1223.3272278705863
+2004-06-01,trend 3x on 'either' signal,1320.6520444028315
+2004-07-01,trend 3x on 'either' signal,1224.3031817428694
+2004-08-01,trend 3x on 'either' signal,1166.6977934294625
+2004-09-01,trend 3x on 'either' signal,1258.0559744672018
+2004-10-01,trend 3x on 'either' signal,1255.4544019997716
+2004-11-01,trend 3x on 'either' signal,1428.6080556618235
+2004-12-01,trend 3x on 'either' signal,1537.8394935117976
+2005-01-01,trend 3x on 'either' signal,1467.4242582098484
+2005-02-01,trend 3x on 'either' signal,1533.764444229269
+2005-03-01,trend 3x on 'either' signal,1513.141298324612
+2005-04-01,trend 3x on 'either' signal,1395.440994383538
+2005-05-01,trend 3x on 'either' signal,1444.131949637442
+2005-06-01,trend 3x on 'either' signal,1531.4592317408583
+2005-07-01,trend 3x on 'either' signal,1606.456564124141
+2005-08-01,trend 3x on 'either' signal,1612.7282201104056
+2005-09-01,trend 3x on 'either' signal,1617.7182233461883
+2005-10-01,trend 3x on 'either' signal,1481.1144185909218
+2005-11-01,trend 3x on 'either' signal,1648.4784293368266
+2005-12-01,trend 3x on 'either' signal,1745.0646037316303
+2006-01-01,trend 3x on 'either' signal,1811.9705242551747
+2006-02-01,trend 3x on 'either' signal,1800.3509032893387
+2006-03-01,trend 3x on 'either' signal,1869.521621752217
+2006-04-01,trend 3x on 'either' signal,1901.9437181817418
+2006-05-01,trend 3x on 'either' signal,1844.1116349606314
+2006-06-01,trend 3x on 'either' signal,1681.864565171285
+2006-07-01,trend 3x on 'either' signal,1706.8039952167921
+2006-08-01,trend 3x on 'either' signal,1813.1886667654423
+2006-09-01,trend 3x on 'either' signal,1939.7092290567657
+2006-10-01,trend 3x on 'either' signal,2138.1609837138803
+2006-11-01,trend 3x on 'either' signal,2253.8290033919907
+2006-12-01,trend 3x on 'either' signal,2385.816439569822
+2007-01-01,trend 3x on 'either' signal,2420.5396535573714
+2007-02-01,trend 3x on 'either' signal,2521.517632522407
+2007-03-01,trend 3x on 'either' signal,2319.5065475735464
+2007-04-01,trend 3x on 'either' signal,2596.2192096023255
+2007-05-01,trend 3x on 'either' signal,2844.2653945822194
+2007-06-01,trend 3x on 'either' signal,2854.3659805287843
+2007-07-01,trend 3x on 'either' signal,2884.66936047674
+2007-08-01,trend 3x on 'either' signal,2503.5886319445417
+2007-09-01,trend 3x on 'either' signal,2719.9538714343776
+2007-10-01,trend 3x on 'either' signal,2948.1781240228374
+2007-11-01,trend 3x on 'either' signal,2507.7241208790247
+2007-12-01,trend 3x on 'either' signal,2588.028137052928
+2008-01-01,trend 3x on 'either' signal,2061.130255402833
+2008-02-01,trend 3x on 'either' signal,1948.8992683103372
+2008-03-01,trend 3x on 'either' signal,1952.1636745847572
+2008-04-01,trend 3x on 'either' signal,1955.7101052602527
+2008-05-01,trend 3x on 'either' signal,1959.588930302352
+2008-06-01,trend 3x on 'either' signal,1963.8347063180072
+2008-07-01,trend 3x on 'either' signal,1967.9423939120556
+2008-08-01,trend 3x on 'either' signal,1971.8618791799304
+2008-09-01,trend 3x on 'either' signal,1975.4605271094338
+2008-10-01,trend 3x on 'either' signal,1979.2632886241192
+2008-11-01,trend 3x on 'either' signal,1982.6115423540416
+2008-12-01,trend 3x on 'either' signal,1984.1315445365128
+2009-01-01,trend 3x on 'either' signal,1985.8180563493688
+2009-02-01,trend 3x on 'either' signal,1988.0851986303676
+2009-03-01,trend 3x on 'either' signal,1990.2720923488612
+2009-04-01,trend 3x on 'either' signal,1992.6438332589103
+2009-05-01,trend 3x on 'either' signal,1995.6161936435215
+2009-06-01,trend 3x on 'either' signal,1999.3080836017618
+2009-07-01,trend 3x on 'either' signal,1996.742304894473
+2009-08-01,trend 3x on 'either' signal,2474.273591114768
+2009-09-01,trend 3x on 'either' signal,2734.9898330231317
+2009-10-01,trend 3x on 'either' signal,2920.9446405271965
+2009-11-01,trend 3x on 'either' signal,3092.4434450416898
+2009-12-01,trend 3x on 'either' signal,3285.2416620893737
+2010-01-01,trend 3x on 'either' signal,3403.9070921788343
+2010-02-01,trend 3x on 'either' signal,3092.533469520653
+2010-03-01,trend 3x on 'either' signal,3629.712864982218
+2010-04-01,trend 3x on 'either' signal,4057.648872902982
+2010-05-01,trend 3x on 'either' signal,3325.26156067175
+2010-06-01,trend 3x on 'either' signal,2959.6050929846488
+2010-07-01,trend 3x on 'either' signal,2935.637190895617
+2010-08-01,trend 3x on 'either' signal,3003.4472925786417
+2010-09-01,trend 3x on 'either' signal,3299.011720894014
+2010-10-01,trend 3x on 'either' signal,3743.667864749043
+2010-11-01,trend 3x on 'either' signal,4012.542318523827
+2010-12-01,trend 3x on 'either' signal,4444.379468243381
+2011-01-01,trend 3x on 'either' signal,4888.503847777895
+2011-02-01,trend 3x on 'either' signal,5329.795924869888
+2011-03-01,trend 3x on 'either' signal,5130.747546198188
+2011-04-01,trend 3x on 'either' signal,5451.868823619085
+2011-05-01,trend 3x on 'either' signal,5540.283586675359
+2011-06-01,trend 3x on 'either' signal,4913.374597048229
+2011-07-01,trend 3x on 'either' signal,5354.463540264161
+2011-08-01,trend 3x on 'either' signal,3672.448492485372
+2011-09-01,trend 3x on 'either' signal,3579.7131919416997
+2011-10-01,trend 3x on 'either' signal,3897.3742534006324
+2011-11-01,trend 3x on 'either' signal,4097.764089148112
+2011-12-01,trend 3x on 'either' signal,4282.549210457542
+2012-01-01,trend 3x on 'either' signal,4890.336028439719
+2012-02-01,trend 3x on 'either' signal,5493.4149123348625
+2012-03-01,trend 3x on 'either' signal,5958.277595619161
+2012-04-01,trend 3x on 'either' signal,5941.367259482721
+2012-05-01,trend 3x on 'either' signal,5382.857367373389
+2012-06-01,trend 3x on 'either' signal,5191.521547734623
+2012-07-01,trend 3x on 'either' signal,5642.297405529853
+2012-08-01,trend 3x on 'either' signal,6209.774409720894
+2012-09-01,trend 3x on 'either' signal,6765.61375290459
+2012-10-01,trend 3x on 'either' signal,6713.73363404575
+2012-11-01,trend 3x on 'either' signal,6135.600996388416
+2012-12-01,trend 3x on 'either' signal,6529.293391200016
+2013-01-01,trend 3x on 'either' signal,7355.879499055672
+2013-02-01,trend 3x on 'either' signal,7859.063825730115
+2013-03-01,trend 3x on 'either' signal,8488.739953812028
+2013-04-01,trend 3x on 'either' signal,8848.742388777115
+2013-05-01,trend 3x on 'either' signal,10049.867471338584
+2013-06-01,trend 3x on 'either' signal,9691.680455960326
+2013-07-01,trend 3x on 'either' signal,10612.963394632403
+2013-08-01,trend 3x on 'either' signal,10663.186911226636
+2013-09-01,trend 3x on 'either' signal,11013.085929394289
+2013-10-01,trend 3x on 'either' signal,11683.294305865596
+2013-11-01,trend 3x on 'either' signal,13003.059552894041
+2013-12-01,trend 3x on 'either' signal,13555.829368811446
+2014-01-01,trend 3x on 'either' signal,13908.164219102731
+2014-02-01,trend 3x on 'either' signal,13815.057766695583
+2014-03-01,trend 3x on 'either' signal,14904.489482393614
+2014-04-01,trend 3x on 'either' signal,14952.975952333174
+2014-05-01,trend 3x on 'either' signal,15602.121246182054
+2014-06-01,trend 3x on 'either' signal,17057.386950875916
+2014-07-01,trend 3x on 'either' signal,17779.861090776867
+2014-08-01,trend 3x on 'either' signal,17510.881826570523
+2014-09-01,trend 3x on 'either' signal,18401.10303960749
+2014-10-01,trend 3x on 'either' signal,16900.96306079993
+2014-11-01,trend 3x on 'either' signal,19757.12044387207
+2014-12-01,trend 3x on 'either' signal,20093.75579217138
+2015-01-01,trend 3x on 'either' signal,19396.25212280664
+2015-02-01,trend 3x on 'either' signal,21010.891172508625
+2015-03-01,trend 3x on 'either' signal,21010.521381362163
+2015-04-01,trend 3x on 'either' signal,21532.063101328637
+2015-05-01,trend 3x on 'either' signal,22122.13019004443
+2015-06-01,trend 3x on 'either' signal,21783.772819468006
+2015-07-01,trend 3x on 'either' signal,21684.47504127958
+2015-08-01,trend 3x on 'either' signal,20065.701138747234
+2015-09-01,trend 3x on 'either' signal,17314.063276659417
+2015-10-01,trend 3x on 'either' signal,19474.3036582743
+2015-11-01,trend 3x on 'either' signal,19428.21447294972
+2015-12-01,trend 3x on 'either' signal,18745.88555570031
+2016-01-01,trend 3x on 'either' signal,15101.958337029524
+2016-02-01,trend 3x on 'either' signal,14788.200210145287
+2016-03-01,trend 3x on 'either' signal,14793.006375213583
+2016-04-01,trend 3x on 'either' signal,14752.448882734872
+2016-05-01,trend 3x on 'either' signal,14598.172641042935
+2016-06-01,trend 3x on 'either' signal,15050.007104059277
+2016-07-01,trend 3x on 'either' signal,16526.60285705826
+2016-08-01,trend 3x on 'either' signal,17106.132654288373
+2016-09-01,trend 3x on 'either' signal,16863.42644030277
+2016-10-01,trend 3x on 'either' signal,16586.52529809451
+2016-11-01,trend 3x on 'either' signal,17153.13544059813
+2016-12-01,trend 3x on 'either' signal,19141.550411208274
+2017-01-01,trend 3x on 'either' signal,19921.96925748611
+2017-02-01,trend 3x on 'either' signal,21415.152715128992
+2017-03-01,trend 3x on 'either' signal,22486.66761871067
+2017-04-01,trend 3x on 'either' signal,22334.72038623862
+2017-05-01,trend 3x on 'either' signal,23420.951713218947
+2017-06-01,trend 3x on 'either' signal,24623.353586491387
+2017-07-01,trend 3x on 'either' signal,25299.733673392337
+2017-08-01,trend 3x on 'either' signal,25437.61089895483
+2017-09-01,trend 3x on 'either' signal,26649.20742749275
+2017-10-01,trend 3x on 'either' signal,28775.886489395834
+2017-11-01,trend 3x on 'either' signal,30084.091144403956
+2017-12-01,trend 3x on 'either' signal,32617.04148994983
+2018-01-01,trend 3x on 'either' signal,37289.663646391775
+2018-02-01,trend 3x on 'either' signal,33945.95055806768
+2018-03-01,trend 3x on 'either' signal,33908.73364118736
+2018-04-01,trend 3x on 'either' signal,32111.391060914855
+2018-05-01,trend 3x on 'either' signal,33896.13328915744
+2018-06-01,trend 3x on 'either' signal,35937.91087688431
+2018-07-01,trend 3x on 'either' signal,37530.43125255927
+2018-08-01,trend 3x on 'either' signal,40173.114717072865
+2018-09-01,trend 3x on 'either' signal,42065.206727624834
+2018-10-01,trend 3x on 'either' signal,37058.92460414961
+2018-11-01,trend 3x on 'either' signal,34621.396094385855
+2018-12-01,trend 3x on 'either' signal,28739.836548635303
+2019-01-01,trend 3x on 'either' signal,30069.275816144356
+2019-02-01,trend 3x on 'either' signal,30098.843937363567
+2019-03-01,trend 3x on 'either' signal,30035.385541395623
+2019-04-01,trend 3x on 'either' signal,33314.66058372426
+2019-05-01,trend 3x on 'either' signal,31707.083222799756
+2019-06-01,trend 3x on 'either' signal,32988.33498527703
+2019-07-01,trend 3x on 'either' signal,36742.51514475926
+2019-08-01,trend 3x on 'either' signal,33250.11567037897
+2019-09-01,trend 3x on 'either' signal,36289.941726569865
+2019-10-01,trend 3x on 'either' signal,36258.70523439682
+2019-11-01,trend 3x on 'either' signal,41033.58919830673
+2019-12-01,trend 3x on 'either' signal,44015.64944062413
+2020-01-01,trend 3x on 'either' signal,48380.25996431674
+2020-02-01,trend 3x on 'either' signal,48518.77506284085
+2020-03-01,trend 3x on 'either' signal,20944.07473774704
+2020-04-01,trend 3x on 'either' signal,23577.33597049506
+2020-05-01,trend 3x on 'either' signal,23577.33597049506
+2020-06-01,trend 3x on 'either' signal,23506.603962583573
+2020-07-01,trend 3x on 'either' signal,25938.06678493015
+2020-08-01,trend 3x on 'either' signal,30501.87609664366
+2020-09-01,trend 3x on 'either' signal,29902.093144460592
+2020-10-01,trend 3x on 'either' signal,31425.08345737628
+2020-11-01,trend 3x on 'either' signal,35126.211690123826
+2020-12-01,trend 3x on 'either' signal,39585.68340131557
+2021-01-01,trend 3x on 'either' signal,42871.73466927422
+2021-02-01,trend 3x on 'either' signal,46039.88491961992
+2021-03-01,trend 3x on 'either' signal,47126.8963905193
+2021-04-01,trend 3x on 'either' signal,55590.07891178493
+2021-05-01,trend 3x on 'either' signal,56800.73487342448
+2021-06-01,trend 3x on 'either' signal,59836.77101546698
+2021-07-01,trend 3x on 'either' signal,65296.27971915003
+2021-08-01,trend 3x on 'either' signal,69524.08691933755
+2021-09-01,trend 3x on 'either' signal,69291.71633060362
+2021-10-01,trend 3x on 'either' signal,70166.18018140942
+2021-11-01,trend 3x on 'either' signal,80089.80653419967
+2021-12-01,trend 3x on 'either' signal,80662.3827171454
+2022-01-01,trend 3x on 'either' signal,75597.00969558819
+2022-02-01,trend 3x on 'either' signal,68899.23265435435
+2022-03-01,trend 3x on 'either' signal,66926.55845921062
+2022-04-01,trend 3x on 'either' signal,66971.48570398518
+2022-05-01,trend 3x on 'either' signal,50944.561415758704
+2022-06-01,trend 3x on 'either' signal,45462.6244809746
+2022-07-01,trend 3x on 'either' signal,45515.66420953574
+2022-08-01,trend 3x on 'either' signal,45568.7658177802
+2022-09-01,trend 3x on 'either' signal,45645.47324024013
+2022-10-01,trend 3x on 'either' signal,45739.807218269954
+2022-11-01,trend 3x on 'either' signal,45830.90566764634
+2022-12-01,trend 3x on 'either' signal,45911.87360099251
+2023-01-01,trend 3x on 'either' signal,45989.541187167524
+2023-02-01,trend 3x on 'either' signal,45937.80295333196
+2023-03-01,trend 3x on 'either' signal,42172.29066236495
+2023-04-01,trend 3x on 'either' signal,47055.72121230907
+2023-05-01,trend 3x on 'either' signal,47896.02504967828
+2023-06-01,trend 3x on 'either' signal,54778.315876231805
+2023-07-01,trend 3x on 'either' signal,60891.35349057118
+2023-08-01,trend 3x on 'either' signal,58752.521190908505
+2023-09-01,trend 3x on 'either' signal,60995.00242532426
+2023-10-01,trend 3x on 'either' signal,50853.422483418035
+2023-11-01,trend 3x on 'either' signal,57579.715262009486
+2023-12-01,trend 3x on 'either' signal,66242.90962111644
+2024-01-01,trend 3x on 'either' signal,71239.97056785227
+2024-02-01,trend 3x on 'either' signal,80381.57815772739
+2024-03-01,trend 3x on 'either' signal,87910.68435899632
+2024-04-01,trend 3x on 'either' signal,84773.1730646285
+2024-05-01,trend 3x on 'either' signal,90730.3172577359
+2024-06-01,trend 3x on 'either' signal,99954.68657032443
+2024-07-01,trend 3x on 'either' signal,106620.7444747831
+2024-08-01,trend 3x on 'either' signal,103074.33536193699
+2024-09-01,trend 3x on 'either' signal,111099.76275906227
+2024-10-01,trend 3x on 'either' signal,121120.8928506653
+2024-11-01,trend 3x on 'either' signal,129564.68370780193
+2024-12-01,trend 3x on 'either' signal,134660.5426676245
+2025-01-01,trend 3x on 'either' signal,132265.72596189496
+2025-02-01,trend 3x on 'either' signal,135959.7095614193
+2025-03-01,trend 3x on 'either' signal,111763.70849286082
+2025-04-01,trend 3x on 'either' signal,93019.30163936183
+2025-05-01,trend 3x on 'either' signal,115828.03872076981
+2025-06-01,trend 3x on 'either' signal,128748.3325631613
+2025-07-01,trend 3x on 'either' signal,145626.05932198412
+2025-08-01,trend 3x on 'either' signal,153223.03655733287
+2025-09-01,trend 3x on 'either' signal,165605.06681014775
+2025-10-01,trend 3x on 'either' signal,176874.88130270134
+2025-11-01,trend 3x on 'either' signal,177073.3576206564
+2025-12-01,trend 3x on 'either' signal,185695.56242965985
+2026-01-01,trend 3x on 'either' signal,191629.70560507718
+2026-02-01,trend 3x on 'either' signal,188454.13097920752
+2026-03-01,trend 3x on 'either' signal,168520.02823533808
+2026-04-01,trend 3x on 'either' signal,191272.8562384503
+2026-05-01,trend 3x on 'either' signal,228542.32182374003
+2026-06-01,trend 3x on 'either' signal,231595.32247467482
+2026-07-01,trend 3x on 'either' signal,234045.06178216814
+2026-08-01,trend 3x on 'either' signal,255147.19365205092
+2026-09-01,trend 3x on 'either' signal,250293.52083200583
+1957-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.9986333333333334
+1957-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8720151885791327
+1957-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8734031460876212
+1957-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8748442612786657
+1957-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8763752387359033
+1957-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8754258322272728
+1957-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.9321821007241318
+1957-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.782114608626316
+1957-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.6906104752897427
+1957-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5629913595835868
+1957-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5640328935988164
+1957-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5648366404721947
+1958-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5655850490208204
+1958-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5663155963758056
+1958-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5670140522780025
+1958-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5676661184381222
+1958-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.5666348583229596
+1958-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.6112267957618244
+1958-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.6652936189005249
+1958-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.743396186274174
+1958-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.8056276421124907
+1958-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.9072474247727972
+1958-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",0.9936658284636676
+1958-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.0534229986906567
+1959-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.182613237468078
+1959-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1319331041168947
+1959-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2216189691606278
+1959-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2862702709005802
+1959-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.3473361397334582
+1959-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.315369590241781
+1959-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.4747788516404141
+1959-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.4522972091029647
+1959-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2820845532733818
+1959-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2813771781967498
+1959-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2995970690533782
+1959-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.4266622714923813
+1960-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.3544473497076426
+1960-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2001269760973423
+1960-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1514058298971894
+1960-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.154073253403118
+1960-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1568141773799503
+1960-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1593688086883311
+1960-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1582094398796428
+1960-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.2011319129006073
+1960-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1998306866616317
+1960-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1301977870836601
+1960-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.1324864376025046
+1960-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.131297326843022
+1961-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.3101103051466034
+1961-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.4759390709301121
+1961-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.6195942204346025
+1961-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.75391825943212
+1961-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.8124710429814122
+1961-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.7450362181010417
+1961-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.7351254344419447
+1961-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.9262111562938038
+1961-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.8853884840972235
+1961-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.9523180373390827
+1961-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.222392527245572
+1961-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.2887545188035134
+1962-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.037623279449658
+1962-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.144073470187318
+1962-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.155587478556886
+1962-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.9549930741272574
+1962-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.518421334687652
+1962-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.52147083086815
+1962-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5246532406893825
+1962-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5278041907201405
+1962-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5309616527142955
+1962-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.534061850061042
+1962-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5371555414586648
+1962-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5401786140235336
+1963-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.5385485916570254
+1963-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.6047446605785016
+1963-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.591735095587148
+1963-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.8216750339080274
+1963-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.9369220623953638
+1963-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.9399726732210096
+1963-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1.8591182176560044
+1963-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.0189027262710346
+1963-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.1838206267738567
+1963-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.205425812236212
+1963-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.173850187604181
+1963-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.3187685144109316
+1964-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.538305986733038
+1964-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.637811897695228
+1964-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.78768807051039
+1964-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9144238995478773
+1964-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.005731547393083
+1964-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9583864099502573
+1964-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.2943900377772044
+1964-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.1559380512259656
+1964-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3253837007405678
+1964-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.5044519584655704
+1964-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.584764725114772
+1964-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.4057013636176277
+1965-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.6759662456936306
+1965-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7640063415678577
+1965-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7819428622770785
+1965-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.9387175985598435
+1965-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.122595781192335
+1965-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.543310675690171
+1965-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.535524093536901
+1965-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7306492699176577
+1965-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.728131081660463
+1965-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.98677952567126
+1965-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.0927638867442955
+1965-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.042310671185989
+1966-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.258377582172737
+1966-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.176436547065522
+1966-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.6657996821326315
+1966-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.008279224009715
+1966-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3810558363847028
+1966-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.292851772768657
+1966-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3025108046354443
+1966-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3127485881298147
+1966-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.32290768380008
+1966-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3326271887751955
+1966-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3427917017009596
+1966-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.352095805270694
+1967-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3606995178375554
+1967-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3593832438597357
+1967-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.6050910569294263
+1967-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.799011667897842
+1967-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.009149303838488
+1967-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8629964349524384
+1967-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.067184414457773
+1967-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.264175072734977
+1967-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.4452669779347955
+1967-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.425066724684863
+1967-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.007479000251416
+1967-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.350193420204962
+1968-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.315181210276334
+1968-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7314102019050073
+1968-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.5162969736069196
+1968-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.528428198165863
+1968-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.530692272926353
+1968-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8145181323905173
+1968-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7916341549170283
+1968-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.5438469250877054
+1968-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.890545600825603
+1968-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.178114754026225
+1968-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.369352761917599
+1968-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.501341070211335
+1969-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.9254821824629653
+1969-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8635288371950343
+1969-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.607676314634022
+1969-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8120010409666567
+1969-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.815876575358306
+1969-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.211445495489297
+1969-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.7660935080308073
+1969-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.7780568624530404
+1969-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.7911600306542774
+1969-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.8041854441306637
+1969-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.8173651157180775
+1969-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.831804111936133
+1970-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.846647485156198
+1970-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.860263948960195
+1970-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.873540340789952
+1970-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.8876446346293294
+1970-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9030694697193073
+1970-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9184073534176576
+1970-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9329021099396315
+1970-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9476399430420783
+1970-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9621079424291765
+1970-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.967612526355524
+1970-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2.9569888522156274
+1970-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.5652936894288874
+1971-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.973731174182713
+1971-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.434638801185569
+1971-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.776532282288548
+1971-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.264490902895016
+1971-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.04218367624771
+1971-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.754356377912993
+1971-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.642879855880838
+1971-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.38834838884839
+1971-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.6780532738029565
+1971-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.377984668568259
+1971-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.755524977358856
+1971-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.7693891237336055
+1972-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.77205910769625
+1972-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.9762868350570795
+1972-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.255177243704215
+1972-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.379075006402877
+1972-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.239703699530895
+1972-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.269238136848363
+1972-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.168378670589761
+1972-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.605370732769983
+1972-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.395567053013816
+1972-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.410700252425651
+1972-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.067362871268048
+1972-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.373750041557704
+1973-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.484422652333796
+1973-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.885855010633245
+1973-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.642233815596186
+1973-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.371071501145836
+1973-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.9785273853564993
+1973-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.9964307585906034
+1973-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.015180679566325
+1973-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.034921984574193
+1973-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.053717996152335
+1973-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.071588136318706
+1973-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.077118710203872
+1973-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.193870899266293
+1974-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.208482858630436
+1974-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.223081455637205
+1974-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.2384179515636125
+1974-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.2546370281376933
+1974-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.271127189080258
+1974-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.2875918625986285
+1974-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.304879116476126
+1974-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.322890707660921
+1974-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3410004620176728
+1974-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.358819131148434
+1974-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3761170496738484
+1974-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.3928006947609863
+1975-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.409764698234791
+1975-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.42650095996196
+1975-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.4340107078992097
+1975-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.5459617318346184
+1975-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.2184595479002285
+1975-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.536710093194161
+1975-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.542123704177663
+1975-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.532768937846801
+1975-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.398651678553597
+1975-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8649749072535364
+1975-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.056185889652101
+1975-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3.8652061991454434
+1976-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.9286580218021205
+1976-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.490702885567235
+1976-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.561334465155263
+1976-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.683616300757067
+1976-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.553228760394023
+1976-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.640091062325871
+1976-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.027289223476677
+1976-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.8583444607918675
+1976-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.2228844345607035
+1976-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.577124558849793
+1976-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.458225125223373
+1976-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.025752532439975
+1977-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.866937551219
+1977-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.388220457828225
+1977-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.305906943454639
+1977-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.331861671586371
+1977-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.358343251221917
+1977-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.384152604548635
+1977-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.410310612619068
+1977-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.4206803746265875
+1977-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.156653497968613
+1977-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.182522709683423
+1977-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.208780824745819
+1977-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.235649452500133
+1978-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.263834698719425
+1978-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.292478732538289
+1978-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.321322741630622
+1978-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.350811738490492
+1978-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.365303520282237
+1978-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.407514815770741
+1978-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.329061563510157
+1978-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.435313990928775
+1978-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.433462263909699
+1978-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.816504636355141
+1978-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.792190176278077
+1978-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.9904855259477765
+1979-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.007120477700936
+1979-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.781299519915544
+1979-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.05293363285827
+1979-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.353129925938961
+1979-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4.976127886365153
+1979-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.272022439663081
+1979-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.427624471283988
+1979-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.172211267034678
+1979-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.372574232842196
+1979-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.633559092377183
+1979-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.4890879070440075
+1979-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.12901895541006
+1980-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.638686490858581
+1980-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.388669599059877
+1980-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.2990821712635965
+1980-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.022469702333222
+1980-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.689942881980635
+1980-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5.712133659220359
+1980-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6.476197953401998
+1980-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.048678400786171
+1980-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.525488201246586
+1980-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.141718107132917
+1980-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9.110841446005876
+1980-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.591327883597696
+1981-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.428876170041423
+1981-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.481919394841082
+1981-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.261362915398724
+1981-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.407996370089473
+1981-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.817055140538726
+1981-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.856249332689282
+1981-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.207802499659015
+1981-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.1928645476505135
+1981-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.2757023710242885
+1981-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.358463485494689
+1981-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.431373594530133
+1981-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.507049748967766
+1982-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.5889391499794225
+1982-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.670709969320451
+1982-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.7497182820044515
+1982-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.829604961294781
+1982-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.908683971403859
+1982-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7.993043267098833
+1982-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.075971090994983
+1982-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.153769612504902
+1982-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.227425331337862
+1982-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8.267259782317089
+1982-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9.251835649977906
+1982-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9.48106880393798
+1983-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10.448420701030994
+1983-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10.947056373385857
+1983-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.043307126583128
+1983-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13.371340072437388
+1983-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14.93716243292973
+1983-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.477942782979076
+1983-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.539452722904128
+1983-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14.136722454380863
+1983-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.29163348573093
+1983-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.320932084769609
+1983-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14.524019329609835
+1983-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14.206692365883928
+1984-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14.6263618606499
+1984-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.119593885154572
+1984-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.015993572839582
+1984-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.127441913227669
+1984-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.247806774216453
+1984-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.370897232297327
+1984-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.493162933276531
+1984-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.609974006702666
+1984-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.68794567931078
+1984-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.295928643137424
+1984-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.554588822315816
+1984-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12.069334713460487
+1985-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13.562225758255499
+1985-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.680201843652663
+1985-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.172325393345883
+1985-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.375561609744633
+1985-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16.38557105650475
+1985-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",17.370317586828996
+1985-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",18.27260251912828
+1985-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16.97769603170121
+1985-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15.753226515047558
+1985-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16.217853427187677
+1985-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",19.104777083063468
+1985-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",21.8767673825927
+1986-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",22.072566561305322
+1986-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25.562947522662256
+1986-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",30.01674701287571
+1986-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32.17109371914022
+1986-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32.28689602661896
+1986-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",34.95675834710942
+1986-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32.69948695448888
+1986-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",34.60218472140208
+1986-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",31.682007489378055
+1986-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",31.257615609666402
+1986-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",34.245511313882275
+1986-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",35.653065401741465
+1987-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",42.43028193234657
+1987-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",50.214480764577345
+1987-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",56.28508047982923
+1987-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.183337846424756
+1987-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",53.77985864634315
+1987-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.37713367795615
+1987-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",65.28488601752176
+1987-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",77.08347248138074
+1987-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",68.99659249670222
+1987-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",43.48321567707544
+1987-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",26.735315300940147
+1987-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",26.90218822727685
+1988-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.06292880193483
+1988-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.214255678818983
+1988-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.37005729258022
+1988-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.53473380395724
+1988-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.708890995267268
+1988-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.88022430458801
+1988-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.97222904479315
+1988-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",26.147040839752044
+1988-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.312878592179914
+1988-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",30.075097267266283
+1988-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27.855766142256204
+1988-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",29.425812030363662
+1989-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32.131623554044644
+1989-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",34.87733167620193
+1989-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",34.22558823233838
+1989-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",37.421441802728005
+1989-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",41.55453606700399
+1989-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",45.2855544576281
+1989-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",48.56180203890819
+1989-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.82460066337563
+1989-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.92410694449691
+1989-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.7567178344622
+1989-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",51.155619588993694
+1989-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.77752166267569
+1990-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",50.48865699246257
+1990-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",46.03559123155985
+1990-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49.05704973939178
+1990-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49.207900167340405
+1990-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54.26059761248935
+1990-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",58.74839442895554
+1990-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",58.31882473111295
+1990-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",43.814106663002846
+1990-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",37.40206449216994
+1990-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",37.627100246864494
+1990-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",37.84314251411524
+1990-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",38.050649078900975
+1991-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",38.259610560092604
+1991-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",38.462067665973095
+1991-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",38.55854335236858
+1991-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",40.71955505712433
+1991-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",40.02149524614375
+1991-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",39.952802708447514
+1991-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",40.40532912972353
+1991-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",43.18911635510469
+1991-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",42.318917771245665
+1991-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",42.08822921166071
+1991-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",41.657105428678165
+1991-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",42.402221859412194
+1992-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",51.33707041511231
+1992-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49.87047234261322
+1992-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",47.81345993159683
+1992-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",47.67619248356932
+1992-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",50.12677329346719
+1992-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",47.60504518614369
+1992-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49.873184398296736
+1992-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",50.81823257708689
+1992-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",50.93675118181652
+1992-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",48.655483433542095
+1992-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",52.20352385239697
+1992-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",56.824751622673936
+1993-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",56.53874322827138
+1993-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",58.968774939417116
+1993-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",62.2842018587747
+1993-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",59.2616553142855
+1993-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.05275628169072
+1993-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",61.11546640142519
+1993-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.737372229910946
+1993-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",63.475046989652036
+1993-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",65.59400189899358
+1993-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",67.5651953536135
+1993-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",67.04970354728134
+1993-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",68.30193697181849
+1994-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",71.31971930066729
+1994-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",70.56862100734759
+1994-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",66.91140763572838
+1994-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",59.52987598956416
+1994-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.629483032982115
+1994-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.91242062046936
+1994-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",61.206830653468295
+1994-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",61.49960332676072
+1994-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",61.62055254663668
+1994-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",60.11062832630757
+1994-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",58.74902869818533
+1994-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",56.27678511907588
+1995-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",59.77949270253267
+1995-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",65.9839749844795
+1995-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",70.36574523032274
+1995-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",76.44560958786413
+1995-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",83.40832738929478
+1995-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",90.64495301772784
+1995-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",99.49747341203387
+1995-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",100.12183215191158
+1995-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",110.4238244757182
+1995-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",112.52267884248717
+1995-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",119.56265075992255
+1995-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",130.78402694324873
+1996-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",130.4138316646144
+1996-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",152.4742719349186
+1996-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",150.22306718934652
+1996-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",149.73481737997747
+1996-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",158.88360970890784
+1996-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",163.4164371733253
+1996-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",144.78179112995693
+1996-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",156.78753730329538
+1996-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",164.79062908333216
+1996-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",183.6423312948781
+1996-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",209.88928308222629
+1996-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",215.5858202682194
+1997-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",234.6531206916753
+1997-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",263.2383292481724
+1997-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",255.8210089470151
+1997-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",227.17838065345015
+1997-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",287.84163924320353
+1997-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",331.29558136089923
+1997-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",385.427262750458
+1997-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",386.0499721474079
+1997-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",396.50891290127527
+1997-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",412.76302948612795
+1997-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",395.14640426831676
+1997-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",423.216390472984
+1998-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",423.0297398061329
+1998-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",501.0622545661015
+1998-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",577.0463113464391
+1998-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",631.5555275212354
+1998-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",622.4717068491141
+1998-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",619.9919453937558
+1998-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",698.4901798680983
+1998-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",547.372420899723
+1998-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",463.4655307425645
+1998-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",477.2994708242077
+1998-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",478.62397685574484
+1998-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",478.4444928644239
+1999-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",547.9376552241181
+1999-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",543.1972897499563
+1999-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",587.0181055349954
+1999-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",657.773743833969
+1999-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",650.8463212655352
+1999-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",633.5860843492977
+1999-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",714.4951906016812
+1999-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",627.7172927565847
+1999-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",611.3159362980878
+1999-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",582.7750372819343
+1999-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",700.3780841364338
+1999-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",701.0667892525013
+2000-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",691.9548635473953
+2000-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",634.1501809348674
+2000-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",703.5681542462012
+2000-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",727.7848491147007
+2000-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",659.2028384972785
+2000-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",716.1585437199974
+2000-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",728.3859889284774
+2000-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",743.042230928218
+2000-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",713.0165239409555
+2000-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",595.8454961043161
+2000-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",575.5579195055709
+2000-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",577.35174168803
+2001-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",579.1126645001784
+2001-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",580.8500024936789
+2001-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",582.4909037507235
+2001-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",584.2577928254341
+2001-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",586.1517618371765
+2001-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",587.9981398869636
+2001-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",589.8307340896113
+2001-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",591.5363279623538
+2001-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",593.1285465784525
+2001-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",594.6459671101157
+2001-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",596.2069127737799
+2001-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",597.9905651211615
+2002-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",599.7546372882689
+2002-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",601.4589400492297
+2002-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",603.3535357103848
+2002-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",603.4088431178249
+2002-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",546.3738898056248
+2002-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",547.9356085073192
+2002-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",549.373939479651
+2002-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",550.6374995404542
+2002-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",551.7250086020466
+2002-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",552.8468494528707
+2002-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",554.0216490079581
+2002-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",555.1897113179499
+2003-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",556.3694894545005
+2003-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",557.4822284334094
+2003-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",558.5553817231437
+2003-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",559.7004202556761
+2003-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",558.9868022198501
+2003-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",652.4705037787961
+2003-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",660.9172451558699
+2003-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",653.8424827609342
+2003-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",712.3095988434914
+2003-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",751.7836115680028
+2003-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",775.0000182548758
+2003-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",842.0590705773585
+2004-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",962.3450394537183
+2004-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",988.8219319444298
+2004-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",937.7723668924059
+2004-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",959.8135620343912
+2004-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",880.0674948023168
+2004-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",950.0834361761722
+2004-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",880.7696007146635
+2004-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",839.3280071450175
+2004-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",902.533538209184
+2004-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",901.781426927343
+2004-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1026.1561143937513
+2004-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1104.6160582457726
+2005-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1054.0374380530593
+2005-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1101.688987576424
+2005-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1086.8755702894173
+2005-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1002.3325172970531
+2005-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1037.3067856076984
+2005-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1100.033174506783
+2005-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1153.9030731702578
+2005-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1158.407946366355
+2005-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1161.9922201011625
+2005-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1063.8709551793236
+2005-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1184.0869950341526
+2005-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1253.463961675443
+2006-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1301.5218731244804
+2006-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1293.175605543407
+2006-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1342.8603006607175
+2006-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1366.1487963126672
+2006-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1324.608539297962
+2006-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1208.0679513830505
+2006-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1225.9817161341787
+2006-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1302.3968537604642
+2006-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1393.2754177425436
+2006-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1535.8215000262717
+2006-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1618.9047817998182
+2006-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1713.7101513483556
+2007-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1738.651518718862
+2007-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1811.1830784587319
+2007-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1666.080361745045
+2007-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1864.8405387898674
+2007-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2043.0098472719235
+2007-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2050.2650058767977
+2007-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2072.031646836964
+2007-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1798.3048411458237
+2007-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1953.7180159244774
+2007-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2117.649411466062
+2007-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1801.275325064985
+2007-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1853.553140237369
+2008-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1851.4524466784333
+2008-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1750.6386649677156
+2008-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1753.5709847315368
+2008-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1756.7566386871322
+2008-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1760.2408726871947
+2008-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1764.0547279113503
+2008-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1767.744542383898
+2008-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1771.265300264146
+2008-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1774.497859437128
+2008-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1777.9137678165444
+2008-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1780.9214052737673
+2008-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1782.2867783511438
+2009-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1783.8017221127423
+2009-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1785.8382290788209
+2009-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1787.8026511308078
+2009-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1789.9331159567387
+2009-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1792.6030995213741
+2009-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1795.9194152554885
+2009-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",1793.6146520059108
+2009-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2222.566905712588
+2009-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2456.760607301673
+2009-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2623.798319946248
+2009-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2777.8506319670264
+2009-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2951.0355773301276
+2010-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3057.629229186614
+2010-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2777.931498298206
+2010-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3260.4638872268115
+2010-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3644.866166903139
+2010-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2986.9842705056017
+2010-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2658.5258628098863
+2010-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2629.020626507183
+2010-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2631.64964713369
+2010-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2634.1716447121935
+2010-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2628.5520785368076
+2010-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2817.3376572442644
+2010-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3120.5446933633293
+2011-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3432.378996813904
+2011-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3742.2246477607573
+2011-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3602.4662481405617
+2011-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3827.9360365197927
+2011-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3890.0149435171925
+2011-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3449.841566157962
+2011-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3759.544590143388
+2011-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2578.546619783776
+2011-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2505.6984817530233
+2011-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2507.0557350973063
+2011-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2508.1212337847223
+2011-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2509.124482278236
+2012-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2510.1072227004615
+2012-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2503.5600263612514
+2012-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2715.415793709971
+2012-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2707.709104472196
+2012-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2453.174709651114
+2012-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2365.9756327011655
+2012-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2571.411492987418
+2012-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2830.0325449640077
+2012-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3083.349868137424
+2012-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3059.70610668656
+2012-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2796.2288735498933
+2012-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",2975.6496087504374
+2013-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3352.356624513314
+2013-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3581.6770356340908
+2013-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",3868.6446157234986
+2013-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4032.7115431182538
+2013-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4580.110345383974
+2013-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4416.870774375217
+2013-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4836.73477063901
+2013-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",4859.623554853413
+2013-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5019.085967419527
+2013-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5324.525648827622
+2013-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",5925.993327743004
+2013-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6177.911749525145
+2014-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6338.484264283242
+2014-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6296.052080266075
+2014-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6792.547928185287
+2014-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6814.645073567021
+2014-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7110.485499771027
+2014-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7773.705938086227
+2014-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8102.96513397809
+2014-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7980.380959191837
+2014-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8386.088934858088
+2014-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7702.417567443981
+2014-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9004.078113273163
+2014-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9157.495762387916
+2015-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8839.616568347637
+2015-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9575.469557125012
+2015-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9575.301029106075
+2015-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9812.987608952051
+2015-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10081.903829509718
+2015-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9927.70138874782
+2015-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9882.447579933774
+2015-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9144.710180015756
+2015-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7863.249061076027
+2015-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7866.984104380038
+2015-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7871.966527646145
+2015-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7853.205007421921
+2016-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6326.656293821957
+2016-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6195.213749491618
+2016-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6197.227193960202
+2016-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6180.2364627367615
+2016-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6115.605589461588
+2016-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6304.892388260311
+2016-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6923.481951657245
+2016-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7166.264096679665
+2016-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7064.5872967578525
+2016-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",6948.58523165992
+2016-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",7185.954951812318
+2016-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8018.960699000394
+2017-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8345.901198731113
+2017-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8971.439841422489
+2017-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9420.329075347
+2017-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9356.673892807461
+2017-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9811.728271055626
+2017-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10315.4499215511
+2017-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10598.80551281341
+2017-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10656.566353984637
+2017-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",11164.13991708023
+2017-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12055.068574917794
+2017-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12603.11413493768
+2017-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13664.241830297111
+2018-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15621.74122971077
+2018-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14220.961080350255
+2018-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14205.369814888996
+2018-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13452.409934198986
+2018-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14200.091155347274
+2018-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15055.452078592782
+2018-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15722.605889572336
+2018-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16829.704028781794
+2018-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",17622.35724367627
+2018-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15525.077831411461
+2018-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14503.925160777051
+2018-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",11996.454414730477
+2019-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12008.550839598664
+2019-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12020.359247924269
+2019-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",11995.016323843229
+2019-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13304.636858225622
+2019-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12662.630227095351
+2019-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13174.314546402202
+2019-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14673.594528461166
+2019-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",13278.860019498823
+2019-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14492.853531098657
+2019-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14480.378837441109
+2019-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16387.28997106444
+2019-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",17578.21396423184
+2020-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",19321.277139057933
+2020-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",19376.59491966726
+2020-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",8364.284787382656
+2020-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9415.911423845282
+2020-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9415.911423845282
+2020-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9415.911423845282
+2020-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",9387.663689573747
+2020-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",11039.425454124499
+2020-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",10822.348341611794
+2020-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",11373.558305665007
+2020-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",12713.093260567928
+2020-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",14327.092522924624
+2021-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",15516.400285375754
+2021-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",16663.03659080635
+2021-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",17056.454427228957
+2021-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",20119.501180554467
+2021-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",20557.669186901523
+2021-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",21656.489946644688
+2021-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",23632.42871052567
+2021-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25162.582536900198
+2021-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25078.481552949852
+2021-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25394.972855409753
+2021-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",28986.5923678983
+2021-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",29193.822640174312
+2022-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27360.53187171016
+2022-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24936.431461598542
+2022-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24222.469157982716
+2022-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24166.06209357673
+2022-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24194.255832685903
+2022-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24227.321315657242
+2022-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24255.586523858845
+2022-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24283.884708136684
+2022-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24324.76258072871
+2022-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24375.033756728884
+2022-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24423.580698961036
+2022-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24466.729024862532
+2023-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24508.11857479626
+2023-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",24480.54694139961
+2023-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",22473.881527054866
+2023-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25076.29268142421
+2023-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",25524.09593306542
+2023-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",29191.71242345282
+2023-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32449.388991581378
+2023-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",31309.59167552632
+2023-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",32504.624167177964
+2023-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",27100.11180771641
+2023-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",30684.595947612826
+2023-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",35301.2672408838
+2024-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",37964.232755361634
+2024-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",42835.853497675795
+2024-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",46848.16200912537
+2024-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",45176.16231425594
+2024-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",48350.76228814246
+2024-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",53266.48727810414
+2024-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",56818.871871028
+2024-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",54928.967931811865
+2024-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",59205.76916063228
+2024-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",64546.09302989922
+2024-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",69045.84280355489
+2024-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",71761.4584066655
+2025-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",70485.24537487948
+2025-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",72453.79269528102
+2025-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",59559.59005884349
+2025-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49391.89783210392
+2025-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49512.08478349537
+2025-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",49482.377532625265
+2025-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",55969.06385116734
+2025-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",58888.84143727215
+2025-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",63647.67818018375
+2025-10-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",67979.05245386309
+2025-11-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",68055.33367553653
+2025-12-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",71369.14120242953
+2026-01-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",73649.83491777998
+2026-02-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",72429.35322771056
+2026-03-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",64767.99732422817
+2026-04-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",73512.68552927782
+2026-05-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",87836.61291393558
+2026-06-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",89009.9852427989
+2026-07-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",89951.50365206007
+2026-08-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",98061.77300577406
+2026-09-01,"mix+SMA10 xL {""w"": 1.0, ""lev"": 3.0}",96196.3409172964
 1957-01-01,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.9849342135012922
 1957-02-01,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.8917534585723647
 1957-03-01,"trend-strength leverage {""w"": 1.0, ""lev"": 3.0}",0.893172832827259

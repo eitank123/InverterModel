@@ -158,5 +158,13 @@
   "finding": "Exp 25: the champion through the full execution simulator over 1957-2026 (ETF prices rebuilt from index data, every cost, 25% capital-gains tax with loss carry-forward, sold at the end), varying only the no-trade band (round values fixed in advance). Trades per year / pre-tax / after-tax. 2% band (current): 9.0 / 14.94% / 12.07%. 5%: 5.2 / 15.05% / 12.08%. 10%: 3.9 / 15.04% / 12.45%. 20%: 3.1 / 15.12% / 12.54%. S&P 500 buy & hold: 10.61% / 10.15%. Over 70 years tax cuts the champion's lead over the S&P from about 4.3 to about 1.9-2.4 points a year. A wider band trades less at no pre-tax cost and keeps about 0.4 points a year more after tax.",
   "decision": "Signals unchanged. Implementation recommendation for a taxable account: trade only beyond a 10% band. A NEW real-time account runs the champion with a 10% band (existing accounts untouched; live_sim gained a band parameter). Important for the owner: in a taxable account the long-run edge over the S&P is about 2 points a year, not 4+. A tax-deferred account keeps the full edge.",
   "sources": "Jeffrey & Arnott (1993); Leibowitz & Bova on tax-efficient rebalancing; Exp 20-like execution model"
+ },
+ {
+  "checkpoint": 21,
+  "date": "2026-10-29",
+  "iteration": 11,
+  "finding": "Round 11: the 'either' exit signal (stay in while the S&P is above its 10-month average OR up over 12 months), which helped recovery+ in round 6, applied to the 3x trend sleeve. Alone: 15.2% / 13.3% / 11.0% / 28.2% by era, vs 15.1% / 14.5% / 11.3% / 24.5% for the 10-month average. In the ensemble: 15.5% / 14.2% / 13.0% / 22.5%, vs the champion's 15.4% / 14.6% / 13.1% / 21.2%. The gain appears only in 1991-2026 and the signal is worse in 1930-56 and 1957-90: a textbook case of an idea that looks good only on the recent, already-studied era. Variants tried: 232.",
+  "decision": "Rejected by beats_everywhere (loses 2 of 4 eras). Champion unchanged, worst era 13.1%. Shown to the owner as an example of the worst-era rule catching an overfit-looking improvement.",
+  "sources": "Moskowitz, Ooi & Pedersen (2012); round 6 (checkpoint 6)"
  }
 ]

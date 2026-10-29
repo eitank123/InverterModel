@@ -421,8 +421,23 @@ def iteration_10():
     ]
 
 
+def iteration_11():
+    """Checkpoint 20: the round-6 'either' exit signal (10-month average OR 12-month momentum
+    up), which helped recovery+, applied to the ensemble's 3x trend sleeve."""
+    return [
+        Candidate("ensemble, trend sleeve on 'either' signal", "ensemble",
+                  lambda: at.Blend({at.RecoveryLeverage(3.0, 3.0, 0.15, signal="either"): 1 / 3,
+                                    CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                                    at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3}),
+                  note="3x while S&P above 10-month average OR up over 12 months"),
+        Candidate("trend 3x on 'either' signal", "levered trend stocks",
+                  lambda: at.RecoveryLeverage(3.0, 3.0, 0.15, signal="either")),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
-              6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10}
+              6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
+              11: iteration_11}
 
 
 def run(iters, financings=(0.005, 0.015)):
