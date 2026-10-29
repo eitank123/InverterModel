@@ -645,3 +645,20 @@ def test_live_sim_daily_rule_trades_mid_month(tmp_path):
     acct.advance(px, pd.Series(0.04, index=days), target, CostModel(), daily=True)
     sides = [(t["date"], t["side"]) for t in acct.st["trades"]]
     assert sides == [("2026-01-05", "buy"), ("2026-01-15", "sell")]
+
+
+def test_simulate_charges_capital_gains_tax_on_realized_gains():
+    from algotrading.execution import CostModel, simulate
+    idx = pd.date_range("2020-01-01", periods=36, freq="MS")
+    px = pd.DataFrame({"SPY": np.linspace(100, 200, 36), "SSO": 100.0, "UPRO": 100.0, "IEF": 100.0, "UST": 100.0},
+                      index=idx)
+    cash = pd.Series(0.0, index=idx)
+    free = CostModel(commission_per_order=0, extra_slippage_bps=0, sec_fee_rate=0, finra_taf_per_share=0,
+                     cash_fee=0)
+    hold = lambda d: ({"SPY": 1.0}, "hold")                       # noqa: E731
+    flip = lambda d: ({"SPY": 1.0} if d.month != 12 else {}, "flip")  # noqa: E731
+    h = simulate(hold, px, cash, 100_000, free, tax_rate=0.25)
+    f = simulate(flip, px, cash, 100_000, free, tax_rate=0.25)
+    assert h["fees"]["taxes_paid"] == 0.0                         # buy & hold defers all tax
+    assert f["fees"]["taxes_paid"] > 0                            # selling each December realizes gains
+    assert h["liquidation_after_tax"] < h["final"]                # tax due when finally sold

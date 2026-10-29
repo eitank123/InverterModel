@@ -25,6 +25,7 @@ from loop import ensemble  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "loop", "dashboard")
 START, START_CASH = "2021-10-01", 100_000.0
+TAX = 0.25        # flat capital-gains rate on realized gains (e.g. Israel 25%; set to your own)
 
 df = at.data.load_shiller_sp500()
 idx = pd.DataFrame({"stocks": df["tr"], "bonds": at.data.bond_total_return(df["long_rate"])})
@@ -104,6 +105,7 @@ for fn, lib in [(champion, at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", 
 summary, equity_rows, trade_rows, yearly_rows = [], [], [], []
 for name, fn in STRATS.items():
     res = simulate(fn, prices, cash, START_CASH, costs)
+    taxed = simulate(fn, prices, cash, START_CASH, costs, tax_rate=TAX)
     eq, tr, fees = res["equity"], res["trades"], res["fees"]
     years = len(eq) / 12
     cagr = (res["final"] / START_CASH) ** (1 / years) - 1
@@ -117,7 +119,11 @@ for name, fn in STRATS.items():
                     "trading_costs_total": round(trading_costs, 2),
                     "fund_costs_embedded": round(fees["fund_costs_embedded"], 2),
                     "all_costs": round(trading_costs + fees["fund_costs_embedded"], 2),
-                    "realized_pl": round(float(tr["realized_pl"].sum()) if len(tr) else 0.0, 2)})
+                    "realized_pl": round(float(tr["realized_pl"].sum()) if len(tr) else 0.0, 2),
+                    "tax_rate": TAX, "taxes_paid_along_the_way": round(taxed["fees"]["taxes_paid"], 2),
+                    "after_tax_value_if_held": round(taxed["final"], 2),
+                    "after_tax_value_if_sold": round(taxed["liquidation_after_tax"], 2),
+                    "after_tax_cagr_if_sold": (taxed["liquidation_after_tax"] / START_CASH) ** (1 / years) - 1})
     for d, r in eq.iterrows():
         equity_rows.append({"strategy": name, "date": d, "equity": r["equity"], "pl": r["pl"]})
     for _, t in tr.iterrows():
@@ -143,6 +149,9 @@ s = pd.DataFrame(summary).set_index("strategy")
 print(f"$100,000 from {s['start'].iloc[0]} to {s['end'].iloc[0]}, all costs included (pre-tax):\n")
 print(s[["end_value", "profit", "cagr", "max_drawdown", "trades", "trading_costs_total",
          "fund_costs_embedded", "all_costs"]].to_string(float_format=lambda v: f"{v:,.3f}"))
+print(f"\nAfter {TAX:.0%} capital-gains tax (losses carried forward):")
+print(s[["taxes_paid_along_the_way", "after_tax_value_if_held", "after_tax_value_if_sold",
+         "after_tax_cagr_if_sold"]].to_string(float_format=lambda v: f"{v:,.3f}"))
 print("\nYearly P/L ($):")
 y = pd.DataFrame(yearly_rows).pivot(index="year", columns="strategy", values="pl")
 print(y.to_string(float_format=lambda v: f"{v:,.0f}"))

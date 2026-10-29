@@ -747,6 +747,19 @@ Setup: 200 synthetic 70-year histories resampled from 1957–2026. Shown as medi
 
 ---
 
+## Taxes: the 5-year simulation after a 25% capital-gains tax
+| | Pre-tax per year | After tax, sold at the end | Tax paid along the way |
+|---|---|---|---|
+| Champion | 19.6% | 15.7% | $10,372 |
+| S&P 500 buy & hold | 13.1% | 10.4% | $0 (deferred) |
+| 60/40 | 6.9% | 5.4% | $559 |
+
+* **Switching costs tax.** Each switch realizes gains, which costs the champion about 3.9 points a year against 2.7 for buy & hold.
+* **The lead survives tax:** about +5 points a year after tax.
+* **A tax-deferred account would remove the drag.**
+
+---
+
 ## Open questions / next experiments
 * More breadth (commodities, currencies, international), which is where trend following's real edge lives.
   Needs data access.

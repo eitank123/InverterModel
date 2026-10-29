@@ -142,5 +142,13 @@
   "finding": "Built the whipsaw monitor planned in checkpoint 17. The weekly report now counts flips of the 10-month trend signal in the last 12 completed months (Shiller history spliced with FRED month-ends) and compares them with 1957-2026: average 1.3 flips per 12 months, 90th percentile 3. Now: 2 flips, normal; signal in (September 2026 month-end). More than 3 flips is flagged as a possible trendless market, the condition under which Exp 24 shows the champion lags plain leverage.",
   "decision": "No strategy change. The monitor is an early-warning input for the weekly learning review, not a trading rule. Acting on it would be a new strategy and would have to pass the worst-era rule like any other.",
   "sources": "Exp 24; Hurst, Ooi & Pedersen (2017) on trend-following drawdowns in trendless periods"
+ },
+ {
+  "checkpoint": 19,
+  "date": "2026-10-29",
+  "iteration": "taxes",
+  "finding": "Capital-gains tax added to the execution simulator (execution.simulate(tax_rate=...)): a flat rate on each year's net realized gains, losses carried forward, paid from cash the next January, plus the value after selling everything at the end. 5-year full-cost simulation (2021-10 to 2026-09, $100k) at 25%. Champion: $10,372 tax paid along the way; $245,003 pre-tax becomes $207,278 if sold (15.7%/yr after tax vs 19.6% pre-tax). S&P 500 buy & hold: no tax until sold; $184,899 becomes $163,673 (10.4%/yr vs 13.1%). 60/40: 5.4% vs 6.9%. Recovery+ challenger: 13.1% after tax. Tax costs the champion about 3.9 points a year (it realizes gains at each switch) against 2.7 for buy & hold, but its lead stays about 5 points a year after tax.",
+  "decision": "Reporting change, no strategy change. The dashboard's 5-year table now shows tax paid and after-tax results. The actual rate depends on the owner's country and account type (a tax-deferred account would remove the drag). Taxes favour buy-and-hold structures; a future candidate could cut realized gains by rebalancing less often (e.g. a \u00b110% band instead of monthly).",
+  "sources": "Israel Tax Authority capital-gains rate 25%; US IRS long-term 15-20% / short-term ordinary rates; Jeffrey & Arnott (1993) Is Your Alpha Big Enough to Cover Its Taxes?"
  }
 ]

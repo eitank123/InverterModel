@@ -143,20 +143,34 @@ class Ledger:
 
 def simulate(target_fn, prices: pd.DataFrame, cash_rate: pd.Series, start_cash: float = 100_000.0,
              costs: CostModel | None = None, min_trade_frac: float = 0.02,
-             instruments: dict[str, Instrument] = INSTRUMENTS) -> dict:
+             instruments: dict[str, Instrument] = INSTRUMENTS, tax_rate: float = 0.0) -> dict:
     """Run a monthly strategy on ETF prices with every cost.
 
     target_fn(date) -> ({symbol: weight}, reason) is called with the decision date; the
     trades execute at the NEXT month's price (signals from monthly-average data, Exp 1).
     Returns equity curve, trades, monthly P/L and the cost breakdown.
+
+    tax_rate: flat capital-gains tax on each calendar year's net realized gains (losses carried
+    forward), paid from cash at the start of the next year. Interest on cash is treated as
+    tax-free for simplicity. The result also reports the value after selling everything and
+    paying tax on the unrealized gains at the end ("liquidation_after_tax").
     """
     costs = costs or CostModel()
     led = Ledger(start_cash, costs)
     dates = prices.index
     rows, fund_costs = [], 0.0
+    taxes, carry, n_trades_seen, year = 0.0, 0.0, 0, dates[0].year
     pending = target_fn(dates[0])
     for i, d in enumerate(dates):
         px = prices.loc[d].to_dict()
+        if tax_rate and d.year != year:                 # settle last year's capital-gains tax
+            realized = sum(t["realized_pl"] for t in led.trades[n_trades_seen:])
+            n_trades_seen, year = len(led.trades), d.year
+            base = realized + carry
+            tax = max(base, 0.0) * tax_rate
+            carry = min(base, 0.0)
+            led.cash -= tax
+            taxes += tax
         if i > 0:
             # one month of interest on idle cash (or cost of a negative balance)
             rate = cash_rate.loc[d] / 12
@@ -182,5 +196,11 @@ def simulate(target_fn, prices: pd.DataFrame, cash_rate: pd.Series, start_cash: 
         pending = target_fn(d)
     eq = pd.DataFrame(rows).set_index("date")
     eq["pl"] = eq["equity"].diff().fillna(eq["equity"].iloc[0] - start_cash)
-    return {"equity": eq, "trades": pd.DataFrame(led.trades), "fees": {**led.fees, "fund_costs_embedded": fund_costs},
-            "final": float(eq["equity"].iloc[-1])}
+    px = prices.iloc[-1].to_dict()
+    pending_realized = sum(t["realized_pl"] for t in led.trades[n_trades_seen:])
+    unrealized = sum(q * px[s] - led.basis.get(s, 0.0) for s, q in led.shares.items())
+    final_tax = max(pending_realized + carry + unrealized, 0.0) * tax_rate
+    return {"equity": eq, "trades": pd.DataFrame(led.trades),
+            "fees": {**led.fees, "fund_costs_embedded": fund_costs, "taxes_paid": taxes},
+            "final": float(eq["equity"].iloc[-1]),
+            "liquidation_after_tax": float(eq["equity"].iloc[-1]) - final_tax}

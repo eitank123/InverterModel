@@ -58,6 +58,7 @@ bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · m
 Live earnings data for the valuation sleeve ·
 deployable 2x global sleeve via country ETFs, momentum-ranked (Exp 23; needs ETF data) ·
 synthetic-market tests (does the ensemble earn on markets with no trend / no mean reversion?) ·
+tax-aware rebalancing bands (fewer realized gains) ·
 turn-of-month effects ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·
 more markets once data access is allowed.
