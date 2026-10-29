@@ -118,5 +118,13 @@
   "finding": "Exp 23, country momentum rotation (Asness, Moskowitz & Pedersen 2013) across 13 markets (OECD monthly, as in Exp 21). Rule fixed in advance: top 4 by 12-1 month return, equal weight, each gated by its 10-month average. 1x: 13.8% / 9.0% / 11.2% for 1961-90 / 1991-2026 / 1961-2026, max DD -23%, vs 9.8% / 8.3% / 8.9% and -23% for the equal-weight global trend sleeve. 3x: 20.2% vs 15.1% for 1961-2026, max DD -67% vs -65%. Robust to the number held (top 2 to 6 all beat all-13 in every sub-period). Decay: the excess over all-13 was about +4.0 points a year in 1961-90, +0.8 in 1991-2013 and +0.7 in 2014-2026 (after publication), consistent with McLean & Pontiff (2016). Turnover about 4x a year at 1x.",
   "decision": "No champion change. There is no data before 1960, so the worst-era rule cannot be applied; the post-publication edge is small (+0.7 points a year); and implementation needs about 12 country ETFs plus leverage via margin. Recorded as the strongest non-US idea so far; if a deployable global sleeve is built (open direction), use momentum-ranked markets rather than equal weight. The OECD indices are monthly averages, which can flatter momentum. The 12-1 skip and one-month execution lag guard against this, but month-end data would be needed to confirm.",
   "sources": "Asness, Moskowitz & Pedersen (2013) Value and Momentum Everywhere, Journal of Finance; McLean & Pontiff (2016) Does Academic Research Destroy Stock Return Predictability?; Antonacci (2014) Dual Momentum Investing"
+ },
+ {
+  "checkpoint": 16,
+  "date": "2026-10-29",
+  "iteration": 10,
+  "finding": "Round 10. (1) Risk-parity sleeve weights (inverse 36-month volatility of each sleeve's own returns; Qian 2005, Asness-Frazzini-Pedersen 2012): 15.2% / 14.8% / 13.1% / 19.7% by era, worst 13.1% (ties the champion), max DD -52%, crash day -46%. It loses 1.5 points a year in 1991-2026, because it underweights the 3x trend sleeve. (2) Adding variance-managed stocks (Moreira-Muir 2017) as a 4th equal sleeve: 15.4% / 15.2% / 12.5% / 21.7%, worst era 12.5% (below 13.1%), crash day -50%. Variants tried: 230.",
+  "decision": "Champion unchanged: neither passes beats_everywhere. Equal weight remains the best way to combine the sleeves, consistent with DeMiguel, Garlappi & Uppal (2009): 1/N is hard to beat out of sample.",
+  "sources": "Qian (2005) Risk Parity Portfolios; Asness, Frazzini & Pedersen (2012) Leverage Aversion and Risk Parity; Moreira & Muir (2017); DeMiguel, Garlappi & Uppal (2009) Optimal Versus Naive Diversification"
  }
 ]

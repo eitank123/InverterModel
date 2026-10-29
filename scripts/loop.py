@@ -389,8 +389,40 @@ def iteration_9():
     ]
 
 
+class RiskParityBlend(at.PortfolioStrategy):
+    """Sleeves weighted by inverse trailing 36-month volatility of their own (simulated) returns,
+    weights summing to 1 (Qian 2005; Asness, Frazzini & Pedersen 2012). No fitted parameters."""
+
+    def __init__(self, sleeves, window=36):
+        self.sleeves, self.window = sleeves, window
+
+    def weights(self, prices):
+        r = prices.pct_change().fillna(0.0)
+        ws = [s.weights(prices) for s in self.sleeves]
+        # each sleeve's own return, earned with its weights from the month before
+        rets = pd.concat([(w.shift(1) * r).sum(axis=1) for w in ws], axis=1)
+        vol = rets.rolling(self.window, min_periods=12).std().shift(1)
+        inv = (1 / vol).replace([np.inf, -np.inf], np.nan)
+        k = inv.div(inv.sum(axis=1), axis=0).fillna(1 / len(ws))
+        return sum(w.mul(k[i], axis=0) for i, w in enumerate(ws))
+
+
+def iteration_10():
+    """Checkpoint 15: sleeve weighting (risk parity) and a 4th independent effect (volatility timing)."""
+    def sleeves():
+        return [at.Levered(filtered(1.0), 3.0), CappedValuationLeverage(1.0, 2.0, 0.5, 3.0),
+                at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0)]
+    return [
+        Candidate("ensemble, risk-parity sleeve weights", "ensemble", lambda: RiskParityBlend(sleeves()),
+                  note="inverse 36-month volatility of each sleeve"),
+        Candidate("ensemble + variance-managed (4 sleeves)", "ensemble",
+                  lambda: at.Blend({s: 0.25 for s in sleeves() + [VarianceManaged(2.0, 3.0, 3)]}),
+                  note="Moreira & Muir (2017) as a 4th independent effect"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
-              6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9}
+              6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10}
 
 
 def run(iters, financings=(0.005, 0.015)):

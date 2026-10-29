@@ -52,7 +52,7 @@ Leverage on trend-filtered portfolios · stock/bond mixes · Gayed-Bilello lever
 volatility targeting · trend-strength leverage · valuation-scaled Kelly · leveraged bonds ·
 ≤2× deployable variants · drawdown brake · levered dual momentum · Sell-in-May seasonality (watch list) ·
 recovery leverage · exit signals (SMA10 / 12-month momentum / either / both) · bonds as the risk-off asset ·
-bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account) · Japan out-of-sample test (Exp 19) · 12-market test (Exp 20) · global 13-market trend sleeve (Exp 21) · leverage frontier across 13 markets (Exp 22) · country momentum rotation (Exp 23).
+bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · multi-horizon (1/3/12-month) trend · daily 200-day exits (Exp 18, one era only; live account) · Japan out-of-sample test (Exp 19) · 12-market test (Exp 20) · global 13-market trend sleeve (Exp 21) · leverage frontier across 13 markets (Exp 22) · country momentum rotation (Exp 23) · risk-parity sleeve weights, 4th variance-managed sleeve (round 10).
 
 ## Open directions (candidates for coming rounds)
 Live earnings data for the valuation sleeve ·
