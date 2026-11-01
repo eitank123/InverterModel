@@ -166,5 +166,13 @@
   "finding": "Round 11: the 'either' exit signal (stay in while the S&P is above its 10-month average OR up over 12 months), which helped recovery+ in round 6, applied to the 3x trend sleeve. Alone: 15.2% / 13.3% / 11.0% / 28.2% by era, vs 15.1% / 14.5% / 11.3% / 24.5% for the 10-month average. In the ensemble: 15.5% / 14.2% / 13.0% / 22.5%, vs the champion's 15.4% / 14.6% / 13.1% / 21.2%. The gain appears only in 1991-2026 and the signal is worse in 1930-56 and 1957-90: a textbook case of an idea that looks good only on the recent, already-studied era. Variants tried: 232.",
   "decision": "Rejected by beats_everywhere (loses 2 of 4 eras). Champion unchanged, worst era 13.1%. Shown to the owner as an example of the worst-era rule catching an overfit-looking improvement.",
   "sources": "Moskowitz, Ooi & Pedersen (2012); round 6 (checkpoint 6)"
+ },
+ {
+  "checkpoint": 22,
+  "date": "2026-11-01",
+  "iteration": "data",
+  "finding": "FRED's S&P 500 series lagged its Dow Jones series by two trading days (29-30 October missing on 1 November), which would have frozen the real-time simulation and the October month-end signal before the first rebalance. Added data.sp500_with_fallback: past the S&P's last date, it extends the S&P with the Dow's daily returns (the indices move almost together). Days filled this way are provisional, and the forward-only record keeps them once processed. The simulation advanced to 30 October: S&P (proxy) about -1.35% over the two days; every account moved in line with its exposure.",
+  "decision": "Data-robustness change only; no strategy change. The provisional days are noted in the reports.",
+  "sources": "FRED SP500 and DJIA series"
  }
 ]

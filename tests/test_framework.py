@@ -662,3 +662,14 @@ def test_simulate_charges_capital_gains_tax_on_realized_gains():
     assert h["fees"]["taxes_paid"] == 0.0                         # buy & hold defers all tax
     assert f["fees"]["taxes_paid"] > 0                            # selling each December realizes gains
     assert h["liquidation_after_tax"] < h["final"]                # tax due when finally sold
+
+
+def test_sp500_fallback_extends_with_dow_moves():
+    idx = pd.bdate_range("2026-10-26", periods=5)
+    sp = pd.Series([100.0, 101.0, 102.0], index=idx[:3])
+    dj = pd.Series([50.0, 50.5, 51.0, 51.51, 50.4798], index=idx)
+    out = at.data.sp500_with_fallback(sp500=sp, djia=dj)
+    assert list(out.index) == list(idx)
+    assert abs(out.iloc[3] / out.iloc[2] - 1.01) < 1e-12 and abs(out.iloc[4] / out.iloc[3] - 0.98) < 1e-9
+    same = at.data.sp500_with_fallback(sp500=dj, djia=dj)          # nothing to extend
+    assert same.equals(dj)

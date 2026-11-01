@@ -56,7 +56,6 @@ bond-trend gate · equal-weight ensembles · growth-trend timing (earnings) · m
 
 ## Open directions (candidates for coming rounds)
 Live earnings data for the valuation sleeve ·
-fallback when FRED's S&P 500 lags (scale the Dow Jones move until it catches up) ·
 deployable 2x global sleeve via country ETFs, momentum-ranked (Exp 23; needs ETF data) ·
 synthetic-market tests (does the ensemble earn on markets with no trend / no mean reversion?) ·
 turn-of-month effects ·

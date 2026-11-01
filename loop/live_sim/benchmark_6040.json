@@ -4,7 +4,7 @@
  "description": "60% SPY, 40% IEF, rebalanced monthly.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -36.01948923017176,
+ "cash": -36.03235448204889,
  "holdings": {
   "IEF": 421.05263157894734,
   "SPY": 78.70214909335124
@@ -21,14 +21,14 @@
   "stocks": 0.6,
   "bonds": 0.4
  },
- "last_date": "2026-10-28",
+ "last_date": "2026-10-30",
  "last_signal_month": "2026-10",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 34.0,
   "regulatory": 0.0
  },
- "fund_costs": 1.3978360541505541,
+ "fund_costs": 2.3286868896584756,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -45,6 +45,14 @@
   {
    "date": "2026-10-28",
    "equity": 100971.89
+  },
+  {
+   "date": "2026-10-29",
+   "equity": 100857.47
+  },
+  {
+   "date": "2026-10-30",
+   "equity": 100203.03
   }
  ],
  "trades": [
@@ -78,10 +86,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.1261,
-  "SPY": 774.5,
+  "IEF": 95.2319,
+  "SPY": 764.1647,
   "SSO": NaN,
-  "UPRO": 104.7022,
-  "UST": 45.0916
+  "UPRO": 100.4495,
+  "UST": 45.1714
  }
 }

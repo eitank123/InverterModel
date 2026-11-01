@@ -4,7 +4,7 @@
  "description": "Same signals as the champion ensemble; a holding is traded only when it drifts more than 10% of the account from target (Exp 25: +0.4 points a year after a 25% tax over 1957-2026). Added 2026-10-29.",
  "start": "2026-10-28",
  "start_equity": 100000.0,
- "cash": -41.95767999999953,
+ "cash": -41.97266622365004,
  "holdings": {
   "SPY": 64.83099057021161,
   "UPRO": 475.5240691618683
@@ -21,18 +21,26 @@
   "stocks": 1.995768043090024,
   "bonds": 0.0
  },
- "last_date": "2026-10-28",
+ "last_date": "2026-10-30",
  "last_signal_month": "2026-10",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 39.957679999999996,
   "regulatory": 0.0
  },
- "fund_costs": 0.0,
+ "fund_costs": 38.584117462461336,
  "equity_history": [
   {
    "date": "2026-10-28",
    "equity": 99958.04
+  },
+  {
+   "date": "2026-10-29",
+   "equity": 99443.82
+  },
+  {
+   "date": "2026-10-30",
+   "equity": 97265.74
   }
  ],
  "trades": [
@@ -66,10 +74,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.1261,
-  "SPY": 774.5,
+  "IEF": 95.2319,
+  "SPY": 764.1647,
   "SSO": NaN,
-  "UPRO": 104.7022,
-  "UST": 45.0916
+  "UPRO": 100.4495,
+  "UST": 45.1714
  }
 }

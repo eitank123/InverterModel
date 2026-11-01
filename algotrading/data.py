@@ -268,6 +268,21 @@ def load_fred(series: str) -> pd.Series:
     return pd.to_numeric(df.iloc[:, 0], errors="coerce").dropna().rename(series)
 
 
+def sp500_with_fallback(sp500: pd.Series | None = None, djia: pd.Series | None = None) -> pd.Series:
+    """FRED's S&P 500 series sometimes lags its Dow Jones series by a few trading days. Extend
+    the S&P past its last date with the Dow's daily returns, so the simulation and the
+    month-end signal are not held up. Those days are provisional (the S&P and the Dow move
+    almost together, correlation about 0.97). The extension is recomputed on every load, so once
+    FRED publishes the real closes, they replace it for any day not yet processed."""
+    sp = sp500 if sp500 is not None else load_fred("SP500")
+    dj = djia if djia is not None else load_fred("DJIA")
+    extra = dj.index[dj.index > sp.index[-1]]
+    if len(extra) == 0 or sp.index[-1] not in dj.index:
+        return sp
+    growth = dj[extra] / dj[sp.index[-1]]
+    return pd.concat([sp, (sp.iloc[-1] * growth).rename(sp.name)])
+
+
 def fred_daily_proxies(div_yield: float = 0.012, duration: float = 7.5,
                        sp500: pd.Series | None = None, dgs10: pd.Series | None = None) -> pd.DataFrame:
     """Daily total-return proxies from FRED: S&P 500 price plus a steady dividend accrual, and a

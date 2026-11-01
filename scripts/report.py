@@ -38,7 +38,7 @@ def load_accounts():
 
 
 def market_section(asof):
-    sp = at.data.load_fred("SP500")[:asof]
+    sp = at.data.sp500_with_fallback()[:asof]
     y10 = at.data.load_fred("DGS10")[:asof]
     tb = at.data.load_fred("DTB3")[:asof]
     me = sp.groupby(sp.index.to_period("M")).tail(1)

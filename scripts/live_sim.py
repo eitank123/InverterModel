@@ -26,7 +26,7 @@ ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
 ANCHOR = "2026-10-23"                       # price levels: SPY = S&P/10 there; others fixed
 LEVELS = {"UPRO": 100.0, "IEF": 95.0, "UST": 45.0}
 
-sp, y10, tb = at.data.load_fred("SP500"), at.data.load_fred("DGS10"), at.data.load_fred("DTB3")
+sp, y10, tb = at.data.sp500_with_fallback(), at.data.load_fred("DGS10"), at.data.load_fred("DTB3")
 closes = at.data.fred_daily_proxies(sp500=sp, dgs10=y10)
 cash = (tb / 100).reindex(closes.index).ffill()
 costs = CostModel()
