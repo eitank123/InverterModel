@@ -4,31 +4,31 @@
  "description": "Loop strategy '60/40+SMA10 vol-target' {\"tv\": 0.12, \"cap\": 4.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -34.40447276047537,
+ "cash": -3.7816449071397074,
  "holdings": {
-  "SPY": 115.60309456850236,
-  "UPRO": 118.67900000000002
+  "SPY": 112.74958772436511,
+  "UPRO": 140.22615414469524
  },
  "basis": {
-  "SPY": 88159.53963,
-  "UPRO": 11874.833950000002
+  "SPY": 85983.44001390257,
+  "UPRO": 14014.969459960668
  },
  "targets": {
-  "UPRO": 0.118679,
-  "SPY": 0.881321
+  "UPRO": 0.139485,
+  "SPY": 0.860515
  },
  "exposure": {
-  "stocks": 1.2373571582457235,
+  "stocks": 1.2789704909393003,
   "bonds": 0.0
  },
- "last_date": "2026-10-30",
- "last_signal_month": "2026-10",
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
  "fees": {
-  "commission": 2.0,
-  "spread_slippage": 32.373580000000004,
-  "regulatory": 0.0
+  "commission": 4.0,
+  "spread_slippage": 34.09435636220698,
+  "regulatory": 0.060868544945839674
  },
- "fund_costs": 25.840147438504054,
+ "fund_costs": 30.791886462557013,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -53,6 +53,10 @@
   {
    "date": "2026-10-30",
    "equity": 100226.65
+  },
+  {
+   "date": "2026-11-02",
+   "equity": 99750.79
   }
  ],
  "trades": [
@@ -83,13 +87,41 @@
    "realized_pl": 0.0,
    "reason": "signal from month-ends to 2026-09: stocks 1.24x, bonds 0.00x",
    "qty": 118.679
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "sell",
+   "shares": 2.8535,
+   "price": 761.3359,
+   "amount": 2172.48,
+   "commission": 1.0,
+   "spread_slippage": 0.65,
+   "regulatory_fees": 0.06,
+   "realized_pl": -5.34,
+   "reason": "signal from month-ends to 2026-10: stocks 1.28x, bonds 0.00x",
+   "qty": 2.8535
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 21.5472,
+   "price": 99.2273,
+   "amount": 2138.07,
+   "commission": 1.0,
+   "spread_slippage": 1.07,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 1.28x, bonds 0.00x",
+   "qty": 21.5472
   }
  ],
  "prices": {
-  "IEF": 95.2319,
-  "SPY": 764.1647,
+  "IEF": 95.5357,
+  "SPY": 761.3359,
   "SSO": NaN,
-  "UPRO": 100.4495,
-  "UST": 45.1714
+  "UPRO": 99.2273,
+  "UST": 45.4505
  }
 }

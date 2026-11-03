@@ -4,31 +4,31 @@
  "description": "Equal thirds of three published effects: S&P 500 at 3x above its 10-month average; leverage 0.5-3x set by valuation; recovery+. Traded through SPY/UPRO and IEF/UST.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -42.922881683579405,
+ "cash": -5.696662451490738,
  "holdings": {
-  "UPRO": 544.217,
-  "SPY": 59.78516936702485
+  "UPRO": 499.14708427553484,
+  "SPY": 65.60288650650904
  },
  "basis": {
-  "UPRO": 54449.91085,
-  "SPY": 45592.973490000004
+  "UPRO": 49940.58296569256,
+  "SPY": 50024.53892690448
  },
  "targets": {
-  "UPRO": 0.544217,
-  "SPY": 0.455783
+  "UPRO": 0.497905,
+  "SPY": 0.502095
  },
  "exposure": {
-  "stocks": 2.0884336084151385,
+  "stocks": 1.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-10-30",
- "last_signal_month": "2026-10",
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
  "fees": {
-  "commission": 2.0,
-  "spread_slippage": 40.88434,
-  "regulatory": 0.0
+  "commission": 4.0,
+  "spread_slippage": 44.44919459744926,
+  "regulatory": 0.13180785404114945
  },
- "fund_costs": 111.70053782769921,
+ "fund_costs": 133.06455211576707,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -53,6 +53,10 @@
   {
    "date": "2026-10-30",
    "equity": 100309.13
+  },
+  {
+   "date": "2026-11-02",
+   "equity": 99469.16
   }
  ],
  "trades": [
@@ -83,13 +87,41 @@
    "realized_pl": 0.0,
    "reason": "signal from month-ends to 2026-09: stocks 2.09x, bonds 0.00x",
    "qty": 59.7852
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "sell",
+   "shares": 45.0699,
+   "price": 99.2273,
+   "amount": 4472.17,
+   "commission": 1.0,
+   "spread_slippage": 2.24,
+   "regulatory_fees": 0.13,
+   "realized_pl": -40.53,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 45.0699
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 5.8177,
+   "price": 761.3359,
+   "amount": 4429.24,
+   "commission": 1.0,
+   "spread_slippage": 1.33,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 5.8177
   }
  ],
  "prices": {
-  "IEF": 95.2319,
-  "SPY": 764.1647,
+  "IEF": 95.5357,
+  "SPY": 761.3359,
   "SSO": NaN,
-  "UPRO": 100.4495,
-  "UST": 45.1714
+  "UPRO": 99.2273,
+  "UST": 45.4505
  }
 }

@@ -4,31 +4,31 @@
  "description": "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like mix -87% there, this one about -61%). Added 2026-10-28.",
  "start": "2026-10-27",
  "start_equity": 100000.0,
- "cash": -36.23713766885738,
+ "cash": -5.336214043104519,
  "holdings": {
-  "SPY": 102.1738444192405,
-  "UPRO": 203.0339367759408
+  "SPY": 107.42639350021052,
+  "UPRO": 162.36774393357922
  },
  "basis": {
-  "SPY": 78936.37350999999,
-  "UPRO": 21099.84415
+  "SPY": 82937.5271537458,
+  "UPRO": 16873.701738672084
  },
  "targets": {
-  "UPRO": 0.210883,
-  "SPY": 0.789117
+  "UPRO": 0.164571,
+  "SPY": 0.835429
  },
  "exposure": {
-  "stocks": 1.421766941748472,
+  "stocks": 1.329142944999438,
   "bonds": 0.0
  },
- "last_date": "2026-10-30",
- "last_signal_month": "2026-10",
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
  "fees": {
-  "commission": 2.0,
-  "spread_slippage": 34.217659999999995,
-  "regulatory": 0.0
+  "commission": 4.0,
+  "spread_slippage": 37.43494496315007,
+  "regulatory": 0.11892907995089977
  },
- "fund_costs": 25.64443929306684,
+ "fund_costs": 33.842854070489906,
  "equity_history": [
   {
    "date": "2026-10-27",
@@ -45,6 +45,10 @@
   {
    "date": "2026-10-30",
    "equity": 98436.07
+  },
+  {
+   "date": "2026-11-02",
+   "equity": 97893.55
   }
  ],
  "trades": [
@@ -75,13 +79,41 @@
    "realized_pl": 0.0,
    "reason": "signal from month-ends to 2026-09: stocks 1.42x, bonds 0.00x",
    "qty": 203.0339
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "sell",
+   "shares": 40.6662,
+   "price": 99.2273,
+   "amount": 4035.2,
+   "commission": 1.0,
+   "spread_slippage": 2.02,
+   "regulatory_fees": 0.12,
+   "realized_pl": -194.08,
+   "reason": "signal from month-ends to 2026-10: stocks 1.33x, bonds 0.00x",
+   "qty": 40.6662
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 5.2525,
+   "price": 761.3359,
+   "amount": 3998.95,
+   "commission": 1.0,
+   "spread_slippage": 1.2,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 1.33x, bonds 0.00x",
+   "qty": 5.2525
   }
  ],
  "prices": {
-  "IEF": 95.2319,
-  "SPY": 764.1647,
+  "IEF": 95.5357,
+  "SPY": 761.3359,
   "SSO": NaN,
-  "UPRO": 100.4495,
-  "UST": 45.1714
+  "UPRO": 99.2273,
+  "UST": 45.4505
  }
 }

@@ -781,3 +781,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Month-end prices instead of monthly averages, to measure the real-time version of the filter.
 * Firm-level news + LLM scoring (Exp 5 follow-up).
 * Paper trading the frozen rule through `scripts/rebalance.py` (needs broker keys + network access; see docs/AUTOMATION.md).
+* Exp 26 (2026-11-03): turn-of-the-month leverage overlay, tested out of sample on FRED S&P 500 2016-2026.
+  The published window (-1..+3) earned more per day (8.2bp vs 5.8bp, t=1.6), but levering up only in
+  the window lost to constant leverage with the same average (17.5% vs 19.1%/yr at 1.38x; 25.5% vs 26.0%
+  at 2.19x). Rejected.

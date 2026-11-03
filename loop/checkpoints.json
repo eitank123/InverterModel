@@ -174,5 +174,15 @@
   "finding": "FRED's S&P 500 series lagged its Dow Jones series by two trading days (29-30 October missing on 1 November), which would have frozen the real-time simulation and the October month-end signal before the first rebalance. Added data.sp500_with_fallback: past the S&P's last date, it extends the S&P with the Dow's daily returns (the indices move almost together). Days filled this way are provisional, and the forward-only record keeps them once processed. The simulation advanced to 30 October: S&P (proxy) about -1.35% over the two days; every account moved in line with its exposure.",
   "decision": "Data-robustness change only; no strategy change. The provisional days are noted in the reports.",
   "sources": "FRED SP500 and DJIA series"
+ },
+ {
+  "checkpoint": 23,
+  "date": "2026-11-03",
+  "finding": "Exp 26 turn-of-the-month (published -1..+3 window, McConnell & Xu 2008) on unseen FRED S&P data 2016-2026: window days earned 8.2bp/day vs 5.8bp on other days (t=1.6, not significant). Levering up only inside the window (1x->3x: 17.5%/yr; 2x->3x: 25.5%/yr) lost to constant leverage with the same average (1.38x: 19.1%; 2.19x: 26.0%) and lost in 2022-2026. Two variants. Live sim: November rebalance recorded on 2 Nov (champion 2.00x: sold 45 UPRO, bought 5.8 SPY).",
+  "decision": "Rejected: no edge over plain leverage after costs; champion unchanged (ensemble trend+value+recovery, 3x trend).",
+  "sources": [
+   "Lakonishok & Smidt (1988) RFS",
+   "McConnell & Xu (2008) Financial Analysts Journal, 'Equity returns at the turn of the month'"
+  ]
  }
 ]
