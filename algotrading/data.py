@@ -365,3 +365,40 @@ def load_ff_industries(n: int = 49, daily: bool = False) -> pd.DataFrame:
 def load_ff_factors(daily: bool = False) -> pd.DataFrame:
     """Fama-French factors: Mkt-RF, SMB, HML, RF (1926-), monthly or daily."""
     return _kf_block("F-F_Research_Data_Factors_daily" if daily else "F-F_Research_Data_Factors", "")
+
+
+# --- Real ETF prices (Yahoo Finance chart API, no key) ---------------------------------
+
+ETF_DIR = os.path.join(os.path.dirname(SHILLER_PATH), "etf")
+YAHOO_CHART = "https://query2.finance.yahoo.com/v8/finance/chart/{}?range={}&interval=1d"
+
+
+def etf_closes(tickers, rng: str = "2y", now: pd.Timestamp | None = None) -> pd.DataFrame:
+    """Dividend-adjusted daily closes of real ETFs from Yahoo Finance, cached in data/etf/.
+    Only COMPLETED sessions are returned: today's row is dropped before 21:30 UTC (the US close
+    plus a margin), so an intraday price is never treated as a close. Offline -> cached file."""
+    import json
+    import urllib.request
+    now = now or pd.Timestamp.now(tz="UTC")
+    os.makedirs(ETF_DIR, exist_ok=True)
+    cols = {}
+    for t in tickers:
+        path = os.path.join(ETF_DIR, f"{t}.csv")
+        try:
+            req = urllib.request.Request(YAHOO_CHART.format(t, rng),
+                                         headers={"User-Agent": "Mozilla/5.0 (compatible; algotrading-research/0.1)"})
+            res = json.loads(urllib.request.urlopen(req, timeout=30).read())["chart"]["result"][0]
+            idx = pd.to_datetime(res["timestamp"], unit="s", utc=True).tz_convert("America/New_York").normalize().tz_localize(None)
+            s = pd.Series(res["indicators"]["adjclose"][0]["adjclose"], index=idx, name=t, dtype=float).dropna()
+            s = s[~s.index.duplicated(keep="last")]
+            s.rename_axis("date").to_csv(path)
+        except Exception:
+            if not os.path.exists(path):
+                raise
+            s = pd.read_csv(path, index_col=0, parse_dates=True)[t]
+        cols[t] = s
+    df = pd.DataFrame(cols).sort_index()
+    today = now.tz_convert("America/New_York").normalize().tz_localize(None)
+    if now.hour < 21 or (now.hour == 21 and now.minute < 30):
+        df = df[df.index < today]
+    return df.dropna(how="all").ffill()

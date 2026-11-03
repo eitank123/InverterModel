@@ -55,13 +55,14 @@ class LiveSimAccount:
             json.dump(self.st, f, indent=1, default=float)
 
     def advance(self, etf_px: pd.DataFrame, cash_rate: pd.Series, target_fn, costs: CostModel,
-                daily: bool = False, band: float = 0.02):
+                daily: bool = False, band: float = 0.02, instruments: dict | None = None):
         """Process every trading day after ``last_date``. ``target_fn(date)`` returns
         ({symbol: weight}, exposure dict, reason) using data up to that date only. Monthly rules
         rebalance on the first trading day of each month; ``daily`` rules also trade on any day
         their target changes. ``band``: trade a holding only when it is more than this share of
         equity away from its target (full exits always happen); Exp 25."""
         st = self.st
+        instruments = instruments or INSTRUMENTS
         days = etf_px.index[etf_px.index >= pd.Timestamp(st["start"])]
         if st["last_date"]:
             days = days[days > pd.Timestamp(st["last_date"])]
@@ -73,7 +74,7 @@ class LiveSimAccount:
                 rate = float(cash_rate.asof(d)) / 252
                 led.cash *= 1 + (rate - costs.cash_fee / 252 if led.cash > 0 else rate + costs.swap_spread / 252)
                 for s, q in led.shares.items():                   # costs inside the funds (reported)
-                    ins = INSTRUMENTS[s]
+                    ins = instruments[s]
                     st["fund_costs"] += q * px[s] * (ins.expense_ratio + (ins.leverage - 1)
                                                      * (float(cash_rate.asof(d)) + costs.swap_spread)) / 252
             month = d.strftime("%Y-%m")
@@ -88,7 +89,7 @@ class LiveSimAccount:
                     if abs(delta) * px[s] >= band * equity or full_exit:
                         orders.append((s, delta))
                 for s, delta in sorted(orders, key=lambda o: o[1] > 0):   # sells first
-                    led.trade(d, s, delta, px[s], INSTRUMENTS[s].spread_bps, reason)
+                    led.trade(d, s, delta, px[s], instruments[s].spread_bps, reason)
                 st["targets"], st["exposure"], st["last_signal_month"] = targets, exposure, month
             st["equity_history"].append({"date": d.strftime("%Y-%m-%d"), "equity": round(led.value(px), 2)})
             st["last_date"] = d.strftime("%Y-%m-%d")

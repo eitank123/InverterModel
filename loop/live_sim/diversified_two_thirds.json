@@ -1,0 +1,135 @@
+{
+ "key": "diversified_two_thirds",
+ "name": "Diversified leg x2/3 (sectors momentum + MTUM + VTV, max 2x)",
+ "description": "Exp 31 lead challenger: the champion's signals at 2/3 of its leverage, stock part split equally into industry momentum (top 3 sector SPDRs), stock momentum (MTUM) and value (VTV). Real ETF prices from Yahoo Finance; margin loan at the T-bill + 1.5%.",
+ "start": "2026-11-02",
+ "start_equity": 100000.0,
+ "cash": -33109.978134482895,
+ "holdings": {
+  "XLE": 219.8330840331659,
+  "MTUM": 161.19547264094427,
+  "XLK": 84.85693260042063,
+  "VTV": 194.0382521000683,
+  "XLV": 80.08545185497074
+ },
+ "basis": {
+  "XLE": 14789.949222445837,
+  "MTUM": 44374.50036604306,
+  "XLK": 14789.949222445837,
+  "VTV": 44365.630101102324,
+  "XLV": 14789.949222445837
+ },
+ "targets": {
+  "MTUM": 0.44351324703691214,
+  "VTV": 0.44351324703691214,
+  "XLE": 0.14783774901230406,
+  "XLK": 0.14783774901230406,
+  "XLV": 0.14783774901230406
+ },
+ "exposure": {
+  "stocks": 1.3305397411107365,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 5.0,
+  "spread_slippage": 51.0040234092449,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-02",
+   "equity": 99944.0
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-02",
+   "symbol": "XLE",
+   "side": "buy",
+   "shares": 219.8331,
+   "price": 67.25,
+   "amount": 14783.77,
+   "commission": 1.0,
+   "spread_slippage": 5.17,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion x2/3: stocks 1.33x (sectors XLE, XLK, XLV + MTUM + VTV), bonds 0.00x",
+   "qty": 219.8331
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "MTUM",
+   "side": "buy",
+   "shares": 161.1955,
+   "price": 275.14,
+   "amount": 44351.32,
+   "commission": 1.0,
+   "spread_slippage": 22.18,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion x2/3: stocks 1.33x (sectors XLE, XLK, XLV + MTUM + VTV), bonds 0.00x",
+   "qty": 161.1955
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "XLK",
+   "side": "buy",
+   "shares": 84.8569,
+   "price": 174.22,
+   "amount": 14783.77,
+   "commission": 1.0,
+   "spread_slippage": 5.17,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion x2/3: stocks 1.33x (sectors XLE, XLK, XLV + MTUM + VTV), bonds 0.00x",
+   "qty": 84.8569
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "VTV",
+   "side": "buy",
+   "shares": 194.0383,
+   "price": 228.57,
+   "amount": 44351.32,
+   "commission": 1.0,
+   "spread_slippage": 13.31,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion x2/3: stocks 1.33x (sectors XLE, XLK, XLV + MTUM + VTV), bonds 0.00x",
+   "qty": 194.0383
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "XLV",
+   "side": "buy",
+   "shares": 80.0855,
+   "price": 184.6,
+   "amount": 14783.77,
+   "commission": 1.0,
+   "spread_slippage": 5.17,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion x2/3: stocks 1.33x (sectors XLE, XLK, XLV + MTUM + VTV), bonds 0.00x",
+   "qty": 80.0855
+  }
+ ],
+ "prices": {
+  "XLB": 53.67,
+  "XLC": 100.26,
+  "XLE": 67.25,
+  "XLF": 57.56,
+  "XLI": 169.71,
+  "XLK": 174.22,
+  "XLP": 90.83,
+  "XLRE": 43.64,
+  "XLU": 43.67,
+  "XLV": 184.6,
+  "XLY": 118.16,
+  "MTUM": 275.14,
+  "VTV": 228.57,
+  "IEF": 91.5
+ }
+}

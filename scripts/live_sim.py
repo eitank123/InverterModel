@@ -178,3 +178,49 @@ for key, (name, desc, fn) in ACCOUNTS.items():
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]
     print(f"{name:55s} {st['last_date']}  +{n} days  equity {eq:>12,.2f} "
           f"({eq / st['start_equity'] - 1:+.2%})  holdings {{{', '.join(f'{k}: {v:,.1f}' for k, v in st['holdings'].items())}}}")
+
+
+# --- Accounts on REAL ETF prices (Yahoo Finance), Exp 31 ----------------------------------
+from algotrading.execution import REAL_ETFS, SECTORS  # noqa: E402
+
+champ_signal = from_strategy(ensemble(3.0))
+
+
+def diversified_two_thirds(scale=2 / 3):
+    """Exp 31 lead challenger: the champion's stock/bond exposure x2/3 (never above 2x), with the
+    stock part in equal thirds: industry momentum (top 3 of the 11 sector SPDRs by 12-1 month
+    return, Moskowitz-Grinblatt 1999), stock momentum (MTUM, Jegadeesh-Titman 1993) and value
+    (VTV, Fama-French 1992). Bonds through IEF. Leverage via a margin loan. Added 2026-11-03."""
+    def fn(d):
+        _, exp, why = champ_signal(d)
+        s, b = exp["stocks"] * scale, exp["bonds"] * scale
+        me = real[SECTORS][real.index < d.to_period("M").to_timestamp()]
+        me = me.groupby(me.index.to_period("M")).tail(1)              # completed month-ends
+        mom = (me.iloc[-2] / me.iloc[-13] - 1).dropna()               # 12-1 months
+        top = list(mom.sort_values(ascending=False).index[:3])
+        w = {"MTUM": s / 3, "VTV": s / 3, **{t: s / 9 for t in top}}
+        if b:
+            w["IEF"] = b
+        w = {k: v for k, v in w.items() if v > 1e-9}
+        return w, {"stocks": s, "bonds": b}, \
+            f"champion x2/3: stocks {s:.2f}x (sectors {', '.join(top)} + MTUM + VTV), bonds {b:.2f}x"
+    return fn
+
+
+REAL = {"diversified_two_thirds": ("Diversified leg x2/3 (sectors momentum + MTUM + VTV, max 2x)",
+                                   "Exp 31 lead challenger: the champion's signals at 2/3 of its leverage, stock part "
+                                   "split equally into industry momentum (top 3 sector SPDRs), stock momentum (MTUM) and "
+                                   "value (VTV). Real ETF prices from Yahoo Finance; margin loan at the T-bill + 1.5%.",
+                                   diversified_two_thirds())}
+real = at.data.etf_closes(list(REAL_ETFS))
+margin_costs = CostModel(swap_spread=0.015)
+print(f"Real ETF prices (Yahoo Finance) to {real.index[-1]:%Y-%m-%d}")
+for key, (name, desc, fn) in REAL.items():
+    acct = LiveSimAccount.load_or_create(os.path.join(ROOT, f"{key}.json"), key, name, desc,
+                                         start_date=real.index[-1].strftime("%Y-%m-%d"))
+    n = acct.advance(real[list(REAL_ETFS)], cash, fn, margin_costs, instruments=REAL_ETFS)
+    acct.save()
+    st = acct.st
+    eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]
+    print(f"{name:55s} {st['last_date']}  +{n} days  equity {eq:>12,.2f} "
+          f"({eq / st['start_equity'] - 1:+.2%})  holdings {{{', '.join(f'{k}: {v:,.1f}' for k, v in st['holdings'].items())}}}")

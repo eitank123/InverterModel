@@ -39,6 +39,14 @@ INSTRUMENTS = {
     "UST": Instrument("UST", "bonds", 2.0, 0.0095, 5.0),       # 2x 7-10y Treasuries (thinly traded)
 }
 
+# Real (unlevered) ETFs for the diversified stock leg (Exp 31): the 11 Select Sector SPDRs,
+# iShares MSCI USA Momentum (MTUM), Vanguard Value (VTV). Prices come from the market itself.
+SECTORS = ["XLB", "XLC", "XLE", "XLF", "XLI", "XLK", "XLP", "XLRE", "XLU", "XLV", "XLY"]
+REAL_ETFS = {**{t: Instrument(t, "stocks", 1.0, 0.0008, 1.5) for t in SECTORS},
+             "MTUM": Instrument("MTUM", "stocks", 1.0, 0.0015, 3.0),
+             "VTV": Instrument("VTV", "stocks", 1.0, 0.0004, 1.0),
+             "IEF": INSTRUMENTS["IEF"]}
+
 
 def etf_weights(stocks: float, bonds: float) -> dict[str, float]:
     """Map a stock/bond exposure (e.g. 2.4x stocks, 0.67x bonds) onto unlevered and levered
