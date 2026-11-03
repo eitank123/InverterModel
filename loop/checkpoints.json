@@ -198,5 +198,23 @@
    "GDELT 2.0 DOC API",
    "Ken French data library"
   ]
+ },
+ {
+  "checkpoint": 25,
+  "date": "2026-11-03",
+  "iteration": null,
+  "finding": "Owner asked for news at longer horizons, NN industry picking (daily/hourly) with costs and tax, combinations with the champion, more diversification and safety. Exp 29 (6 variants): news tone vs S&P 1-63 days ahead: sign is contrarian as Tetlock predicts but not significant (best non-overlapping t = -1.7 at 63 days, 39 windows); a 'buy the gloom' rule lost to constant leverage (17.3% vs 23.1%, p = 0.93). Exp 30 (8 variants, 12 industries daily 1957-2026, walk-forward MLP ensemble, 10bp/side, 25% tax): NN daily -9.5%/yr (126x turnover), weekly 11.0%, monthly 10.3% vs momentum 11.8/12.9/14.1% and market 10.8%; as the champion's stock leg NN 13.3% worst era vs S&P 13.6% vs momentum 18.5%. Hourly not testable (no data). Exp 31 (22 variants, CRSP 1927-2026): stock legs: industry momentum 17.2%, stock momentum 16.8%, value 12.5%, equal-thirds diversified 18.8% worst era vs market 13.6%. Short side, vol-managed overlay (1929 trap), short-term reversal all hurt; market-neutral momentum+value factor sleeve +2.4 worst-era points. Scaled to 2/3 (max 2x, margin-account size): diversified long-only worst era 16.1%, 1927-2026 17.1%, drawdown since 1940 -50% vs -68%, months >30% under water 15% vs 25% (champion x1: 13.6%, 17.4%). Walk-forward selection over the 22 variants: 22.5%/yr 1957-2026 (it picks the 1x variants).",
+  "decision": "Champion formally unchanged (the new legs have no 1880-1929 data and no live feed). Lead challenger: 'diversified stock leg x2/3' - more growth in the worst era AND smaller drawdowns, holdable with 2x margin and ordinary ETFs. Forward-tested monthly via scripts/forward_kf.py until a sector/momentum/value ETF price feed exists, then a play-money account. Rejected: NN picking, daily/weekly rotation, news timing, short side, vol overlay, reversal.",
+  "sources": [
+   "Barroso & Santa-Clara (2015) JFE 'Momentum has its moments'",
+   "Gu, Kelly & Xiu (2020) RFS 'Empirical asset pricing via machine learning'",
+   "de Groot, Huij & Zhou (2012) JBF 'Another look at trading costs and short-term reversal profits'",
+   "Jegadeesh & Titman (1993)",
+   "Fama & French (1992)",
+   "Asness, Moskowitz & Pedersen (2013)",
+   "Moreira & Muir (2017)",
+   "Moskowitz, Ooi & Pedersen (2012)",
+   "Tetlock (2007)"
+  ]
  }
 ]

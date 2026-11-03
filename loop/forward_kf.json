@@ -1,0 +1,10 @@
+{
+ "start_after": "2026-09-01",
+ "months": {
+  "current champion (market leg)": {},
+  "champion x2/3 (market leg)": {},
+  "diversified leg x2/3 (max 2x, long only)": {},
+  "diversified leg + factor sleeve x2/3": {},
+  "market buy & hold": {}
+ }
+}

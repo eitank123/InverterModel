@@ -20,6 +20,8 @@ acceptable; ruin is not.
 4. **Real-time simulation** (`python scripts/live_sim.py`): play-money accounts that started
    2026-10-23 advance by every new real trading day (FRED data), with every cost charged.
    Nothing is backfilled. (`scripts/paper_trade.py` keeps the older monthly ledger.)
+   Also run `python scripts/forward_kf.py`: a delayed forward test (Ken French CRSP data, about a
+   month late) of the Exp 31 candidates whose ETFs have no free real-time feed here.
 5. **Dashboard** (`python scripts/export_dashboard.py`): writes `loop/dashboard/*.json`, which are
    uploaded to the Algo Trading Lab dashboard.
 6. Commit and push.
@@ -59,6 +61,10 @@ Live earnings data for the valuation sleeve ·
 deployable 2x global sleeve via country ETFs, momentum-ranked (Exp 23; needs ETF data) ·
 synthetic-market tests (does the ensemble earn on markets with no trend / no mean reversion?) ·
 turn-of-month leverage overlay (Exp 26: rejected, loses to constant leverage) ·
+news tone at 1 day to 3 months (Exp 28-29: rejected) · neural-net industry picking daily/weekly/monthly (Exp 30: rejected) ·
+short side, volatility-managed overlay, short-term reversal (Exp 31: rejected) ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
+diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
+so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·
 more markets once data access is allowed.

@@ -796,3 +796,17 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 28 (2026-11-03): news tone (GDELT, 2017-2026). No next-day predictive power; a gloomy-news
   de-leveraging overlay lost 3.5 points a year to plain 2x (p = 0.66). News is now in the reports as
   information, with a forward-test account.
+* Exp 29 (2026-11-03): news tone 1-63 trading days ahead. Gloomy news is followed by slightly HIGHER
+  returns (the reversal Tetlock 2007 describes) but no horizon is significant once overlapping windows
+  are removed, and a "buy the gloom" rule lost to constant leverage. News stays information only.
+* Exp 30 (2026-11-03): a neural network picking 3 of 12 industries, retrained every 5 years on past
+  data only, with 10bp costs and a 25% tax. Daily: -9.5%/yr (turnover 126x a year); weekly 11.0%;
+  monthly 10.3%. Plain 12-month momentum beat it at every frequency (11.8 / 12.9 / 14.1%), and monthly
+  beat weekly beat daily. Same lesson as Exp 15: on ~100 years of noisy returns a network finds noise.
+  Matches Gu-Kelly-Xiu (2020): ML gains come mostly from thousands of small stocks and many company
+  characteristics, not from rotating a dozen industries.
+* Exp 31 (2026-11-03): combining published effects (CRSP 1927-2026). The best stock leg for the
+  champion is a fixed equal-thirds mix of industry momentum, stock momentum and value (worst era 18.8%
+  vs 13.6% for the S&P leg). Scaled to 2/3 of the champion's leverage (never above 2x), it still beats
+  the current champion in the worst era (16.1% vs 13.6%) with much smaller drawdowns (-50% vs -68%
+  since 1940). Shorting in downtrends, volatility timing and short-term reversal all made things worse.

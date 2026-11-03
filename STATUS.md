@@ -1,6 +1,14 @@
 # Project status
 
-_Last updated: 2026-10-27 (after loop round 8: overfitting audit, ensemble champion)_
+_Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
+
+> **Lead challenger (Exp 31, 2026-11-03): same three sleeves, but the stock part is an equal-thirds mix of
+> industry momentum, stock momentum and value, at 2/3 of the champion's leverage (never above 2x).**
+> CRSP 1927-2026: worst era 16.1% vs 13.6%, whole period 17.1% vs 17.4%, drawdown since 1940 -50% vs -68%,
+> months more than 30% under water 15% vs 25%. More growth where it matters and much less pain. Not yet
+> the champion: no 1880-1929 data and no free real-time ETF feed; forward-tested by `scripts/forward_kf.py`.
+> Rejected the same day: neural-net industry picking (daily -9.5%/yr after costs and tax), news timing at
+> any horizon, shorting in downtrends, volatility timing, short-term reversal.
 
 > **Champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
 > It is chosen by its worst era across 1880–2026, not by the best backtest:

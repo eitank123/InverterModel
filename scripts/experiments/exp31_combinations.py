@@ -158,3 +158,17 @@ if __name__ == "__main__":
     print(f"\nFactor sleeve alone: {at.metrics.cagr(fs['1927':] + RF['1927':], 12):.1%}/yr incl. cash, "
           f"corr with market {fs.corr(MKT):+.2f}; reversal after costs {at.metrics.cagr(rev['1927':] + RF['1927':], 12):.1%}/yr; "
           f"reversal gross mean {STREV.mean() * 12:.1%}/yr")
+
+    # Selection bias: had the loop picked the best of these variants each January using only
+    # past data (and held it a year), what would it have earned? (research.walk_forward_selection)
+    D = LEGS["diversified (ind mom + stock mom + value)"]
+    variants = {f"leg {k}": portfolio(v) for k, v in LEGS.items()}
+    variants.update({"S1": portfolio(D, short=True), "S2": portfolio(D, extra=fs), "S3": portfolio(D, volman=True),
+                     "S4": portfolio(D, extra=rev), "S2+S3": portfolio(D, extra=fs, volman=True)})
+    for s in (0.5, 0.67, 0.75, 1.0):
+        variants[f"div x{s}"] = portfolio(D, scale=s)
+        variants[f"div+S2 x{s}"] = portfolio(D, extra=fs * s, scale=s)
+        variants[f"champ x{s}"] = portfolio(MKT, scale=s)
+    wf = at.research.walk_forward_selection(pd.DataFrame(variants).dropna(), start=1957)
+    print(f"\nWalk-forward selection over {len(variants)} variants, 1957-2026: {at.metrics.cagr(wf, 12):.1%}/yr "
+          f"(1957-1990 {at.metrics.cagr(wf[:'1990'], 12):.1%}, 1991-2026 {at.metrics.cagr(wf['1991':], 12):.1%})")
