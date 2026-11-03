@@ -829,3 +829,11 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   calibrated; buying favorites lost money (-6.3% per bet). One bucket (YES at 15-30 cents a week out)
   won more often than priced, but 1 of 16 buckets at ~3 standard errors is what chance produces.
   No tradable edge established.
+* Exp 37-38 (2026-11-03): one algorithm over everything - six sleeves (champion, diversified legs, risk
+  parity, time-series momentum, factor long/short, gold trend), money split monthly by equal weights,
+  inverse volatility, half-Kelly, sleeve momentum or a neural network; decisions on 1972-1999, test
+  2000-2026. Lessons: (1) mixing everything raises the Sharpe ratio to ~1 but cuts growth to 8-12% unless
+  levered; (2) the NN split was no better than inverse volatility or historical means; (3) the best
+  growth-plus-safety design was 2/3 champion + 1/3 diversifiers at 2x: test 17.9% vs 17.6% with a -34%
+  instead of -48% worst drawdown; on real ETFs 2006-2026 18.4% vs 21.4% with -33% vs -48%. A safety
+  dial again, not extra growth. New account core_satellite; Polymarket forward paper ledger.

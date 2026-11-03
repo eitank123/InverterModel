@@ -246,5 +246,18 @@
    "Polymarket Gamma/CLOB APIs",
    "Princeton thesis 2026 on Polymarket calibration (theses-dissertations.princeton.edu)"
   ]
+ },
+ {
+  "checkpoint": 28,
+  "date": "2026-11-03",
+  "iteration": null,
+  "finding": "Owner: one algorithm over all methods, money split by a NN or other models, loop of rounds. Exp 37 (6 sleeves 1972-2026, train 1972-1999, test 2000-2026; ~30 variants): R1 combiners on all sleeves: EW 11.5% test (DD -18%), IV 9.1%, half-Kelly 7.5% (DD -9%), sleeve momentum 10.7%, NN 10.2% vs its historical-mean control 9.9% - high Sharpe (~1.0) but low growth. R2 leave-one-out by train Sharpe dropped the champion and diversified sleeves: wrong yardstick for a growth goal (test 7-9%). R3 half-Kelly mix levered x4.86 to the champion's train volatility: test 19.2% vs 17.6%, DD -46% vs -48%, but 10.5% vs 23.2% in 2013-2026 and needs ~5x leverage. R4 core + satellite (diversifiers at 2x), chosen by the worst train half: 2/3 champion + 1/3 satellite: test 17.9% vs champion 17.6%, DD -34% vs -48%. R5 monthly money split by combiners: fixed 17.9%/-34%, IV 17.5%/-23%, half-Kelly 16.8%/-21%, NN 17.5%/-27% (no better than the simple rules). Exp 38 on real ETFs 2006-2026: 2/3 + 1/3 earned 18.4% vs champion 21.4%, DD -33% vs -48%. Factor sleeve decayed after publication (train 17.9%, test 3.2%).",
+  "decision": "Champion unchanged for maximum growth. New account core_satellite (the round-4 pick, chosen on train only). NN allocation not adopted: no gain over simple risk-based splits. Polymarket: forward paper ledger scripts/polymarket_paper.py (YES 0.15-0.30, 5-9 days to end, >= $100k volume) runs every round from live_sim.",
+  "sources": [
+   "DeMiguel, Garlappi & Uppal (2009) RFS 'Optimal versus naive diversification'",
+   "Gupta & Kelly (2019) 'Factor momentum everywhere'",
+   "Zhang, Zohren & Roberts (2020) 'Deep learning for portfolio optimization'",
+   "Kelly (1956); MacLean, Thorp & Ziemba (2011) on fractional Kelly"
+  ]
  }
 ]

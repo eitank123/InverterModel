@@ -272,6 +272,45 @@ REAL["champion_risk_parity"] = ("50/50 champion + multi-asset risk parity (15% v
 REAL["champion_bitcoin5"] = ("Champion + 5% Bitcoin trend (IBIT)",
                              "Exp 36: 95% the champion, 5% in the IBIT Bitcoin ETF while Bitcoin is above its 200-day "
                              "average. Real ETF prices. Weak evidence: only 2015-2026 exists.", champion_plus_bitcoin())
+champ_band_signal = from_strategy(ensemble(3.0, band=0.02))
+
+
+def core_satellite():
+    """Exp 37 round 4 (chosen on 1972-1999 only): 2/3 the champion with the 2% band + 1/3 a
+    satellite at 2x made of equal thirds: risk parity + trend (10% vol), time-series momentum
+    (10% vol per asset) and gold above its 10-month average; SPY/EFA/IEF/LQD/GLD. Added 2026-11-03."""
+    import numpy as np
+
+    def fn(d):
+        w_ch, exp, _ = champ_band_signal(d)
+        px = real[RP_ASSETS][real.index < d.to_period("M").to_timestamp()]
+        me = px.groupby(px.index.to_period("M")).tail(1)
+        r = me.pct_change().iloc[-12:]
+        vol = r.std() * np.sqrt(12)
+        on = me.iloc[-1] > me.iloc[-10:].mean()
+        base = (1 / vol) / (1 / vol).sum()
+        pv = float(np.sqrt(base @ r.cov() @ base * 12))
+        rp = (base * min(0.10 / pv, 3.0)).where(on, 0.0)
+        rf12 = float(cash[cash.index < d].iloc[-252:].mean())
+        ts = ((me.iloc[-1] / me.iloc[-13] - 1 > rf12).astype(float) * 0.10 / vol / 5)
+        ts = ts / max(ts.sum() / 3, 1.0)
+        gold = pd.Series(0.0, index=RP_ASSETS)
+        gold["GLD"] = float(on["GLD"])
+        sat = 2 * (rp + ts + gold) / 3
+        w = {k: 2 / 3 * v for k, v in w_ch.items()}
+        for k, v in sat.items():
+            if v > 1e-9:
+                w[k] = w.get(k, 0.0) + float(v) / 3
+        return w, {"stocks": 2 / 3 * exp["stocks"] + float(sat["SPY"] + sat["EFA"]) / 3,
+                   "bonds": 2 / 3 * exp["bonds"] + float(sat["IEF"] + sat["LQD"]) / 3}, \
+            "2/3 champion (2% band) + 1/3 satellite: " + ", ".join(f"{k} {v:.2f}" for k, v in sat.items())
+    return fn
+
+
+REAL["core_satellite"] = ("One algorithm: 2/3 champion + 1/3 multi-asset satellite (2x)",
+                          "Exp 37 round 4, chosen on 1972-1999 only: the banded champion plus a satellite of risk parity, "
+                          "time-series momentum and gold trend at 2x. Real ETF prices; margin at T-bill + 1.5%.",
+                          core_satellite())
 DAILY_REAL = {"champion_bitcoin5"}
 real = at.data.etf_closes(list(REAL_ETFS))
 margin_costs = CostModel(swap_spread=0.015)
@@ -286,3 +325,9 @@ for key, (name, desc, fn) in REAL.items():
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]
     print(f"{name:55s} {st['last_date']}  +{n} days  equity {eq:>12,.2f} "
           f"({eq / st['start_equity'] - 1:+.2%})  holdings {{{', '.join(f'{k}: {v:,.1f}' for k, v in st['holdings'].items())}}}")
+
+try:                                                       # Polymarket forward paper test (Exp 32)
+    import polymarket_paper
+    polymarket_paper.main()
+except Exception as e:
+    print(f"Polymarket paper test skipped: {type(e).__name__}")

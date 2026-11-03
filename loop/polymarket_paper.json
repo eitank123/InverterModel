@@ -1,0 +1,15 @@
+{
+ "rule": "Exp 32: on 1,252 resolved liquid markets (2024-2026), YES contracts priced 15-30 cents about a week\nbefore the end won 39% of the time. One of 16 buckets standing out is what chance produces, so\nthe honest test is forward. The rule was fixed BEFORE any of these bets:\n  every run, for each OPEN binary market ending in 5-9 days with >= $250k volume and a YES ask of\n  0.15-0.30, paper-buy $100 of YES at the current ask + 0.5 cent (slippage); one bet per market;\n  hold to resolution. Resolved bets are settled at 1 or 0.\nLedger: loop/polymarket_paper.json. Nothing is ever sent to Polymarket.",
+ "bets": [],
+ "summary": {
+  "bets": 0,
+  "open": 0,
+  "settled": 0,
+  "won": 0,
+  "staked_settled": 0,
+  "pnl": 0,
+  "return_per_bet": null,
+  "avg_price_settled": null,
+  "updated": "2026-11-03T13:37:16.988012+00:00"
+ }
+}

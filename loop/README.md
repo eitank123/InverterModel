@@ -22,6 +22,8 @@ acceptable; ruin is not.
    Nothing is backfilled. (`scripts/paper_trade.py` keeps the older monthly ledger.)
    Also run `python scripts/forward_kf.py`: a delayed forward test (Ken French CRSP data, about a
    month late) of the Exp 31 candidates whose ETFs have no free real-time feed here.
+   `live_sim.py` also runs the Polymarket forward paper ledger (`scripts/polymarket_paper.py`, Exp 32).
+   Meta-allocation research loop: `scripts/experiments/exp37_meta.py` (rounds logged to `loop/meta_rounds.json`).
 5. **Dashboard** (`python scripts/export_dashboard.py`): writes `loop/dashboard/*.json`, which are
    uploaded to the Algo Trading Lab dashboard.
 6. Commit and push.

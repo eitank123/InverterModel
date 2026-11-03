@@ -1,0 +1,107 @@
+{
+ "key": "core_satellite",
+ "name": "One algorithm: 2/3 champion + 1/3 multi-asset satellite (2x)",
+ "description": "Exp 37 round 4, chosen on 1972-1999 only: the banded champion plus a satellite of risk parity, time-series momentum and gold trend at 2x. Real ETF prices; margin at T-bill + 1.5%.",
+ "start": "2026-11-02",
+ "start_equity": 100000.0,
+ "cash": 17432.64236912175,
+ "holdings": {
+  "UPRO": 238.5630790015381,
+  "SPY": 54.88061797515632,
+  "EFA": 77.7587381024099
+ },
+ "basis": {
+  "UPRO": 33211.2635,
+  "SPY": 41289.094152688005,
+  "EFA": 8066.999978190244
+ },
+ "targets": {
+  "UPRO": 0.33193666666666666,
+  "SPY": 0.4127571143925623,
+  "EFA": 0.0806358090391907
+ },
+ "exposure": {
+  "stocks": 1.4892026645424896,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 3.0,
+  "spread_slippage": 31.39862103628592,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-02",
+   "equity": 99965.6
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 238.5631,
+   "price": 139.14,
+   "amount": 33193.67,
+   "commission": 1.0,
+   "spread_slippage": 16.6,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "2/3 champion (2% band) + 1/3 satellite: SPY 0.23, EFA 0.24, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 238.5631
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 54.8806,
+   "price": 752.1,
+   "amount": 41275.71,
+   "commission": 1.0,
+   "spread_slippage": 12.38,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "2/3 champion (2% band) + 1/3 satellite: SPY 0.23, EFA 0.24, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 54.8806
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "EFA",
+   "side": "buy",
+   "shares": 77.7587,
+   "price": 103.7,
+   "amount": 8063.58,
+   "commission": 1.0,
+   "spread_slippage": 2.42,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "2/3 champion (2% band) + 1/3 satellite: SPY 0.23, EFA 0.24, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 77.7587
+  }
+ ],
+ "prices": {
+  "XLB": 53.67,
+  "XLC": 100.26,
+  "XLE": 67.25,
+  "XLF": 57.56,
+  "XLI": 169.71,
+  "XLK": 174.22,
+  "XLP": 90.83,
+  "XLRE": 43.64,
+  "XLU": 43.67,
+  "XLV": 184.6,
+  "XLY": 118.16,
+  "MTUM": 275.14,
+  "VTV": 228.57,
+  "IEF": 91.5,
+  "SPY": 752.1,
+  "UPRO": 139.14,
+  "EFA": 103.7,
+  "LQD": 103.71,
+  "GLD": 361.65,
+  "IBIT": 43.35
+ }
+}
