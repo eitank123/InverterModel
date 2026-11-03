@@ -216,5 +216,18 @@
    "Moskowitz, Ooi & Pedersen (2012)",
    "Tetlock (2007)"
   ]
+ },
+ {
+  "checkpoint": 26,
+  "date": "2026-11-03",
+  "iteration": 12,
+  "finding": "Owner asked for a train/validation/test split. Exp 33: train 1927-2014, validation 2015-2024, test 2025-01..2026-09 (CRSP monthly) plus a daily replay 2025-01-02..2026-11-02 on REAL ETF prices with every cost. Picking by worst era over train+validation chose the industry-momentum leg, which then made only 4.8%/yr in the test (S&P 16.9%, champion 24.5%): single-effect picks are fragile. Daily real-ETF replay 2025-26: diversified x2/3 +32.7% total (16.7%/yr, max DD -13.7%), S&P +31.1% (-18.8%), champion +25.8% (-23.4%), lower-leverage +19.9%, 60/40 +20.8%. The champion lagged because the live system reads the trend from MONTH-END closes: it left the market in April 2025 and April 2026 and missed both rebounds; the Shiller monthly-average backtests never saw this. Exp 34 (CRSP 1927-2026): champion on month-end closes worst era 11.8% (vs 13.6% on averages); with a 2% band around the 10-month average 14.0% (2025-26: 24.5% vs 15.9%). On Shiller averages (iteration 12) the band gives eras 15.7/16.4/12.7/21.2% vs 15.4/14.6/13.1/21.2%.",
+  "decision": "New play-money account champion_band2 (2% band on every sleeve's trend signal). It does not formally replace the champion (on Shiller averages its 1957-1990 era is 0.4 points lower), but it fixes a measured weakness of the live implementation. Next: if it holds, make the band part of the champion and of the diversified account.",
+  "sources": [
+   "Faber (2007) monthly averages vs month-end",
+   "Exp 13/18 band",
+   "Ken French data library",
+   "Yahoo Finance ETF closes"
+  ]
  }
 ]

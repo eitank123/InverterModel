@@ -159,6 +159,12 @@ ACCOUNTS["ensemble_lower_leverage"] = (
     "Ensemble, lower leverage (2x trend, 1-1.5x recovery)",
     "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like "
     "mix -87% there, this one about -61%). Added 2026-10-28.", from_strategy(ensemble_lower()))
+ACCOUNTS["champion_band2"] = (
+    "Champion with a 2% band on its trend signals",
+    "Exp 34: the live system reads the trend from month-end closes, which whipsawed out of the market in "
+    "April 2025 and April 2026. Same three sleeves; a sleeve leaves only 2% below its 10-month average and "
+    "re-enters 2% above it. CRSP 1927-2026 on month-end closes: worst era 14.0% vs 11.8%. Added 2026-11-03.",
+    from_strategy(ensemble(3.0, band=0.02)))
 
 try:                                                         # grow the headline archive (Exp 28)
     print(f"Headlines archived: {len(at.news.collect_headlines()):,}")

@@ -1,0 +1,75 @@
+{
+ "key": "champion_band2",
+ "name": "Champion with a 2% band on its trend signals",
+ "description": "Exp 34: the live system reads the trend from month-end closes, which whipsawed out of the market in April 2025 and April 2026. Same three sleeves; a sleeve leaves only 2% below its 10-month average and re-enters 2% above it. CRSP 1927-2026 on month-end closes: worst era 14.0% vs 11.8%. Added 2026-11-03.",
+ "start": "2026-11-02",
+ "start_equity": 100000.0,
+ "cash": -41.95810000000347,
+ "holdings": {
+  "UPRO": 501.78214294166213,
+  "SPY": 65.94921218897363
+ },
+ "basis": {
+  "UPRO": 49816.39525,
+  "SPY": 50225.56285
+ },
+ "targets": {
+  "UPRO": 0.497905,
+  "SPY": 0.502095
+ },
+ "exposure": {
+  "stocks": 1.9958096116661048,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 39.9581,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-02",
+   "equity": 99958.04
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 501.7821,
+   "price": 99.2273,
+   "amount": 49790.5,
+   "commission": 1.0,
+   "spread_slippage": 24.9,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 501.7821
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 65.9492,
+   "price": 761.3359,
+   "amount": 50209.5,
+   "commission": 1.0,
+   "spread_slippage": 15.06,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 65.9492
+  }
+ ],
+ "prices": {
+  "IEF": 95.5357,
+  "SPY": 761.3359,
+  "SSO": NaN,
+  "UPRO": 99.2273,
+  "UST": 45.4505
+ }
+}

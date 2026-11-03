@@ -35,8 +35,9 @@ def mix(stock_w):
     return at.PerAsset(at.BuyAndHold(), {"stocks": stock_w, "bonds": 1 - stock_w})
 
 
-def filtered(stock_w=0.6, window=10):
-    return at.TrendFilter(mix(stock_w), at.PriceAboveSMA(window))
+def filtered(stock_w=0.6, window=10, band=0.0):
+    sig = at.BandedSMA(window, band) if band else at.PriceAboveSMA(window)
+    return at.TrendFilter(mix(stock_w), sig)
 
 
 class TrendScaledLeverage(at.PortfolioStrategy):
@@ -126,15 +127,15 @@ class CappedValuationLeverage(at.PortfolioStrategy):
     """Trend-filtered stock/bond mix whose total leverage follows the expected stock premium:
     L = clip(k * premium / premium_median, lo, cap). Cheap market -> more leverage."""
 
-    def __init__(self, stock_w, k, lo, cap):
-        self.stock_w, self.k, self.lo, self.cap = stock_w, k, lo, cap
+    def __init__(self, stock_w, k, lo, cap, band=0.0):
+        self.stock_w, self.k, self.lo, self.cap, self.band = stock_w, k, lo, cap, band
         self.prem = ValuationKelly(1, 1).premium
 
     def weights(self, prices):
         prem = self.prem.reindex(prices.index).ffill()
         med = prem.expanding(120).median()                   # point-in-time typical premium
         lev = (self.k * prem / med).clip(self.lo, self.cap).fillna(1.0)
-        return filtered(self.stock_w).weights(prices).mul(lev, axis=0)
+        return filtered(self.stock_w, band=self.band).weights(prices).mul(lev, axis=0)
 
 
 def iteration_3():
@@ -310,13 +311,13 @@ def iteration_7():
     ]
 
 
-def ensemble(trend_lev=2.0):
+def ensemble(trend_lev=2.0, band=0.0):
     """Equal thirds of three different, published effects; no selection between them:
     trend (Moskowitz-Ooi-Pedersen 2012; Faber 2007), valuation (Campbell & Shiller 1988),
     post-crash mean reversion with trend confirmation (Poterba & Summers 1988)."""
-    return at.Blend({at.Levered(filtered(1.0), trend_lev): 1 / 3,
-                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
-                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})
+    return at.Blend({at.Levered(filtered(1.0, band=band), trend_lev): 1 / 3,
+                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0, band=band): 1 / 3,
+                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0, band=band): 1 / 3})
 
 
 def ensemble_lower(trend_lev=2.0, rec_base=1.0, rec_boost=1.5, off=1.0):
@@ -435,9 +436,19 @@ def iteration_11():
     ]
 
 
+def iteration_12():
+    """Checkpoint 26 (Exp 33-34): the live system reads the trend from month-end closes, which
+    whipsawed out of the market in April 2025 and April 2026. A 2% band around the 10-month
+    average (round; used before in Exp 13/18) on every sleeve's trend signal."""
+    return [
+        Candidate("ensemble, 2% band on the trend signals", "ensemble", lambda: ensemble(3.0, band=0.02),
+                  note="same three sleeves; enter above SMA10 +2%, exit below SMA10 -2%"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11}
+              11: iteration_11, 12: iteration_12}
 
 
 def run(iters, financings=(0.005, 0.015)):

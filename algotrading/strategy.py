@@ -384,12 +384,13 @@ class RecoveryLeverage(PortfolioStrategy):
 
     def __init__(self, base: float = 2.0, boost: float = 3.0, depth: float = 0.15,
                  stocks: str = "stocks", signal: str = "sma10", off_lev: float = 0.0,
-                 bonds: str = "bonds", off_gate: bool = False):
+                 bonds: str = "bonds", off_gate: bool = False, band: float = 0.0):
+        self.band = band                     # hysteresis around the 10-month average (Exp 34)
         self.base, self.boost, self.depth, self.stocks = base, boost, depth, stocks
         self.signal, self.off_lev, self.bonds, self.off_gate = signal, off_lev, bonds, off_gate
 
     def trend(self, s: pd.Series) -> pd.Series:
-        sma = PriceAboveSMA(10).positions(s).astype(bool)
+        sma = (BandedSMA(10, self.band) if self.band else PriceAboveSMA(10)).positions(s).astype(bool)
         mom = (s / s.shift(12) - 1 > 0).fillna(False)
         return {"sma10": sma, "tsmom12": mom, "either": sma | mom, "both": sma & mom}[self.signal]
 

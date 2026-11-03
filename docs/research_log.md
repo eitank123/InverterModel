@@ -810,3 +810,11 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   vs 13.6% for the S&P leg). Scaled to 2/3 of the champion's leverage (never above 2x), it still beats
   the current champion in the worst era (16.1% vs 13.6%) with much smaller drawdowns (-50% vs -68%
   since 1940). Shorting in downtrends, volatility timing and short-term reversal all made things worse.
+* Exp 33 (2026-11-03): clean split - train 1927-2014, validation 2015-2024, test 2025-2026. The rule
+  "pick the best worst era" chose the industry-momentum leg, which then earned 4.8%/yr in the test:
+  one effect alone is fragile; the fixed three-way mix held up. Replaying 2025-26 day by day on REAL ETF
+  prices with all costs: diversified x2/3 +32.7% (max DD -14%), S&P +31.1% (-19%), champion +25.8% (-23%).
+* Exp 34 (2026-11-03): the live system reads the trend from month-end closes; the backtests used
+  monthly AVERAGE prices, which are smoother. On month-end closes the champion's worst era drops from
+  13.6% to 11.8% and it whipsawed out of the market in April 2025 and April 2026. A 2% band around the
+  10-month average restores it (14.0%). New account champion_band2.
