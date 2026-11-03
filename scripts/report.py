@@ -84,6 +84,33 @@ def whipsaw_lines():
             f"(month-end {monthly.index[-1]:%b %Y})."]
 
 
+def news_lines():
+    """News monitor (Exp 28): GDELT tone of 'stock market' news and the latest headlines from
+    MarketWatch, the Federal Reserve and Yahoo Finance, scored with the Loughran-McDonald finance
+    dictionary. Information only: in the 2017-2026 test, tone did not predict the next day."""
+    try:
+        tone = at.news.update_gdelt_tone()
+        z = at.news.tone_zscore(tone)
+        heads = at.news.collect_headlines()
+    except Exception as e:                                   # offline
+        return [f"* News feeds unavailable this run ({type(e).__name__})."]
+    out = [f"* News tone ('stock market', GDELT, 5-day average): {z.iloc[-1]:+.1f} standard deviations vs "
+           f"its 250-day mean (through {z.index[-1]:%d %b}); the news-tone account cuts to 1x below -1.0."]
+    h = heads.copy()
+    h["fetched"] = pd.to_datetime(h["fetched"], utc=True, format="mixed")
+    recent = h[h["fetched"] >= h["fetched"].max() - pd.Timedelta(days=1)]
+    recent = recent[recent["source"] != "Federal Reserve"] if len(recent[recent["source"] != "Federal Reserve"]) else recent
+    out.append(f"* Headlines archived: {len(h):,} ({len(recent)} new in the last day); average score of new ones "
+               f"{recent['score'].mean():+.2f} on a -1..+1 scale.")
+    for lab, sub in [("Most negative", recent.nsmallest(2, "score")), ("Most positive", recent.nlargest(2, "score"))]:
+        for _, r in sub.iterrows():
+            out.append(f"  * {lab} ({r['source']}): {r['title']}")
+    fed = h[h["source"] == "Federal Reserve"].sort_values("published").tail(1)
+    if len(fed):
+        out.append(f"* Latest Federal Reserve release: {fed['title'].iloc[0]}")
+    return out
+
+
 def accounts_table(accts, since):
     rows = []
     for st, eq in accts:
@@ -177,7 +204,8 @@ def main(kind):
         body = [f"Data through the {asof:%a %d %b %Y} close (FRED). Play money, every cost charged. "
                 f"{len(rows)} accounts running since {min(st['start'] for st, _ in accts)}.", ""] + mkt + \
                ["", "## Accounts (ranked by return since start)"] + render_table(rows, "Day") + \
-               ["", "## Trades today"] + trades_lines(rows)
+               ["", "## Trades today"] + trades_lines(rows) + \
+               ["", "## News monitor (information, not a signal for the champion)"] + news_lines()
         best, worst = rows[0], rows[-1]
         body += ["", "## Notes",
                  f"* Leader since start: {best['account']} ({pct(best['since_start'])}); last: "
@@ -194,6 +222,7 @@ def main(kind):
                ["", "## Trades this week"] + trades_lines(rows) + \
                ["", "## Behaviour check (real time vs what the backtest implies)"] + learning_lines(accts, start, asof) + \
                ["", "## Whipsaw monitor (early warning, Exp 24)"] + whipsaw_lines() + \
+               ["", "## News monitor (information, not a signal for the champion)"] + news_lines() + \
                ["", "## Research loop this week"] + \
                ([f"* Checkpoint {c['checkpoint']} ({c['date']}): {c['decision']}" for c in week_cps] or
                 ["* No new checkpoints."]) + \

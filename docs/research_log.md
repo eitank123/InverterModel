@@ -785,3 +785,14 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   The published window (-1..+3) earned more per day (8.2bp vs 5.8bp, t=1.6), but levering up only in
   the window lost to constant leverage with the same average (17.5% vs 19.1%/yr at 1.38x; 25.5% vs 26.0%
   at 2.19x). Rejected.
+* Exp 27 (2026-11-03): sectors and themes (Ken French 49 industries, 1927-2026, 26 variants). Holding
+  one hot industry is hindsight: semiconductors earned 6.8%/yr in 1957-1990 (market 10.1%) with an
+  84-96% drawdown; software lost money in 1957-1990. Thematic ETFs (quantum, robotics, AI) lose about
+  30% risk-adjusted in their first five years (Ben-David et al. 2023). Industry MOMENTUM (top ~tenth to
+  quarter of industries by 12-1 month return) beat equal-weight industries in every era and every
+  industry set, also after publication (2000-2026: 12.2% vs 8.5%). As the champion's stock leg it lifts
+  the worst era from 13.6% to 17.2% (15.6% if only the first 1x is in sectors). Strongest open candidate;
+  blocked on live sector-ETF data and on the 1880-1929 era.
+* Exp 28 (2026-11-03): news tone (GDELT, 2017-2026). No next-day predictive power; a gloomy-news
+  de-leveraging overlay lost 3.5 points a year to plain 2x (p = 0.66). News is now in the reports as
+  information, with a forward-test account.

@@ -673,3 +673,26 @@ def test_sp500_fallback_extends_with_dow_moves():
     assert abs(out.iloc[3] / out.iloc[2] - 1.01) < 1e-12 and abs(out.iloc[4] / out.iloc[3] - 0.98) < 1e-9
     same = at.data.sp500_with_fallback(sp500=dj, djia=dj)          # nothing to extend
     assert same.equals(dj)
+
+
+def test_tone_zscore_flags_gloomy_news():
+    import numpy as np
+    import pandas as pd
+    from algotrading.news import tone_zscore
+    idx = pd.date_range("2020-01-01", periods=400)
+    tone = pd.Series(np.random.default_rng(0).normal(0, 0.1, 400), index=idx)
+    tone.iloc[-5:] = -2.0                                  # a week of very bad news
+    z = tone_zscore(tone)
+    assert z.iloc[:254].isna().all() or z.iloc[260:395].abs().max() < 5
+    assert z.iloc[-1] < -1
+
+
+def test_kf_block_parses_monthly_table(tmp_path, monkeypatch):
+    import algotrading.data as d
+    csv = ("header line\n\n  Average Value Weighted Returns -- Monthly\n,Chips,Softw\n"
+           "192607,   1.00, -99.99\n192608,  -2.50,   3.00\n\n  Average Equal Weighted Returns -- Monthly\n")
+    (tmp_path / "X.csv").write_text(csv)
+    monkeypatch.setattr(d, "KF_DIR", str(tmp_path))
+    df = d._kf_block("X", "Average Value Weighted Returns -- Monthly")
+    assert list(df.columns) == ["Chips", "Softw"] and len(df) == 2
+    assert abs(df.loc["1926-08-01", "Chips"] + 0.025) < 1e-12 and df["Softw"].isna().iloc[0]

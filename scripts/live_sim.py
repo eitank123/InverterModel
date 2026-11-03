@@ -124,6 +124,31 @@ DAILY = {"daily_band_3x": ("Daily trend: 3x above the 200-day average (±2% band
                            "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its "
                            "200-day average, T-bills otherwise; checked every day.", daily_band_200())}
 ACCOUNTS.update(DAILY)
+
+
+def news_tone_overlay(lev=2.0, low=1.0, z_cut=-1.0):
+    """Exp 28: S&P at ``lev``, cut to ``low`` while the 5-day average tone of 'stock market' news
+    (GDELT) is more than 1 standard deviation below its trailing 250-day mean (Tetlock 2007).
+    The backtest (2018-2026) LOST to plain 2x (17.7% vs 21.2%/yr; p = 0.66 against shifted news):
+    this account is a forward test the owner asked for, not a recommendation. Added 2026-11-03."""
+    tone = at.news.update_gdelt_tone()
+    z = at.news.tone_zscore(tone)
+
+    def fn(d):
+        zz = z[z.index < d]                                # news through the previous day only
+        zv = float(zz.iloc[-1]) if len(zz) and pd.notna(zz.iloc[-1]) else 0.0
+        L = low if zv < z_cut else lev
+        return etf_weights(L, 0.0), {"stocks": L, "bonds": 0.0}, \
+            f"news tone z {zv:+.1f} (through {zz.index[-1]:%d %b}): {L:.0f}x" if len(zz) else f"no news data: {L:.0f}x"
+    return fn
+
+
+NEWS = {"news_tone_2x": ("News tone: 2x S&P, 1x when the news turns gloomy",
+                         "Exp 28 forward test: 2x the S&P, cut to 1x while the 5-day news tone (GDELT, "
+                         "'stock market', English) is 1 standard deviation below its 250-day mean. "
+                         "Lost to plain 2x in the 2018-2026 backtest.", news_tone_overlay())}
+DAILY.update(NEWS)
+ACCOUNTS.update(NEWS)
 BANDS = {"champion_band10": 0.10}
 ACCOUNTS["champion_band10"] = (
     "Champion, tax-aware (trades only beyond a 10% band)",
@@ -135,6 +160,10 @@ ACCOUNTS["ensemble_lower_leverage"] = (
     "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like "
     "mix -87% there, this one about -61%). Added 2026-10-28.", from_strategy(ensemble_lower()))
 
+try:                                                         # grow the headline archive (Exp 28)
+    print(f"Headlines archived: {len(at.news.collect_headlines()):,}")
+except Exception as e:
+    print(f"Headline feeds unavailable: {type(e).__name__}")
 print(f"Data: FRED S&P 500 to {sp.index[-1]:%Y-%m-%d}, 10y yield to {y10.index[-1]:%Y-%m-%d}, "
       f"T-bill to {tb.index[-1]:%Y-%m-%d}")
 for key, (name, desc, fn) in ACCOUNTS.items():

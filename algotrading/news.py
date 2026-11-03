@@ -208,3 +208,69 @@ def load_reddit_headlines(cache_dir: str | None = None) -> pd.DataFrame:
     long["rank"] = long["rank"].str[3:].astype(int)
     long = long.rename(columns={"Date": "date", "Label": "label"})
     return long.sort_values(["date", "rank"]).reset_index(drop=True)
+
+
+# --- Real-time news monitor (Exp 28) ---------------------------------------------------
+
+NEWS_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "news")
+GDELT_TONE_PATH = os.path.join(NEWS_DIR, "gdelt_tone_stock_market.csv")
+HEADLINES_PATH = os.path.join(NEWS_DIR, "headlines.csv")
+GDELT_TONE_URL = ("https://api.gdeltproject.org/api/v2/doc/doc?query=%22stock%20market%22%20sourcelang:english"
+                  "&mode=timelinetone&format=json&timespan=3months")
+LIVE_FEEDS = {"MarketWatch": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+              "Federal Reserve": "https://www.federalreserve.gov/feeds/press_all.xml",
+              "Yahoo Finance (SPY)": "https://feeds.finance.yahoo.com/rss/2.0/headline?s=SPY"}
+
+
+def update_gdelt_tone(path: str = GDELT_TONE_PATH, timeout: float = 60.0) -> pd.Series:
+    """Append newly published days of GDELT's daily 'stock market' news tone to ``path``.
+    Days already stored are never rewritten (point-in-time record). Offline -> stored data."""
+    old = pd.read_csv(path, index_col=0, parse_dates=True)["tone"] if os.path.exists(path) else pd.Series(dtype=float)
+    try:
+        req = urllib.request.Request(GDELT_TONE_URL, headers={"User-Agent": "algotrading-research/0.1"})
+        d = json.loads(urllib.request.urlopen(req, timeout=timeout).read())
+        s = pd.DataFrame(d["timeline"][0]["data"])
+        new = pd.Series(s["value"].to_numpy(), index=pd.to_datetime(s["date"].str[:8]), name="tone")
+        today = pd.Timestamp.today().normalize()
+        new = new[(new.index < today) & ~new.index.isin(old.index)]      # completed days only
+        if len(new):
+            old = pd.concat([old, new]).sort_index().rename("tone")
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            old.rename_axis("date").to_csv(path)
+    except Exception:
+        pass
+    return old
+
+
+def tone_zscore(tone: pd.Series, smooth: int = 5, window: int = 250) -> pd.Series:
+    """5-day average tone relative to its trailing 250-day mean, in standard deviations."""
+    s = tone.rolling(smooth).mean()
+    return (s - s.rolling(window).mean()) / s.rolling(window).std()
+
+
+def collect_headlines(path: str = HEADLINES_PATH, feeds: dict | None = None, scorer=None) -> pd.DataFrame:
+    """Fetch the live feeds, score each headline (Loughran-McDonald), append new ones to
+    ``path`` (deduplicated by title) and return the whole archive. Feeds that fail are skipped."""
+    feeds = feeds or LIVE_FEEDS
+    old = pd.read_csv(path, parse_dates=["published", "fetched"]) if os.path.exists(path) else \
+        pd.DataFrame(columns=["published", "fetched", "source", "title", "score", "link"])
+    frames = []
+    for name, url in feeds.items():
+        try:
+            df = fetch_rss(url)
+            df["source"] = name
+            frames.append(df)
+        except Exception:
+            continue
+    if frames:
+        new = pd.concat(frames, ignore_index=True)
+        new = new[~new["title"].isin(old["title"]) & (new["title"] != "")].drop_duplicates("title")
+        if len(new):
+            scorer = scorer or LexiconScorer()
+            new["score"] = scorer.score(new["title"].tolist())
+            new["fetched"] = pd.Timestamp.now(tz="UTC")
+            new["published"] = pd.to_datetime(new["published"], utc=True, errors="coerce")
+            old = pd.concat([old, new[old.columns]], ignore_index=True)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            old.to_csv(path, index=False)
+    return old

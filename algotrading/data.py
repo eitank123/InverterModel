@@ -316,3 +316,45 @@ def load_yahoo(ticker: str, start: str = "2010-01-01", end: str | None = None) -
     if isinstance(close, pd.DataFrame):  # newer yfinance returns a column per ticker
         close = close.iloc[:, 0]
     return pd.DataFrame({"close": close}).dropna()
+
+
+# --- Ken French data library (industry portfolios, market factor) ----------------------
+
+KF_URL = "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/{}_CSV.zip"
+KF_DIR = os.path.join(os.path.dirname(SHILLER_PATH), "kenfrench")
+
+
+def _kf_block(name: str, header: str) -> pd.DataFrame:
+    """First monthly table after ``header`` in a Ken French CSV (downloaded and cached)."""
+    import io
+    import urllib.request
+    import zipfile
+    path = os.path.join(KF_DIR, f"{name}.csv")
+    if not os.path.exists(path):
+        os.makedirs(KF_DIR, exist_ok=True)
+        with urllib.request.urlopen(KF_URL.format(name), timeout=60) as r:
+            zipfile.ZipFile(io.BytesIO(r.read())).extractall(KF_DIR)
+    with open(path) as f:
+        lines = f.read().splitlines()
+    start = next(i for i, ln in enumerate(lines) if ln.strip().startswith(header)) if header else \
+        next(i for i, ln in enumerate(lines) if ln.startswith(",")) - 1
+    rows = []
+    for ln in lines[start + 2:]:
+        cells = [c.strip() for c in ln.split(",")]
+        if len(cells) < 2 or not (cells[0].isdigit() and len(cells[0]) == 6):
+            break
+        rows.append(cells)
+    cols = [c.strip() for c in lines[start + 1].split(",")][1:]
+    df = pd.DataFrame([r[1:] for r in rows], columns=cols,
+                      index=pd.to_datetime([r[0] for r in rows], format="%Y%m")).astype(float)
+    return df.where(df > -99) / 100
+
+
+def load_ff_industries(n: int = 49) -> pd.DataFrame:
+    """Monthly value-weighted total returns of Ken French's ``n`` industry portfolios (1926-)."""
+    return _kf_block(f"{n}_Industry_Portfolios", "Average Value Weighted Returns -- Monthly")
+
+
+def load_ff_factors() -> pd.DataFrame:
+    """Monthly Fama-French factors: Mkt-RF, SMB, HML, RF (1926-)."""
+    return _kf_block("F-F_Research_Data_Factors", "")

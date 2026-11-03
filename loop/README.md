@@ -60,4 +60,5 @@ deployable 2x global sleeve via country ETFs, momentum-ranked (Exp 23; needs ETF
 synthetic-market tests (does the ensemble earn on markets with no trend / no mean reversion?) ·
 turn-of-month leverage overlay (Exp 26: rejected, loses to constant leverage) ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·
+sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
 more markets once data access is allowed.

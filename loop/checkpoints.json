@@ -184,5 +184,19 @@
    "Lakonishok & Smidt (1988) RFS",
    "McConnell & Xu (2008) Financial Analysts Journal, 'Equity returns at the turn of the month'"
   ]
+ },
+ {
+  "checkpoint": 24,
+  "date": "2026-11-03",
+  "iteration": null,
+  "finding": "Owner asked about semiconductors / quantum / robotics and news. Exp 27 (Ken French 49 US industries, 1927-2026, 26 variants): holding one hot industry is hindsight (Chips 6.8%/yr in 1957-1990 vs market 10.1%, max DD -84% to -96%; Softw -3.3% in 1957-1990); thematic ETFs lose ~30% risk-adjusted in their first 5 years (Ben-David et al. 2023). Industry momentum (Moskowitz-Grinblatt 1999; top ~tenth-quarter by 12-1 return) beat equal-weight industries in every era and every industry set (10/12/17/30/48/49), worst era 11.9-15.0% at 1x, and after publication (2000-2026: 12.2% vs market 8.5%). Using top 3 of 12 industries as the champion's stock leg: worst era 13.6% -> 17.2% (1927-2026; 1x sectors + S&P leverage: 15.6%). Exp 28 (GDELT 'stock market' news tone, 2017-2026, 2 variants): no next-day prediction (corr +0.005); overlay 2x->1x on gloomy news 17.7% vs 21.2%/yr for plain 2x, p = 0.66 vs shifted news.",
+  "decision": "Champion unchanged for now: sector momentum is the strongest new candidate but cannot be tested on 1880-1929 (no industry data) and there is no free real-time sector-ETF price feed here, so no live account yet (needs a data key). News: rejected as a signal; added a news monitor to the reports, a headline archive (data/news/headlines.csv) and a forward-test account news_tone_2x at the owner's request.",
+  "sources": [
+   "Moskowitz & Grinblatt (1999) JF 'Do industries explain momentum?'",
+   "Ben-David, Franzoni, Kim & Moussawi (2023) RFS 'Competition for Attention in the ETF Space'",
+   "Tetlock (2007) JF",
+   "GDELT 2.0 DOC API",
+   "Ken French data library"
+  ]
  }
 ]

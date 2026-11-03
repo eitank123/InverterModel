@@ -7,3 +7,4 @@ results/
 data/*.csv
 !data/sp500_shiller_monthly.csv
 .ipynb_checkpoints/
+data/kenfrench/
