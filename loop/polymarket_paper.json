@@ -1,15 +1,26 @@
 {
  "rule": "Exp 32: on 1,252 resolved liquid markets (2024-2026), YES contracts priced 15-30 cents about a week\nbefore the end won 39% of the time. One of 16 buckets standing out is what chance produces, so\nthe honest test is forward. The rule was fixed BEFORE any of these bets:\n  every run, for each OPEN binary market ending in 5-9 days with >= $250k volume and a YES ask of\n  0.15-0.30, paper-buy $100 of YES at the current ask + 0.5 cent (slippage); one bet per market;\n  hold to resolution. Resolved bets are settled at 1 or 0.\nLedger: loop/polymarket_paper.json. Nothing is ever sent to Polymarket.",
- "bets": [],
+ "bets": [
+  {
+   "id": "6537716",
+   "question": "Chennai Open: Aliona Falei vs Magda Linette",
+   "end": "2026-11-09T09:30:00Z",
+   "placed": "2026-11-03T16:36:23.874850+00:00",
+   "price": 0.265,
+   "shares": 377.3585,
+   "stake": 100.0,
+   "status": "open"
+  }
+ ],
  "summary": {
-  "bets": 0,
-  "open": 0,
+  "bets": 1,
+  "open": 1,
   "settled": 0,
   "won": 0,
   "staked_settled": 0,
   "pnl": 0,
   "return_per_bet": null,
   "avg_price_settled": null,
-  "updated": "2026-11-03T13:37:16.988012+00:00"
+  "updated": "2026-11-03T16:36:23.874850+00:00"
  }
 }
