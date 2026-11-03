@@ -45,7 +45,13 @@ SECTORS = ["XLB", "XLC", "XLE", "XLF", "XLI", "XLK", "XLP", "XLRE", "XLU", "XLV"
 REAL_ETFS = {**{t: Instrument(t, "stocks", 1.0, 0.0008, 1.5) for t in SECTORS},
              "MTUM": Instrument("MTUM", "stocks", 1.0, 0.0015, 3.0),
              "VTV": Instrument("VTV", "stocks", 1.0, 0.0004, 1.0),
-             "IEF": INSTRUMENTS["IEF"]}
+             "IEF": INSTRUMENTS["IEF"],
+             # Exp 35-36 (multi-asset and Bitcoin accounts): real prices for these too
+             "SPY": INSTRUMENTS["SPY"], "UPRO": INSTRUMENTS["UPRO"],
+             "EFA": Instrument("EFA", "stocks", 1.0, 0.0035, 1.0),
+             "LQD": Instrument("LQD", "bonds", 1.0, 0.0014, 1.0),
+             "GLD": Instrument("GLD", "gold", 1.0, 0.0040, 1.0),
+             "IBIT": Instrument("IBIT", "bitcoin", 1.0, 0.0025, 5.0)}
 
 
 def etf_weights(stocks: float, bonds: float) -> dict[str, float]:

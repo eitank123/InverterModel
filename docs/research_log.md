@@ -818,3 +818,14 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   monthly AVERAGE prices, which are smoother. On month-end closes the champion's worst era drops from
   13.6% to 11.8% and it whipsawed out of the market in April 2025 and April 2026. A 2% band around the
   10-month average restores it (14.0%). New account champion_band2.
+* Exp 35 (2026-11-03): wider investment areas (foreign stocks, Treasuries, corporate bonds, gold).
+  Risk parity with trend filters looks excellent on long index data (14-16%/yr, -20 to -24% worst
+  drawdown) but on real ETFs 2006-2026 it earned only 7-9%/yr. Half champion + half risk parity cuts the
+  worst drawdown from -44% to -27% and the growth from 21.6% to 16.0% (2006-2026): a safety dial, not a
+  growth engine. Forward-tested as account champion_risk_parity.
+* Exp 36 (2026-11-03): a 5-10% Bitcoin trend sleeve added 2.6-5 points a year to the champion over
+  2016-2026, almost all from 2016-2020. Weak evidence; forward-tested as champion_bitcoin5 (5%).
+* Exp 32 (2026-11-03): Polymarket, 1,252 resolved liquid markets 2024-2026. Prices were roughly
+  calibrated; buying favorites lost money (-6.3% per bet). One bucket (YES at 15-30 cents a week out)
+  won more often than priced, but 1 of 16 buckets at ~3 standard errors is what chance produces.
+  No tradable edge established.

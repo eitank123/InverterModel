@@ -229,5 +229,22 @@
    "Ken French data library",
    "Yahoo Finance ETF closes"
   ]
+ },
+ {
+  "checkpoint": 27,
+  "date": "2026-11-03",
+  "iteration": null,
+  "finding": "Owner: widen the investment areas, new papers, combine, test everything. Exp 35 (1972-2026; US + 12 developed markets + Treasuries + Baa corporates + gold; 14 variants): risk parity with trend filters (Asness-Frazzini-Pedersen 2012 + Faber 2007) at 10% vol: 14.3%/yr, worst era 11.2%, max DD -20%; at 15% vol 16.5%, DD -24%. 50/50 with the champion: worst era 16.0-17.1% vs 14.6%, DD -34 to -37% vs -56%. But on REAL ETFs (SPY/EFA/IEF/LQD/GLD, unhedged, margin T-bill+1.5%, 2006-2026) risk parity earned only 7.2-9.0%/yr (SPY 11.0%); 50/50 with the champion 15.0-16.0% vs 21.6% alone, DD -26/-27% vs -44%: a safety trade, not a growth gain. Time-series momentum per asset (MOP 2012) 10.3%, DD -10%. Exp 36 (Bitcoin 2015-2026, 6 variants): 200-day trend 54.8%/yr but 14.3% in 2021-2026; +5-10% Bitcoin-trend sleeve added +2.6 to +5 points to the champion over 2016-2026, almost all from 2016-2020; corr with stocks +0.32. Weak evidence. Exp 32 (Polymarket, 1,252 resolved binary markets with >= $250k volume, 2024-2026, 3 variants): no favorite-longshot bias; buying favorites at 0.80-0.95 a week out lost 6.3% per bet (se 3.3%); YES at 0.15-0.30 a week out won 39% vs 23% price (t ~2.9, but 16 buckets tested and selection by final volume).",
+  "decision": "Champion unchanged. New play-money accounts (real ETF prices): champion_risk_parity (50/50 champion + risk parity 15% vol), champion_bitcoin5 (95% champion + 5% IBIT on a 200-day trend). Polymarket: no tradable edge established; real-money betting not in scope.",
+  "sources": [
+   "Asness, Frazzini & Pedersen (2012) FAJ 'Leverage aversion and risk parity'",
+   "Faber (2007) 'A quantitative approach to tactical asset allocation'",
+   "Moskowitz, Ooi & Pedersen (2012)",
+   "Hurst, Ooi & Pedersen (2017) 'A century of evidence on trend-following'",
+   "Liu & Tsyvinski (2021) RFS",
+   "Snowberg & Wolfers (2010) favorite-longshot bias",
+   "Polymarket Gamma/CLOB APIs",
+   "Princeton thesis 2026 on Polymarket calibration (theses-dissertations.princeton.edu)"
+  ]
  }
 ]

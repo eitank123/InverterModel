@@ -1,0 +1,107 @@
+{
+ "key": "champion_risk_parity",
+ "name": "50/50 champion + multi-asset risk parity (15% vol)",
+ "description": "Exp 35: half the champion, half risk parity with trend filters over SPY, EFA, IEF, LQD and GLD at 15% volatility (max 3x). Real ETF prices; margin at T-bill + 1.5%.",
+ "start": "2026-11-02",
+ "start_equity": 100000.0,
+ "cash": 19345.8751481027,
+ "holdings": {
+  "EFA": 150.07435931252934,
+  "UPRO": 178.9223092511536,
+  "SPY": 53.4024729626189
+ },
+ "basis": {
+  "EFA": 15568.37941589951,
+  "UPRO": 24908.697625,
+  "SPY": 40177.047810997785
+ },
+ "targets": {
+  "UPRO": 0.2489525,
+  "SPY": 0.40163998611414364,
+  "EFA": 0.15562710602718693
+ },
+ "exposure": {
+  "stocks": 1.304124397974383,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 3.0,
+  "spread_slippage": 29.165637764239914,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-02",
+   "equity": 99967.83
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-02",
+   "symbol": "EFA",
+   "side": "buy",
+   "shares": 150.0744,
+   "price": 103.7,
+   "amount": 15562.71,
+   "commission": 1.0,
+   "spread_slippage": 4.67,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "50% champion + 50% risk parity: SPY 0.30, EFA 0.31, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 150.0744
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 178.9223,
+   "price": 139.14,
+   "amount": 24895.25,
+   "commission": 1.0,
+   "spread_slippage": 12.45,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "50% champion + 50% risk parity: SPY 0.30, EFA 0.31, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 178.9223
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 53.4025,
+   "price": 752.1,
+   "amount": 40164.0,
+   "commission": 1.0,
+   "spread_slippage": 12.05,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "50% champion + 50% risk parity: SPY 0.30, EFA 0.31, IEF 0.00, LQD 0.00, GLD 0.00",
+   "qty": 53.4025
+  }
+ ],
+ "prices": {
+  "XLB": 53.67,
+  "XLC": 100.26,
+  "XLE": 67.25,
+  "XLF": 57.56,
+  "XLI": 169.71,
+  "XLK": 174.22,
+  "XLP": 90.83,
+  "XLRE": 43.64,
+  "XLU": 43.67,
+  "XLV": 184.6,
+  "XLY": 118.16,
+  "MTUM": 275.14,
+  "VTV": 228.57,
+  "IEF": 91.5,
+  "SPY": 752.1,
+  "UPRO": 139.14,
+  "EFA": 103.7,
+  "LQD": 103.71,
+  "GLD": 361.65,
+  "IBIT": 43.35
+ }
+}

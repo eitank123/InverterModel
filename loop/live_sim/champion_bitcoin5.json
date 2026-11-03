@@ -1,0 +1,107 @@
+{
+ "key": "champion_bitcoin5",
+ "name": "Champion + 5% Bitcoin trend (IBIT)",
+ "description": "Exp 36: 95% the champion, 5% in the IBIT Bitcoin ETF while Bitcoin is above its 200-day average. Real ETF prices. Weak evidence: only 2015-2026 exists.",
+ "start": "2026-11-02",
+ "start_equity": 100000.0,
+ "cash": -44.46019499999238,
+ "holdings": {
+  "UPRO": 339.9523875771918,
+  "SPY": 63.4211229203128,
+  "IBIT": 115.34025780842599
+ },
+ "basis": {
+  "UPRO": 47325.6254875,
+  "SPY": 47714.33470749999,
+  "IBIT": 5004.5
+ },
+ "targets": {
+  "UPRO": 0.47300974999999995,
+  "SPY": 0.47699024999999995,
+  "IBIT": 0.05
+ },
+ "exposure": {
+  "stocks": 1.8960191310827994,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-02",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 3.0,
+  "spread_slippage": 41.460195,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-02",
+   "equity": 99955.54
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-02",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 339.9524,
+   "price": 139.14,
+   "amount": 47300.97,
+   "commission": 1.0,
+   "spread_slippage": 23.65,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion 95% + Bitcoin in (BTC +7% vs 200-day)",
+   "qty": 339.9524
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 63.4211,
+   "price": 752.1,
+   "amount": 47699.02,
+   "commission": 1.0,
+   "spread_slippage": 14.31,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion 95% + Bitcoin in (BTC +7% vs 200-day)",
+   "qty": 63.4211
+  },
+  {
+   "date": "2026-11-02",
+   "symbol": "IBIT",
+   "side": "buy",
+   "shares": 115.3403,
+   "price": 43.35,
+   "amount": 5000.0,
+   "commission": 1.0,
+   "spread_slippage": 3.5,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "champion 95% + Bitcoin in (BTC +7% vs 200-day)",
+   "qty": 115.3403
+  }
+ ],
+ "prices": {
+  "XLB": 53.67,
+  "XLC": 100.26,
+  "XLE": 67.25,
+  "XLF": 57.56,
+  "XLI": 169.71,
+  "XLK": 174.22,
+  "XLP": 90.83,
+  "XLRE": 43.64,
+  "XLU": 43.67,
+  "XLV": 184.6,
+  "XLY": 118.16,
+  "MTUM": 275.14,
+  "VTV": 228.57,
+  "IEF": 91.5,
+  "SPY": 752.1,
+  "UPRO": 139.14,
+  "EFA": 103.7,
+  "LQD": 103.71,
+  "GLD": 361.65,
+  "IBIT": 43.35
+ }
+}

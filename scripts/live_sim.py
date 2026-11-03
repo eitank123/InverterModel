@@ -218,13 +218,69 @@ REAL = {"diversified_two_thirds": ("Diversified leg x2/3 (sectors momentum + MTU
                                    "split equally into industry momentum (top 3 sector SPDRs), stock momentum (MTUM) and "
                                    "value (VTV). Real ETF prices from Yahoo Finance; margin loan at the T-bill + 1.5%.",
                                    diversified_two_thirds())}
+RP_ASSETS = ["SPY", "EFA", "IEF", "LQD", "GLD"]
+
+
+def champion_plus_risk_parity(tv=0.15):
+    """Exp 35: 50% the champion (SPY/UPRO/IEF) + 50% risk parity with trend filters over US stocks,
+    developed-market stocks, Treasuries, corporate bonds and gold (Asness-Frazzini-Pedersen 2012
+    weights; Faber 2007 10-month filters), scaled to 15% volatility, max 3x. Added 2026-11-03."""
+    import numpy as np
+
+    def fn(d):
+        w_ch, exp, _ = champ_signal(d)
+        px = real[RP_ASSETS][real.index < d.to_period("M").to_timestamp()]
+        me = px.groupby(px.index.to_period("M")).tail(1)
+        r = me.pct_change().iloc[-12:]
+        vol = r.std() * np.sqrt(12)
+        base = (1 / vol) / (1 / vol).sum()
+        pv = float(np.sqrt(base @ r.cov() @ base * 12))
+        on = me.iloc[-1] > me.iloc[-10:].mean()
+        rp = (base * min(tv / pv, 3.0)).where(on, 0.0)
+        w = {k: 0.5 * v for k, v in w_ch.items()}
+        for k, v in rp.items():
+            if v > 1e-9:
+                w[k] = w.get(k, 0.0) + 0.5 * float(v)
+        return w, {"stocks": exp["stocks"] / 2 + 0.5 * float(rp["SPY"] + rp["EFA"]),
+                   "bonds": exp["bonds"] / 2 + 0.5 * float(rp["IEF"] + rp["LQD"])}, \
+            "50% champion + 50% risk parity: " + ", ".join(f"{k} {v:.2f}" for k, v in rp.items())
+    return fn
+
+
+btc = at.data.load_fred("CBBTCUSD").dropna()
+
+
+def champion_plus_bitcoin(k=0.05):
+    """Exp 36: 95% the champion + 5% Bitcoin (IBIT spot ETF) while Bitcoin is above its 200-day
+    average, T-bills otherwise (checked daily). Weak evidence (2015-2026 only). Added 2026-11-03."""
+    def fn(d):
+        w_ch, exp, _ = champ_signal(d)
+        b = btc[btc.index < d]
+        on = b.iloc[-1] > b.iloc[-200:].mean()
+        w = {s: (1 - k) * v for s, v in w_ch.items()}
+        if on:
+            w["IBIT"] = k
+        return w, {"stocks": (1 - k) * exp["stocks"], "bonds": (1 - k) * exp["bonds"]}, \
+            f"champion 95% + Bitcoin {'in' if on else 'out'} (BTC {b.iloc[-1] / b.iloc[-200:].mean() - 1:+.0%} vs 200-day)"
+    return fn
+
+
+REAL["champion_risk_parity"] = ("50/50 champion + multi-asset risk parity (15% vol)",
+                                "Exp 35: half the champion, half risk parity with trend filters over SPY, EFA, IEF, LQD "
+                                "and GLD at 15% volatility (max 3x). Real ETF prices; margin at T-bill + 1.5%.",
+                                champion_plus_risk_parity())
+REAL["champion_bitcoin5"] = ("Champion + 5% Bitcoin trend (IBIT)",
+                             "Exp 36: 95% the champion, 5% in the IBIT Bitcoin ETF while Bitcoin is above its 200-day "
+                             "average. Real ETF prices. Weak evidence: only 2015-2026 exists.", champion_plus_bitcoin())
+DAILY_REAL = {"champion_bitcoin5"}
 real = at.data.etf_closes(list(REAL_ETFS))
 margin_costs = CostModel(swap_spread=0.015)
 print(f"Real ETF prices (Yahoo Finance) to {real.index[-1]:%Y-%m-%d}")
 for key, (name, desc, fn) in REAL.items():
     acct = LiveSimAccount.load_or_create(os.path.join(ROOT, f"{key}.json"), key, name, desc,
                                          start_date=real.index[-1].strftime("%Y-%m-%d"))
-    n = acct.advance(real[list(REAL_ETFS)], cash, fn, margin_costs, instruments=REAL_ETFS)
+    n = acct.advance(real[list(REAL_ETFS)].dropna(), cash, fn, margin_costs, instruments=REAL_ETFS,
+                     daily=key in DAILY_REAL)
     acct.save()
     st = acct.st
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]
