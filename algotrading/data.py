@@ -329,11 +329,15 @@ def _kf_block(name: str, header: str) -> pd.DataFrame:
     import io
     import urllib.request
     import zipfile
-    path = os.path.join(KF_DIR, f"{name}.csv")
-    if not os.path.exists(path):
+    def find():
+        hits = [f for f in os.listdir(KF_DIR) if f.lower() == f"{name}.csv".lower()] if os.path.isdir(KF_DIR) else []
+        return os.path.join(KF_DIR, hits[0]) if hits else None
+    path = find()
+    if path is None:
         os.makedirs(KF_DIR, exist_ok=True)
         with urllib.request.urlopen(KF_URL.format(name), timeout=60) as r:
             zipfile.ZipFile(io.BytesIO(r.read())).extractall(KF_DIR)
+        path = find()
     with open(path) as f:
         lines = f.read().splitlines()
     start = next(i for i, ln in enumerate(lines) if ln.strip().startswith(header)) if header else \
@@ -341,20 +345,23 @@ def _kf_block(name: str, header: str) -> pd.DataFrame:
     rows = []
     for ln in lines[start + 2:]:
         cells = [c.strip() for c in ln.split(",")]
-        if len(cells) < 2 or not (cells[0].isdigit() and len(cells[0]) == 6):
+        if len(cells) < 2 or not (cells[0].isdigit() and len(cells[0]) in (6, 8)):
             break
         rows.append(cells)
     cols = [c.strip() for c in lines[start + 1].split(",")][1:]
     df = pd.DataFrame([r[1:] for r in rows], columns=cols,
-                      index=pd.to_datetime([r[0] for r in rows], format="%Y%m")).astype(float)
+                      index=pd.to_datetime([r[0] for r in rows], format="%Y%m%d" if len(rows[0][0]) == 8 else "%Y%m")).astype(float)
     return df.where(df > -99) / 100
 
 
-def load_ff_industries(n: int = 49) -> pd.DataFrame:
-    """Monthly value-weighted total returns of Ken French's ``n`` industry portfolios (1926-)."""
+def load_ff_industries(n: int = 49, daily: bool = False) -> pd.DataFrame:
+    """Value-weighted total returns of Ken French's ``n`` industry portfolios (1926-),
+    monthly or daily."""
+    if daily:
+        return _kf_block(f"{n}_Industry_Portfolios_daily", "Average Value Weighted Returns -- Daily")
     return _kf_block(f"{n}_Industry_Portfolios", "Average Value Weighted Returns -- Monthly")
 
 
-def load_ff_factors() -> pd.DataFrame:
-    """Monthly Fama-French factors: Mkt-RF, SMB, HML, RF (1926-)."""
-    return _kf_block("F-F_Research_Data_Factors", "")
+def load_ff_factors(daily: bool = False) -> pd.DataFrame:
+    """Fama-French factors: Mkt-RF, SMB, HML, RF (1926-), monthly or daily."""
+    return _kf_block("F-F_Research_Data_Factors_daily" if daily else "F-F_Research_Data_Factors", "")
