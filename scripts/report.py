@@ -94,8 +94,11 @@ def news_lines():
         heads = at.news.collect_headlines()
     except Exception as e:                                   # offline
         return [f"* News feeds unavailable this run ({type(e).__name__})."]
+    stale = (pd.Timestamp.today().normalize() - z.index[-1]).days > 3
     out = [f"* News tone ('stock market', GDELT, 5-day average): {z.iloc[-1]:+.1f} standard deviations vs "
-           f"its 250-day mean (through {z.index[-1]:%d %b}); the news-tone account cuts to 1x below -1.0."]
+           f"its 250-day mean (through {z.index[-1]:%d %b}); the news-tone account cuts to 1x below -1.0."
+           + (" **Stale: GDELT is refusing requests from this network (rate limit, HTTP 429); the account "
+              "holds its last signal until the feed returns.**" if stale else "")]
     h = heads.copy()
     h["fetched"] = pd.to_datetime(h["fetched"], utc=True, format="mixed")
     recent = h[h["fetched"] >= h["fetched"].max() - pd.Timedelta(days=1)]

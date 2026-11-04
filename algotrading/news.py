@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import os
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
@@ -227,8 +228,16 @@ def update_gdelt_tone(path: str = GDELT_TONE_PATH, timeout: float = 60.0) -> pd.
     Days already stored are never rewritten (point-in-time record). Offline -> stored data."""
     old = pd.read_csv(path, index_col=0, parse_dates=True)["tone"] if os.path.exists(path) else pd.Series(dtype=float)
     try:
+        import time
         req = urllib.request.Request(GDELT_TONE_URL, headers={"User-Agent": "algotrading-research/0.1"})
-        d = json.loads(urllib.request.urlopen(req, timeout=timeout).read())
+        for attempt in range(4):                  # GDELT allows ~1 request per 5 s; 429 otherwise
+            try:
+                d = json.loads(urllib.request.urlopen(req, timeout=timeout).read())
+                break
+            except urllib.error.HTTPError as err:
+                if err.code != 429 or attempt == 3:
+                    raise
+                time.sleep(10 * (attempt + 1))
         s = pd.DataFrame(d["timeline"][0]["data"])
         new = pd.Series(s["value"].to_numpy(), index=pd.to_datetime(s["date"].str[:8]), name="tone")
         today = pd.Timestamp.today().normalize()
