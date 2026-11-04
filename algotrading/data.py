@@ -268,13 +268,23 @@ def load_fred(series: str) -> pd.Series:
     return pd.to_numeric(df.iloc[:, 0], errors="coerce").dropna().rename(series)
 
 
-def sp500_with_fallback(sp500: pd.Series | None = None, djia: pd.Series | None = None) -> pd.Series:
-    """FRED's S&P 500 series sometimes lags its Dow Jones series by a few trading days. Extend
-    the S&P past its last date with the Dow's daily returns, so the simulation and the
-    month-end signal are not held up. Those days are provisional (the S&P and the Dow move
-    almost together, correlation about 0.97). The extension is recomputed on every load, so once
-    FRED publishes the real closes, they replace it for any day not yet processed."""
+def sp500_with_fallback(sp500: pd.Series | None = None, djia: pd.Series | None = None,
+                        spy: pd.Series | None = None) -> pd.Series:
+    """FRED's S&P 500 series sometimes lags by a few trading days. Extend it past its last date
+    with SPY's daily closes (the S&P 500 ETF, Yahoo Finance) when available - it tracks the index
+    almost exactly; on 2-3 Nov 2026 the Dow, used before, moved the OTHER way. Days SPY lacks fall
+    back to the Dow's returns. These days are provisional; once FRED publishes the real closes,
+    they replace them for any day not yet processed. Pass ``spy=False`` to skip SPY (offline)."""
     sp = sp500 if sp500 is not None else load_fred("SP500")
+    if spy is None:
+        try:
+            spy = etf_closes(["SPY"], rng="1mo")["SPY"]
+        except Exception:
+            spy = False
+    if spy is not False and spy is not None and sp.index[-1] in spy.index:
+        extra = spy.index[spy.index > sp.index[-1]]
+        if len(extra):
+            sp = pd.concat([sp, (sp.iloc[-1] * spy[extra] / spy[sp.index[-1]]).rename(sp.name)])
     dj = djia if djia is not None else load_fred("DJIA")
     extra = dj.index[dj.index > sp.index[-1]]
     if len(extra) == 0 or sp.index[-1] not in dj.index:
@@ -375,8 +385,8 @@ YAHOO_CHART = "https://query2.finance.yahoo.com/v8/finance/chart/{}?range={}&int
 
 def etf_closes(tickers, rng: str = "2y", now: pd.Timestamp | None = None) -> pd.DataFrame:
     """Dividend-adjusted daily closes of real ETFs from Yahoo Finance, cached in data/etf/.
-    Only COMPLETED sessions are returned: today's row is dropped before 21:30 UTC (the US close
-    plus a margin), so an intraday price is never treated as a close. Offline -> cached file."""
+    Only COMPLETED sessions are returned: today's row is dropped before 16:30 New York time (the
+    US close plus a margin), so an intraday price is never treated as a close. Offline -> cached file."""
     import json
     import urllib.request
     now = now or pd.Timestamp.now(tz="UTC")
@@ -398,7 +408,8 @@ def etf_closes(tickers, rng: str = "2y", now: pd.Timestamp | None = None) -> pd.
             s = pd.read_csv(path, index_col=0, parse_dates=True)[t]
         cols[t] = s
     df = pd.DataFrame(cols).sort_index()
-    today = now.tz_convert("America/New_York").normalize().tz_localize(None)
-    if now.hour < 21 or (now.hour == 21 and now.minute < 30):
+    ny = now.tz_convert("America/New_York")
+    today = ny.normalize().tz_localize(None)
+    if ny.hour < 16 or (ny.hour == 16 and ny.minute < 30):        # before the close + 30 min (NY time)
         df = df[df.index < today]
     return df.dropna(how="all").ffill()

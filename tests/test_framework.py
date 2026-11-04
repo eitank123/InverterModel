@@ -668,10 +668,10 @@ def test_sp500_fallback_extends_with_dow_moves():
     idx = pd.bdate_range("2026-10-26", periods=5)
     sp = pd.Series([100.0, 101.0, 102.0], index=idx[:3])
     dj = pd.Series([50.0, 50.5, 51.0, 51.51, 50.4798], index=idx)
-    out = at.data.sp500_with_fallback(sp500=sp, djia=dj)
+    out = at.data.sp500_with_fallback(sp500=sp, djia=dj, spy=False)
     assert list(out.index) == list(idx)
     assert abs(out.iloc[3] / out.iloc[2] - 1.01) < 1e-12 and abs(out.iloc[4] / out.iloc[3] - 0.98) < 1e-9
-    same = at.data.sp500_with_fallback(sp500=dj, djia=dj)          # nothing to extend
+    same = at.data.sp500_with_fallback(sp500=dj, djia=dj, spy=False)          # nothing to extend
     assert same.equals(dj)
 
 
@@ -696,3 +696,16 @@ def test_kf_block_parses_monthly_table(tmp_path, monkeypatch):
     df = d._kf_block("X", "Average Value Weighted Returns -- Monthly")
     assert list(df.columns) == ["Chips", "Softw"] and len(df) == 2
     assert abs(df.loc["1926-08-01", "Chips"] + 0.025) < 1e-12 and df["Softw"].isna().iloc[0]
+
+
+def test_etf_closes_keeps_completed_session_after_midnight_utc(tmp_path, monkeypatch):
+    import pandas as pd
+    import algotrading.data as d
+    monkeypatch.setattr(d, "ETF_DIR", str(tmp_path))
+    idx = pd.to_datetime(["2026-11-02", "2026-11-03"])
+    pd.Series([1.0, 2.0], index=idx, name="X").rename_axis("date").to_csv(tmp_path / "X.csv")
+    monkeypatch.setattr(d.urllib.request if hasattr(d, "urllib") else __import__("urllib.request").request,
+                        "urlopen", lambda *a, **k: (_ for _ in ()).throw(OSError("offline")))
+    after = d.etf_closes(["X"], now=pd.Timestamp("2026-11-04 00:36", tz="UTC"))   # 19:36 New York, Nov 3
+    during = d.etf_closes(["X"], now=pd.Timestamp("2026-11-03 18:00", tz="UTC"))  # 13:00 New York, Nov 3
+    assert after.index[-1] == pd.Timestamp("2026-11-03") and during.index[-1] == pd.Timestamp("2026-11-02")

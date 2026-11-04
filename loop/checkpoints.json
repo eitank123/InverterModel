@@ -259,5 +259,15 @@
    "Zhang, Zohren & Roberts (2020) 'Deep learning for portfolio optimization'",
    "Kelly (1956); MacLean, Thorp & Ziemba (2011) on fractional Kelly"
   ]
+ },
+ {
+  "checkpoint": 29,
+  "date": "2026-11-04",
+  "iteration": null,
+  "finding": "Data fixes. (1) Real-ETF prices dropped a completed session after midnight UTC (the 'before the close' test compared UTC hours with the New York date); fixed to New York time, with a test. (2) The S&P-lag fallback used the Dow, which moved the opposite way on 2 Nov (+0.4% vs S&P -0.5%) and 3 Nov (-0.4% vs +0.3%), so the FRED-based accounts booked provisional days with the wrong sign; the error self-corrects in later days' returns (levels always restart from the real index) but daily attributions were wrong. Fallback now uses SPY's real closes first, the Dow only if SPY is missing.",
+  "decision": "Bug fixes only; recorded history is not rewritten. Champion unchanged.",
+  "sources": [
+   "FRED SP500/DJIA, Yahoo SPY closes 2026-11-02/03"
+  ]
  }
 ]
