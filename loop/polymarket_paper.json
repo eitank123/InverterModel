@@ -24,17 +24,37 @@
    "status": "won",
    "payout": 338.98,
    "settled": "2026-11-03T20:37:39.625211+00:00"
+  },
+  {
+   "id": "6644141",
+   "question": "Prudential Hong Kong Tennis Open: Elena Pridankina vs Alexandra Shubladze",
+   "end": "2026-11-12T06:00:00Z",
+   "placed": "2026-11-05T08:37:28.638604+00:00",
+   "price": 0.275,
+   "shares": 363.6364,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "6701966",
+   "question": "Rolex Paris Masters: Matteo Berrettini vs Carlos Alcaraz",
+   "end": "2026-11-12T18:00:00Z",
+   "placed": "2026-11-05T08:37:28.638604+00:00",
+   "price": 0.185,
+   "shares": 540.5405,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 2,
-  "open": 0,
+  "bets": 4,
+  "open": 2,
   "settled": 2,
   "won": 1,
   "staked_settled": 200.0,
   "pnl": 138.98,
   "return_per_bet": 0.6949,
   "avg_price_settled": 0.28,
-  "updated": "2026-11-05T04:37:31.803460+00:00"
+  "updated": "2026-11-05T08:37:28.638604+00:00"
  }
 }
