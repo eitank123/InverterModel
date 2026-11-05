@@ -46,17 +46,27 @@
    "shares": 540.5405,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6701973",
+   "question": "Rolex Paris Masters: Jan-Lennard Struff vs Casper Ruud",
+   "end": "2026-11-12T16:00:00Z",
+   "placed": "2026-11-05T20:37:20.329464+00:00",
+   "price": 0.205,
+   "shares": 487.8049,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 4,
-  "open": 1,
+  "bets": 5,
+  "open": 2,
   "settled": 3,
   "won": 1,
   "staked_settled": 300.0,
   "pnl": 38.98,
   "return_per_bet": 0.1299,
   "avg_price_settled": 0.2783,
-  "updated": "2026-11-05T17:24:25.002380+00:00"
+  "updated": "2026-11-05T20:37:20.329464+00:00"
  }
 }
