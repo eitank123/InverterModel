@@ -58,17 +58,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-06T00:38:29.384165+00:00"
+  },
+  {
+   "id": "6709174",
+   "question": "Luanda: Ksenia Zaytseva vs Gina Feistel",
+   "end": "2026-11-13T09:00:00Z",
+   "placed": "2026-11-06T12:37:27.509169+00:00",
+   "price": 0.217,
+   "shares": 460.8295,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 5,
-  "open": 1,
+  "bets": 6,
+  "open": 2,
   "settled": 4,
   "won": 1,
   "staked_settled": 400.0,
   "pnl": -61.02,
   "return_per_bet": -0.1525,
   "avg_price_settled": 0.26,
-  "updated": "2026-11-06T08:38:21.135551+00:00"
+  "updated": "2026-11-06T12:37:27.509169+00:00"
  }
 }
