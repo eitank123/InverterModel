@@ -4,10 +4,10 @@
  "description": "Exp 31 lead challenger: the champion's signals at 2/3 of its leverage, stock part split equally into industry momentum (top 3 sector SPDRs), stock momentum (MTUM) and value (VTV). Real ETF prices from Yahoo Finance; margin loan at the T-bill + 1.5%.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": -33124.51133043709,
+ "cash": -33131.780320423495,
  "holdings": {
   "XLE": 219.8330840331659,
-  "MTUM": 161.19547264094427,
+  "MTUM": 644.7819251787729,
   "XLK": 84.85693260042063,
   "VTV": 194.0382521000683,
   "XLV": 80.08545185497074
@@ -30,14 +30,14 @@
   "stocks": 1.3305397411107365,
   "bonds": 0.0
  },
- "last_date": "2026-11-04",
+ "last_date": "2026-11-05",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 5.0,
   "spread_slippage": 51.0040234092449,
   "regulatory": 0.0
  },
- "fund_costs": 0.951062082299776,
+ "fund_costs": 1.3940395507648002,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -50,6 +50,10 @@
   {
    "date": "2026-11-04",
    "equity": 99808.29
+  },
+  {
+   "date": "2026-11-05",
+   "equity": 92808.84
   }
  ],
  "trades": [
@@ -125,25 +129,33 @@
   }
  ],
  "prices": {
-  "XLB": 53.9,
-  "XLC": 104.96,
-  "XLE": 63.52,
-  "XLF": 59.2,
-  "XLI": 169.46,
-  "XLK": 176.5,
-  "XLP": 91.94,
-  "XLRE": 45.12,
-  "XLU": 43.61,
-  "XLV": 189.66,
-  "XLY": 122.33,
-  "MTUM": 272.86,
-  "VTV": 230.98,
-  "IEF": 91.66,
-  "SPY": 766.81,
-  "UPRO": 147.26,
-  "EFA": 105.72,
-  "LQD": 104.5,
-  "GLD": 372.49,
-  "IBIT": 45.33
- }
+  "XLB": 52.33,
+  "XLC": 104.34,
+  "XLE": 61.63,
+  "XLF": 57.5,
+  "XLI": 162.47,
+  "XLK": 162.38,
+  "XLP": 91.25,
+  "XLRE": 44.3,
+  "XLU": 43.3,
+  "XLV": 184.91,
+  "XLY": 117.64,
+  "MTUM": 62.6,
+  "VTV": 223.88,
+  "IEF": 91.97,
+  "SPY": 733.0,
+  "UPRO": 127.87,
+  "EFA": 102.7,
+  "LQD": 104.66,
+  "GLD": 375.49,
+  "IBIT": 43.03
+ },
+ "corporate_actions": [
+  {
+   "date": "2026-11-04",
+   "symbol": "MTUM",
+   "share_ratio": 4.0,
+   "note": "feed re-based past prices (split): shares scaled, value unchanged"
+  }
+ ]
 }
