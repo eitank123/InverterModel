@@ -269,5 +269,16 @@
   "sources": [
    "FRED SP500/DJIA, Yahoo SPY closes 2026-11-02/03"
   ]
+ },
+ {
+  "checkpoint": 30,
+  "date": "2026-11-06",
+  "iteration": null,
+  "finding": "5 Nov 2026: real sell-off (SPY -4.4%, UPRO -13%, XLK -8%). Data error at the same time: Yahoo's MTUM close went 272.86 -> 62.60 (-77%) with no split event in the feed, which booked the diversified account -37% in a day. S&P now ~0.6% above its 10-month average and ~0.4% above its 200-day average: the trend signals are close to flipping.",
+  "decision": "The diversified account's 5 Nov record was rolled back to its committed 4 Nov state (a feed error, not a market result; documented here). New data guard in live_sim: an unlevered fund moving >40% in a day (scaled by leverage) pauses the accounts holding it; when the feed re-bases past prices after a split, held shares are scaled so value is unchanged (logged as a corporate action). Champion unchanged.",
+  "sources": [
+   "Yahoo Finance chart API MTUM/SPY/UPRO/XLK 2026-11-03..05",
+   "FRED DJIA 2026-11-05"
+  ]
  }
 ]

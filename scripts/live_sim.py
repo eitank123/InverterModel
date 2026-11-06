@@ -315,11 +315,35 @@ DAILY_REAL = {"champion_bitcoin5"}
 real = at.data.etf_closes(list(REAL_ETFS))
 margin_costs = CostModel(swap_spread=0.015)
 print(f"Real ETF prices (Yahoo Finance) to {real.index[-1]:%Y-%m-%d}")
+# Data guard: an unlevered ETF moving more than 40% in a day is almost always a share split the
+# feed has not adjusted yet (MTUM 272.86 -> 62.60 on 2026-11-05, no split event in the feed) or a
+# bad tick. Accounts holding such a fund wait at the day before until the price is confirmed.
+day_ret = real[list(REAL_ETFS)].pct_change()
+suspect = {s: day_ret.index[(day_ret[s].abs() > 0.40 * REAL_ETFS[s].leverage)].tolist() for s in REAL_ETFS}
+suspect = {s: d for s, d in suspect.items() if d}
+for s, d in suspect.items():
+    print(f"DATA GUARD: {s} moved {day_ret.loc[d[-1], s]:+.0%} on {d[-1]:%Y-%m-%d} - probable unadjusted split/bad tick")
 for key, (name, desc, fn) in REAL.items():
     acct = LiveSimAccount.load_or_create(os.path.join(ROOT, f"{key}.json"), key, name, desc,
                                          start_date=real.index[-1].strftime("%Y-%m-%d"))
-    n = acct.advance(real[list(REAL_ETFS)].dropna(), cash, fn, margin_costs, instruments=REAL_ETFS,
-                     daily=key in DAILY_REAL)
+    px = real[list(REAL_ETFS)].dropna()
+    held = set(acct.st["holdings"]) | set(acct.st.get("targets", {}))
+    cut = [d for s, ds in suspect.items() if s in held for d in ds if acct.st["last_date"] is None or d > pd.Timestamp(acct.st["last_date"])]
+    if acct.st["last_date"] and pd.Timestamp(acct.st["last_date"]) in px.index:   # split re-basing
+        for sym, q in list(acct.st["holdings"].items()):
+            was, now = acct.st["prices"].get(sym), float(px.loc[pd.Timestamp(acct.st["last_date"]), sym])
+            if was and not (0.67 < was / now < 1.5):
+                ratio = was / now
+                acct.st["holdings"][sym] = q * ratio
+                acct.st["prices"][sym] = now
+                acct.st.setdefault("corporate_actions", []).append(
+                    {"date": acct.st["last_date"], "symbol": sym, "share_ratio": round(ratio, 6),
+                     "note": "feed re-based past prices (split): shares scaled, value unchanged"})
+                print(f"  {name}: {sym} re-based by the feed (x{ratio:.3f}); shares scaled, value unchanged")
+    if cut:
+        px = px[px.index < min(cut)]
+        print(f"  {name}: waiting at {px.index[-1]:%Y-%m-%d} (holds a fund with a suspect price)")
+    n = acct.advance(px, cash, fn, margin_costs, instruments=REAL_ETFS, daily=key in DAILY_REAL)
     acct.save()
     st = acct.st
     eq = st["equity_history"][-1]["equity"] if st["equity_history"] else st["start_equity"]
