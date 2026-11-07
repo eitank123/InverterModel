@@ -94,17 +94,37 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-07T00:36:19.910931+00:00"
+  },
+  {
+   "id": "6253456",
+   "question": "Will Predict.fun launch a token by November 15, 2026?",
+   "end": "2026-11-16T04:59:00Z",
+   "placed": "2026-11-07T16:39:31.670187+00:00",
+   "price": 0.204,
+   "shares": 490.1961,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "6765304",
+   "question": "Rolex Paris Masters: Casper Ruud vs Carlos Alcaraz",
+   "end": "2026-11-14T16:00:00Z",
+   "placed": "2026-11-07T16:39:31.670187+00:00",
+   "price": 0.185,
+   "shares": 540.5405,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 8,
-  "open": 1,
+  "bets": 10,
+  "open": 3,
   "settled": 7,
   "won": 2,
   "staked_settled": 700.0,
   "pnl": 64.51,
   "return_per_bet": 0.0922,
   "avg_price_settled": 0.2539,
-  "updated": "2026-11-07T12:37:55.803153+00:00"
+  "updated": "2026-11-07T16:39:31.670187+00:00"
  }
 }
