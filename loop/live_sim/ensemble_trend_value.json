@@ -4,7 +4,7 @@
  "description": "Loop strategy 'ensemble: trend + value' {}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -7.628904146664089,
+ "cash": -7.630266450975993,
  "holdings": {
   "SPY": 98.55257873229269,
   "UPRO": 247.84547508053222
@@ -21,14 +21,14 @@
   "stocks": 1.4937144174991572,
   "bonds": 0.0
  },
- "last_date": "2026-11-05",
+ "last_date": "2026-11-06",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 4.0,
   "spread_slippage": 41.75102175028374,
   "regulatory": 0.2002697160690017
  },
- "fund_costs": 107.2062851829681,
+ "fund_costs": 116.21046160451337,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -69,6 +69,10 @@
   {
    "date": "2026-11-05",
    "equity": 94414.94
+  },
+  {
+   "date": "2026-11-06",
+   "equity": 94926.62
   }
  ],
  "trades": [
@@ -130,10 +134,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.8758,
-  "SPY": 735.2517,
+  "IEF": 96.3251,
+  "SPY": 737.994,
   "SSO": NaN,
-  "UPRO": 88.6101,
-  "UST": 45.745
+  "UPRO": 89.5842,
+  "UST": 46.1645
  }
 }

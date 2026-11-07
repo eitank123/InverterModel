@@ -4,7 +4,7 @@
  "description": "Exp 36: 95% the champion, 5% in the IBIT Bitcoin ETF while Bitcoin is above its 200-day average. Real ETF prices. Weak evidence: only 2015-2026 exists.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": -44.48947105189456,
+ "cash": -44.49918105549716,
  "holdings": {
   "UPRO": 339.9523875771918,
   "SPY": 63.4211229203128,
@@ -24,14 +24,14 @@
   "stocks": 1.8960191310827994,
   "bonds": 0.0
  },
- "last_date": "2026-11-05",
+ "last_date": "2026-11-06",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 3.0,
   "spread_slippage": 41.460195,
   "regulatory": 0.0
  },
- "fund_costs": 67.78792737971892,
+ "fund_costs": 88.7283951107639,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -48,6 +48,10 @@
   {
    "date": "2026-11-05",
    "equity": 94876.0
+  },
+  {
+   "date": "2026-11-06",
+   "equity": 95367.67
   }
  ],
  "trades": [
@@ -95,25 +99,25 @@
   }
  ],
  "prices": {
-  "XLB": 52.33,
-  "XLC": 104.34,
-  "XLE": 61.63,
-  "XLF": 57.5,
-  "XLI": 162.47,
-  "XLK": 162.38,
-  "XLP": 91.25,
-  "XLRE": 44.3,
-  "XLU": 43.3,
-  "XLV": 184.91,
-  "XLY": 117.64,
-  "MTUM": 62.6,
-  "VTV": 223.88,
-  "IEF": 91.97,
-  "SPY": 733.0,
-  "UPRO": 127.87,
-  "EFA": 102.7,
-  "LQD": 104.66,
-  "GLD": 375.49,
-  "IBIT": 43.03
+  "XLB": 51.95,
+  "XLC": 104.79,
+  "XLE": 61.62,
+  "XLF": 57.16,
+  "XLI": 162.67,
+  "XLK": 164.74,
+  "XLP": 90.08,
+  "XLRE": 44.0,
+  "XLU": 43.13,
+  "XLV": 184.8,
+  "XLY": 117.58,
+  "MTUM": 63.76,
+  "VTV": 223.01,
+  "IEF": 91.86,
+  "SPY": 735.29,
+  "UPRO": 128.94,
+  "EFA": 101.89,
+  "LQD": 104.53,
+  "GLD": 372.52,
+  "IBIT": 42.88
  }
 }

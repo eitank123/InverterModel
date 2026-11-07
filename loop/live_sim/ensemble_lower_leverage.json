@@ -4,7 +4,7 @@
  "description": "Exp 19: same three sleeves as the champion at lower leverage, after the Japan test (champion-like mix -87% there, this one about -61%). Added 2026-10-28.",
  "start": "2026-10-27",
  "start_equity": 100000.0,
- "cash": -5.339092304446076,
+ "cash": -5.3400457137861554,
  "holdings": {
   "SPY": 107.42639350021052,
   "UPRO": 162.36774393357922
@@ -21,14 +21,14 @@
   "stocks": 1.329142944999438,
   "bonds": 0.0
  },
- "last_date": "2026-11-05",
+ "last_date": "2026-11-06",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 4.0,
   "spread_slippage": 37.43494496315007,
   "regulatory": 0.11892907995089977
  },
- "fund_costs": 53.14673109333978,
+ "fund_costs": 59.16414089535324,
  "equity_history": [
   {
    "date": "2026-10-27",
@@ -61,6 +61,10 @@
   {
    "date": "2026-11-05",
    "equity": 93367.52
+  },
+  {
+   "date": "2026-11-06",
+   "equity": 93820.28
   }
  ],
  "trades": [
@@ -122,10 +126,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.8758,
-  "SPY": 735.2517,
+  "IEF": 96.3251,
+  "SPY": 737.994,
   "SSO": NaN,
-  "UPRO": 88.6101,
-  "UST": 45.745
+  "UPRO": 89.5842,
+  "UST": 46.1645
  }
 }
