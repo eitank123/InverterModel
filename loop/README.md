@@ -69,4 +69,6 @@ lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend levera
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
 diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
 so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·
+rebalance timing luck: 4 weekly tranches of the monthly trade (Newfound Research) vs the 2% band ·
+second news-tone source (GDELT blocked here) ·
 more markets once data access is allowed.
