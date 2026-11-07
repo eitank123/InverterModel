@@ -280,5 +280,16 @@
    "Yahoo Finance chart API MTUM/SPY/UPRO/XLK 2026-11-03..05",
    "FRED DJIA 2026-11-05"
   ]
+ },
+ {
+  "checkpoint": 31,
+  "date": "2026-11-07",
+  "iteration": null,
+  "finding": "Exp 39 (rebalance timing luck, Newfound Research; daily CRSP 1928-2026, trend sleeve at 3x, 4 variants + 4 single-day offsets): timing luck is real - the same monthly rule decided 0/5/10/15 trading days before month-end earned 10.8-13.8% in 1957-1990. Worst era: A one day at month-end (live) 10.8%; B 4 weekly tranches 12.8% (max DD since 1940 -68% vs -78%); C one day + 2% band 14.7%; D tranches + band 13.7%. 2025-26: A 9.1%, B 21.0%, C 28.5%, D 15.0%.",
+  "decision": "Tranching helps the plain rule but the 2% band alone is better on the worst era, and combining them adds nothing. Keeps the band (account champion_band2) as the fix for month-end whipsaw; no new account. Champion unchanged.",
+  "sources": [
+   "Newfound Research (Hoffstein), 'rebalance timing luck' / tranching, blog.thinknewfound.com",
+   "Ken French daily market factor"
+  ]
  }
 ]

@@ -837,3 +837,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   growth-plus-safety design was 2/3 champion + 1/3 diversifiers at 2x: test 17.9% vs 17.6% with a -34%
   instead of -48% worst drawdown; on real ETFs 2006-2026 18.4% vs 21.4% with -33% vs -48%. A safety
   dial again, not extra growth. New account core_satellite; Polymarket forward paper ledger.
+* Exp 39 (2026-11-07): rebalance timing luck. Deciding the same monthly trend rule on different days
+  of the month changes the 1957-1990 result from 10.8% to 13.8%/yr: luck of the calendar. Splitting the
+  decision into 4 weekly tranches lifts the plain rule's worst era from 10.8% to 12.8%, but the 2% band
+  alone does better (14.7%) and adding tranches to the band does not help. The band stays the fix.

@@ -65,10 +65,10 @@ synthetic-market tests (does the ensemble earn on markets with no trend / no mea
 turn-of-month leverage overlay (Exp 26: rejected, loses to constant leverage) ·
 news tone at 1 day to 3 months (Exp 28-29: rejected) · neural-net industry picking daily/weekly/monthly (Exp 30: rejected) ·
 short side, volatility-managed overlay, short-term reversal (Exp 31: rejected) ·
+weekly tranching of the monthly trade (Exp 39: helps the plain rule, but the 2% band alone is better) ·
 lifecycle de-leveraging (Ayres-Nalebuff) · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
 diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
 so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·
-rebalance timing luck: 4 weekly tranches of the monthly trade (Newfound Research) vs the 2% band ·
 second news-tone source (GDELT blocked here) ·
 more markets once data access is allowed.
