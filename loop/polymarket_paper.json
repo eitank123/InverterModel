@@ -116,17 +116,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-07T18:40:25.067096+00:00"
+  },
+  {
+   "id": "6806546",
+   "question": "BNP Paribas Nordic Open: James Duckworth vs Cameron Norrie",
+   "end": "2026-11-16T10:00:00Z",
+   "placed": "2026-11-09T12:36:52.787157+00:00",
+   "price": 0.275,
+   "shares": 363.6364,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 10,
-  "open": 2,
+  "bets": 11,
+  "open": 3,
   "settled": 8,
   "won": 2,
   "staked_settled": 800.0,
   "pnl": -35.49,
   "return_per_bet": -0.0444,
   "avg_price_settled": 0.2452,
-  "updated": "2026-11-09T08:40:37.588920+00:00"
+  "updated": "2026-11-09T12:36:52.787157+00:00"
  }
 }
