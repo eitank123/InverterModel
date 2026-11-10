@@ -4,7 +4,7 @@
  "description": "Loop strategy 'mix+SMA10 x2 (deployable)' {\"w\": 1.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -42.07542755423008,
+ "cash": -42.082957720034436,
  "holdings": {
   "SPY": 65.58512424445937,
   "UPRO": 500.0
@@ -21,14 +21,14 @@
   "stocks": 2.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-06",
+ "last_date": "2026-11-09",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 40.0,
   "regulatory": 0.0
  },
- "fund_costs": 197.43441981266022,
+ "fund_costs": 216.51909627002425,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -73,6 +73,10 @@
   {
    "date": "2026-11-06",
    "equity": 93151.46
+  },
+  {
+   "date": "2026-11-09",
+   "equity": 97467.77
   }
  ],
  "trades": [
@@ -106,10 +110,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.3251,
-  "SPY": 737.994,
+  "IEF": 96.1986,
+  "SPY": 755.4912,
   "SSO": NaN,
-  "UPRO": 89.5842,
-  "UST": 46.1645
+  "UPRO": 95.9217,
+  "UST": 46.0338
  }
 }
