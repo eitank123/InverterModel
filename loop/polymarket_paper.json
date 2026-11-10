@@ -149,18 +149,30 @@
    "price": 0.285,
    "shares": 350.8772,
    "stake": 100.0,
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-10T20:40:44.203646+00:00"
+  },
+  {
+   "id": "6835467",
+   "question": "WTA Finals, Group A: Marta Kostyuk vs Jessica Pegula",
+   "end": "2026-11-17T18:00:00Z",
+   "placed": "2026-11-10T20:40:44.203646+00:00",
+   "price": 0.245,
+   "shares": 408.1633,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 13,
+  "bets": 14,
   "open": 3,
-  "settled": 10,
+  "settled": 11,
   "won": 2,
-  "staked_settled": 1000.0,
-  "pnl": -235.49,
-  "return_per_bet": -0.2355,
-  "avg_price_settled": 0.2422,
-  "updated": "2026-11-10T17:25:02.268774+00:00"
+  "staked_settled": 1100.0,
+  "pnl": -335.49,
+  "return_per_bet": -0.305,
+  "avg_price_settled": 0.2461,
+  "updated": "2026-11-10T20:40:44.203646+00:00"
  }
 }
