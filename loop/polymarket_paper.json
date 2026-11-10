@@ -128,17 +128,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-09T16:36:57.019454+00:00"
+  },
+  {
+   "id": "6911431",
+   "question": "BNP Paribas Nordic Open: Adrian Mannarino vs Alexander Shevchenko",
+   "end": "2026-11-17T12:00:00Z",
+   "placed": "2026-11-10T12:39:04.240401+00:00",
+   "price": 0.185,
+   "shares": 540.5405,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 11,
-  "open": 2,
+  "bets": 12,
+  "open": 3,
   "settled": 9,
   "won": 2,
   "staked_settled": 900.0,
   "pnl": -135.49,
   "return_per_bet": -0.1505,
   "avg_price_settled": 0.2486,
-  "updated": "2026-11-10T08:36:58.173226+00:00"
+  "updated": "2026-11-10T12:39:04.240401+00:00"
  }
 }
