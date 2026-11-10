@@ -137,18 +137,30 @@
    "price": 0.185,
    "shares": 540.5405,
    "stake": 100.0,
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-10T16:36:40.841631+00:00"
+  },
+  {
+   "id": "6806548",
+   "question": "BNP Paribas Nordic Open: Arthur Rinderknech vs Miomir Kecmanovic",
+   "end": "2026-11-16T10:00:00Z",
+   "placed": "2026-11-10T16:36:40.841631+00:00",
+   "price": 0.285,
+   "shares": 350.8772,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 12,
+  "bets": 13,
   "open": 3,
-  "settled": 9,
+  "settled": 10,
   "won": 2,
-  "staked_settled": 900.0,
-  "pnl": -135.49,
-  "return_per_bet": -0.1505,
-  "avg_price_settled": 0.2486,
-  "updated": "2026-11-10T12:39:04.240401+00:00"
+  "staked_settled": 1000.0,
+  "pnl": -235.49,
+  "return_per_bet": -0.2355,
+  "avg_price_settled": 0.2422,
+  "updated": "2026-11-10T16:36:40.841631+00:00"
  }
 }
