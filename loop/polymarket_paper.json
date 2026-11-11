@@ -164,17 +164,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-11T00:37:11.040866+00:00"
+  },
+  {
+   "id": "6941983",
+   "question": "BNP Paribas Nordic Open: Alexander Shevchenko vs Casper Ruud",
+   "end": "2026-11-18T12:00:00Z",
+   "placed": "2026-11-11T17:25:49.917366+00:00",
+   "price": 0.195,
+   "shares": 512.8205,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 14,
-  "open": 2,
+  "bets": 15,
+  "open": 3,
   "settled": 12,
   "won": 2,
   "staked_settled": 1200.0,
   "pnl": -435.49,
   "return_per_bet": -0.3629,
   "avg_price_settled": 0.246,
-  "updated": "2026-11-11T16:38:21.126492+00:00"
+  "updated": "2026-11-11T17:25:49.917366+00:00"
  }
 }
