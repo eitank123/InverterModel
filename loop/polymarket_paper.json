@@ -173,18 +173,30 @@
    "price": 0.195,
    "shares": 512.8205,
    "stake": 100.0,
+   "status": "won",
+   "payout": 512.82,
+   "settled": "2026-11-11T20:38:49.243985+00:00"
+  },
+  {
+   "id": "6947887",
+   "question": "BNP Paribas Nordic Open: Miomir Kecmanovic vs Holger Rune",
+   "end": "2026-11-18T18:30:00Z",
+   "placed": "2026-11-11T20:38:49.243985+00:00",
+   "price": 0.155,
+   "shares": 645.1613,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 15,
+  "bets": 16,
   "open": 3,
-  "settled": 12,
-  "won": 2,
-  "staked_settled": 1200.0,
-  "pnl": -435.49,
-  "return_per_bet": -0.3629,
-  "avg_price_settled": 0.246,
-  "updated": "2026-11-11T17:25:49.917366+00:00"
+  "settled": 13,
+  "won": 3,
+  "staked_settled": 1300.0,
+  "pnl": -22.67,
+  "return_per_bet": -0.0174,
+  "avg_price_settled": 0.2421,
+  "updated": "2026-11-11T20:38:49.243985+00:00"
  }
 }
