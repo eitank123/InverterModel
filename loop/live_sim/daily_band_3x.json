@@ -4,7 +4,7 @@
  "description": "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its 200-day average, T-bills otherwise; checked every day.",
  "start": "2026-10-26",
  "start_equity": 100000.0,
- "cash": -51.091529789198844,
+ "cash": -51.1007749231607,
  "holdings": {
   "UPRO": 979.779203890055
  },
@@ -18,14 +18,14 @@
   "stocks": 3.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-09",
+ "last_date": "2026-11-10",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 50.0,
   "regulatory": 0.0
  },
- "fund_costs": 380.6086743174028,
+ "fund_costs": 417.57380939938514,
  "equity_history": [
   {
    "date": "2026-10-26",
@@ -70,6 +70,10 @@
   {
    "date": "2026-11-09",
    "equity": 93931.04
+  },
+  {
+   "date": "2026-11-10",
+   "equity": 92822.42
   }
  ],
  "trades": [
@@ -89,10 +93,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.1986,
-  "SPY": 755.4912,
+  "IEF": 96.0724,
+  "SPY": 752.6115,
   "SSO": NaN,
-  "UPRO": 95.9217,
-  "UST": 46.0338
+  "UPRO": 94.7903,
+  "UST": 45.9033
  }
 }

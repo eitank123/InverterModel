@@ -4,7 +4,7 @@
  "description": "Loop strategy 'recovery mix' {\"w\": 0.8, \"base\": 2.0, \"boost\": 4.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -38.07505698479305,
+ "cash": -38.08194675700935,
  "holdings": {
   "SPY": 91.81917394224311,
   "UPRO": 300.0
@@ -21,14 +21,14 @@
   "stocks": 1.6,
   "bonds": 0.0
  },
- "last_date": "2026-11-09",
+ "last_date": "2026-11-10",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 36.0,
   "regulatory": 0.0
  },
- "fund_costs": 131.55682979613368,
+ "fund_costs": 143.13437817381336,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -77,6 +77,10 @@
   {
    "date": "2026-11-09",
    "equity": 98107.03
+  },
+  {
+   "date": "2026-11-10",
+   "equity": 97503.16
   }
  ],
  "trades": [
@@ -110,10 +114,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.1986,
-  "SPY": 755.4912,
+  "IEF": 96.0724,
+  "SPY": 752.6115,
   "SSO": NaN,
-  "UPRO": 95.9217,
-  "UST": 46.0338
+  "UPRO": 94.7903,
+  "UST": 45.9033
  }
 }
