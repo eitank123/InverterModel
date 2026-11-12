@@ -4,7 +4,7 @@
  "description": "Loop strategy 'S&P+SMA10 xL (Gayed-Bilello)' {\"lev\": 3.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -51.109981173880975,
+ "cash": -51.11922964666482,
  "holdings": {
   "UPRO": 1000.0
  },
@@ -18,14 +18,14 @@
   "stocks": 3.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-10",
+ "last_date": "2026-11-11",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 50.0,
   "regulatory": 0.0
  },
- "fund_costs": 466.65278825405136,
+ "fund_costs": 505.8446350837618,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -78,6 +78,10 @@
   {
    "date": "2026-11-10",
    "equity": 94739.14
+  },
+  {
+   "date": "2026-11-11",
+   "equity": 98416.93
   }
  ],
  "trades": [
@@ -97,10 +101,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.0724,
-  "SPY": 752.6115,
+  "IEF": 96.0904,
+  "SPY": 762.4464,
   "SSO": NaN,
-  "UPRO": 94.7903,
-  "UST": 45.9033
+  "UPRO": 98.468,
+  "UST": 45.9111
  }
 }

@@ -4,7 +4,7 @@
  "description": "Exp 34: the live system reads the trend from month-end closes, which whipsawed out of the market in April 2025 and April 2026. Same three sleeves; a sleeve leaves only 2% below its 10-month average and re-enters 2% above it. CRSP 1927-2026 on month-end closes: worst era 14.0% vs 11.8%. Added 2026-11-03.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": -42.00334182038195,
+ "cash": -42.0109424250923,
  "holdings": {
   "UPRO": 501.78214294166213,
   "SPY": 65.94921218897363
@@ -21,14 +21,14 @@
   "stocks": 1.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-11-10",
+ "last_date": "2026-11-11",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 39.9581,
   "regulatory": 0.0
  },
- "fund_costs": 113.53608355437761,
+ "fund_costs": 133.39041270390476,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -57,6 +57,10 @@
   {
    "date": "2026-11-10",
    "equity": 97156.19
+  },
+  {
+   "date": "2026-11-11",
+   "equity": 99650.23
   }
  ],
  "trades": [
@@ -90,10 +94,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.0724,
-  "SPY": 752.6115,
+  "IEF": 96.0904,
+  "SPY": 762.4464,
   "SSO": NaN,
-  "UPRO": 94.7903,
-  "UST": 45.9033
+  "UPRO": 98.468,
+  "UST": 45.9111
  }
 }
