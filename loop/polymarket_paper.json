@@ -200,17 +200,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-13T12:37:29.482969+00:00"
+  },
+  {
+   "id": "7001797",
+   "question": "Knoxville: Stefan Kozlov vs Michael Zheng",
+   "end": "2026-11-20T23:00:00Z",
+   "placed": "2026-11-14T00:37:32.570417+00:00",
+   "price": 0.205,
+   "shares": 487.8049,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 17,
-  "open": 2,
+  "bets": 18,
+  "open": 3,
   "settled": 15,
   "won": 3,
   "staked_settled": 1500.0,
   "pnl": -222.67,
   "return_per_bet": -0.1484,
   "avg_price_settled": 0.2305,
-  "updated": "2026-11-13T20:37:21.940174+00:00"
+  "updated": "2026-11-14T00:37:32.570417+00:00"
  }
 }
