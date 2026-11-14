@@ -841,3 +841,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   of the month changes the 1957-1990 result from 10.8% to 13.8%/yr: luck of the calendar. Splitting the
   decision into 4 weekly tranches lifts the plain rule's worst era from 10.8% to 12.8%, but the 2% band
   alone does better (14.7%) and adding tranches to the band does not help. The band stays the fix.
+* Exp 40 (2026-11-14): equal-weight vs cap-weight. Unlevered, an equal-weighted large-stock portfolio
+  beat the cap-weighted market by 0.2-0.8 points a year in every era since 1927. Used as the champion's
+  leveraged stock part it earned less (16.6% vs 17.4%/yr 1927-2026) with deeper drawdowns: its extra
+  volatility costs more at 2-3x. Real RSP trailed SPY 2004-2026 (10.2% vs 10.7%). Rejected.

@@ -291,5 +291,17 @@
    "Newfound Research (Hoffstein), 'rebalance timing luck' / tranching, blog.thinknewfound.com",
    "Ken French daily market factor"
   ]
+ },
+ {
+  "checkpoint": 32,
+  "date": "2026-11-14",
+  "iteration": null,
+  "finding": "Exp 40 (equal-weight stock leg; Plyakha-Uppal-Vilkov 2012; 4 variants; CRSP size deciles 1927-2026 with 0.2%/yr extra cost). Unlevered, equal weight beats cap weight in every era: EW-large (deciles 6-10, RSP-like) 9.8/10.7/11.7% vs 9.0/10.1/11.5%; EW-all 10.9/11.3/11.8%. As the champion's stock leg it does NOT help: worst era 13.8% (EW-large) / 14.3% (EW-all) vs 13.6%, but whole period 16.6%/16.3% vs 17.4%, 1927-56 15.1%/14.3% vs 16.6%, drawdown since 1940 -74%/-80% vs -68% (higher volatility costs more at 2-3x, and the signal still comes from the cap-weighted index). Real funds 2004-2026: RSP 10.2%/yr vs SPY 10.7%.",
+  "decision": "Rejected for the champion (fails beats_everywhere in 1927-1956, deeper drawdowns). Equal weight is a small unlevered edge, not a better base for leverage. No new account.",
+  "sources": [
+   "Plyakha, Uppal & Vilkov (2012) 'Why does an equal-weighted portfolio outperform value- and price-weighted portfolios?'",
+   "Ken French portfolios formed on ME",
+   "Yahoo SPY/RSP"
+  ]
  }
 ]
