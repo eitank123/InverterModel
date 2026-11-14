@@ -71,4 +71,5 @@ sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs
 diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
 so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·
 second news-tone source (GDELT blocked here) ·
+equal-weight stock leg (RSP; Plyakha-Uppal-Vilkov 2012) vs cap-weight ·
 more markets once data access is allowed.
