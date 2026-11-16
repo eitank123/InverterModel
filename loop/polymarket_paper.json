@@ -214,17 +214,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-14T04:38:21.414485+00:00"
+  },
+  {
+   "id": "7083663",
+   "question": "Drummondville: Noah Zamora vs Joshua Charlton",
+   "end": "2026-11-23T15:00:00Z",
+   "placed": "2026-11-16T20:38:04.248466+00:00",
+   "price": 0.215,
+   "shares": 465.1163,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 18,
-  "open": 1,
+  "bets": 19,
+  "open": 2,
   "settled": 17,
   "won": 3,
   "staked_settled": 1700.0,
   "pnl": -422.67,
   "return_per_bet": -0.2486,
   "avg_price_settled": 0.2274,
-  "updated": "2026-11-16T16:37:18.213329+00:00"
+  "updated": "2026-11-16T20:38:04.248466+00:00"
  }
 }
