@@ -103,7 +103,9 @@
    "price": 0.204,
    "shares": 490.1961,
    "stake": 100.0,
-   "status": "open"
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-16T08:37:21.772432+00:00"
   },
   {
    "id": "6765304",
@@ -216,13 +218,13 @@
  ],
  "summary": {
   "bets": 18,
-  "open": 2,
-  "settled": 16,
+  "open": 1,
+  "settled": 17,
   "won": 3,
-  "staked_settled": 1600.0,
-  "pnl": -322.67,
-  "return_per_bet": -0.2017,
-  "avg_price_settled": 0.2289,
-  "updated": "2026-11-16T04:36:28.387304+00:00"
+  "staked_settled": 1700.0,
+  "pnl": -422.67,
+  "return_per_bet": -0.2486,
+  "avg_price_settled": 0.2274,
+  "updated": "2026-11-16T08:37:21.772432+00:00"
  }
 }
