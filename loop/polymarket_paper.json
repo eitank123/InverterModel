@@ -223,18 +223,30 @@
    "price": 0.215,
    "shares": 465.1163,
    "stake": 100.0,
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-17T00:38:42.342631+00:00"
+  },
+  {
+   "id": "7089722",
+   "question": "Sydney: Matthew Dellavedova vs Jason Kubler",
+   "end": "2026-11-23T23:00:00Z",
+   "placed": "2026-11-17T00:38:42.342631+00:00",
+   "price": 0.215,
+   "shares": 465.1163,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 19,
+  "bets": 20,
   "open": 2,
-  "settled": 17,
+  "settled": 18,
   "won": 3,
-  "staked_settled": 1700.0,
-  "pnl": -422.67,
-  "return_per_bet": -0.2486,
-  "avg_price_settled": 0.2274,
-  "updated": "2026-11-16T20:38:04.248466+00:00"
+  "staked_settled": 1800.0,
+  "pnl": -522.67,
+  "return_per_bet": -0.2904,
+  "avg_price_settled": 0.2267,
+  "updated": "2026-11-17T00:38:42.342631+00:00"
  }
 }
