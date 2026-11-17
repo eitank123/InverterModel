@@ -238,17 +238,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-17T04:37:24.609627+00:00"
+  },
+  {
+   "id": "7096567",
+   "question": "Helsinki: Moez Echargui vs Otto Virtanen",
+   "end": "2026-11-24T15:30:00Z",
+   "placed": "2026-11-17T17:26:02.070900+00:00",
+   "price": 0.175,
+   "shares": 571.4286,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 20,
-  "open": 1,
+  "bets": 21,
+  "open": 2,
   "settled": 19,
   "won": 3,
   "staked_settled": 1900.0,
   "pnl": -622.67,
   "return_per_bet": -0.3277,
   "avg_price_settled": 0.2261,
-  "updated": "2026-11-17T16:36:30.072890+00:00"
+  "updated": "2026-11-17T17:26:02.070900+00:00"
  }
 }
