@@ -709,3 +709,16 @@ def test_etf_closes_keeps_completed_session_after_midnight_utc(tmp_path, monkeyp
     after = d.etf_closes(["X"], now=pd.Timestamp("2026-11-04 00:36", tz="UTC"))   # 19:36 New York, Nov 3
     during = d.etf_closes(["X"], now=pd.Timestamp("2026-11-03 18:00", tz="UTC"))  # 13:00 New York, Nov 3
     assert after.index[-1] == pd.Timestamp("2026-11-03") and during.index[-1] == pd.Timestamp("2026-11-02")
+
+
+def test_load_fred_keeps_cached_history_when_window_shrinks(tmp_path, monkeypatch):
+    import algotrading.data as d
+    monkeypatch.setattr(d, "FRED_DIR", str(tmp_path))
+    old = pd.Series([1.0, 2.0, 3.0], index=pd.to_datetime(["2020-01-02", "2020-01-03", "2020-01-06"]))
+    old.rename_axis("date").to_csv(tmp_path / "DGS10.csv")
+    fresh = pd.DataFrame({"DGS10": [3.5, 4.0]}, index=pd.to_datetime(["2020-01-06", "2020-01-07"]))
+    real = pd.read_csv
+    monkeypatch.setattr(d.pd, "read_csv", lambda src, *a, **k: fresh if str(src).startswith("http")
+                        else real(src, *a, **k))
+    s = d.load_fred("DGS10")
+    assert list(s.values) == [1.0, 2.0, 3.5, 4.0]          # history kept, new row wins on overlap

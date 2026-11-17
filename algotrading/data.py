@@ -260,12 +260,52 @@ def load_djia_daily(cache_dir: str | None = None) -> pd.DataFrame:
     return df.rename(columns={"adj_close": "close", "close": "raw_close"})
 
 
+FRED_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "fred")
+
+
+def _yahoo_index(symbol: str, rng: str = "10y") -> pd.Series:
+    """Daily closes of an index (not dividend-adjusted) from the Yahoo chart API."""
+    import json
+    import urllib.parse
+    import urllib.request
+    req = urllib.request.Request(YAHOO_CHART.format(urllib.parse.quote(symbol), rng),
+                                 headers={"User-Agent": "Mozilla/5.0 (compatible; algotrading-research/0.1)"})
+    res = json.loads(urllib.request.urlopen(req, timeout=30).read())["chart"]["result"][0]
+    idx = pd.to_datetime(res["timestamp"], unit="s", utc=True).tz_convert("America/New_York").normalize().tz_localize(None)
+    s = pd.Series(res["indicators"]["quote"][0]["close"], index=idx, dtype=float).dropna()
+    return s[~s.index.duplicated(keep="last")]
+
+
 def load_fred(series: str) -> pd.Series:
-    """One daily series from FRED (St. Louis Fed), e.g. "SP500" (S&P 500 price, last ~10 years)
-    or "DGS10" (10-year Treasury yield, %). Public CSV endpoint, no key needed."""
-    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}"
-    df = pd.read_csv(url, index_col=0, parse_dates=True)
-    return pd.to_numeric(df.iloc[:, 0], errors="coerce").dropna().rename(series)
+    """One daily series from FRED (St. Louis Fed), e.g. "SP500" (S&P 500 price) or "DGS10"
+    (10-year Treasury yield, %). Public CSV endpoint, no key needed.
+
+    Since Nov 2026 FRED serves only the last ~12 months of SP500 (licensing), so every download
+    is merged into a local cache (data/fred/<series>.csv): new rows win, old rows are never lost.
+    SP500 history missing from the cache is filled from Yahoo's ^GSPC (the same index; it matches
+    FRED to 1e-7). Offline -> the cache alone."""
+    os.makedirs(FRED_DIR, exist_ok=True)
+    path = os.path.join(FRED_DIR, f"{series}.csv")
+    cached = pd.read_csv(path, index_col=0, parse_dates=True).iloc[:, 0] if os.path.exists(path) else None
+    try:
+        url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}"
+        df = pd.read_csv(url, index_col=0, parse_dates=True)
+        s = pd.to_numeric(df.iloc[:, 0], errors="coerce").dropna()
+    except Exception:
+        if cached is None:
+            raise
+        return cached.rename(series)
+    if series == "SP500" and (cached is None or cached.index[0] > s.index[0] - pd.Timedelta(days=365 * 5)):
+        try:
+            y = _yahoo_index("^GSPC")
+            s = s.combine_first(y[y.index < s.index[0]])          # history only, never today's intraday
+        except Exception:
+            pass
+    if cached is not None:
+        s = s.combine_first(cached)
+    s = s.sort_index().rename(series)
+    s.rename_axis("date").to_csv(path)
+    return s
 
 
 def sp500_with_fallback(sp500: pd.Series | None = None, djia: pd.Series | None = None,
