@@ -845,3 +845,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   beat the cap-weighted market by 0.2-0.8 points a year in every era since 1927. Used as the champion's
   leveraged stock part it earned less (16.6% vs 17.4%/yr 1927-2026) with deeper drawdowns: its extra
   volatility costs more at 2-3x. Real RSP trailed SPY 2004-2026 (10.2% vs 10.7%). Rejected.
+* Exp 41 (2026-11-17): inflation regimes (Neville et al. 2021: y/y CPI at 5% or more and rising).
+  Halving the champion's leverage in those months helped 1880-1929 (16.3% vs 15.4%) but not the worst
+  era, 1957-1990 (13.0% vs 13.1%): the trend sleeve already leaves most inflationary bear markets. A CPI
+  level test alone was worse (11.8%). Rejected; 2 variants counted.

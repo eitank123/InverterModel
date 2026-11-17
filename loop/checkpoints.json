@@ -303,5 +303,16 @@
    "Ken French portfolios formed on ME",
    "Yahoo SPY/RSP"
   ]
+ },
+ {
+  "checkpoint": 33,
+  "date": "2026-11-17",
+  "iteration": 13,
+  "finding": "Exp 41 / iteration 13 (inflation regimes; Neville, Draaisma, Funnell, Harvey & Van Hemert 2021; 2 variants, Shiller 1880-2026, CPI lagged a month). Halving the champion's leverage while y/y CPI >= 5% AND accelerating (260 of 1761 months): eras 16.3/14.7/13.0/21.4% vs champion 15.4/14.6/13.1/21.2%; worst era 13.0% vs 13.1%. CPI >= 5% without the acceleration test (410 months): 16.1/13.4/11.8/21.4%, worse. The trend sleeve already steps out of most inflationary bear markets (1970s), so the overlay adds little where it would matter; it mainly helps 1880-1929 (WWI inflation).",
+  "decision": "Rejected: both fail beats_everywhere (1957-1990 is the worst era and does not improve). No new account. Variants counted: 2 (iteration 13). Champion unchanged.",
+  "sources": [
+   "Neville, Draaisma, Funnell, Harvey & Van Hemert (2021) 'The Best Strategies for Inflationary Times', SSRN 3813202",
+   "Shiller CPI extended with FRED CPIAUCSL"
+  ]
  }
 ]

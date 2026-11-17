@@ -446,9 +446,43 @@ def iteration_12():
     ]
 
 
+class InflationRegimeScaled(at.PortfolioStrategy):
+    """Neville, Draaisma, Funnell, Harvey & Van Hemert (2021), 'The Best Strategies for
+    Inflationary Times': an inflation regime is year-on-year US CPI at or above 5% and still
+    accelerating. Equities lose in real terms there and borrowing costs climb, so leverage is
+    cut to ``scale`` x the base weights (CPI lagged one month for its publication delay)."""
+
+    def __init__(self, base, scale=0.5, need_rising=True):
+        self.base, self.scale, self.need_rising = base, scale, need_rising
+        cpi = at.data.load_shiller_sp500()["cpi"]
+        yoy = cpi / cpi.shift(12) - 1
+        reg = yoy >= 0.05
+        if need_rising:
+            reg &= yoy > yoy.shift(6)
+        self.regime = reg.shift(1).fillna(False).astype(bool)
+
+    def weights(self, prices):
+        w = self.base.weights(prices)
+        reg = self.regime.reindex(prices.index).ffill().fillna(False).astype(bool)
+        return w.mul(np.where(reg, self.scale, 1.0), axis=0)
+
+
+def iteration_13():
+    """Checkpoint 33 (Exp 41, Neville et al. 2021): cut the champion's leverage in inflation
+    regimes (CPI >= 5% and accelerating). Round, published threshold; 2 variants."""
+    return [
+        Candidate("ensemble, half leverage in inflation regimes", "ensemble",
+                  lambda: InflationRegimeScaled(ensemble(3.0), 0.5, True),
+                  note="CPI y/y >= 5% and above its level 6 months earlier"),
+        Candidate("ensemble, half leverage when CPI >= 5%", "ensemble",
+                  lambda: InflationRegimeScaled(ensemble(3.0), 0.5, False),
+                  note="level only, no acceleration test"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12}
+              11: iteration_11, 12: iteration_12, 13: iteration_13}
 
 
 def run(iters, financings=(0.005, 0.015)):
