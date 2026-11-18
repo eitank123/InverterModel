@@ -4,7 +4,7 @@
  "description": "Equal thirds of three published effects: S&P 500 at 3x above its 10-month average; leverage 0.5-3x set by valuation; recovery+. Traded through SPY/UPRO and IEF/UST.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -5.706981359899431,
+ "cash": -5.7080366985159845,
  "holdings": {
   "UPRO": 499.14708427553484,
   "SPY": 65.60288650650904
@@ -21,14 +21,14 @@
   "stocks": 1.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-11-16",
+ "last_date": "2026-11-17",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 4.0,
   "spread_slippage": 44.44919459744926,
   "regulatory": 0.13180785404114945
  },
- "fund_costs": 323.57349226709863,
+ "fund_costs": 341.54860454345794,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -97,6 +97,10 @@
   {
    "date": "2026-11-16",
    "equity": 93919.83
+  },
+  {
+   "date": "2026-11-17",
+   "equity": 92025.02
   }
  ],
  "trades": [
@@ -158,10 +162,10 @@
   }
  ],
  "prices": {
-  "IEF": 94.2129,
-  "SPY": 742.2334,
+  "IEF": 94.4435,
+  "SPY": 734.6792,
   "SSO": NaN,
-  "UPRO": 90.6203,
-  "UST": 44.0998
+  "UPRO": 87.8171,
+  "UST": 44.3063
  }
 }

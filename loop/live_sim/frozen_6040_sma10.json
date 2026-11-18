@@ -4,7 +4,7 @@
  "description": "The original research rule: 60/40, each asset held only above its 10-month average.",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": 40080.27458854915,
+ "cash": 40086.668346638275,
  "holdings": {
   "SPY": 78.70214909335124
  },
@@ -18,14 +18,14 @@
   "stocks": 0.6,
   "bonds": 0.0
  },
- "last_date": "2026-11-16",
+ "last_date": "2026-11-17",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 18.0,
   "regulatory": 0.0
  },
- "fund_costs": 3.581883830309671,
+ "fund_costs": 3.7987119571508363,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -94,6 +94,10 @@
   {
    "date": "2026-11-16",
    "equity": 98495.64
+  },
+  {
+   "date": "2026-11-17",
+   "equity": 97907.5
   }
  ],
  "trades": [
@@ -113,10 +117,10 @@
   }
  ],
  "prices": {
-  "IEF": 94.2129,
-  "SPY": 742.2334,
+  "IEF": 94.4435,
+  "SPY": 734.6792,
   "SSO": NaN,
-  "UPRO": 90.6203,
-  "UST": 44.0998
+  "UPRO": 87.8171,
+  "UST": 44.3063
  }
 }

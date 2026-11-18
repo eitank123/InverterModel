@@ -4,7 +4,7 @@
  "description": "Loop strategy '60/40+SMA10 vol-target' {\"tv\": 0.12, \"cap\": 4.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -3.788494961494037,
+ "cash": -3.7891955323877102,
  "holdings": {
   "SPY": 112.74958772436511,
   "UPRO": 140.22615414469524
@@ -21,14 +21,14 @@
   "stocks": 1.2789704909393003,
   "bonds": 0.0
  },
- "last_date": "2026-11-16",
+ "last_date": "2026-11-17",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 4.0,
   "spread_slippage": 34.09435636220698,
   "regulatory": 0.060868544945839674
  },
- "fund_costs": 86.97304445196194,
+ "fund_costs": 92.28267537605431,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -97,6 +97,10 @@
   {
    "date": "2026-11-16",
    "equity": 96390.06
+  },
+  {
+   "date": "2026-11-17",
+   "equity": 95145.24
   }
  ],
  "trades": [
@@ -158,10 +162,10 @@
   }
  ],
  "prices": {
-  "IEF": 94.2129,
-  "SPY": 742.2334,
+  "IEF": 94.4435,
+  "SPY": 734.6792,
   "SSO": NaN,
-  "UPRO": 90.6203,
-  "UST": 44.0998
+  "UPRO": 87.8171,
+  "UST": 44.3063
  }
 }

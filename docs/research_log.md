@@ -849,3 +849,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   Halving the champion's leverage in those months helped 1880-1929 (16.3% vs 15.4%) but not the worst
   era, 1957-1990 (13.0% vs 13.1%): the trend sleeve already leaves most inflationary bear markets. A CPI
   level test alone was worse (11.8%). Rejected; 2 variants counted.
+* Exp 42 (2026-11-18): macro warnings. Halving leverage while the yield curve is inverted (10-year
+  below 3-month yield) left the worst era unchanged (13.2% vs 13.1%) and cost 1.8 points a year since
+  1991: recent inversions came 1-2 years before any fall, while the market kept rising. Halving it while
+  credit spreads widen was on 43% of the time and lowered the worst era to 11.3%. Both rejected.

@@ -314,5 +314,17 @@
    "Neville, Draaisma, Funnell, Harvey & Van Hemert (2021) 'The Best Strategies for Inflationary Times', SSRN 3813202",
    "Shiller CPI extended with FRED CPIAUCSL"
   ]
+ },
+ {
+  "checkpoint": 34,
+  "date": "2026-11-18",
+  "iteration": 14,
+  "finding": "Exp 42 / iteration 14 (macro warnings, 2 variants, each halves the champion's leverage, data lagged a month). (1) Yield-curve inversion, 10y - 3m < 0 (Estrella & Mishkin 1996; T-bills from 1934; on in 97 of 1113 months): eras 15.4/14.6/13.2/19.4% vs champion 15.4/14.6/13.1/21.2%. The worst era rises 0.1 point but 1991-2026 loses 1.8 points (inversions in 2006-07, 2019 and 2022-24 were followed by long rallies before any bear market). (2) Credit spread Baa - Aaa above its 10-month average (Gilchrist-Zakrajsek rationale; on in 556 of 1294 months): 15.9/15.8/11.3/18.7%; worst era down 1.8 points - on 43% of the time it is mostly noise.",
+  "decision": "Rejected: both fail beats_everywhere. The inversion signal is a near-tie on the worst era and a clear loss recently; not worth a lower-growth account. Variants counted: 2 (iteration 14). Champion unchanged.",
+  "sources": [
+   "Estrella & Mishkin (1996) 'The Yield Curve as a Predictor of U.S. Recessions', FRBNY Current Issues",
+   "Gilchrist & Zakrajsek (2012) 'Credit Spreads and Business Cycle Fluctuations', AER",
+   "FRED TB3MS, AAA, BAA"
+  ]
  }
 ]

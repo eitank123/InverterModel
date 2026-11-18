@@ -480,9 +480,58 @@ def iteration_13():
     ]
 
 
+class MacroGateScaled(at.PortfolioStrategy):
+    """Scale the base weights by ``scale`` while a monthly macro warning is on (lagged one month
+    for publication; no warning where the data do not exist yet)."""
+
+    def __init__(self, base, warning, scale=0.5):
+        self.base, self.scale = base, scale
+        self.warning = warning.shift(1).fillna(False).astype(bool)
+
+    def weights(self, prices):
+        w = self.base.weights(prices)
+        on = self.warning.reindex(prices.index, method="ffill").fillna(False).astype(bool)
+        return w.mul(np.where(on, self.scale, 1.0), axis=0)
+
+
+def _monthly(series):
+    x = at.data.load_fred(series)
+    return x.groupby(x.index.to_period("M")).last().to_timestamp()
+
+
+def curve_inverted():
+    """Estrella & Mishkin (1996/98): 10-year minus 3-month yield below zero warns of recession
+    12 months ahead. Long rate from Shiller (GS10 after 1953), T-bill from FRED (1934+)."""
+    long = at.data.load_shiller_sp500()["long_rate"] * 100
+    long.index = long.index.to_period("M").to_timestamp()
+    tb = _monthly("TB3MS")
+    spread = (long.reindex(tb.index) - tb).dropna()
+    return spread < 0
+
+
+def credit_widening():
+    """Credit-spread trend (Gilchrist & Zakrajsek 2012: credit spreads lead downturns): Moody's
+    Baa minus Aaa yield above its own 10-month average, the same round rule as the price trend."""
+    sp = (_monthly("BAA") - _monthly("AAA")).dropna()
+    return sp > sp.rolling(10).mean()
+
+
+def iteration_14():
+    """Checkpoint 34 (Exp 42): two macro warnings not yet tried - yield-curve inversion and a
+    widening credit spread - each halving the champion's leverage. Published, round rules; 2 variants."""
+    return [
+        Candidate("ensemble, half leverage when the yield curve is inverted", "ensemble",
+                  lambda: MacroGateScaled(ensemble(3.0), curve_inverted(), 0.5),
+                  note="10y - 3m < 0 (Estrella-Mishkin); data from 1934"),
+        Candidate("ensemble, half leverage while credit spreads widen", "ensemble",
+                  lambda: MacroGateScaled(ensemble(3.0), credit_widening(), 0.5),
+                  note="Baa - Aaa above its 10-month average; data from 1919"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14}
 
 
 def run(iters, financings=(0.005, 0.015)):
