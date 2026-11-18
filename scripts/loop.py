@@ -571,9 +571,46 @@ def iteration_15():
     ]
 
 
+class IntermediateMomentum(at.Strategy):
+    """Novy-Marx (2012, JFE) 'Is momentum really momentum?': returns from 12 to 7 months ago
+    predict better than the most recent 6 months. Long when the 12-7 month return is positive."""
+
+    def positions(self, px):
+        r = px.shift(6) / px.shift(12) - 1
+        return (r > 0).astype(float).where(r.notna(), 1.0)
+
+
+class VoteSignal(at.Strategy):
+    """Majority of SMA10, 12-1 month momentum and 12-7 month momentum (three horizons, one vote each)."""
+
+    def positions(self, px):
+        a = at.PriceAboveSMA(10).positions(px)
+        b = ((px.shift(1) / px.shift(12) - 1) > 0).astype(float)
+        c = IntermediateMomentum().positions(px)
+        return ((a + b + c) >= 2).astype(float)
+
+
+def ensemble_with_trend_signal(sig):
+    return at.Blend({at.Levered(at.TrendFilter(mix(1.0), sig), 3.0): 1 / 3,
+                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})
+
+
+def iteration_16():
+    """Checkpoint 37 (Exp 45): intermediate-horizon momentum (Novy-Marx 2012) as the trend
+    sleeve's signal, alone and in a 3-horizon majority vote. 2 variants."""
+    return [
+        Candidate("ensemble, trend sleeve on 12-7 month momentum", "ensemble",
+                  lambda: ensemble_with_trend_signal(IntermediateMomentum())),
+        Candidate("ensemble, trend sleeve on a 3-horizon vote", "ensemble",
+                  lambda: ensemble_with_trend_signal(VoteSignal()),
+                  note="SMA10, 12-1 and 12-7 month momentum; 2 of 3"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16}
 
 
 def run(iters, financings=(0.005, 0.015)):

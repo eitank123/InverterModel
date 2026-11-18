@@ -860,3 +860,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 44 (2026-11-18): resetting the three sleeves to equal thirds monthly, yearly or never. Yearly
   ties monthly (worst era 13.1% vs 13.0%); never resetting lets the winner drift and is worse (12.7%,
   drawdown -93%). The sleeves are 0.84-0.91 correlated, so rebalancing harvests little. Keep monthly.
+* Exp 45 (2026-11-18): intermediate-horizon momentum (Novy-Marx 2012) as the trend sleeve's
+  signal. The 12-7 month return reacts six months late to crashes: worst era 12.2% vs 13.1%. A vote of
+  SMA10, 12-1 and 12-7 momentum: 11.4%. Rejected; the fast SMA10 exit is what protects the worst era.

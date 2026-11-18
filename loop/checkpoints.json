@@ -348,5 +348,16 @@
    "Willenbrock (2011) 'Diversification Return, Portfolio Rebalancing, and the Commodity Return Puzzle', FAJ",
    "Bouchey, Nemtchinov, Paulsen & Stein (2012) 'Volatility Harvesting: Why Does Diversifying and Rebalancing Create Portfolio Growth?', Journal of Wealth Management"
   ]
+ },
+ {
+  "checkpoint": 37,
+  "date": "2026-11-18",
+  "iteration": 16,
+  "finding": "Exp 45 / iteration 16 (intermediate-horizon momentum, Novy-Marx 2012; 2 variants for the trend sleeve's signal). 12-7 month return > 0: eras 12.9/17.6/12.2/21.8% vs champion 15.4/14.6/13.1/21.2% - it reacts 6 months late to crashes (worse 1880-1929 and 1957-1990) but gains in 1930-1956 by skipping whipsaws. Majority vote of SMA10, 12-1 and 12-7 momentum: 14.8/14.2/11.4/22.2%. Novy-Marx's result is cross-sectional; for timing a single index the slow signal costs where the worst era is decided.",
+  "decision": "Rejected: both lower the worst era (12.2% / 11.4% vs 13.1%) and fail beats_everywhere. Variants counted: 2 (iteration 16). Champion unchanged.",
+  "sources": [
+   "Novy-Marx (2012) 'Is momentum really momentum?', JFE 103(3)",
+   "Goyal & Wahal (2015) 'Is momentum an echo?', JFQA"
+  ]
  }
 ]
