@@ -869,3 +869,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   financing levels; same -53% max drawdown since 1948. **New champion**, with caveats: no data before
   1948, bad years can be deeper (2022 -30% vs -21%), and the last 5 years on real ETFs it trailed
   ($219.8k vs $244.8k). An industrial-production gate did not pass (13.0%). New play-money account.
+* Exp 47 (2026-11-18): real-time check of the unemployment gate. Using only unemployment figures as
+  first published (Philadelphia Fed vintages, 1966+), the new champion's worst era is 14.2% (13.9% on
+  revised data, 13.1% for the old champion). The improvement is not an artefact of data revisions.

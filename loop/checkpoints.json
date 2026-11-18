@@ -370,5 +370,16 @@
    "Philosophical Economics (Jesse Livermore, 2016) 'Growth and Trend: A Simple, Powerful Technique for Timing the Stock Market'",
    "FRED UNRATE, INDPRO"
   ]
+ },
+ {
+  "checkpoint": 39,
+  "date": "2026-11-18",
+  "iteration": null,
+  "finding": "Exp 47 (real-time check of the new champion's unemployment gate). Philadelphia Fed Real-Time Data Set, quarterly vintages of the unemployment rate from 1965Q4; at each month-end only the latest vintage then published is used (up to ~3 months staler than live use). The real-time gate agrees with the revised-data gate in 89% of months since 1966. Eras: old champion 15.4/14.6/13.1/21.2%; new champion on revised data 15.4/15.0/13.9/22.6%; on real-time data 15.4/15.0/14.2/23.4% (1966-2026: 17.6% / 18.7% / 19.2%). The real-time version still passes beats_everywhere against the old champion.",
+  "decision": "The promotion stands: the gain does not come from data revisions. Not a new candidate (0 variants counted). Still open: a pre-1948 proxy for the gate (1880-1947 remains untested).",
+  "sources": [
+   "Federal Reserve Bank of Philadelphia, Real-Time Data Set for Macroeconomists (RUC, quarterly vintages)",
+   "Croushore & Stark (2001) 'A real-time data set for macroeconomists', Journal of Econometrics"
+  ]
  }
 ]

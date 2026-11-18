@@ -74,7 +74,8 @@ yield-curve inversion and credit-spread warnings (Exp 42: rejected; inversion ti
 sleeve reset monthly vs yearly vs never (Exp 44: yearly ties, never is worse; keep monthly) ·
 12-7 month (Novy-Marx) momentum for the trend sleeve, alone or in a 3-horizon vote (Exp 45: rejected, worst era 12.2% / 11.4%) ·
 growth-trend gate on the trend sleeve with unemployment (Exp 46: PROMOTED, worst era 13.9%) and industrial production (13.0%, rejected) ·
-next: a real-time (ALFRED vintage) check of the unemployment gate, and a pre-1948 proxy for it · combining valuation and trend leverage ·
+real-time (Philadelphia Fed vintage) check of the unemployment gate (Exp 47: holds, worst era 14.2%) ·
+next: a pre-1948 proxy for the unemployment gate · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
 diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
 so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·
