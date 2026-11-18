@@ -857,3 +857,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   high (optionally only while still >5% below the all-time high) lowered the worst era to 12.2-12.3%
   (vs 13.1%). The sleeves are 0.9 correlated with the champion: the same trend bet in other clothes.
   Rejected.
+* Exp 44 (2026-11-18): resetting the three sleeves to equal thirds monthly, yearly or never. Yearly
+  ties monthly (worst era 13.1% vs 13.0%); never resetting lets the winner drift and is worse (12.7%,
+  drawdown -93%). The sleeves are 0.84-0.91 correlated, so rebalancing harvests little. Keep monthly.

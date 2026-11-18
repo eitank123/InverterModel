@@ -250,17 +250,27 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-17T20:38:12.312094+00:00"
+  },
+  {
+   "id": "6957956",
+   "question": "England Tour of Australia ODIs: Australia vs England",
+   "end": "2026-11-25T03:30:00Z",
+   "placed": "2026-11-18T08:37:13.615144+00:00",
+   "price": 0.165,
+   "shares": 606.0606,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 21,
-  "open": 1,
+  "bets": 22,
+  "open": 2,
   "settled": 20,
   "won": 3,
   "staked_settled": 2000.0,
   "pnl": -722.67,
   "return_per_bet": -0.3613,
   "avg_price_settled": 0.2235,
-  "updated": "2026-11-18T04:37:32.428272+00:00"
+  "updated": "2026-11-18T08:37:13.615144+00:00"
  }
 }

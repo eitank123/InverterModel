@@ -337,5 +337,16 @@
    "Li & Yu (2012) 'Investor attention, psychological anchors, and stock return predictability', JFE 104(2) 401-419",
    "George & Hwang (2004) 'The 52-week high and momentum investing'"
   ]
+ },
+ {
+  "checkpoint": 36,
+  "date": "2026-11-18",
+  "iteration": null,
+  "finding": "Exp 44 (sleeve rebalancing; diversification return, Willenbrock 2011, Bouchey et al. 2012; 2 variants vs the monthly reset). Same sleeve returns, only the reset differs: monthly 15.4/14.5/13.0/21.2% (worst 13.0%, max DD -88%), yearly (January) 15.2/14.7/13.1/21.3% (worst 13.1%, -89%), never 14.9/16.2/12.7/20.1% (worst 12.7%, -93%). The sleeves correlate 0.84-0.91, so there is little diversification return to harvest; letting the winner drift concentrates risk.",
+  "decision": "No change: yearly is a tie within 0.2 points (fails beats_everywhere in 1880-1929), never is worse. The champion keeps its monthly equal-third reset (which also costs nothing extra live, since the sleeves net into one position). Variants counted: 2.",
+  "sources": [
+   "Willenbrock (2011) 'Diversification Return, Portfolio Rebalancing, and the Commodity Return Puzzle', FAJ",
+   "Bouchey, Nemtchinov, Paulsen & Stein (2012) 'Volatility Harvesting: Why Does Diversifying and Rebalancing Create Portfolio Growth?', Journal of Wealth Management"
+  ]
  }
 ]
