@@ -853,3 +853,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   below 3-month yield) left the worst era unchanged (13.2% vs 13.1%) and cost 1.8 points a year since
   1991: recent inversions came 1-2 years before any fall, while the market kept rising. Halving it while
   credit spreads widen was on 43% of the time and lowered the worst era to 11.3%. Both rejected.
+* Exp 43 (2026-11-18): psychological anchors (Li & Yu 2012). A 4th sleeve at 3x near the 52-week
+  high (optionally only while still >5% below the all-time high) lowered the worst era to 12.2-12.3%
+  (vs 13.1%). The sleeves are 0.9 correlated with the champion: the same trend bet in other clothes.
+  Rejected.

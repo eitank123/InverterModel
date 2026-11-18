@@ -529,9 +529,51 @@ def iteration_14():
     ]
 
 
+class AnchorLeverage(at.PortfolioStrategy):
+    """Li & Yu (2012, JFE): nearness to the 52-week high predicts HIGHER market returns
+    (under-reaction to good news), nearness to the all-time high LOWER returns. Trend-filtered
+    S&P 500 at ``hi`` x when the price index is within 5% of its 52-week high (and, if
+    ``avoid_ath``, more than 5% below its all-time high), ``lo`` x otherwise. Uses the Shiller
+    price index (month-end), so the anchors use only past closes."""
+
+    def __init__(self, hi=3.0, lo=1.0, avoid_ath=False):
+        self.hi, self.lo, self.avoid_ath = hi, lo, avoid_ath
+        p = at.data.load_shiller_sp500()["close"]
+        near52 = p / p.rolling(12, min_periods=12).max() >= 0.95
+        cond = near52
+        if avoid_ath:
+            cond &= p / p.cummax() < 0.95
+        self.lev = pd.Series(np.where(cond, hi, lo), index=p.index)
+
+    def weights(self, prices):
+        lev = self.lev.reindex(prices.index).ffill().fillna(self.lo)
+        return filtered(1.0).weights(prices).mul(lev, axis=0)
+
+
+def ensemble4(fourth):
+    """The champion's three sleeves plus a fourth, in equal quarters."""
+    return at.Blend({at.Levered(filtered(1.0), 3.0): 0.25,
+                     CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 0.25,
+                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 0.25,
+                     fourth: 0.25})
+
+
+def iteration_15():
+    """Checkpoint 35 (Exp 43): psychological anchors (Li & Yu 2012) as a 4th equal-weight sleeve.
+    Round 5% nearness thresholds, 3x/1x; 2 variants."""
+    return [
+        Candidate("ensemble + 52-week-high anchor sleeve", "ensemble",
+                  lambda: ensemble4(AnchorLeverage(3.0, 1.0, False)),
+                  note="4th sleeve: 3x within 5% of the 52-week high, else 1x (trend-filtered)"),
+        Candidate("ensemble + Li-Yu anchor sleeve (52-week high, not all-time high)", "ensemble",
+                  lambda: ensemble4(AnchorLeverage(3.0, 1.0, True)),
+                  note="3x near the 52-week high but >5% below the all-time high, else 1x"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15}
 
 
 def run(iters, financings=(0.005, 0.015)):

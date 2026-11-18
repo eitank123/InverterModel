@@ -326,5 +326,16 @@
    "Gilchrist & Zakrajsek (2012) 'Credit Spreads and Business Cycle Fluctuations', AER",
    "FRED TB3MS, AAA, BAA"
   ]
+ },
+ {
+  "checkpoint": 35,
+  "date": "2026-11-18",
+  "iteration": 15,
+  "finding": "Exp 43 / iteration 15 (psychological anchors, Li & Yu 2012 JFE: nearness to the 52-week high predicts higher market returns, nearness to the all-time high lower; 2 variants as a 4th equal-weight sleeve, round 5% thresholds, 3x/1x, trend-filtered). (1) 3x within 5% of the 52-week high: eras 15.0/16.4/12.2/21.6% vs champion 15.4/14.6/13.1/21.2%. (2) 3x near the 52-week high but >5% below the all-time high: 15.0/15.6/12.3/19.4%, shallower drawdown (-83% vs -88% whole period, -46% vs -53% stress). Alone the sleeves earn 9.3-9.4% in 1957-1990 and correlate 0.87-0.92 with the champion: mostly the same trend bet, not an independent effect.",
+  "decision": "Rejected: both lower the worst era (12.2-12.3% vs 13.1%) and fail beats_everywhere. Variants counted: 2 (iteration 15). Champion unchanged.",
+  "sources": [
+   "Li & Yu (2012) 'Investor attention, psychological anchors, and stock return predictability', JFE 104(2) 401-419",
+   "George & Hwang (2004) 'The 52-week high and momentum investing'"
+  ]
  }
 ]
