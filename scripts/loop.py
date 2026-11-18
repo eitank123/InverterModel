@@ -27,7 +27,8 @@ LOOP = os.path.join(os.path.dirname(__file__), "..", "loop")
 # The current champion (changed only by a checkpoint decision; see loop/checkpoints.json).
 # Since checkpoint 7 the champion is chosen by its WORST era (1880-1929, 1930-1956, 1957-1990,
 # 1991-2026), not by the 1991-2026 test alone (see loop/README.md).
-CHAMPION = {"name": "ensemble: trend + value + recovery", "params": '{"trend": 3.0}'}
+CHAMPION = {"name": "ensemble, trend sleeve gated by unemployment", "params": "{}"}
+PREVIOUS_CHAMPION = {"name": "ensemble: trend + value + recovery", "params": '{"trend": 3.0}'}
 SMA10 = at.PriceAboveSMA(10)
 
 
@@ -608,9 +609,59 @@ def iteration_16():
     ]
 
 
+class MacroGatedTrend(at.PortfolioStrategy):
+    """Growth-trend timing (Philosophical Economics 2016) with real-economy data: obey the 10-month
+    trend exit only while the economy weakens; otherwise stay invested at ``lev``. Before the data
+    exist the exit is always obeyed (= the plain trend sleeve). ``weak`` is lagged one month."""
+
+    def __init__(self, weak, lev=3.0):
+        self.lev = lev
+        self.weak = weak.shift(1)
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        weak = self.weak.reindex(prices.index, method="ffill").fillna(True).astype(bool)
+        on = ~weak | SMA10.positions(s).astype(bool)
+        return pd.DataFrame({"stocks": np.where(on, self.lev, 0.0), "bonds": 0.0}, index=prices.index)
+
+
+def unemployment_rising():
+    u = _monthly("UNRATE")
+    return u > u.rolling(12).mean()
+
+
+def production_falling():
+    ip = _monthly("INDPRO")
+    return ip / ip.shift(12) - 1 < 0
+
+
+def ensemble_trend_sleeve(sleeve):
+    return at.Blend({sleeve: 1 / 3, CappedValuationLeverage(1.0, 2.0, 0.5, 3.0): 1 / 3,
+                     at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})
+
+
+def ensemble_unemployment():
+    """Champion since checkpoint 38: the ensemble with its trend sleeve gated by unemployment
+    (exit on the 10-month trend only while UNRATE is above its 12-month average)."""
+    return ensemble_trend_sleeve(MacroGatedTrend(unemployment_rising()))
+
+
+def iteration_17():
+    """Checkpoint 38 (Exp 46): growth-trend timing with unemployment (1948+) and industrial
+    production (1919+) instead of earnings; the trend sleeve exits only in a weakening economy. 2 variants."""
+    return [
+        Candidate("ensemble, trend sleeve gated by unemployment", "ensemble",
+                  lambda: ensemble_trend_sleeve(MacroGatedTrend(unemployment_rising())),
+                  note="exit only while UNRATE > its 12-month average"),
+        Candidate("ensemble, trend sleeve gated by industrial production", "ensemble",
+                  lambda: ensemble_trend_sleeve(MacroGatedTrend(production_falling())),
+                  note="exit only while INDPRO is below its level a year earlier"),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17}
 
 
 def run(iters, financings=(0.005, 0.015)):

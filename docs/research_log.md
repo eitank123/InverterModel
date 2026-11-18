@@ -863,3 +863,9 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 45 (2026-11-18): intermediate-horizon momentum (Novy-Marx 2012) as the trend sleeve's
   signal. The 12-7 month return reacts six months late to crashes: worst era 12.2% vs 13.1%. A vote of
   SMA10, 12-1 and 12-7 momentum: 11.4%. Rejected; the fast SMA10 exit is what protects the worst era.
+* Exp 46 (2026-11-18): growth-trend timing (Philosophical Economics 2016). The 3x trend sleeve now
+  obeys its 10-month exit only while unemployment is above its 12-month average; in a healthy economy
+  it stays in. Worst era 13.9% vs 13.1% (1957-1990), better in every era it can be tested, at both
+  financing levels; same -53% max drawdown since 1948. **New champion**, with caveats: no data before
+  1948, bad years can be deeper (2022 -30% vs -21%), and the last 5 years on real ETFs it trailed
+  ($219.8k vs $244.8k). An industrial-production gate did not pass (13.0%). New play-money account.

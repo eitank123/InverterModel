@@ -20,7 +20,7 @@ import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_weights  # noqa: E402
 from algotrading.live import completed_month_ends, shiller_history, splice_monthly  # noqa: E402
 from algotrading.live_sim import LiveSimAccount, daily_etf_returns  # noqa: E402
-from loop import build_from_row, ensemble, ensemble_lower, filtered  # noqa: E402
+from loop import build_from_row, ensemble, ensemble_lower, filtered, ensemble_unemployment  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
 ANCHOR = "2026-10-23"                       # price levels: SPY = S&P/10 there; others fixed
@@ -165,6 +165,13 @@ ACCOUNTS["champion_band2"] = (
     "April 2025 and April 2026. Same three sleeves; a sleeve leaves only 2% below its 10-month average and "
     "re-enters 2% above it. CRSP 1927-2026 on month-end closes: worst era 14.0% vs 11.8%. Added 2026-11-03.",
     from_strategy(ensemble(3.0, band=0.02)))
+
+ACCOUNTS["champion_unemployment"] = (
+    "Champion: ensemble, trend sleeve gated by unemployment",
+    "Exp 46 (checkpoint 38): the champion's three sleeves, but the 3x trend sleeve obeys its 10-month "
+    "exit only while US unemployment is above its 12-month average (growth-trend timing, Philosophical "
+    "Economics 2016). Worst era 13.9% vs 13.1%, passes beats_everywhere; 1880-1947 untested (no data). "
+    "Added 2026-11-18.", from_strategy(ensemble_unemployment()))
 
 try:                                                         # grow the headline archive (Exp 28)
     print(f"Headlines archived: {len(at.news.collect_headlines()):,}")

@@ -722,3 +722,19 @@ def test_load_fred_keeps_cached_history_when_window_shrinks(tmp_path, monkeypatc
                         else real(src, *a, **k))
     s = d.load_fred("DGS10")
     assert list(s.values) == [1.0, 2.0, 3.5, 4.0]          # history kept, new row wins on overlap
+
+
+def test_macro_gated_trend_is_causal_and_defaults_to_plain_trend():
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+    import loop as L
+    idx = pd.date_range("2000-01-01", periods=60, freq="MS")
+    s = pd.Series(np.r_[np.linspace(100, 150, 30), np.linspace(150, 90, 30)], index=idx)
+    px = pd.DataFrame({"stocks": s, "bonds": 100.0})
+    plain = L.MacroGatedTrend(pd.Series(True, index=idx)).weights(px)["stocks"]
+    assert (plain == np.where(L.SMA10.positions(s).astype(bool), 3.0, 0.0)).all()
+    healthy = L.MacroGatedTrend(pd.Series(False, index=idx)).weights(px)["stocks"]
+    assert (healthy.iloc[1:] == 3.0).all()                   # strong economy: ignore the trend exit
+    weak = pd.Series(False, index=idx)
+    weak.iloc[40] = True                                    # a warning seen in month 40 acts from month 41
+    w = L.MacroGatedTrend(weak).weights(px)["stocks"]
+    assert w.iloc[40] == 3.0 and w.iloc[41] == (3.0 if L.SMA10.positions(s).iloc[41] else 0.0)

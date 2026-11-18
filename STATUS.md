@@ -10,7 +10,16 @@ _Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
 > Rejected the same day: neural-net industry picking (daily -9.5%/yr after costs and tax), news timing at
 > any horizon, shorting in downtrends, volatility timing, short-term reversal.
 
-> **Champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
+> **Champion (checkpoint 38, 2026-11-18):** the same three sleeves, but the 3× trend sleeve obeys its
+> 10-month exit only while US unemployment is above its 12-month average (growth-trend timing,
+> Philosophical Economics 2016). Eras 15.4% / 15.0% / 13.9% / 22.6% (worst 13.9% vs 13.1%); passes
+> beats_everywhere at both financing levels; same max drawdown since 1948 (−53%). Caveats: no
+> unemployment data before 1948, so 1880–1947 is just the old champion; bad years can be worse
+> (2022 −30% vs −21%, 1973 −34% vs −30%); last 5 years on real ETFs $219.8k vs $244.8k; 1 of 3
+> growth-trend variants passed (earnings and industrial production did not). Walk-forward over the
+> 12 ensemble variants of 17-18 Nov: 16.9%/yr 1957–2026. New play-money account `champion_unemployment`.
+>
+> **Previous champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
 > It is chosen by its worst era across 1880–2026, not by the best backtest:
 > - eras: 15.4% / 14.6% / 13.1% / 21.3%;
 > - 5-year full-cost: 19.6%/yr with a −26% max drawdown (after the 2023+ data fix); 15.7%/yr after 25% capital-gains tax (S&P 500: 13.1% / 10.4%);

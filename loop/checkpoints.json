@@ -359,5 +359,16 @@
    "Novy-Marx (2012) 'Is momentum really momentum?', JFE 103(3)",
    "Goyal & Wahal (2015) 'Is momentum an echo?', JFQA"
   ]
+ },
+ {
+  "checkpoint": 38,
+  "date": "2026-11-18",
+  "iteration": 17,
+  "finding": "Exp 46 / iteration 17 (growth-trend timing with real-economy data, Philosophical Economics 2016; 2 variants; data lagged a month, before the data exist the trend exit is always obeyed). Trend sleeve exits on SMA10 only while unemployment is above its 12-month average (UNRATE, 1948+; weak 37% of months): eras 15.4/15.0/13.9/22.6% vs champion 15.4/14.6/13.1/21.2%; at +1.5% financing 14.3/13.8/12.8/21.4% vs 14.3/13.4/12.0/20.1%; max DD since 1948 -53% for both; better in 23 years, worse in 10 (2022 -30% vs -21%, 1973 -34% vs -30%, 2001 -7% vs +5%). Industrial production falling y/y as the gate: 15.7/16.5/13.0/22.6% (worst era 13.0%). Last 5 years on real ETFs: $219.8k vs $244.8k (held 3x through 2022). Walk-forward selection over the 12 ensemble variants of iterations 13-17 plus the two incumbents: 16.9%/yr 1957-2026.",
+  "decision": "PROMOTED: the unemployment-gated ensemble passes beats_everywhere at both financing levels and lifts the worst era 13.1% -> 13.9% with a round published rule (12-month average). Honest caveats: 1880-1947 untested (identical to the old champion there), 1 of 3 growth-trend variants passed (the earnings version was rejected in an earlier round), and bad years can be deeper because it stays 3x through non-recession bear markets. New play-money account champion_unemployment (old accounts unchanged); paper_trade, live_trade and simulate_last5 updated. Variants counted: 2 (iteration 17).",
+  "sources": [
+   "Philosophical Economics (Jesse Livermore, 2016) 'Growth and Trend: A Simple, Powerful Technique for Timing the Stock Market'",
+   "FRED UNRATE, INDPRO"
+  ]
  }
 ]

@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_prices, etf_weights, simulate  # noqa: E402
 sys.path.insert(0, os.path.dirname(__file__))
-from loop import ensemble  # noqa: E402
+from loop import ensemble, ensemble_unemployment  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "loop", "dashboard")
 START, START_CASH = "2021-10-01", 100_000.0
@@ -41,6 +41,12 @@ mom12 = idx["stocks"] / idx["stocks"].shift(12) - 1
 
 # The ensemble's exposure comes straight from the library (causal: tests check no look-ahead).
 ENSEMBLE_W = ensemble(3.0).weights(idx)
+UNEMP_W = ensemble_unemployment().weights(idx)
+
+
+def unemployment_champion(d):
+    st, bd = UNEMP_W.loc[d, "stocks"], UNEMP_W.loc[d, "bonds"]
+    return etf_weights(st, bd), f"ensemble (unemployment-gated trend) exposure: stocks {st:.2f}x, bonds {bd:.2f}x"
 
 
 def ensemble_champion(d):
@@ -87,7 +93,8 @@ def margin_champion(d):
 
 
 STRATS = {
-    "Champion: ensemble 3x trend + value + recovery+": ensemble_champion,
+    "Champion: ensemble, trend sleeve gated by unemployment": unemployment_champion,
+    "Previous champion: ensemble 3x trend + value + recovery+": ensemble_champion,
     "Challenger: recovery+ (SSO/UPRO, UST when out)": champion,
     "Previous champion: recovery leverage (SSO/UPRO/cash)": previous_champion,
     "Benchmark: 60/40 (SPY/IEF)": lambda d: ({"SPY": 0.6, "IEF": 0.4}, "monthly rebalance to 60/40"),

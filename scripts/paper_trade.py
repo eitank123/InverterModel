@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import algotrading as at  # noqa: E402
 from algotrading.paper import PaperAccount  # noqa: E402
 sys.path.insert(0, os.path.dirname(__file__))
-from loop import ensemble  # noqa: E402
+from loop import ensemble, ensemble_unemployment  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "paper")
 SYMBOLS = {"stocks": "SPY", "bonds": "IEF"}
@@ -41,6 +41,10 @@ ACCOUNTS = {
                           "Equal thirds of three published effects, no fitted weights: S&P 500 at 3x above its "
                           "10-month average; S&P leverage 0.5-3x set by valuation (trend-filtered); recovery+. "
                           "ETFs: SPY/UPRO, IEF/UST.", ensemble(3.0), 0.005, 3.0),
+    "champion_unemployment": ("Champion: ensemble, trend sleeve gated by unemployment",
+                              "As the ensemble, but the 3x trend sleeve exits on its 10-month average only while "
+                              "US unemployment is above its 12-month average (Exp 46). Added 2026-11-18.",
+                              ensemble_unemployment(), 0.005, 3.0),
     "champion_recovery_plus": ("Challenger: recovery+ (2x/3x S&P, 2x Treasuries when out)",
                                "S&P 500 at 2x while above its 10-month average OR up over 12 months (3x while "
                                ">15% below its 36-month high); 2x 7-10y Treasuries otherwise. ETFs: SSO/UPRO, UST.",

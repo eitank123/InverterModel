@@ -21,7 +21,7 @@ import algotrading as at  # noqa: E402
 from algotrading.broker import Limits  # noqa: E402
 from algotrading.live import completed_month_ends, log_run, shiller_history, splice_monthly, \
     target_etf_weights  # noqa: E402
-from loop import CHAMPION, ensemble  # noqa: E402
+from loop import CHAMPION, ensemble_unemployment  # noqa: E402
 
 LOG = os.path.join(os.path.dirname(__file__), "..", "loop", "live", "runs.jsonl")
 # Index proxies used for the SIGNAL (total-return adjusted): S&P 500 and 7-10y Treasuries.
@@ -34,7 +34,7 @@ p.add_argument("--execute", action="store_true", help="actually send orders")
 p.add_argument("--live", action="store_true", help="use the LIVE (real money) account")
 a = p.parse_args()
 
-strategy = ensemble(3.0)
+strategy = ensemble_unemployment()                  # champion since checkpoint 38
 history, _ = shiller_history()
 if a.broker == "alpaca":
     if a.live and a.execute and input("LIVE account, real money. Type 'yes' to continue: ") != "yes":

@@ -1,0 +1,33 @@
+{
+ "name": "Champion: ensemble, trend sleeve gated by unemployment",
+ "description": "As the ensemble, but the 3x trend sleeve exits on its 10-month average only while US unemployment is above its 12-month average (Exp 46). Added 2026-11-18.",
+ "symbols": {
+  "stocks": "SPY",
+  "bonds": "IEF"
+ },
+ "start": "2026-09-01",
+ "cash": -99616.7196698642,
+ "holdings": {
+  "SPY": 307.0412373984652
+ },
+ "last_month": "2026-09",
+ "equity_history": [
+  {
+   "date": "2026-09-01",
+   "equity": 99960.08
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-09-01",
+   "symbol": "SPY",
+   "side": "buy",
+   "qty": 307.0412,
+   "price": 650.0
+  }
+ ],
+ "targets": {
+  "SPY": 1.995768043090024,
+  "IEF": 0.0
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "key": "champion_unemployment",
+ "name": "Champion: ensemble, trend sleeve gated by unemployment",
+ "description": "Exp 46 (checkpoint 38): the champion's three sleeves, but the 3x trend sleeve obeys its 10-month exit only while US unemployment is above its 12-month average (growth-trend timing, Philosophical Economics 2016). Worst era 13.9% vs 13.1%, passes beats_everywhere; 1880-1947 untested (no data). Added 2026-11-18.",
+ "start": "2026-11-17",
+ "start_equity": 100000.0,
+ "cash": -41.95809999999619,
+ "holdings": {
+  "UPRO": 566.9795872140387,
+  "SPY": 68.3420714220343
+ },
+ "basis": {
+  "UPRO": 49816.39525,
+  "SPY": 50225.562849999995
+ },
+ "targets": {
+  "UPRO": 0.497905,
+  "SPY": 0.502095
+ },
+ "exposure": {
+  "stocks": 1.9958096116661048,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-17",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 39.9581,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-17",
+   "equity": 99958.04
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-17",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 566.9796,
+   "price": 87.8171,
+   "amount": 49790.5,
+   "commission": 1.0,
+   "spread_slippage": 24.9,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 566.9796
+  },
+  {
+   "date": "2026-11-17",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 68.3421,
+   "price": 734.6792,
+   "amount": 50209.5,
+   "commission": 1.0,
+   "spread_slippage": 15.06,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 68.3421
+  }
+ ],
+ "prices": {
+  "IEF": 94.4435,
+  "SPY": 734.6792,
+  "SSO": NaN,
+  "UPRO": 87.8171,
+  "UST": 44.3063
+ }
+}
