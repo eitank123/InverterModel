@@ -401,5 +401,16 @@
   "sources": [
    "Philosophical Economics (2016) growth-trend timing (as Exp 46)"
   ]
+ },
+ {
+  "checkpoint": 42,
+  "date": "2026-11-19",
+  "iteration": 19,
+  "finding": "Exp 50 / iteration 19 (two published alternatives to the champion's unemployment test; 2 variants). Sahm rule (Sahm 2019: 3-month average unemployment >= 0.5 points above its 12-month low; weak 23% of months since 1968): eras 15.4/15.1/11.9/23.5% vs champion 15.4/15.0/13.9/22.6% - it fires only once a recession is under way, so the trend exit is ignored during the early part of bear markets. Weekly jobless claims (ICSA 1967+, 4-week average above its 52-week average; weak 38%): 15.4/15.0/13.6/23.0%.",
+  "decision": "Rejected: both lower the worst era and fail beats_everywhere. The plain 12-month-average unemployment test stays. Variants counted: 2 (iteration 19).",
+  "sources": [
+   "Sahm (2019) 'Direct Stimulus Payments to Individuals', Hamilton Project (the Sahm rule)",
+   "FRED UNRATE, ICSA"
+  ]
  }
 ]

@@ -687,9 +687,37 @@ def iteration_18():
     ]
 
 
+def sahm_rule():
+    """Sahm (2019): recession signal when the 3-month average unemployment rate is 0.5 points or
+    more above its low of the previous 12 months."""
+    u = _monthly("UNRATE")
+    a3 = u.rolling(3).mean()
+    return a3 - a3.shift(1).rolling(12).min() >= 0.5
+
+
+def claims_rising():
+    """Weekly initial jobless claims (ICSA, 1967+): month-end 4-week average above its 52-week
+    average - the same rising-unemployment test on a faster series. Before 1967: UNRATE gate."""
+    c = at.data.load_fred("ICSA")
+    w = c.rolling(4).mean() > c.rolling(52).mean()
+    m = w.groupby(w.index.to_period("M")).last().to_timestamp()
+    return pd.concat([unemployment_rising()[:m.index[0] - pd.Timedelta(days=1)], m])
+
+
+def iteration_19():
+    """Checkpoint 42 (Exp 50): two published alternatives to the champion's unemployment test.
+    2 variants."""
+    return [
+        Candidate("ensemble, trend sleeve gated by the Sahm rule", "ensemble",
+                  lambda: ensemble_trend_sleeve(MacroGatedTrend(sahm_rule()))),
+        Candidate("ensemble, trend sleeve gated by jobless claims", "ensemble",
+                  lambda: ensemble_trend_sleeve(MacroGatedTrend(claims_rising()))),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19}
 
 
 def run(iters, financings=(0.005, 0.015)):

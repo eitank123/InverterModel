@@ -878,3 +878,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 49 (2026-11-19): the unemployment gate on the valuation sleeve as well. Worst era 14.1% vs
   13.9% (a tie at margin-loan rates), but 2022 would have been -36% instead of -30%, and two sleeves
   would hang on one signal. Not promoted; a gain this small is noise.
+* Exp 50 (2026-11-19): the Sahm rule and weekly jobless claims as the gate. The Sahm rule fires
+  only once a recession is under way (worst era 11.9%); claims were close but lower (13.6% vs 13.9%).
+  Rejected; the champion keeps the 12-month-average unemployment test.
