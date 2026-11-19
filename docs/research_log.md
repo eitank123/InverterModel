@@ -875,3 +875,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 48 (2026-11-19): the unemployment gate on NBER data for 1930-1947 (Depression, 1937, WWII),
   which the promotion never saw: 3.1% vs 1.9% a year for the old champion, same -85% drawdown. Only
   1880-1929 remains untested.
+* Exp 49 (2026-11-19): the unemployment gate on the valuation sleeve as well. Worst era 14.1% vs
+  13.9% (a tie at margin-loan rates), but 2022 would have been -36% instead of -30%, and two sleeves
+  would hang on one signal. Not promoted; a gain this small is noise.

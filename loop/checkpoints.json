@@ -391,5 +391,15 @@
   "sources": [
    "NBER Macrohistory Database, series 08292 (G.H. Moore, Business Cycle Indicators vol. II; National Industrial Conference Board)"
   ]
+ },
+ {
+  "checkpoint": 41,
+  "date": "2026-11-19",
+  "iteration": 18,
+  "finding": "Exp 49 / iteration 18 (the unemployment gate on the valuation sleeve too; 1 variant, no new parameter). Futures-like financing: eras 15.4/15.4/14.1/23.6% vs champion 15.4/15.0/13.9/22.6%; margin financing (+1.5%): 14.3/14.1/12.8/22.3% vs 14.3/13.8/12.8/21.4% (worst era tied). Max drawdown since 1948 -54% vs -53%; bad years deeper: 2022 -36% vs -30%, 1973 -37% vs -34%.",
+  "decision": "Not promoted, though it technically passes beats_everywhere: the worst-era gain is 0.2 points (0.0 at margin rates), within noise, while it makes two of the three sleeves depend on the same macro signal (less independence) and deepens the bad years. Watch list. Variants counted: 1 (iteration 18).",
+  "sources": [
+   "Philosophical Economics (2016) growth-trend timing (as Exp 46)"
+  ]
  }
 ]

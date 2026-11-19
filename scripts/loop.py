@@ -659,9 +659,37 @@ def iteration_17():
     ]
 
 
+class GatedValuationLeverage(CappedValuationLeverage):
+    """The valuation sleeve with the same unemployment gate: its trend exit counts only while
+    unemployment is rising; otherwise it holds stocks at the valuation-set leverage."""
+
+    def __init__(self, weak):
+        super().__init__(1.0, 2.0, 0.5, 3.0)
+        self.weak = weak.shift(1)
+
+    def weights(self, prices):
+        prem = self.prem.reindex(prices.index).ffill()
+        med = prem.expanding(120).median()
+        lev = (self.k * prem / med).clip(self.lo, self.cap).fillna(1.0)
+        weak = self.weak.reindex(prices.index, method="ffill").fillna(True).astype(bool)
+        on = ~weak | SMA10.positions(prices["stocks"]).astype(bool)
+        return pd.DataFrame({"stocks": np.where(on, lev, 0.0), "bonds": 0.0}, index=prices.index)
+
+
+def iteration_18():
+    """Checkpoint 41 (Exp 49): extend the champion's unemployment gate to the valuation sleeve
+    (the recovery sleeve already holds Treasuries when out). Same rule, no new parameter. 1 variant."""
+    w = unemployment_rising()
+    return [
+        Candidate("ensemble, trend and valuation sleeves gated by unemployment", "ensemble",
+                  lambda: at.Blend({MacroGatedTrend(w): 1 / 3, GatedValuationLeverage(w): 1 / 3,
+                                    at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3})),
+    ]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18}
 
 
 def run(iters, financings=(0.005, 0.015)):
