@@ -262,17 +262,37 @@
    "status": "lost",
    "payout": 0.0,
    "settled": "2026-11-18T16:39:05.809218+00:00"
+  },
+  {
+   "id": "7122029",
+   "question": "Colina: Lucia Bronzetti vs Carole Monnet",
+   "end": "2026-11-25T16:00:00Z",
+   "placed": "2026-11-19T16:38:59.978111+00:00",
+   "price": 0.275,
+   "shares": 363.6364,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "7122695",
+   "question": "Helsinki: Alexander Ritschard vs Otto Virtanen",
+   "end": "2026-11-26T11:00:00Z",
+   "placed": "2026-11-19T16:38:59.978111+00:00",
+   "price": 0.275,
+   "shares": 363.6364,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 22,
-  "open": 1,
+  "bets": 24,
+  "open": 3,
   "settled": 21,
   "won": 3,
   "staked_settled": 2100.0,
   "pnl": -822.67,
   "return_per_bet": -0.3917,
   "avg_price_settled": 0.2208,
-  "updated": "2026-11-19T12:38:16.712760+00:00"
+  "updated": "2026-11-19T16:38:59.978111+00:00"
  }
 }

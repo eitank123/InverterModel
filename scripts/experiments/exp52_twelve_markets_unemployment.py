@@ -18,7 +18,7 @@ import pandas as pd
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import algotrading as at  # noqa: E402
-from loop import MacroGatedTrend, _monthly, filtered  # noqa: E402
+from loop import BearAwareGatedTrend, MacroGatedTrend, _monthly, filtered  # noqa: E402
 
 COUNTRIES = {"DE": "Germany", "GB": "UK", "FR": "France", "IT": "Italy", "CA": "Canada",
              "AU": "Australia", "NL": "Netherlands", "CH": "Switzerland", "SE": "Sweden",
@@ -45,7 +45,8 @@ for cc, name in COUNTRIES.items():
     start = max(px.index[12], u.index[12]) if len(u) > 12 else px.index[12]   # test only where the gate exists
     strats = {"trend 3x old": at.Levered(filtered(1.0), 3.0), "trend 3x gated": MacroGatedTrend(weak),
               "mix old": at.Blend({at.Levered(filtered(1.0), 3.0): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3}),
-              "mix gated": at.Blend({MacroGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3})}
+              "mix gated": at.Blend({MacroGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3}),
+              "mix bear-aware": at.Blend({BearAwareGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3})}  # Exp 53
     row = {"country": name, "from": f"{start:%Y}"}
     for k, st in strats.items():
         r = at.run_backtest(px, st, cost_bps=10, execution_lag=1, cash_rate=cash, borrow_spread=0.005).returns[start:]
@@ -62,4 +63,6 @@ print("worst growth:", T[g].min().map("{:.1%}".format).to_dict())
 print("worst DD:", T[d].min().map("{:.0%}".format).to_dict())
 print("countries with DD below -90%:", (T[d] < -0.90).sum().to_dict())
 T = T.drop(index=[c for c in T.index if c == "Switzerland"])        # no unemployment data: gate inactive
+print("bear-aware mix beats old mix in", int((T["mix bear-aware growth"] > T["mix old growth"]).sum()), "of", len(T),
+      "; deeper DD than old in", int((T["mix bear-aware DD"] < T["mix old DD"]).sum()))
 print("gated mix beats old mix in", int((T["mix gated growth"] > T["mix old growth"]).sum()), "of", len(T))

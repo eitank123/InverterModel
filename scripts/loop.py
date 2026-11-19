@@ -715,9 +715,29 @@ def iteration_19():
     ]
 
 
+class BearAwareGatedTrend(MacroGatedTrend):
+    """Exp 53: the unemployment-gated trend sleeve, but the trend exit is also obeyed in a bear
+    market (price more than 20% below its 12-month high - the conventional definition), so a deep
+    fall without rising unemployment (Japan 1990-2012) is not held at 3x."""
+
+    def weights(self, prices):
+        s = prices["stocks"]
+        weak = self.weak.reindex(prices.index, method="ffill").fillna(True).astype(bool)
+        bear = s / s.rolling(12, min_periods=1).max() < 0.80
+        on = ~(weak | bear) | SMA10.positions(s).astype(bool)
+        return pd.DataFrame({"stocks": np.where(on, self.lev, 0.0), "bonds": 0.0}, index=prices.index)
+
+
+def iteration_20():
+    """Checkpoint 44 (Exp 53): unemployment gate plus a bear-market override. 1 variant."""
+    return [Candidate("ensemble, unemployment-gated trend with a bear-market override", "ensemble",
+                      lambda: ensemble_trend_sleeve(BearAwareGatedTrend(unemployment_rising())),
+                      note="trend exit obeyed if unemployment is rising OR price < 80% of its 12-month high")]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20}
 
 
 def run(iters, financings=(0.005, 0.015)):

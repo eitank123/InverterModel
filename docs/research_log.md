@@ -887,3 +887,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   fell more than 90% in 10 of 12 markets. Bear markets without rising unemployment (Japan 1990-2012)
   are held at 3x. The champion stays (nothing goes to zero), but its US gain is an upper bound and its
   tail risk is higher than the old champion's.
+* Exp 53 (2026-11-19): a bear-market override on the unemployment gate (obey the trend exit when the
+  price is 20% below its 12-month high). It fires too late: Japan's drawdown got worse (-83%), the US
+  worst era fell to 13.6%. Rejected.
