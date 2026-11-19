@@ -381,5 +381,15 @@
    "Federal Reserve Bank of Philadelphia, Real-Time Data Set for Macroeconomists (RUC, quarterly vintages)",
    "Croushore & Stark (2001) 'A real-time data set for macroeconomists', Journal of Econometrics"
   ]
+ },
+ {
+  "checkpoint": 40,
+  "date": "2026-11-19",
+  "iteration": null,
+  "finding": "Exp 48 (the unemployment gate before 1948). NBER Macrohistory series 08292: monthly seasonally adjusted unemployment 04/1929-06/1942 (NICB) and 1940-1946, spliced with FRED UNRATE (1948+); each source's signal uses only its own 12-month average. Gate available from 1930-03, weak 41% of months 1930-1947 (39% after). Eras 1880-1929 / 1930-1956 / (1930-1947) / 1957-1990 / 1991-2026: old champion 15.4/14.6/(1.9)/13.1/21.2%; new champion with the gate from 1948 15.4/15.0/(1.9)/13.9/22.6%; with the gate from 1930 15.4/15.5/(3.1)/13.9/22.6%. Max drawdown 1930-1947 -85% for all three (the 1929-32 crash is caught by the trend exit either way).",
+  "decision": "The champion's rule also helps through the Depression, the 1937 crash and WWII, out of the sample it was promoted on. Only 1880-1929 stays untested (no monthly unemployment data). The live rule is unchanged (it uses FRED UNRATE). 0 variants counted.",
+  "sources": [
+   "NBER Macrohistory Database, series 08292 (G.H. Moore, Business Cycle Indicators vol. II; National Industrial Conference Board)"
+  ]
  }
 ]

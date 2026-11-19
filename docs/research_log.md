@@ -872,3 +872,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 47 (2026-11-18): real-time check of the unemployment gate. Using only unemployment figures as
   first published (Philadelphia Fed vintages, 1966+), the new champion's worst era is 14.2% (13.9% on
   revised data, 13.1% for the old champion). The improvement is not an artefact of data revisions.
+* Exp 48 (2026-11-19): the unemployment gate on NBER data for 1930-1947 (Depression, 1937, WWII),
+  which the promotion never saw: 3.1% vs 1.9% a year for the old champion, same -85% drawdown. Only
+  1880-1929 remains untested.

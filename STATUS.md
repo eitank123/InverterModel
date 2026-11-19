@@ -16,7 +16,8 @@ _Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
 > beats_everywhere at both financing levels; same max drawdown since 1948 (−53%). Caveats: no
 > unemployment data before 1948, so 1880–1947 is just the old champion; bad years can be worse
 > (2022 −30% vs −21%, 1973 −34% vs −30%); last 5 years on real ETFs $219.8k vs $244.8k; 1 of 3
-> growth-trend variants passed (earnings and industrial production did not). Real-time check (Exp 47, unemployment as first published): worst era 14.2%, still passes. Walk-forward over the
+> growth-trend variants passed (earnings and industrial production did not). Real-time check (Exp 47, unemployment as first published): worst era 14.2%, still passes. On NBER
+> unemployment data for 1930-1947 (Exp 48) it also helps: 3.1% vs 1.9%/yr. Walk-forward over the
 > 12 ensemble variants of 17-18 Nov: 16.9%/yr 1957–2026. New play-money account `champion_unemployment`.
 >
 > **Previous champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
