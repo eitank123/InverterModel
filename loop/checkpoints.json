@@ -412,5 +412,17 @@
    "Sahm (2019) 'Direct Stimulus Payments to Individuals', Hamilton Project (the Sahm rule)",
    "FRED UNRATE, ICSA"
   ]
+ },
+ {
+  "checkpoint": 43,
+  "date": "2026-11-19",
+  "iteration": null,
+  "finding": "Exp 51-52 (out-of-sample markets for the new champion's unemployment gate; required since checkpoints 10-11 and missed at promotion). Each country's own OECD unemployment rate, same rule. Japan 1956-2026 (Nikkei, Exp 19 setup): gated 3x trend sleeve 8.5%/yr, max DD -99%, worst year -75% vs plain 9.5%, -94%, -59%; ensemble-like mix 9.7% vs 9.4%, DD -91% vs -87%. Japanese unemployment barely rose in the 1990-2012 bust, so the gate kept 3x through it. 11 markets with data (mostly 1984+): champion-like mix gated vs old - growth better in 7 of 11, median 11.1% vs 11.0%, worst country 9.3% vs 8.8%; drawdowns deeper in most (Germany -77% vs -63%, Netherlands -69% vs -60%, Japan -80% vs -72%, Korea -80% vs -78%), better in Canada, Australia, Spain; no market goes to zero. The gated 3x sleeve alone falls more than 90% in 10 of 12 markets vs 5.",
+  "decision": "The champion stays (eligible: nothing goes to zero; growth roughly neutral to slightly better abroad), but the evidence is downgraded: outside the US the gate is close to growth-neutral and raises tail risk, because unemployment is a slow or sticky signal in many countries and bear markets without rising unemployment are then held at 3x. The old champion keeps running side by side; if the two diverge, the live record decides nothing for years - treat the US +0.8-point worst-era gain as an upper bound. 0 variants counted.",
+  "sources": [
+   "FRED OECD harmonised unemployment rates (LRHUTTTT<cc>M156S, LRUNTTTT<cc>M156S)",
+   "OECD share prices (SPASTT01<cc>M661N)",
+   "Nikkei 225 (FRED NIKKEI225)"
+  ]
  }
 ]

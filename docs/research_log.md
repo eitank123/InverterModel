@@ -881,3 +881,9 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 50 (2026-11-19): the Sahm rule and weekly jobless claims as the gate. The Sahm rule fires
   only once a recession is under way (worst era 11.9%); claims were close but lower (13.6% vs 13.9%).
   Rejected; the champion keeps the 12-month-average unemployment test.
+* Exp 51-52 (2026-11-19): the unemployment gate outside the US, each country with its own
+  unemployment rate. The champion-like mix grew a little faster in 7 of 11 markets (median 11.1% vs
+  11.0%) but fell deeper in most (Germany -77% vs -63%, Japan -80% vs -72%); the gated 3x sleeve alone
+  fell more than 90% in 10 of 12 markets. Bear markets without rising unemployment (Japan 1990-2012)
+  are held at 3x. The champion stays (nothing goes to zero), but its US gain is an upper bound and its
+  tail risk is higher than the old champion's.
