@@ -271,7 +271,9 @@
    "price": 0.275,
    "shares": 363.6364,
    "stake": 100.0,
-   "status": "open"
+   "status": "won",
+   "payout": 363.64,
+   "settled": "2026-11-19T20:36:43.491923+00:00"
   },
   {
    "id": "7122695",
@@ -281,18 +283,30 @@
    "price": 0.275,
    "shares": 363.6364,
    "stake": 100.0,
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-19T20:36:43.491923+00:00"
+  },
+  {
+   "id": "7135101",
+   "question": "Champaign: Harry Wendelken vs Geoffrey Blancaneaux",
+   "end": "2026-11-26T16:00:00Z",
+   "placed": "2026-11-19T20:39:18.977244+00:00",
+   "price": 0.305,
+   "shares": 327.8689,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 24,
-  "open": 3,
-  "settled": 21,
-  "won": 3,
-  "staked_settled": 2100.0,
-  "pnl": -822.67,
-  "return_per_bet": -0.3917,
-  "avg_price_settled": 0.2208,
-  "updated": "2026-11-19T17:25:42.289794+00:00"
+  "bets": 25,
+  "open": 2,
+  "settled": 23,
+  "won": 4,
+  "staked_settled": 2300.0,
+  "pnl": -659.03,
+  "return_per_bet": -0.2865,
+  "avg_price_settled": 0.2255,
+  "updated": "2026-11-19T20:39:18.977244+00:00"
  }
 }

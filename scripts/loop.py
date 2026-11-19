@@ -735,9 +735,21 @@ def iteration_20():
                       note="trend exit obeyed if unemployment is rising OR price < 80% of its 12-month high")]
 
 
+def half_half():
+    """Exp 54: half the old champion, half the new one (a fixed 50/50 hedge against choosing the
+    wrong trend-sleeve rule): the trend sleeve is 3x plain on half its money, 3x gated on the other."""
+    return ensemble_trend_sleeve(at.Blend({at.Levered(filtered(1.0), 3.0): 0.5,
+                                           MacroGatedTrend(unemployment_rising()): 0.5}))
+
+
+def iteration_21():
+    """Checkpoint 45 (Exp 54): 50/50 old and new trend sleeves. 1 variant."""
+    return [Candidate("ensemble, trend sleeve half plain, half unemployment-gated", "ensemble", half_half)]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21}
 
 
 def run(iters, financings=(0.005, 0.015)):

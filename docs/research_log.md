@@ -890,3 +890,7 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 53 (2026-11-19): a bear-market override on the unemployment gate (obey the trend exit when the
   price is 20% below its 12-month high). It fires too late: Japan's drawdown got worse (-83%), the US
   worst era fell to 13.6%. Rejected.
+* Exp 54 (2026-11-19): half the trend sleeve on the old plain rule, half on the unemployment-gated
+  rule. US worst era 13.6% (between old 13.1% and new 13.9%), 2022 -25% instead of -30%; across 11
+  other markets the best median growth (11.2%) and fewer deeper drawdowns than either. Not promoted
+  (the rule needs it to beat the champion in every era), but it gets its own play-money account.

@@ -1,0 +1,75 @@
+{
+ "key": "champion_half_half",
+ "name": "Hedge: trend sleeve half plain, half unemployment-gated",
+ "description": "Exp 54 (checkpoint 45): the champion's sleeves with the 3x trend sleeve split 50/50 between the old plain rule and the new unemployment-gated rule - a fixed equal weight against choosing the wrong one. US worst era 13.6% (old 13.1%, new 13.9%); in 11 other markets the most robust version (median 11.2%, beats the old mix in 8 of 11, 2022 -25% vs -30%). Added 2026-11-19.",
+ "start": "2026-11-18",
+ "start_equity": 100000.0,
+ "cash": -41.95809999999619,
+ "holdings": {
+  "UPRO": 571.2609230503418,
+  "SPY": 68.50411185982261
+ },
+ "basis": {
+  "UPRO": 49816.39525,
+  "SPY": 50225.562849999995
+ },
+ "targets": {
+  "UPRO": 0.497905,
+  "SPY": 0.502095
+ },
+ "exposure": {
+  "stocks": 1.9958096116661048,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-18",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 2.0,
+  "spread_slippage": 39.9581,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-18",
+   "equity": 99958.04
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-18",
+   "symbol": "UPRO",
+   "side": "buy",
+   "shares": 571.2609,
+   "price": 87.1589,
+   "amount": 49790.5,
+   "commission": 1.0,
+   "spread_slippage": 24.9,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 571.2609
+  },
+  {
+   "date": "2026-11-18",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 68.5041,
+   "price": 732.9414,
+   "amount": 50209.5,
+   "commission": 1.0,
+   "spread_slippage": 15.06,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "signal from month-ends to 2026-10: stocks 2.00x, bonds 0.00x",
+   "qty": 68.5041
+  }
+ ],
+ "prices": {
+  "IEF": 94.6037,
+  "SPY": 732.9414,
+  "SSO": NaN,
+  "UPRO": 87.1589,
+  "UST": 44.4473
+ }
+}

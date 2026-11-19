@@ -46,7 +46,9 @@ for cc, name in COUNTRIES.items():
     strats = {"trend 3x old": at.Levered(filtered(1.0), 3.0), "trend 3x gated": MacroGatedTrend(weak),
               "mix old": at.Blend({at.Levered(filtered(1.0), 3.0): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3}),
               "mix gated": at.Blend({MacroGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3}),
-              "mix bear-aware": at.Blend({BearAwareGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3})}  # Exp 53
+              "mix bear-aware": at.Blend({BearAwareGatedTrend(weak): 1 / 3, filtered(1.0): 1 / 3, rec: 1 / 3}),  # Exp 53
+              "mix half-half": at.Blend({at.Levered(filtered(1.0), 3.0): 1 / 6, MacroGatedTrend(weak): 1 / 6,
+                                         filtered(1.0): 1 / 3, rec: 1 / 3})}  # Exp 54
     row = {"country": name, "from": f"{start:%Y}"}
     for k, st in strats.items():
         r = at.run_backtest(px, st, cost_bps=10, execution_lag=1, cash_rate=cash, borrow_spread=0.005).returns[start:]
@@ -65,4 +67,6 @@ print("countries with DD below -90%:", (T[d] < -0.90).sum().to_dict())
 T = T.drop(index=[c for c in T.index if c == "Switzerland"])        # no unemployment data: gate inactive
 print("bear-aware mix beats old mix in", int((T["mix bear-aware growth"] > T["mix old growth"]).sum()), "of", len(T),
       "; deeper DD than old in", int((T["mix bear-aware DD"] < T["mix old DD"]).sum()))
+print("half-half mix beats old mix in", int((T["mix half-half growth"] > T["mix old growth"]).sum()), "of", len(T),
+      "; deeper DD than old in", int((T["mix half-half DD"] < T["mix old DD"]).sum()))
 print("gated mix beats old mix in", int((T["mix gated growth"] > T["mix old growth"]).sum()), "of", len(T))

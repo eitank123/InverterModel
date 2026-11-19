@@ -79,7 +79,8 @@ unemployment gate on NBER data 1930-1947 (Exp 48: helps, 3.1% vs 1.9%/yr; 1880-1
 unemployment gate on the valuation sleeve too (Exp 49: +0.2 worst era, tie at margin rates, deeper bad years; watch list) ·
 Sahm rule and jobless-claims gates instead of the 12-month average (Exp 50: rejected, 11.9% / 13.6%) ·
 unemployment gate on Japan and 11 other markets (Exp 51-52: growth about neutral, deeper drawdowns in most; champion kept, evidence downgraded) ·
-bear-market override (-20%) on the gate (Exp 53: rejected, fires too late; Japan -83%) · combining valuation and trend leverage ·
+bear-market override (-20%) on the gate (Exp 53: rejected, fires too late; Japan -83%) ·
+50/50 plain and gated trend sleeve (Exp 54: US 13.6%, most robust abroad; new account champion_half_half) · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
 diversified stock leg x2/3 (Exp 31: worst era 16.1% vs 13.6%, drawdown since 1940 -50% vs -68%, max 2x
 so a margin account holds it; needs sector/momentum/value ETF prices for a live account) ·

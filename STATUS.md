@@ -19,7 +19,8 @@ _Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
 > growth-trend variants passed (earnings and industrial production did not). Real-time check (Exp 47, unemployment as first published): worst era 14.2%, still passes. On NBER
 > unemployment data for 1930-1947 (Exp 48) it also helps: 3.1% vs 1.9%/yr. **Outside the US (Exp 51-52)
 > it is about growth-neutral and deepens drawdowns in most markets (Japan -80% vs -72% for the mix)**:
-> treat the gain as an upper bound and the tail risk as higher than the old champion's. Walk-forward over the
+> treat the gain as an upper bound and the tail risk as higher than the old champion's. A 50/50 hedge of the
+> two trend rules (Exp 54) is the most robust version abroad and runs as account `champion_half_half`. Walk-forward over the
 > 12 ensemble variants of 17-18 Nov: 16.9%/yr 1957–2026. New play-money account `champion_unemployment`.
 >
 > **Previous champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.

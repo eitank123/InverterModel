@@ -434,5 +434,15 @@
   "sources": [
    "Conventional bear-market definition (20% below the prior high)"
   ]
+ },
+ {
+  "checkpoint": 45,
+  "date": "2026-11-19",
+  "iteration": 21,
+  "finding": "Exp 54 / iteration 21 (fixed 50/50 of the old plain and the new unemployment-gated trend sleeve inside the ensemble; 1 variant). US eras 15.4/14.8/13.6/22.0% (old 15.4/14.6/13.1/21.2%, champion 15.4/15.0/13.9/22.6%); 2022 -25% (old -21%, champion -30%). 11 other markets (Exp 52 setup): median 11.2% (old 11.0%, champion 11.1%), worst country 9.6% (8.8%, 9.3%), beats the old mix in 8 of 11 with a deeper drawdown in 5 (champion: 7 and 7); Japan -76% (old -72%, champion -80%). No market goes to zero.",
+  "decision": "Not the champion (fails beats_everywhere against the incumbent: 13.6% vs 13.9% in 1957-1990), but the most robust version out of sample and a fixed equal-weight combination, which the rules prefer. Added as a NEW play-money account champion_half_half. If the US advantage of the gated rule is partly luck, this is the version to trust. Variants counted: 1 (iteration 21).",
+  "sources": [
+   "Exp 46, 51-52 (this loop)"
+  ]
  }
 ]

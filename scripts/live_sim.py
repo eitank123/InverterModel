@@ -20,7 +20,7 @@ import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_weights  # noqa: E402
 from algotrading.live import completed_month_ends, shiller_history, splice_monthly  # noqa: E402
 from algotrading.live_sim import LiveSimAccount, daily_etf_returns  # noqa: E402
-from loop import build_from_row, ensemble, ensemble_lower, filtered, ensemble_unemployment  # noqa: E402
+from loop import build_from_row, ensemble, ensemble_lower, filtered, ensemble_unemployment, half_half  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
 ANCHOR = "2026-10-23"                       # price levels: SPY = S&P/10 there; others fixed
@@ -172,6 +172,13 @@ ACCOUNTS["champion_unemployment"] = (
     "exit only while US unemployment is above its 12-month average (growth-trend timing, Philosophical "
     "Economics 2016). Worst era 13.9% vs 13.1%, passes beats_everywhere; 1880-1947 untested (no data). "
     "Added 2026-11-18.", from_strategy(ensemble_unemployment()))
+
+ACCOUNTS["champion_half_half"] = (
+    "Hedge: trend sleeve half plain, half unemployment-gated",
+    "Exp 54 (checkpoint 45): the champion's sleeves with the 3x trend sleeve split 50/50 between the "
+    "old plain rule and the new unemployment-gated rule - a fixed equal weight against choosing the wrong "
+    "one. US worst era 13.6% (old 13.1%, new 13.9%); in 11 other markets the most robust version "
+    "(median 11.2%, beats the old mix in 8 of 11, 2022 -25% vs -30%). Added 2026-11-19.", from_strategy(half_half()))
 
 try:                                                         # grow the headline archive (Exp 28)
     print(f"Headlines archived: {len(at.news.collect_headlines()):,}")
