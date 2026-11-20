@@ -760,9 +760,24 @@ def iteration_22():
                       lambda: MacroGateScaled(ensemble_unemployment(), fed_tightening(), 0.5))]
 
 
+def midterm_years():
+    """Presidential cycle (Hensel & Ziemba 1995; Booth & Booth 2003): the second year of a US
+    presidential term (midterm-election year: 1882, 1886, ..., 2026) has the weakest returns.
+    A calendar fact known in advance - no data needed."""
+    idx = pd.date_range("1870-01-01", "2030-12-01", freq="MS")
+    return pd.Series([(d.year - 1882) % 4 == 0 for d in idx], index=idx)
+
+
+def iteration_23():
+    """Checkpoint 48 (Exp 56): halve the champion's leverage in midterm-election years. 1 variant."""
+    return [Candidate("champion, half leverage in midterm years", "ensemble",
+                      lambda: MacroGateScaled(ensemble_unemployment(), midterm_years().shift(-1).fillna(False), 0.5),
+                      note="MacroGateScaled lags one month; the calendar is known, so it is shifted back")]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21, 22: iteration_22}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21, 22: iteration_22, 23: iteration_23}
 
 
 def run(iters, financings=(0.005, 0.015)):

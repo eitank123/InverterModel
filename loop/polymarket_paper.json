@@ -298,17 +298,27 @@
    "status": "won",
    "payout": 327.87,
    "settled": "2026-11-20T00:37:32.576931+00:00"
+  },
+  {
+   "id": "3581449",
+   "question": "Will Ko Chih-en win the next Kaohsiung Mayor election?",
+   "end": "2026-11-29T04:59:00Z",
+   "placed": "2026-11-20T08:38:05.964126+00:00",
+   "price": 0.179,
+   "shares": 558.6592,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 25,
-  "open": 1,
+  "bets": 26,
+  "open": 2,
   "settled": 24,
   "won": 5,
   "staked_settled": 2400.0,
   "pnl": -431.16,
   "return_per_bet": -0.1796,
   "avg_price_settled": 0.2288,
-  "updated": "2026-11-20T04:36:24.828144+00:00"
+  "updated": "2026-11-20T08:38:05.964126+00:00"
  }
 }

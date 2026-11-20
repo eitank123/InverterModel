@@ -464,5 +464,16 @@
   "sources": [
    "research.walk_forward_selection (this repo)"
   ]
+ },
+ {
+  "checkpoint": 48,
+  "date": "2026-11-20",
+  "iteration": 23,
+  "finding": "Exp 56 / iteration 23 (presidential cycle, Hensel & Ziemba 1995: halve the champion's leverage in midterm-election years, a calendar rule known in advance; 1 variant). Eras 15.0/12.8/12.1/20.9% vs champion 15.4/15.0/13.9/22.6%: worse in every era. Midterm years are weaker on average for the index, but the trend sleeve already steps out of the bad ones, so halving leverage mostly cuts the good ones.",
+  "decision": "Rejected (fails beats_everywhere in all four eras). Variants counted: 1 (iteration 23). Champion unchanged.",
+  "sources": [
+   "Hensel & Ziemba (1995) 'United States investment returns during Democratic and Republican administrations, 1928-1993', FAJ",
+   "Booth & Booth (2003) 'Is presidential cycle in security returns merely a reflection of business conditions?', RFE"
+  ]
  }
 ]

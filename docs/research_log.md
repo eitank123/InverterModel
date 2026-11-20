@@ -897,3 +897,5 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
 * Exp 55 (2026-11-20): halving leverage while the Fed tightens (T-bill above its level a year ago,
   Jensen-Mercer-Johnson 1996). Helped 1957-1990 (15.5%) but cost 3.7 points in 1930-56 and 5.6 points
   since 1991. Rejected - the fourth macro warning that fails for the same reason.
+* Exp 56 (2026-11-20): presidential cycle - halving leverage in midterm-election years made every
+  era worse (worst 12.1% vs 13.9%): the trend sleeve already avoids the bad midterm years. Rejected.
