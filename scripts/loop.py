@@ -775,9 +775,32 @@ def iteration_23():
                       note="MacroGateScaled lags one month; the calendar is known, so it is shifted back")]
 
 
+class ValuationBondsWhenOut(CappedValuationLeverage):
+    """Exp 57: the valuation sleeve, but when its stock trend exit is on it holds 1x Treasuries if
+    bonds are above their own 10-month average (flight to quality; Moskowitz-Ooi-Pedersen 2012
+    time-series momentum on bonds), instead of cash."""
+
+    def __init__(self):
+        super().__init__(1.0, 2.0, 0.5, 3.0)
+
+    def weights(self, prices):
+        w = super().weights(prices)
+        out = w["stocks"] == 0
+        bond_up = SMA10.positions(prices["bonds"]).astype(bool)
+        w.loc[out & bond_up, "bonds"] = 1.0
+        return w
+
+
+def iteration_24():
+    """Checkpoint 49 (Exp 57): Treasuries instead of cash in the valuation sleeve's off-state. 1 variant."""
+    return [Candidate("champion, valuation sleeve holds trending Treasuries when out", "ensemble",
+                      lambda: at.Blend({MacroGatedTrend(unemployment_rising()): 1 / 3, ValuationBondsWhenOut(): 1 / 3,
+                                        at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0): 1 / 3}))]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21, 22: iteration_22, 23: iteration_23}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21, 22: iteration_22, 23: iteration_23, 24: iteration_24}
 
 
 def run(iters, financings=(0.005, 0.015)):

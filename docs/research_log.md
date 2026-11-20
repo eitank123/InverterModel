@@ -899,3 +899,5 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   since 1991. Rejected - the fourth macro warning that fails for the same reason.
 * Exp 56 (2026-11-20): presidential cycle - halving leverage in midterm-election years made every
   era worse (worst 12.1% vs 13.9%): the trend sleeve already avoids the bad midterm years. Rejected.
+* Exp 57 (2026-11-20): Treasuries (when trending up) instead of cash in the valuation sleeve's
+  off-state. +0.2-0.3 points in three eras, a tie in the worst one. Not promoted; watch list.

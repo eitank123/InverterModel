@@ -475,5 +475,15 @@
    "Hensel & Ziemba (1995) 'United States investment returns during Democratic and Republican administrations, 1928-1993', FAJ",
    "Booth & Booth (2003) 'Is presidential cycle in security returns merely a reflection of business conditions?', RFE"
   ]
+ },
+ {
+  "checkpoint": 49,
+  "date": "2026-11-20",
+  "iteration": 24,
+  "finding": "Exp 57 / iteration 24 (the valuation sleeve holds 1x Treasuries instead of cash when its stock exit is on and bonds are above their 10-month average; time-series momentum on bonds, Moskowitz-Ooi-Pedersen 2012; 1 variant). Eras 15.6/15.2/13.9/22.9% vs champion 15.4/15.0/13.9/22.6%; at margin financing 14.5/14.0/12.7/21.7% vs 14.3/13.8/12.8/21.4%.",
+  "decision": "Not promoted: +0.2-0.3 points in three eras but a tie in the worst era (and -0.1 at margin rates), so it fails beats_everywhere. Watch list. Variants counted: 1 (iteration 24). Champion unchanged.",
+  "sources": [
+   "Moskowitz, Ooi & Pedersen (2012) 'Time series momentum', JFE"
+  ]
  }
 ]
