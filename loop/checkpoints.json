@@ -454,5 +454,15 @@
   "sources": [
    "Jensen, Mercer & Johnson (1996) 'Business conditions, monetary policy, and expected security returns', JFE 40(2)"
   ]
+ },
+ {
+  "checkpoint": 47,
+  "date": "2026-11-20",
+  "iteration": null,
+  "finding": "Walk-forward selection refresh (research.walk_forward_selection) over the 18 ensemble variants of iterations 13-22 plus the two incumbents: each January pick the variant with the best log growth on data known then. 1957-2026 17.3%/yr; 1957-1990 11.1%; 1991-2026 23.4%. The rule would pick 'trend and valuation sleeves gated by unemployment' (Exp 49) for 2026 - a version the loop rejected for doubling the dependence on one signal.",
+  "decision": "Honest estimate for the loop's own selection: about 11% in the hardest era, versus 13.9% for the hand-picked champion, so the champion's worst-era number is an upper bound by about 3 points. No candidates this round (0 variants).",
+  "sources": [
+   "research.walk_forward_selection (this repo)"
+  ]
  }
 ]

@@ -21,7 +21,7 @@ _Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
 > it is about growth-neutral and deepens drawdowns in most markets (Japan -80% vs -72% for the mix)**:
 > treat the gain as an upper bound and the tail risk as higher than the old champion's. A 50/50 hedge of the
 > two trend rules (Exp 54) is the most robust version abroad and runs as account `champion_half_half`. Walk-forward over the
-> 12 ensemble variants of 17-18 Nov: 16.9%/yr 1957–2026. New play-money account `champion_unemployment`.
+> 18 ensemble variants of 17-20 Nov: 17.3%/yr 1957–2026, but only 11.1% in 1957–1990 (vs 13.9% hand-picked). New play-money account `champion_unemployment`.
 >
 > **Previous champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
 > It is chosen by its worst era across 1880–2026, not by the best backtest:
