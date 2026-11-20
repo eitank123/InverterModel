@@ -4,7 +4,7 @@
  "description": "Loop strategy 'dual momentum xL' {\"lev\": 1.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -31.101089862462494,
+ "cash": -31.106841095746585,
  "holdings": {
   "SPY": 131.17024848891873
  },
@@ -18,14 +18,14 @@
   "stocks": 1.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-18",
+ "last_date": "2026-11-19",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 30.0,
   "regulatory": 0.0
  },
- "fund_costs": 6.691438816713864,
+ "fund_costs": 7.044904461213452,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -102,6 +102,10 @@
   {
    "date": "2026-11-18",
    "equity": 96036.16
+  },
+  {
+   "date": "2026-11-19",
+   "equity": 94226.4
   }
  ],
  "trades": [
@@ -121,10 +125,10 @@
   }
  ],
  "prices": {
-  "IEF": 94.6037,
-  "SPY": 732.386,
+  "IEF": 94.835,
+  "SPY": 718.5891,
   "SSO": NaN,
-  "UPRO": 86.9598,
-  "UST": 44.4473
+  "UPRO": 82.0043,
+  "UST": 44.6553
  }
 }

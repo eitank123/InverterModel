@@ -444,5 +444,15 @@
   "sources": [
    "Exp 46, 51-52 (this loop)"
   ]
+ },
+ {
+  "checkpoint": 46,
+  "date": "2026-11-20",
+  "iteration": 22,
+  "finding": "Exp 55 / iteration 22 (Fed tightening, Jensen-Mercer-Johnson 1996: 3-month T-bill above its level a year earlier, on 50% of months since 1934; halve the champion's leverage; 1 variant). Eras 15.4/11.3/15.5/17.0% vs champion 15.4/15.0/13.9/22.6%: helps the 1970s-80s, but costs 3.7 points in 1930-1956 and 5.6 points since 1991 (rates rose through long bull markets: 1950s, 2004-06, 2017-18, 2022-24 rally). Live: 19 Nov the S&P closed 2.3% below its 200-day average (SPY stand-in), so the daily-trend 3x account sold all its UPRO.",
+  "decision": "Rejected: fails beats_everywhere. Like the curve, credit and inflation warnings (Exp 41-42), a macro warning on half the months costs more in bull markets than it saves. Variants counted: 1 (iteration 22). Champion unchanged.",
+  "sources": [
+   "Jensen, Mercer & Johnson (1996) 'Business conditions, monetary policy, and expected security returns', JFE 40(2)"
+  ]
  }
 ]

@@ -4,7 +4,7 @@
  "description": "Loop strategy 'seasonal leverage S&P+SMA10' {\"w_\": 3.0, \"s_\": 1.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -51.16630912856732,
+ "cash": -51.17577083493792,
  "holdings": {
   "UPRO": 1000.0
  },
@@ -18,14 +18,14 @@
   "stocks": 3.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-18",
+ "last_date": "2026-11-19",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 50.0,
   "regulatory": 0.0
  },
- "fund_costs": 691.4490188899624,
+ "fund_costs": 724.7388511041319,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -102,6 +102,10 @@
   {
    "date": "2026-11-18",
    "equity": 86908.67
+  },
+  {
+   "date": "2026-11-19",
+   "equity": 81953.1
   }
  ],
  "trades": [
@@ -121,10 +125,10 @@
   }
  ],
  "prices": {
-  "IEF": 94.6037,
-  "SPY": 732.386,
+  "IEF": 94.835,
+  "SPY": 718.5891,
   "SSO": NaN,
-  "UPRO": 86.9598,
-  "UST": 44.4473
+  "UPRO": 82.0043,
+  "UST": 44.6553
  }
 }

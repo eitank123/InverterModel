@@ -4,28 +4,22 @@
  "description": "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its 200-day average, T-bills otherwise; checked every day.",
  "start": "2026-10-26",
  "start_equity": 100000.0,
- "cash": -51.15709273170218,
- "holdings": {
-  "UPRO": 979.779203890055
- },
- "basis": {
-  "UPRO": 100051.0
- },
- "targets": {
-  "UPRO": 1.0
- },
+ "cash": 80251.35110614756,
+ "holdings": {},
+ "basis": {},
+ "targets": {},
  "exposure": {
-  "stocks": 3.0,
+  "stocks": 0.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-18",
+ "last_date": "2026-11-19",
  "last_signal_month": "2026-11",
  "fees": {
-  "commission": 1.0,
-  "spread_slippage": 50.0,
-  "regulatory": 0.0
+  "commission": 2.0,
+  "spread_slippage": 90.17304348346516,
+  "regulatory": 2.3962645655264123
  },
- "fund_costs": 637.8244812893233,
+ "fund_costs": 670.4411665937557,
  "equity_history": [
   {
    "date": "2026-10-26",
@@ -98,6 +92,10 @@
   {
    "date": "2026-11-18",
    "equity": 85150.29
+  },
+  {
+   "date": "2026-11-19",
+   "equity": 80251.35
   }
  ],
  "trades": [
@@ -114,13 +112,27 @@
    "realized_pl": 0.0,
    "reason": "S&P +5.2% vs 200-day average: in",
    "qty": 979.7792
+  },
+  {
+   "date": "2026-11-19",
+   "symbol": "UPRO",
+   "side": "sell",
+   "shares": 979.7792,
+   "price": 82.0043,
+   "amount": 80346.09,
+   "commission": 1.0,
+   "spread_slippage": 40.17,
+   "regulatory_fees": 2.4,
+   "realized_pl": -19748.48,
+   "reason": "S&P -2.3% vs 200-day average: out",
+   "qty": 979.7792
   }
  ],
  "prices": {
-  "IEF": 94.6037,
-  "SPY": 732.386,
+  "IEF": 94.835,
+  "SPY": 718.5891,
   "SSO": NaN,
-  "UPRO": 86.9598,
-  "UST": 44.4473
+  "UPRO": 82.0043,
+  "UST": 44.6553
  }
 }

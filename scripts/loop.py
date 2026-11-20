@@ -747,9 +747,22 @@ def iteration_21():
     return [Candidate("ensemble, trend sleeve half plain, half unemployment-gated", "ensemble", half_half)]
 
 
+def fed_tightening():
+    """Jensen, Mercer & Johnson (1996, JFE): stock returns are lower in restrictive monetary
+    periods. Tightening = 3-month T-bill rate above its level 12 months earlier (FRED TB3MS, 1934+)."""
+    tb = _monthly("TB3MS")
+    return tb > tb.shift(12)
+
+
+def iteration_22():
+    """Checkpoint 46 (Exp 55): halve the champion's leverage during Fed tightening. 1 variant."""
+    return [Candidate("champion, half leverage during Fed tightening", "ensemble",
+                      lambda: MacroGateScaled(ensemble_unemployment(), fed_tightening(), 0.5))]
+
+
 ITERATIONS = {1: iteration_1, 2: iteration_2, 3: iteration_3, 4: iteration_4, 5: iteration_5,
               6: iteration_6, 7: iteration_7, 8: iteration_8, 9: iteration_9, 10: iteration_10,
-              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21}
+              11: iteration_11, 12: iteration_12, 13: iteration_13, 14: iteration_14, 15: iteration_15, 16: iteration_16, 17: iteration_17, 18: iteration_18, 19: iteration_19, 20: iteration_20, 21: iteration_21, 22: iteration_22}
 
 
 def run(iters, financings=(0.005, 0.015)):

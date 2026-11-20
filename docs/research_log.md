@@ -894,3 +894,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   rule. US worst era 13.6% (between old 13.1% and new 13.9%), 2022 -25% instead of -30%; across 11
   other markets the best median growth (11.2%) and fewer deeper drawdowns than either. Not promoted
   (the rule needs it to beat the champion in every era), but it gets its own play-money account.
+* Exp 55 (2026-11-20): halving leverage while the Fed tightens (T-bill above its level a year ago,
+  Jensen-Mercer-Johnson 1996). Helped 1957-1990 (15.5%) but cost 3.7 points in 1930-56 and 5.6 points
+  since 1991. Rejected - the fourth macro warning that fails for the same reason.
