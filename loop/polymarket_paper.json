@@ -318,17 +318,27 @@
    "shares": 363.6364,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "5336560",
+   "question": "Will PSOE win the most seats in the 2026 Spanish general election?",
+   "end": "2026-11-30T04:59:00Z",
+   "placed": "2026-11-21T08:37:06.336812+00:00",
+   "price": 0.255,
+   "shares": 392.1569,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 27,
-  "open": 3,
+  "bets": 28,
+  "open": 4,
   "settled": 24,
   "won": 5,
   "staked_settled": 2400.0,
   "pnl": -431.16,
   "return_per_bet": -0.1796,
   "avg_price_settled": 0.2288,
-  "updated": "2026-11-21T04:37:11.839671+00:00"
+  "updated": "2026-11-21T08:37:06.336812+00:00"
  }
 }
