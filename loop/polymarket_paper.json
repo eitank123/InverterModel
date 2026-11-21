@@ -328,17 +328,27 @@
    "shares": 392.1569,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "814613",
+   "question": "Will the Democratic Progressive Party (DPP) win the most head of local government elections in the 2026 Taiwan local elections?",
+   "end": "2026-11-29T04:59:00Z",
+   "placed": "2026-11-21T16:36:25.614351+00:00",
+   "price": 0.263,
+   "shares": 380.2281,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 28,
-  "open": 4,
+  "bets": 29,
+  "open": 5,
   "settled": 24,
   "won": 5,
   "staked_settled": 2400.0,
   "pnl": -431.16,
   "return_per_bet": -0.1796,
   "avg_price_settled": 0.2288,
-  "updated": "2026-11-21T12:37:09.163232+00:00"
+  "updated": "2026-11-21T16:36:25.614351+00:00"
  }
 }
