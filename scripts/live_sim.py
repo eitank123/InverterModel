@@ -20,6 +20,7 @@ import algotrading as at  # noqa: E402
 from algotrading.execution import CostModel, etf_weights  # noqa: E402
 from algotrading.live import completed_month_ends, shiller_history, splice_monthly  # noqa: E402
 from algotrading.live_sim import LiveSimAccount, daily_etf_returns  # noqa: E402
+import loop as L  # noqa: E402
 from loop import build_from_row, ensemble, ensemble_lower, filtered, ensemble_unemployment, half_half  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "loop", "live_sim")
@@ -124,6 +125,37 @@ DAILY = {"daily_band_3x": ("Daily trend: 3x above the 200-day average (±2% band
                            "Gayed-Bilello daily rule with a 2% band (Exp 18): UPRO while the S&P is above its "
                            "200-day average, T-bills otherwise; checked every day.", daily_band_200())}
 ACCOUNTS.update(DAILY)
+
+
+def champion_daily_trend():
+    """Exp 58 (checkpoint 50): the champion's three equal sleeves with the 3x trend sleeve on the
+    DAILY 200-day rule (+-2% band, checked every day) instead of the month-end rule; the valuation and
+    recovery+ sleeves keep their monthly decisions. Daily CRSP 1930-2026: worst era 15.6% vs 14.2%
+    (new champion) and 13.0% (old); max drawdown since 1940 -58% vs -67%; 2022 -24% vs -33%; but
+    1991-2026 19.8% vs 21.2%, so it fails beats_everywhere and 1880-1929 is untested. Added 2026-11-21."""
+    trend = daily_band_200(3.0, 0.02)
+    val = L.CappedValuationLeverage(1.0, 2.0, 0.5, 3.0)
+    rec = at.RecoveryLeverage(2.0, 3.0, 0.15, signal="either", off_lev=2.0)
+
+    def fn(d):
+        _, t_exp, t_why = trend(d)
+        me = completed_month_ends(closes[:d], asof=d)
+        monthly = splice_monthly(history, me)
+        wv, wr = val.weights(monthly).iloc[-1], rec.weights(monthly).iloc[-1]
+        st = (t_exp["stocks"] + float(wv.get("stocks", 0)) + float(wr.get("stocks", 0))) / 3
+        bd = (float(wv.get("bonds", 0)) + float(wr.get("bonds", 0))) / 3
+        return etf_weights(st, bd), {"stocks": st, "bonds": bd}, \
+            f"{t_why}; with monthly sleeves to {me.index[-1]:%Y-%m}: stocks {st:.2f}x, bonds {bd:.2f}x"
+    return fn
+
+
+DAILY["champion_daily_trend"] = ("Champion with a DAILY trend sleeve (200-day rule)",
+                                 "Exp 58: equal thirds of the daily 200-day 3x trend rule (+-2% band), "
+                                 "valuation-scaled leverage and recovery+. Best worst-era result on daily "
+                                 "CRSP 1930-2026 (15.6%) and smaller drawdowns, but lower growth since 1991 "
+                                 "(19.8% vs 21.2%) and untested before 1930. Added 2026-11-21.",
+                                 champion_daily_trend())
+ACCOUNTS["champion_daily_trend"] = DAILY["champion_daily_trend"]
 
 
 def news_tone_overlay(lev=2.0, low=1.0, z_cut=-1.0):

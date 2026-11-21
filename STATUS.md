@@ -23,6 +23,10 @@ _Last updated: 2026-11-03 (Exp 26-31: sectors, news, neural nets, combinations)_
 > two trend rules (Exp 54) is the most robust version abroad and runs as account `champion_half_half`. Walk-forward over the
 > 18 ensemble variants of 17-20 Nov: 17.3%/yr 1957–2026, but only 11.1% in 1957–1990 (vs 13.9% hand-picked). New play-money account `champion_unemployment`.
 >
+> **Strongest open challenger (Exp 58, 2026-11-21):** the same ensemble with its trend sleeve decided daily
+> (200-day rule): best worst era on daily CRSP 1930-2026 (15.6% vs 14.2%) and smaller drawdowns, but lower
+> growth since 1991 and untested before 1930. Runs as account `champion_daily_trend`.
+>
 > **Previous champion (round 8):** equal thirds of 3× S&P trend, valuation-scaled leverage and recovery+.
 > It is chosen by its worst era across 1880–2026, not by the best backtest:
 > - eras: 15.4% / 14.6% / 13.1% / 21.3%;

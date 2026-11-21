@@ -1,0 +1,58 @@
+{
+ "key": "champion_daily_trend",
+ "name": "Champion with a DAILY trend sleeve (200-day rule)",
+ "description": "Exp 58: equal thirds of the daily 200-day 3x trend rule (+-2% band), valuation-scaled leverage and recovery+. Best worst-era result on daily CRSP 1930-2026 (15.6%) and smaller drawdowns, but lower growth since 1991 (19.8% vs 21.2%) and untested before 1930. Added 2026-11-21.",
+ "start": "2026-11-20",
+ "start_equity": 100000.0,
+ "cash": 388.12570000000414,
+ "holdings": {
+  "SPY": 143.88918327982898
+ },
+ "basis": {
+  "SPY": 99611.8743
+ },
+ "targets": {
+  "SPY": 0.99581
+ },
+ "exposure": {
+  "stocks": 0.9958096116661048,
+  "bonds": 0.0
+ },
+ "last_date": "2026-11-20",
+ "last_signal_month": "2026-11",
+ "fees": {
+  "commission": 1.0,
+  "spread_slippage": 29.8743,
+  "regulatory": 0.0
+ },
+ "fund_costs": 0.0,
+ "equity_history": [
+  {
+   "date": "2026-11-20",
+   "equity": 99969.13
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-11-20",
+   "symbol": "SPY",
+   "side": "buy",
+   "shares": 143.8892,
+   "price": 692.0673,
+   "amount": 99581.0,
+   "commission": 1.0,
+   "spread_slippage": 29.87,
+   "regulatory_fees": 0.0,
+   "realized_pl": 0.0,
+   "reason": "S&P -5.9% vs 200-day average: out; with monthly sleeves to 2026-10: stocks 1.00x, bonds 0.00x",
+   "qty": 143.8892
+  }
+ ],
+ "prices": {
+  "IEF": 95.0668,
+  "SPY": 692.0673,
+  "SSO": NaN,
+  "UPRO": 72.897,
+  "UST": 44.8641
+ }
+}

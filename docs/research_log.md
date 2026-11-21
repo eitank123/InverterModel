@@ -901,3 +901,9 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   era worse (worst 12.1% vs 13.9%): the trend sleeve already avoids the bad midterm years. Rejected.
 * Exp 57 (2026-11-20): Treasuries (when trending up) instead of cash in the valuation sleeve's
   off-state. +0.2-0.3 points in three eras, a tie in the worst one. Not promoted; watch list.
+* Exp 58 (2026-11-21): the trend sleeve decided DAILY (200-day average, +-2% band; Gayed & Bilello
+  2016) instead of at month-end, on daily CRSP 1930-2026 with all costs. The sleeve alone: worst era
+  19.8% vs 10.8% for the monthly rule, robust to higher financing, double costs and a 2-day delay. In the
+  whole ensemble: worst era 15.6% vs 14.2% (new champion), drawdown since 1940 -58% vs -67%, 2022 -24%
+  vs -33%; but 1991-2026 19.8% vs 21.2%, untestable before 1930, and slightly worse in Japan (14.5% vs
+  16.6%). Not promoted under the strict rule; new play-money account `champion_daily_trend`.

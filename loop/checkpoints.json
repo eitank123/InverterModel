@@ -485,5 +485,17 @@
   "sources": [
    "Moskowitz, Ooi & Pedersen (2012) 'Time series momentum', JFE"
   ]
+ },
+ {
+  "checkpoint": 50,
+  "date": "2026-11-21",
+  "iteration": null,
+  "finding": "Exp 58 (daily crash guard; Gayed & Bilello 2016; 3 variants; daily CRSP 1930-2026, 3x daily-reset, T-bill+0.5%, 10bp, trades at the next close). Trend sleeve alone: monthly 10-month rule 15.4/10.8/20.9% (1930-56/1957-90/1991-2026), worst 10.8%, DD since 1940 -78%, 1987 -48%; unemployment-gated monthly 15.2/14.7/24.0%; monthly + daily guard 17.2/15.9/19.1%; daily 200-day rule (+-2%) alone 20.1/19.8/20.6%, worst 19.8%, DD -68%, 1987 +40%, 1.5 switches a year. Robust: at T-bill+1.5% and 20bp it is still 18.0/17.7/18.1% vs 13.5/8.7/18.5%; traded 2 days late 17.3/16.7/21.1%; no band 16.9% worst. Whole ensemble (other sleeves monthly, Treasuries as cash): old champion 13.8/13.0/19.9%, new champion 14.2/14.6/21.2% (DD -67%, 2022 -33%), champion with the daily trend sleeve 15.6/16.1/19.8% (DD -58%, 2022 -24%). Japan (Nikkei daily 1951-2026, out of sample): daily rule 14.5%/yr vs monthly 16.6%, both -92% max drawdown.",
+  "decision": "Not the champion: the daily-sleeve ensemble has the best worst era on daily data (15.6% vs 14.2%) and smaller drawdowns, but fails beats_everywhere (1991-2026 19.8% vs 21.2%), 1880-1929 cannot be tested (no daily data), and in Japan the daily rule was slightly worse. Strongest evidence the loop has seen that the month-end decision is a weakness of the US trend sleeve; added as a NEW play-money account champion_daily_trend. Exp 18's 'one era only' caveat is lifted: on daily CRSP the daily rule beats the monthly one in all three eras. Variants counted: 3.",
+  "sources": [
+   "Gayed & Bilello (2016) 'Leverage for the Long Run - A Systematic Approach to Managing Risk and Magnifying Returns in Stocks', NAAIM Wagner Award",
+   "Ken French daily market factor (CRSP)",
+   "FRED NIKKEI225"
+  ]
  }
 ]
