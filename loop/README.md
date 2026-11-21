@@ -82,6 +82,7 @@ unemployment gate on Japan and 11 other markets (Exp 51-52: growth about neutral
 bear-market override (-20%) on the gate (Exp 53: rejected, fires too late; Japan -83%) ·
 50/50 plain and gated trend sleeve (Exp 54: US 13.6%, most robust abroad; new account champion_half_half) ·
 Fed-tightening leverage cut (Exp 55: rejected, -3.7 points 1930-56, -5.6 since 1991) ·
+NEXT: daily 200-day crash guard on the champion's 3x trend sleeve between month-ends (Gayed & Bilello 2016; CRSP daily 1926+); does it fix the unemployment gate's overseas tail? ·
 presidential-cycle (midterm-year) leverage cut (Exp 56: rejected, worse in every era) ·
 trending Treasuries instead of cash in the valuation sleeve (Exp 57: tie in the worst era; watch list) · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·
