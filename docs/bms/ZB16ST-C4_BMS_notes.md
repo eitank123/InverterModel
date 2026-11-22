@@ -213,3 +213,14 @@ get the shipment report or ask the maker.
 Quote the board markings `ZB16ST-C4-V8.5`, the power board marked `V4.2 2021.08.12`, and the label above.
 
 No ZBL48V40A document was found in the BGR Drive.
+
+---
+
+## Update: web search by exact model (2026-11-22)
+
+- No public datasheet found for "ZBL48V40A" in English or Chinese searches.
+- The maker's English site is **http://zl.smart-bms.com/**. A search snippet shows a related product there,
+  "ZBF48V20ATC4-2G-GPS" (48 V 20 A, 16S, RS485, 2G/GPS, for swappable batteries), at
+  http://zl.smart-bms.com/productshow.asp?ArticleID=0&id=46&cid=001004. It uses the same "TC4" suffix, which supports
+  the maker identification. The meaning of "TC4" is still unknown.
+- The site returned HTTP 503 (www and zl) and reset HTTPS connections on 2026-11-22, so its pages could not be read. Retry later.
