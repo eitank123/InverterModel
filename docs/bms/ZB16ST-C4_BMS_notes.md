@@ -178,3 +178,38 @@ Implications:
   Check what the black cable between the two BMSs is, and whether the packs are meant to be joined,
   before connecting them together.
 - The ISM/ISP pins are likely the current-shunt sense lines (I-sense minus/plus) (inferred).
+
+---
+
+## Update: label on the back (2026-11-22) — maker effectively identified
+
+Label on the back of one BMS:
+- 客户 (customer): 香港量盛 ("Hong Kong Liangsheng"): the pack assembler it was built for, not the BMS maker
+- 产品名称 (product name): **ZBL48V40A TC4-13S**
+- 日期 (date): 2024-11-20
+
+**What this establishes:**
+- The `ZBL<voltage>V<current>A…` naming is the same scheme as the team's Shenzhen Smart Li-ion `ZBL12V60ATCC` manual.
+  So this is almost certainly a **Shenzhen Smart Li-ion Energy Technology Co. (smart-bms.com) BMS**.
+- **48 V, 40 A, 13S.** The "ZB16ST" control board is a common board that handles up to 16 cells; this unit is set up for 13 cells.
+- 13S NMC/NCA is 54.6 V at 4.20 V per cell (47 V nominal), which stays under 60 V.
+- "TC4" is not decoded. It may be a communication or temperature option (e.g. 4 NTC); ask the maker.
+
+**To check on the bench:**
+- Count the populated balance wires against 13S. The harness looked like 16 + 1 wires, so 3 taps may be bridged or unused.
+  Confirm before plugging in, because a wrong tap mapping can destroy the AFE.
+- Check that both packs' labels read 13S.
+
+**Defaults:** use the ZBL12V60ATCC manual only for the protocol, interfaces and connection order (CAN 500k, UART 9600).
+Do not use its current limits, which are for a 60 A unit. This unit is 40 A, so its overcurrent thresholds will be lower;
+get the shipment report or ask the maker.
+
+**Ask the maker for:**
+- the ZBL48V40A TC4-13S spec / shipment report;
+- the CAN and UART protocol documents;
+- the PC software and password;
+- whether two packs may be connected in parallel (the manual says no).
+
+Quote the board markings `ZB16ST-C4-V8.5`, the power board marked `V4.2 2021.08.12`, and the label above.
+
+No ZBL48V40A document was found in the BGR Drive.
