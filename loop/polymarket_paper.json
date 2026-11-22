@@ -412,17 +412,27 @@
    "shares": 361.0108,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "5787490",
+   "question": "Next White House Press Secretary announced by November 30, 2026?",
+   "end": "2026-12-01T04:59:00Z",
+   "placed": "2026-11-22T16:39:01.395699+00:00",
+   "price": 0.155,
+   "shares": 645.1613,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 36,
-  "open": 10,
+  "bets": 37,
+  "open": 11,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-22T12:36:35.842769+00:00"
+  "updated": "2026-11-22T16:39:01.395699+00:00"
  }
 }
