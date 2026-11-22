@@ -156,3 +156,25 @@ Next step: email the maker (address in the manual) with the board markings and p
 the UART/CAN protocol document and the PC tool.
 
 Other BMS documents in the drive are for the HV accumulator's Orion BMS 2, not for this board.
+
+---
+
+## Update: full photo of both packs (2026-11-22)
+
+Read from the second photo (two packs side by side, each with its own BMS):
+- Each BMS has two parts: the black control board (`ZB16ST-C4-V8.5` on the right pack; the left one has the same layout)
+  and a separate **power board marked "2021.08.12 V4.2"**. The power board carries two columns of power MOSFETs
+  (charge and discharge switches) and the DFET / RSENSE / CFET / PSENSE / ISP / ISM / B- pins that join it to the control board.
+- The power-board pads are labelled B- and P/C. "P/C" suggests one shared terminal for charge and discharge (inferred).
+- A black multi-wire cable runs between the two BMSs' communication connectors.
+- A cell sleeve shows "INR-21700-P4…" and "NOT FOR E-CIG". This is probably Molicel INR21700-P45B
+  (the HV accumulator cell) (inferred, partly obscured).
+- Thick single power leads leave the top of each pack.
+
+Implications:
+- Separate control and power boards (one model code each) is how the Shenzhen Smart Li-ion manual describes its
+  large-pack range. That still fits the "ZB" match but doesn't confirm it.
+- **Caution:** that manual says the BMS "can only be used in a separate battery pack, can not in parallel or in series".
+  Check what the black cable between the two BMSs is, and whether the packs are meant to be joined,
+  before connecting them together.
+- The ISM/ISP pins are likely the current-shunt sense lines (I-sense minus/plus) (inferred).
