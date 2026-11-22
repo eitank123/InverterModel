@@ -907,3 +907,6 @@ Setup: 1957–2026, full execution model, 25% capital-gains tax, sold at the end
   whole ensemble: worst era 15.6% vs 14.2% (new champion), drawdown since 1940 -58% vs -67%, 2022 -24%
   vs -33%; but 1991-2026 19.8% vs 21.2%, untestable before 1930, and slightly worse in Japan (14.5% vs
   16.6%). Not promoted under the strict rule; new play-money account `champion_daily_trend`.
+* Exp 59 (2026-11-22): splitting the trend sleeve 50/50 between the daily rule and the monthly rule
+  lands between them (worst era 15.1% with the gated monthly half; 1991-2026 20.6% vs 21.2%). Not
+  promoted. A pre-1930 daily test is blocked: no reachable daily index before Dec 1927.

@@ -148,3 +148,16 @@ for k, on in {"monthly 10-month rule": n_m, "daily 200-day rule (+-2%)": n_d}.it
     w = (1 + x).cumprod()
     print(f"  {k:28s} 1951-1989 {at.metrics.cagr(x[:'1989'], 252):6.1%}  1990-2012 {at.metrics.cagr(x['1990':'2012'], 252):6.1%}"
           f"  2013-2026 {at.metrics.cagr(x['2013':], 252):6.1%}  all {at.metrics.cagr(x, 252):6.1%}  max DD {float((w / w.cummax() - 1).min()):.0%}")
+
+
+# --- Part 4 (Exp 59): fixed 50/50 trend sleeves, daily rule + a monthly rule -----------------------
+print("\nExp 59 - trend sleeve split 50/50 between the daily rule and a monthly rule (whole ensemble):")
+mix = {"half daily, half old monthly": 1.5 * guard + 1.5 * daily(m_on),
+       "half daily, half gated monthly": 1.5 * guard + 1.5 * daily(gm_on)}
+for fin in (0.005, 0.015):
+    for k, t in {**{"new champion (gated monthly)": 3 * daily(gm_on), "champion with daily trend sleeve": 3 * guard}, **mix}.items():
+        x = run_exposure((t + val + rec) / 3, fin)
+        v = [at.metrics.cagr(x[a:b], 252) for a, b in ERAS.values()]
+        w = (1 + x["1940":]).cumprod()
+        print(f"  +{fin:.1%} {k:36s} " + " ".join(f"{q:6.1%}" for q in v) + f"  worst {min(v):6.1%}  DD1940+ "
+              f"{float((w / w.cummax() - 1).min()):.0%}  2022 {float((1 + x['2022']).prod() - 1):.0%}")

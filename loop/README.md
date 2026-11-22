@@ -83,7 +83,8 @@ bear-market override (-20%) on the gate (Exp 53: rejected, fires too late; Japan
 50/50 plain and gated trend sleeve (Exp 54: US 13.6%, most robust abroad; new account champion_half_half) ·
 Fed-tightening leverage cut (Exp 55: rejected, -3.7 points 1930-56, -5.6 since 1991) ·
 daily 200-day trend sleeve / crash guard (Exp 58: daily CRSP 1930-2026 worst era 15.6% vs 14.2% for the ensemble, smaller drawdowns, but lower 1991-2026 and slightly worse in Japan; new account champion_daily_trend) ·
-next: a pre-1930 daily test (Dow Jones daily from 1896) for the daily trend sleeve; daily guard on the 50/50 hedge ·
+50/50 daily + monthly trend sleeve (Exp 59: worst era 15.1%, fails 1991-2026 by 0.6; no new account) ·
+next: a pre-1930 daily index for the daily trend sleeve (Stooq Dow 1896+ blocked by the proxy here) ·
 presidential-cycle (midterm-year) leverage cut (Exp 56: rejected, worse in every era) ·
 trending Treasuries instead of cash in the valuation sleeve (Exp 57: tie in the worst era; watch list) · combining valuation and trend leverage ·
 sector momentum as the stock leg (Exp 27: worst era +3.6 points 1927-2026; needs a sector-ETF daily price feed for a live account, and a pre-1926 proxy) ·

@@ -497,5 +497,16 @@
    "Ken French daily market factor (CRSP)",
    "FRED NIKKEI225"
   ]
+ },
+ {
+  "checkpoint": 51,
+  "date": "2026-11-22",
+  "iteration": null,
+  "finding": "(a) Pre-1930 daily test of the daily trend sleeve is blocked here: Stooq (Dow daily from 1896) is unreachable through the network proxy; Yahoo's daily ^GSPC starts 1927-12-30 and ^DJI 1992. (b) Exp 59, trend sleeve split 50/50 inside the ensemble (daily CRSP 1930-2026, other sleeves monthly; 2 variants): half daily + half old monthly 14.8/14.6/19.9% (worst 14.6%, DD since 1940 -61%, 2022 -23%); half daily + half unemployment-gated monthly 15.1/15.4/20.6% (worst 15.1%, -61%, -28%) vs new champion 14.2/14.6/21.2% (-66%, -33%) and all-daily 15.6/16.1/19.8% (-58%, -24%). Same ranking at +1.5% financing.",
+  "decision": "Not promoted: both fail beats_everywhere against the champion in 1991-2026 (20.6% vs 21.2%). The 50/50 split behaves like an average of two accounts already running (champion_unemployment and champion_daily_trend), so no new account. Variants counted: 2. Open: a pre-1930 daily index (needs a reachable source).",
+  "sources": [
+   "Gayed & Bilello (2016)",
+   "Ken French daily market factor"
+  ]
  }
 ]
