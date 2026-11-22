@@ -124,3 +124,35 @@ yourself during the first charge.
 * The source of the pack (vehicle or brand). An OEM BMS is usually documented only by the pack vendor.
 * Then search the AFE and MCU numbers plus "16S" on 21ic / mydigit / endless-sphere, and send the photo and
   markings to the seller.
+
+---
+
+## Update: BGR Drive search (2026-11-22, read-only)
+
+No file in the BGR shared drive mentions "ZB16ST", "ZLYF", or the DFET/CFET/PSENSE labels.
+The closest lead is a Shenzhen Smart Li-ion Energy Technology Co. (smart-bms.com) BMS that the team
+already used. Its model code `ZBL12V60ATCC` uses the same "ZB" prefix as this board's `ZB16ST-C4`.
+**Likely the same maker, not confirmed.**
+
+Drive files (same manual, several copies):
+- `ZBL12V60ATCC - Shenzhen Smart Li-ion.pdf` (spec pages only)
+- `60A CAN li-ion (3 6V) Specification_shenzen BMS.pdf` (full 21-page manual, Rev CC-A8, 2022-04-02)
+
+Key facts **for that product** (4S-16S, 170x60x25 mm, 60 A). These are defaults; the actual board's shipment report governs:
+- Communication: isolated CAN at 500 kbit/s (firmware upgrade over CAN); non-isolated UART at 9600 baud,
+  to be used only with the maker's USB-TTL PC adapter, Bluetooth or LCD module. Do not tie UART GND to an external RS485 ground.
+- Default NMC thresholds: OVP 4.25 V (release 4.10 V), UVP 2.80 V (release 3.30 V), 1 s delays.
+  Discharge OCP 110 A / 120 A (1 s), charge OCP 55 A, short-circuit 200-600 us.
+- Temperature: discharge cutoff 65 / -20 C, charge cutoff 55 / -5 C, MOSFET 85 C. Up to 4 NTC probes.
+- Passive balancing, 75 ohm (10-30 mA). Starts above 3.8 V when cell difference >50 mV; stops below 20 mV.
+- Sleep after 30 s idle (<300 uA); wakes on current or communication. Deep sleep after over-discharge (<30 uA),
+  which only a charger can wake.
+- Reset: a pair of white wires; shorting them restarts the BMS.
+- Connection order (from the manual): solder the balance leads from lowest to highest cell without plugging them in,
+  then B-, P- and B+, then plug in the balance connector, then connect the charger or load. Remove in reverse order.
+- Parameters can be changed with their PC software, but it is password-protected; request it from the maker.
+
+Next step: email the maker (address in the manual) with the board markings and photos and ask for the ZB16ST-C4 spec,
+the UART/CAN protocol document and the PC tool.
+
+Other BMS documents in the drive are for the HV accumulator's Orion BMS 2, not for this board.
