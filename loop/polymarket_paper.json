@@ -338,17 +338,27 @@
    "shares": 380.2281,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6117508",
+   "question": "Will Kimi Antonelli win the 2026 F1 Las Vegas Grand Prix?",
+   "end": "2026-11-29T04:00:00Z",
+   "placed": "2026-11-22T04:38:01.984386+00:00",
+   "price": 0.175,
+   "shares": 571.4286,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 29,
-  "open": 5,
+  "bets": 30,
+  "open": 6,
   "settled": 24,
   "won": 5,
   "staked_settled": 2400.0,
   "pnl": -431.16,
   "return_per_bet": -0.1796,
   "avg_price_settled": 0.2288,
-  "updated": "2026-11-22T00:37:03.801678+00:00"
+  "updated": "2026-11-22T04:38:01.984386+00:00"
  }
 }
