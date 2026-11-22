@@ -347,7 +347,9 @@
    "price": 0.175,
    "shares": 571.4286,
    "stake": 100.0,
-   "status": "open"
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-22T12:36:35.842769+00:00"
   },
   {
    "id": "6507426",
@@ -397,18 +399,30 @@
    "price": 0.285,
    "shares": 350.8772,
    "stake": 100.0,
+   "status": "lost",
+   "payout": 0.0,
+   "settled": "2026-11-22T12:36:35.842769+00:00"
+  },
+  {
+   "id": "6507392",
+   "question": "Will Bitcoin dip to $55,000 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-22T12:36:35.842769+00:00",
+   "price": 0.277,
+   "shares": 361.0108,
+   "stake": 100.0,
    "status": "open"
   }
  ],
  "summary": {
-  "bets": 35,
-  "open": 11,
-  "settled": 24,
+  "bets": 36,
+  "open": 10,
+  "settled": 26,
   "won": 5,
-  "staked_settled": 2400.0,
-  "pnl": -431.16,
-  "return_per_bet": -0.1796,
-  "avg_price_settled": 0.2288,
-  "updated": "2026-11-22T08:37:51.080150+00:00"
+  "staked_settled": 2600.0,
+  "pnl": -631.16,
+  "return_per_bet": -0.2428,
+  "avg_price_settled": 0.2289,
+  "updated": "2026-11-22T12:36:35.842769+00:00"
  }
 }
