@@ -348,17 +348,67 @@
    "shares": 571.4286,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6507426",
+   "question": "Will Ethereum dip to $1,500 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-22T08:37:51.080150+00:00",
+   "price": 0.3,
+   "shares": 333.3333,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "6507427",
+   "question": "Will Ethereum dip to $1,400 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-22T08:37:51.080150+00:00",
+   "price": 0.169,
+   "shares": 591.716,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "7043499",
+   "question": "Will Bitcoin reach $67,500 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-22T08:37:51.080150+00:00",
+   "price": 0.195,
+   "shares": 512.8205,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "7043500",
+   "question": "Will Bitcoin dip to $52,500 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-22T08:37:51.080150+00:00",
+   "price": 0.205,
+   "shares": 487.8049,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "7222061",
+   "question": "Playford: Dominik Palan vs Chen Dong",
+   "end": "2026-11-29T03:00:00Z",
+   "placed": "2026-11-22T08:37:51.080150+00:00",
+   "price": 0.285,
+   "shares": 350.8772,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 30,
-  "open": 6,
+  "bets": 35,
+  "open": 11,
   "settled": 24,
   "won": 5,
   "staked_settled": 2400.0,
   "pnl": -431.16,
   "return_per_bet": -0.1796,
   "avg_price_settled": 0.2288,
-  "updated": "2026-11-22T04:38:01.984386+00:00"
+  "updated": "2026-11-22T08:37:51.080150+00:00"
  }
 }
