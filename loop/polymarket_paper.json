@@ -442,17 +442,27 @@
    "shares": 606.0606,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "5407575",
+   "question": "Will Predict.fun launch a token by November 30, 2026?",
+   "end": "2026-12-01T04:59:00Z",
+   "placed": "2026-11-23T16:37:20.441587+00:00",
+   "price": 0.176,
+   "shares": 568.1818,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 39,
-  "open": 13,
+  "bets": 40,
+  "open": 14,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-23T12:38:26.325050+00:00"
+  "updated": "2026-11-23T16:37:20.441587+00:00"
  }
 }
