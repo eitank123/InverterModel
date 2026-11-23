@@ -422,17 +422,27 @@
    "shares": 645.1613,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "3580933",
+   "question": "Will Puma Shen win the next Taipei Mayor election?",
+   "end": "2026-11-29T04:59:00Z",
+   "placed": "2026-11-23T00:37:10.497959+00:00",
+   "price": 0.299,
+   "shares": 334.4482,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 37,
-  "open": 11,
+  "bets": 38,
+  "open": 12,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-22T20:37:32.576714+00:00"
+  "updated": "2026-11-23T00:37:10.497959+00:00"
  }
 }
