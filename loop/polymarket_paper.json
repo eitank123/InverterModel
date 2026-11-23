@@ -432,17 +432,27 @@
    "shares": 334.4482,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6207382",
+   "question": "Will WTI Crude Oil (WTI) hit (LOW) $75 in November?",
+   "end": "2026-12-01T04:59:59.999Z",
+   "placed": "2026-11-23T12:38:26.325050+00:00",
+   "price": 0.165,
+   "shares": 606.0606,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 38,
-  "open": 12,
+  "bets": 39,
+  "open": 13,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-23T08:36:20.493289+00:00"
+  "updated": "2026-11-23T12:38:26.325050+00:00"
  }
 }
