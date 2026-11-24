@@ -472,17 +472,27 @@
    "shares": 398.4064,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "7150681",
+   "question": "Will Bitcoin reach $65,000 in November?",
+   "end": "2026-12-01T05:00:00Z",
+   "placed": "2026-11-24T04:38:10.287128+00:00",
+   "price": 0.305,
+   "shares": 327.8689,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 42,
-  "open": 16,
+  "bets": 43,
+  "open": 17,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-24T00:37:51.720683+00:00"
+  "updated": "2026-11-24T04:38:10.287128+00:00"
  }
 }
