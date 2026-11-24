@@ -4,7 +4,7 @@
  "description": "Exp 31 lead challenger: the champion's signals at 2/3 of its leverage, stock part split equally into industry momentum (top 3 sector SPDRs), stock momentum (MTUM) and value (VTV). Real ETF prices from Yahoo Finance; margin loan at the T-bill + 1.5%.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": -33212.92504730654,
+ "cash": -33220.34523651354,
  "holdings": {
   "XLE": 219.8330840331659,
   "MTUM": 644.7819251787729,
@@ -30,14 +30,14 @@
   "stocks": 1.3305397411107365,
   "bonds": 0.0
  },
- "last_date": "2026-11-20",
+ "last_date": "2026-11-23",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 5.0,
   "spread_slippage": 51.0040234092449,
   "regulatory": 0.0
  },
- "fund_costs": 6.4246242449323505,
+ "fund_costs": 6.868577496681195,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -98,6 +98,10 @@
   {
    "date": "2026-11-20",
    "equity": 87355.93
+  },
+  {
+   "date": "2026-11-23",
+   "equity": 91785.57
   }
  ],
  "trades": [
@@ -173,26 +177,26 @@
   }
  ],
  "prices": {
-  "XLB": 48.34,
-  "XLC": 100.03,
-  "XLE": 60.51,
-  "XLF": 54.57,
-  "XLI": 156.37,
-  "XLK": 149.01,
-  "XLP": 90.46,
-  "XLRE": 42.46,
-  "XLU": 42.69,
-  "XLV": 177.24,
-  "XLY": 112.46,
-  "MTUM": 60.27,
-  "VTV": 214.22,
-  "IEF": 91.65,
-  "SPY": 689.81,
-  "UPRO": 105.4,
-  "EFA": 96.14,
-  "LQD": 103.69,
-  "GLD": 322.87,
-  "IBIT": 33.02
+  "XLB": 49.9,
+  "XLC": 103.6,
+  "XLE": 59.87,
+  "XLF": 55.65,
+  "XLI": 162.47,
+  "XLK": 162.38,
+  "XLP": 90.38,
+  "XLRE": 42.9,
+  "XLU": 43.32,
+  "XLV": 179.42,
+  "XLY": 116.93,
+  "MTUM": 63.94,
+  "VTV": 218.87,
+  "IEF": 91.64,
+  "SPY": 722.29,
+  "UPRO": 119.74,
+  "EFA": 98.76,
+  "LQD": 103.93,
+  "GLD": 333.02,
+  "IBIT": 34.62
  },
  "corporate_actions": [
   {

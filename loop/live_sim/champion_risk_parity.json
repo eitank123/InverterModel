@@ -4,7 +4,7 @@
  "description": "Exp 35: half the champion, half risk parity with trend filters over SPY, EFA, IEF, LQD and GLD at 15% volatility (max 3x). Real ETF prices; margin at T-bill + 1.5%.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": 19388.35649118927,
+ "cash": 19391.426314300374,
  "holdings": {
   "EFA": 150.07435931252934,
   "UPRO": 178.9223092511536,
@@ -24,14 +24,14 @@
   "stocks": 1.304124397974383,
   "bonds": 0.0
  },
- "last_date": "2026-11-20",
+ "last_date": "2026-11-23",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 3.0,
   "spread_slippage": 29.165637764239914,
   "regulatory": 0.0
  },
- "fund_costs": 163.3439997682296,
+ "fund_costs": 174.0410045672653,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -92,6 +92,10 @@
   {
    "date": "2026-11-20",
    "equity": 89512.48
+  },
+  {
+   "date": "2026-11-23",
+   "equity": 94209.0
   }
  ],
  "trades": [
@@ -139,25 +143,25 @@
   }
  ],
  "prices": {
-  "XLB": 48.34,
-  "XLC": 100.03,
-  "XLE": 60.51,
-  "XLF": 54.57,
-  "XLI": 156.37,
-  "XLK": 149.01,
-  "XLP": 90.46,
-  "XLRE": 42.46,
-  "XLU": 42.69,
-  "XLV": 177.24,
-  "XLY": 112.46,
-  "MTUM": 60.27,
-  "VTV": 214.22,
-  "IEF": 91.65,
-  "SPY": 689.81,
-  "UPRO": 105.4,
-  "EFA": 96.14,
-  "LQD": 103.69,
-  "GLD": 322.87,
-  "IBIT": 33.02
+  "XLB": 49.9,
+  "XLC": 103.6,
+  "XLE": 59.87,
+  "XLF": 55.65,
+  "XLI": 162.47,
+  "XLK": 162.38,
+  "XLP": 90.38,
+  "XLRE": 42.9,
+  "XLU": 43.32,
+  "XLV": 179.42,
+  "XLY": 116.93,
+  "MTUM": 63.94,
+  "VTV": 218.87,
+  "IEF": 91.64,
+  "SPY": 722.29,
+  "UPRO": 119.74,
+  "EFA": 98.76,
+  "LQD": 103.93,
+  "GLD": 333.02,
+  "IBIT": 34.62
  }
 }

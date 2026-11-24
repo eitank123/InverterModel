@@ -452,17 +452,37 @@
    "shares": 568.1818,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6440135",
+   "question": "Will Trump speak to Volodymyr Zelenskyy by November 30?",
+   "end": "2026-12-01T04:59:00Z",
+   "placed": "2026-11-24T00:37:22.414657+00:00",
+   "price": 0.195,
+   "shares": 512.8205,
+   "stake": 100.0,
+   "status": "open"
+  },
+  {
+   "id": "6440141",
+   "question": "Will Trump speak to Emmanuel Macron by November 30?",
+   "end": "2026-12-01T04:59:00Z",
+   "placed": "2026-11-24T00:37:22.414657+00:00",
+   "price": 0.251,
+   "shares": 398.4064,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 40,
-  "open": 14,
+  "bets": 42,
+  "open": 16,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-23T20:38:08.500710+00:00"
+  "updated": "2026-11-24T00:37:51.720683+00:00"
  }
 }

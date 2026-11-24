@@ -4,7 +4,7 @@
  "description": "Loop strategy 'valuation-scaled leverage <=3x' {\"w\": 1.0, \"k\": 2.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": 1244.0937982268565,
+ "cash": 1244.290779744909,
  "holdings": {
   "SPY": 129.36667409759994
  },
@@ -18,14 +18,14 @@
   "stocks": 0.9874288349983147,
   "bonds": 0.0
  },
- "last_date": "2026-11-20",
+ "last_date": "2026-11-23",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 4.0,
   "spread_slippage": 42.79642690111931,
   "regulatory": 0.3879375312225739
  },
- "fund_costs": 39.19572056300497,
+ "fund_costs": 39.54706925169906,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -110,6 +110,10 @@
   {
    "date": "2026-11-20",
    "equity": 90774.54
+  },
+  {
+   "date": "2026-11-23",
+   "equity": 94937.27
   }
  ],
  "trades": [
@@ -171,10 +175,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.0668,
-  "SPY": 692.0673,
+  "IEF": 95.9404,
+  "SPY": 724.2436,
   "SSO": NaN,
-  "UPRO": 72.897,
-  "UST": 44.8641
+  "UPRO": 83.0112,
+  "UST": 45.6793
  }
 }
