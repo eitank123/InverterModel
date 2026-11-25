@@ -492,17 +492,27 @@
    "shares": 408.1633,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "6910695",
+   "question": "Will WTI Crude Oil (WTI) hit (HIGH) $90 in November?",
+   "end": "2026-12-01T04:59:59.999Z",
+   "placed": "2026-11-25T16:38:53.333553+00:00",
+   "price": 0.165,
+   "shares": 606.0606,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 44,
-  "open": 18,
+  "bets": 45,
+  "open": 19,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-25T12:36:55.371354+00:00"
+  "updated": "2026-11-25T16:38:53.333553+00:00"
  }
 }
