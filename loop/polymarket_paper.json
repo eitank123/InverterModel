@@ -482,17 +482,27 @@
    "shares": 327.8689,
    "stake": 100.0,
    "status": "open"
+  },
+  {
+   "id": "7268605",
+   "question": "Exact Score: Any Other Score?",
+   "end": "2026-11-30T19:45:00Z",
+   "placed": "2026-11-25T00:36:53.670621+00:00",
+   "price": 0.245,
+   "shares": 408.1633,
+   "stake": 100.0,
+   "status": "open"
   }
  ],
  "summary": {
-  "bets": 43,
-  "open": 17,
+  "bets": 44,
+  "open": 18,
   "settled": 26,
   "won": 5,
   "staked_settled": 2600.0,
   "pnl": -631.16,
   "return_per_bet": -0.2428,
   "avg_price_settled": 0.2289,
-  "updated": "2026-11-24T20:37:23.135358+00:00"
+  "updated": "2026-11-25T00:36:53.670621+00:00"
  }
 }

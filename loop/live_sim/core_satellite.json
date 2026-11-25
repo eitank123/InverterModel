@@ -4,7 +4,7 @@
  "description": "Exp 37 round 4, chosen on 1972-1999 only: the banded champion plus a satellite of risk parity, time-series momentum and gold trend at 2x. Real ETF prices; margin at T-bill + 1.5%.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": 17473.68869986365,
+ "cash": 17476.49003725839,
  "holdings": {
   "UPRO": 238.5630790015381,
   "SPY": 54.88061797515632,
@@ -24,14 +24,14 @@
   "stocks": 1.4892026645424896,
   "bonds": 0.0
  },
- "last_date": "2026-11-23",
+ "last_date": "2026-11-24",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 3.0,
   "spread_slippage": 31.39862103628592,
   "regulatory": 0.0
  },
- "fund_costs": 228.76996660409546,
+ "fund_costs": 242.7219739545333,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -96,6 +96,10 @@
   {
    "date": "2026-11-23",
    "equity": 93358.4
+  },
+  {
+   "date": "2026-11-24",
+   "equity": 92743.72
   }
  ],
  "trades": [
@@ -143,25 +147,25 @@
   }
  ],
  "prices": {
-  "XLB": 49.9,
-  "XLC": 103.6,
-  "XLE": 59.87,
-  "XLF": 55.65,
-  "XLI": 162.47,
-  "XLK": 162.38,
-  "XLP": 90.38,
-  "XLRE": 42.9,
-  "XLU": 43.32,
-  "XLV": 179.42,
-  "XLY": 116.93,
-  "MTUM": 63.94,
-  "VTV": 218.87,
+  "XLB": 50.17,
+  "XLC": 104.45,
+  "XLE": 60.45,
+  "XLF": 56.11,
+  "XLI": 161.61,
+  "XLK": 157.09,
+  "XLP": 91.88,
+  "XLRE": 43.46,
+  "XLU": 43.4,
+  "XLV": 184.72,
+  "XLY": 117.72,
+  "MTUM": 61.89,
+  "VTV": 220.1,
   "IEF": 91.64,
-  "SPY": 722.29,
-  "UPRO": 119.74,
-  "EFA": 98.76,
-  "LQD": 103.93,
-  "GLD": 333.02,
-  "IBIT": 34.62
+  "SPY": 718.78,
+  "UPRO": 117.92,
+  "EFA": 98.88,
+  "LQD": 103.79,
+  "GLD": 325.45,
+  "IBIT": 33.76
  }
 }
