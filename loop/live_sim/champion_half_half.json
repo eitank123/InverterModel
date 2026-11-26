@@ -4,7 +4,7 @@
  "description": "Exp 54 (checkpoint 45): the champion's sleeves with the 3x trend sleeve split 50/50 between the old plain rule and the new unemployment-gated rule - a fixed equal weight against choosing the wrong one. US worst era 13.6% (old 13.1%, new 13.9%); in 11 other markets the most robust version (median 11.2%, beats the old mix in 8 of 11, 2022 -25% vs -30%). Added 2026-11-19.",
  "start": "2026-11-18",
  "start_equity": 100000.0,
- "cash": -41.98912762441273,
+ "cash": -41.99692560525726,
  "holdings": {
   "UPRO": 571.2609230503418,
   "SPY": 68.50411185982261
@@ -21,14 +21,14 @@
   "stocks": 1.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-11-24",
+ "last_date": "2026-11-25",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 39.9581,
   "regulatory": 0.0
  },
- "fund_costs": 74.84295336704378,
+ "fund_costs": 93.89911826119186,
  "equity_history": [
   {
    "date": "2026-11-18",
@@ -49,6 +49,10 @@
   {
    "date": "2026-11-24",
    "equity": 96084.23
+  },
+  {
+   "date": "2026-11-25",
+   "equity": 95501.3
   }
  ],
  "trades": [
@@ -82,10 +86,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.9586,
-  "SPY": 720.8954,
+  "IEF": 96.0487,
+  "SPY": 718.7498,
   "SSO": NaN,
-  "UPRO": 81.8224,
-  "UST": 45.6869
+  "UPRO": 81.0592,
+  "UST": 45.763
  }
 }

@@ -4,7 +4,7 @@
  "description": "Exp 28 forward test: 2x the S&P, cut to 1x while the 5-day news tone (GDELT, 'stock market', English) is 1 standard deviation below its 250-day mean. Lost to plain 2x in the 2018-2026 backtest.",
  "start": "2026-11-02",
  "start_equity": 100000.0,
- "cash": -42.12275118261978,
+ "cash": -42.13057397926798,
  "holdings": {
   "UPRO": 503.89345652449975,
   "SPY": 65.67403796987983
@@ -21,14 +21,14 @@
   "stocks": 2.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-24",
+ "last_date": "2026-11-25",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 40.0,
   "regulatory": 0.0
  },
- "fund_costs": 294.45632569164326,
+ "fund_costs": 311.27938778891024,
  "equity_history": [
   {
    "date": "2026-11-02",
@@ -97,6 +97,10 @@
   {
    "date": "2026-11-24",
    "equity": 88531.74
+  },
+  {
+   "date": "2026-11-25",
+   "equity": 88006.3
   }
  ],
  "trades": [
@@ -130,10 +134,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.9586,
-  "SPY": 720.8954,
+  "IEF": 96.0487,
+  "SPY": 718.7498,
   "SSO": NaN,
-  "UPRO": 81.8224,
-  "UST": 45.6869
+  "UPRO": 81.0592,
+  "UST": 45.763
  }
 }

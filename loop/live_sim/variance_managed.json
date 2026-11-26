@@ -4,7 +4,7 @@
  "description": "Loop strategy 'variance-managed stocks' {\"lev\": 2.0, \"cap\": 3.0, \"win\": 3}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -51.204146137927175,
+ "cash": -51.21365547935279,
  "holdings": {
   "UPRO": 1000.0
  },
@@ -18,14 +18,14 @@
   "stocks": 3.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-24",
+ "last_date": "2026-11-25",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 50.0,
   "regulatory": 0.0
  },
- "fund_costs": 821.1784016004971,
+ "fund_costs": 854.2132621988044,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -118,6 +118,10 @@
   {
    "date": "2026-11-24",
    "equity": 81771.16
+  },
+  {
+   "date": "2026-11-25",
+   "equity": 81008.04
   }
  ],
  "trades": [
@@ -137,10 +141,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.9586,
-  "SPY": 720.8954,
+  "IEF": 96.0487,
+  "SPY": 718.7498,
   "SSO": NaN,
-  "UPRO": 81.8224,
-  "UST": 45.6869
+  "UPRO": 81.0592,
+  "UST": 45.763
  }
 }

@@ -4,7 +4,7 @@
  "description": "Exp 46 (checkpoint 38): the champion's three sleeves, but the 3x trend sleeve obeys its 10-month exit only while US unemployment is above its 12-month average (growth-trend timing, Philosophical Economics 2016). Worst era 13.9% vs 13.1%, passes beats_everywhere; 1880-1947 untested (no data). Added 2026-11-18.",
  "start": "2026-11-17",
  "start_equity": 100000.0,
- "cash": -41.99687561820056,
+ "cash": -42.00467503795822,
  "holdings": {
   "UPRO": 566.9795872140387,
   "SPY": 68.3420714220343
@@ -21,14 +21,14 @@
   "stocks": 1.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-11-24",
+ "last_date": "2026-11-25",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 2.0,
   "spread_slippage": 39.9581,
   "regulatory": 0.0
  },
- "fund_costs": 94.4496309873439,
+ "fund_costs": 113.36392579947324,
  "equity_history": [
   {
    "date": "2026-11-17",
@@ -53,6 +53,10 @@
   {
    "date": "2026-11-24",
    "equity": 95617.1
+  },
+  {
+   "date": "2026-11-25",
+   "equity": 95037.78
   }
  ],
  "trades": [
@@ -86,10 +90,10 @@
   }
  ],
  "prices": {
-  "IEF": 95.9586,
-  "SPY": 720.8954,
+  "IEF": 96.0487,
+  "SPY": 718.7498,
   "SSO": NaN,
-  "UPRO": 81.8224,
-  "UST": 45.6869
+  "UPRO": 81.0592,
+  "UST": 45.763
  }
 }
