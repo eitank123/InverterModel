@@ -4,7 +4,7 @@
  "description": "Loop strategy 'trend-strength leverage' {\"w\": 1.0, \"lev\": 3.0}, best of its family (parameters picked on 1957-1990).",
  "start": "2026-10-23",
  "start_equity": 100000.0,
- "cash": -51.21365547935279,
+ "cash": -51.22316658679895,
  "holdings": {
   "UPRO": 1000.0
  },
@@ -18,14 +18,14 @@
   "stocks": 3.0,
   "bonds": 0.0
  },
- "last_date": "2026-11-25",
+ "last_date": "2026-11-27",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 50.0,
   "regulatory": 0.0
  },
- "fund_costs": 854.2132621988044,
+ "fund_costs": 888.4448848509232,
  "equity_history": [
   {
    "date": "2026-10-23",
@@ -122,6 +122,10 @@
   {
    "date": "2026-11-25",
    "equity": 81008.04
+  },
+  {
+   "date": "2026-11-27",
+   "equity": 83944.58
   }
  ],
  "trades": [
@@ -141,10 +145,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.0487,
-  "SPY": 718.7498,
+  "IEF": 96.0668,
+  "SPY": 727.5167,
   "SSO": NaN,
-  "UPRO": 81.0592,
-  "UST": 45.763
+  "UPRO": 83.9958,
+  "UST": 45.7706
  }
 }

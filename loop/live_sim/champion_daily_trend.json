@@ -4,7 +4,7 @@
  "description": "Exp 58: equal thirds of the daily 200-day 3x trend rule (+-2% band), valuation-scaled leverage and recovery+. Best worst-era result on daily CRSP 1930-2026 (15.6%) and smaller drawdowns, but lower growth since 1991 (19.8% vs 21.2%) and untested before 1930. Added 2026-11-21.",
  "start": "2026-11-20",
  "start_equity": 100000.0,
- "cash": 388.3116295699719,
+ "cash": 388.37388270423634,
  "holdings": {
   "SPY": 143.88918327982898
  },
@@ -18,14 +18,14 @@
   "stocks": 0.9958096116661048,
   "bonds": 0.0
  },
- "last_date": "2026-11-25",
+ "last_date": "2026-11-27",
  "last_signal_month": "2026-11",
  "fees": {
   "commission": 1.0,
   "spread_slippage": 29.8743,
   "regulatory": 0.0
  },
- "fund_costs": 1.167600681811931,
+ "fund_costs": 1.5601573569829505,
  "equity_history": [
   {
    "date": "2026-11-20",
@@ -42,6 +42,10 @@
   {
    "date": "2026-11-25",
    "equity": 103808.63
+  },
+  {
+   "date": "2026-11-27",
+   "equity": 105070.15
   }
  ],
  "trades": [
@@ -61,10 +65,10 @@
   }
  ],
  "prices": {
-  "IEF": 96.0487,
-  "SPY": 718.7498,
+  "IEF": 96.0668,
+  "SPY": 727.5167,
   "SSO": NaN,
-  "UPRO": 81.0592,
-  "UST": 45.763
+  "UPRO": 83.9958,
+  "UST": 45.7706
  }
 }
